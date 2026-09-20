@@ -67,7 +67,7 @@ export const metadata: Metadata = {
       "Live one-on-one online Quran classes for kids and adults. Free 3-day trial, no credit card.",
   },
   icons: {
-    icon: "/logo.png",
+    icon: "/icon.png",
     apple: "/apple-touch-icon.png",
   },
   robots: {

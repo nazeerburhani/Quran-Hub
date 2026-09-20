@@ -17,7 +17,7 @@ function LogoMark() {
       aria-hidden="true"
       className="grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-2xl bg-white shadow-glow"
     >
-      <Image src="/logo.jpg" alt="" width={40} height={40} className="h-10 w-10 object-cover" priority />
+      <Image src="/images/logo.jpg" alt="" width={40} height={40} className="h-10 w-10 object-cover" priority />
     </span>
   );
 }
