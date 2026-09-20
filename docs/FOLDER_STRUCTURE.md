@@ -1,4 +1,4 @@
-# Folder Structure — Noor Al-Quran Academy Website
+# Folder Structure — QuranHub Website
 
 Think of the project like a well-organized office. Every file has a fixed place so anyone can find things later.
 

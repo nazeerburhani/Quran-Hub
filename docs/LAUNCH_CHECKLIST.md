@@ -9,7 +9,7 @@ Work through this top to bottom. Tick each box before announcing the site.
 - [ ] Teacher profiles are real (replace the 8 sample profiles) with correct qualifications
 - [ ] Testimonials are real and approved (or removed until you have them)
 - [ ] FAQ answers reviewed by a scholar/teacher
-- [ ] Contact email `info@nooralquran.academy` actually exists and is monitored
+- [ ] Contact email `info@quranhub.academy` actually exists and is monitored
 - [ ] WhatsApp number +1 917 722 5120 tested from a real phone
 
 ## 2. Pricing & payments

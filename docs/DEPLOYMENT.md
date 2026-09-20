@@ -28,7 +28,7 @@
 
 1. In Vercel, open your project → **Settings → Environment Variables**.
 2. Copy each name from `.env.example` and paste your real value:
-   - `NEXT_PUBLIC_SITE_URL` → your final domain, e.g. `https://www.nooralquran.academy`
+   - `NEXT_PUBLIC_SITE_URL` → your final domain, e.g. `https://www.quranhub.academy`
    - `NEXT_PUBLIC_GA_ID` → Google Analytics ID (e.g. `G-XXXXXXXXXX`), when ready
    - `NEXT_PUBLIC_META_PIXEL_ID` → Meta Pixel ID, when ready
    - Supabase / Stripe / PayPal / LiveKit keys → added in later steps when those are connected
@@ -38,7 +38,7 @@
 
 ## Step 4 — Connect your own domain (optional but recommended)
 
-1. Buy a domain (e.g. `nooralquran.academy`) from Namecheap, GoDaddy, etc.
+1. Buy a domain (e.g. `quranhub.academy`) from Namecheap, GoDaddy, etc.
 2. In Vercel: project → **Settings → Domains** → **Add** → type your domain.
 3. Vercel shows you 2 DNS records. Add them in your domain provider's DNS settings.
 4. Wait up to 24 hours. Vercel adds the HTTPS certificate automatically.

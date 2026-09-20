@@ -1,4 +1,4 @@
-# Noor Al-Quran Academy — Website
+# QuranHub — Online Quran Academy Website
 
 Live one-on-one online Quran classes for kids and adults. Built with **Next.js 14 (App Router) + TypeScript + Tailwind CSS + Framer Motion + Three.js**.
 
