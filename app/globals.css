@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Base ---------- */
+:root {
+  --gold: #dd9b4e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(201, 162, 39, 0.35);
+}
+
+/* Visible, consistent keyboard focus (WCAG AA) */
+:focus-visible {
+  outline: 2px solid #dd9b4e;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Skip link for keyboard / screen-reader users */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: #dd9b4e;
+  color: #0b1026;
+  padding: 0.6rem 1rem;
+  border-radius: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+/* Slim, theme-aware scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(201, 162, 39, 0.45);
+  border-radius: 8px;
+}
+
+/* ---------- Reusable utilities ---------- */
+@layer components {
+  /* Frosted glass card */
+  .glass {
+    @apply border border-white/10 bg-white/60 backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.04];
+  }
+
+  /* Gold gradient headline text */
+  .text-gold-gradient {
+    background: linear-gradient(100deg, #f9dfae 0%, #dd9b4e 40%, #f6c88f 70%, #9a6224 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Subtle Islamic geometric pattern (SVG, no imagery) */
+  .geo-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'%3E%3Cg fill='none' stroke='%23c9a227' stroke-opacity='0.16'%3E%3Cpath d='M48 6l11 25 27 3-20 19 6 27-24-15-24 15 6-27-20-19 27-3z'/%3E%3Ccircle cx='48' cy='48' r='7'/%3E%3Cpath d='M0 48h18M78 48h18M48 0v18M48 78v18'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .geo-pattern-soft {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'%3E%3Cg fill='none' stroke='%23c9a227' stroke-opacity='0.08'%3E%3Cpath d='M48 6l11 25 27 3-20 19 6 27-24-15-24 15 6-27-20-19 27-3z'/%3E%3Ccircle cx='48' cy='48' r='7'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Primary gold button */
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-dark via-gold to-gold-light px-7 py-3.5 font-semibold text-navy-950 shadow-glow transition-transform duration-300 hover:shadow-glow-lg;
+  }
+
+  /* Ghost / glass button */
+  .btn-glass {
+    @apply glass inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-semibold text-slate-900 transition-colors duration-300 hover:border-gold/50 dark:text-white;
+  }
+}
+
+/* ---------- Motion safety ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
