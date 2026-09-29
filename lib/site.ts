@@ -513,8 +513,8 @@ export const FAQS: Faq[] = [
     a: "Plans are based on classes per week: 2, 3, 5 or 7 days. Pricing shown on this site is currently a placeholder while we finalize rates — book a free trial or message us on WhatsApp and we will share the exact fee for your country, including sibling and family discounts.",
   },
   {
-    q: "What if I am not satisfied? Is there a refund?",
-    a: "Yes. We offer a money-back guarantee: if you are not happy after your first paid week, we refund you — no questions asked. You can also pause or cancel your plan at any time.",
+    q: "What if I am not satisfied?",
+    a: "That is exactly what the free 3-day trial is for — you experience real classes before paying anything. If the tutor fit ever feels off, you can switch tutors free at any time, and you can pause or cancel your plan at any time with a WhatsApp message. No lock-in.",
   },
   {
     q: "Can my child learn Quran online with a female Quran teacher?",

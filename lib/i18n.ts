@@ -34,7 +34,6 @@ const en = {
   guaranteeNoCard: "No Card Required",
   guaranteeSameTutor: "Same Tutor Every Class",
   guaranteeReports: "Weekly Parent Progress Reports",
-  guaranteeMoneyBack: "7-Day Money-Back",
 
   statTutors: "Qualified tutors",
   statLessons: "Lessons delivered",
@@ -111,7 +110,6 @@ const en = {
     "Premium 1-on-1 teaching at honest prices — every plan includes reading, Tajweed and memorization with a qualified tutor. Pick how many days a week you learn.",
   mostPopular: "Most Popular",
   noFee: "No registration fee",
-  moneyBackBadge: "7-day money-back guarantee",
   siblingNote: "Sibling discount: extra children learn for less — ask us on WhatsApp.",
   startTrial: "Start Free Trial",
   perMonth: "/month",
@@ -185,7 +183,6 @@ const ur: typeof en = {
   guaranteeNoCard: "کارڈ کی ضرورت نہیں",
   guaranteeSameTutor: "ہر کلاس میں وہی استاد",
   guaranteeReports: "والدین کے لیے ہفتہ وار رپورٹس",
-  guaranteeMoneyBack: "7 دن کی رقم واپسی",
 
   statTutors: "مستند اساتذہ",
   statLessons: "دیے گئے اسباق",
@@ -262,7 +259,6 @@ const ur: typeof en = {
     "ہر پلان میں تلاوت، تجوید اور حفظ شامل ہے۔ منتخب کریں کہ ہفتے میں کتنے دن پڑھنا ہے۔",
   mostPopular: "سب سے مقبول",
   noFee: "کوئی رجسٹریشن فیس نہیں",
-  moneyBackBadge: "7 دن کی رقم واپسی کی ضمانت",
   siblingNote: "بہن بھائیوں کے لیے رعایت — واٹس ایپ پر پوچھیں۔",
   startTrial: "مفت ٹرائل شروع کریں",
   perMonth: "/ماہ",
@@ -336,7 +332,6 @@ const ar: typeof en = {
   guaranteeNoCard: "بدون بطاقة ائتمانية",
   guaranteeSameTutor: "نفس المعلم في كل درس",
   guaranteeReports: "تقارير أسبوعية للأهالي",
-  guaranteeMoneyBack: "استرداد خلال ٧ أيام",
 
   statTutors: "معلمون معتمدون",
   statLessons: "درس مُقدَّم",
@@ -413,7 +408,6 @@ const ar: typeof en = {
     "كل خطة تشمل التلاوة والتجويد والحفظ. اختر عدد أيام الدراسة أسبوعيًا.",
   mostPopular: "الأكثر شعبية",
   noFee: "بدون رسوم تسجيل",
-  moneyBackBadge: "ضمان استرداد لمدة ٧ أيام",
   siblingNote: "خصم للإخوة: يتعلم الإخوة بتكلفة أقل — اسألنا عبر واتساب.",
   startTrial: "ابدأ التجربة المجانية",
   perMonth: "/شهريًا",

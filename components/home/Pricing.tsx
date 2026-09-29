@@ -1,6 +1,6 @@
 "use client";
 
-import { BadgeCheck, Check, ShieldCheck } from "lucide-react";
+import { BadgeCheck, Check } from "lucide-react";
 import { PLANS } from "@/lib/site";
 import { useLocale } from "@/components/layout/LanguageSwitcher";
 import { dict } from "@/lib/i18n";
@@ -98,10 +98,6 @@ export default function Pricing() {
             <li className="inline-flex items-center gap-2">
               <BadgeCheck className="h-5 w-5 text-brand-600 dark:text-gold-300" aria-hidden="true" />
               {d.noFee}
-            </li>
-            <li className="inline-flex items-center gap-2">
-              <ShieldCheck className="h-5 w-5 text-brand-600 dark:text-gold-300" aria-hidden="true" />
-              {d.moneyBackBadge}
             </li>
           </ul>
           <p className="mt-4 text-center text-xs text-ink-soft/80 dark:text-night-muted/80">

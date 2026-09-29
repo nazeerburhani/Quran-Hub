@@ -36,7 +36,7 @@ function botReply(input: string): string {
     return "All our tutors are qualified — many hold Ijazah with an unbroken chain. We have both male and female teachers, and you can switch tutors any time if you wish.";
   }
   if (/refund|money back|cancel/.test(s)) {
-    return "We offer a money-back guarantee: if you are not happy after your first paid week, we refund you. You can pause or cancel your plan at any time.";
+    return "You can pause or cancel your plan at any time — just message us on WhatsApp. No lock-in, no questions asked. And the 3-day trial is completely free, so you decide with confidence before paying anything.";
   }
   if (/salam|assalam|hello|hi\b/.test(s)) {
     return "Wa Alaikum Assalam! Welcome to QuranHub. Ask me about fees, the free trial, courses, teachers or timings — or tap below to chat with our admin directly.";

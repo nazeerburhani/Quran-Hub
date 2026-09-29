@@ -49,7 +49,7 @@ export default function FinalCTA() {
             </a>
           </div>
           <p className="mt-4 text-sm text-sand-100/60">
-            {d.guaranteeNoCard} · {d.guaranteeMoneyBack}
+            {d.guaranteeNoCard}
           </p>
         </Reveal>
       </div>

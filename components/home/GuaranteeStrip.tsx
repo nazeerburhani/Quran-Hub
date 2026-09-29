@@ -1,11 +1,11 @@
 "use client";
 
-import { BadgeCheck, CalendarClock, CreditCard, FileBarChart, UserCheck } from "lucide-react";
+import { CalendarClock, CreditCard, FileBarChart, UserCheck } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import { useLocale } from "@/components/layout/LanguageSwitcher";
 import { dict } from "@/lib/i18n";
 
-const ICONS = [CalendarClock, CreditCard, UserCheck, FileBarChart, BadgeCheck];
+const ICONS = [CalendarClock, CreditCard, UserCheck, FileBarChart];
 
 export default function GuaranteeStrip() {
   const { locale } = useLocale();
@@ -15,7 +15,6 @@ export default function GuaranteeStrip() {
     d.guaranteeNoCard,
     d.guaranteeSameTutor,
     d.guaranteeReports,
-    d.guaranteeMoneyBack,
   ];
 
   return (
@@ -26,7 +25,7 @@ export default function GuaranteeStrip() {
     >
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
         <Reveal>
-          <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+          <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-4">
             {items.map((label, i) => {
               const Icon = ICONS[i];
               return (
