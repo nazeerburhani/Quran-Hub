@@ -624,7 +624,7 @@ export const REVIEWS: Review[] = [
 /* Animated stats                                                      */
 /* ------------------------------------------------------------------ */
 export interface Stat {
-  /** Numeric stats count up on scroll; string stats (e.g. "Thousands") render as-is. */
+  /** Numeric stats count up on scroll; string stats (e.g. "24/7") render as-is. */
   value: number | string;
   suffix: string;
   label: string;
@@ -633,7 +633,7 @@ export interface Stat {
 
 export const STATS: Stat[] = [
   { value: 20, suffix: "+", label: "Qualified tutors" },
-  { value: "Thousands", suffix: "", label: "Lessons delivered" },
+  { value: 1000, suffix: "+", label: "Lessons delivered" },
   { value: "24/7", suffix: "", label: "Live classes, every timezone" },
   { value: 10, suffix: "+", label: "Countries served" },
 ];
