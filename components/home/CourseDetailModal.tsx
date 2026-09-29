@@ -51,8 +51,8 @@ export default function CourseDetailModal({
   const chips = course
     ? [
         { icon: Video, label: d.chipOneOnOne },
-        { icon: Clock3, label: `${course.classMinutes} ${d.minShort}` },
-        { icon: CalendarDays, label: `${course.daysPerWeek} ${d.daysPerWeekShort}` },
+        { icon: Clock3, label: `${course.classMinutes ?? 30} ${d.minShort}` },
+        { icon: CalendarDays, label: `${course.daysPerWeek ?? 3} ${d.daysPerWeekShort}` },
         { icon: Globe, label: d.chipFlexible },
       ]
     : [];
@@ -138,12 +138,10 @@ export default function CourseDetailModal({
                 {d.whatYouLearn}
               </h4>
               <ul className="mt-3 space-y-2.5">
-                {course.outcomes.map((o) => (
-                  <li key={o} className="flex items-start gap-2.5 text-sm leading-relaxed text-ink dark:text-sand-100">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand-600 dark:text-gold-300" aria-hidden="true" />
-                    {o}
-                  </li>
-                ))}
+                <li className="flex items-start gap-2.5 text-sm leading-relaxed text-ink dark:text-sand-100">
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand-600 dark:text-gold-300" aria-hidden="true" />
+                  {course.outcome}
+                </li>
               </ul>
 
               {/* Lesson format */}
@@ -190,7 +188,7 @@ export default function CourseDetailModal({
                 </button>
               </div>
               <p className="mt-3 text-center text-xs text-ink-soft dark:text-night-muted">
-                {course.lessonFormat}
+                {course.lessonFormat ?? "Live 1-on-1 on Zoom or Skype"}
               </p>
             </div>
           </motion.div>

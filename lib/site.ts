@@ -37,6 +37,11 @@ export interface Course {
   categories: CourseCategory[];
   whoFor: string;
   outcome: string;
+  /** Optional scheduling hints used by CourseDetailModal chips. */
+  classMinutes?: number;
+  daysPerWeek?: number;
+  /** Optional format blurb shown in CourseDetailModal. */
+  lessonFormat?: string;
   image: string;
   imageAlt: string;
 }
