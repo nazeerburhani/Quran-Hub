@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
@@ -27,21 +27,13 @@ function LogoMark() {
 }
 
 /**
- * Sticky glass header. Over the dark hero it starts transparent with light
- * text; once scrolled it gains a frosted theme-aware background.
+ * Sticky glass header. Always frosted with a light theme-aware background so
+ * the dark logo stays clearly readable, including at the very top of the page.
  */
 export default function Header() {
   const { locale } = useLocale();
   const d = dict[locale];
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   const nav = [
     { label: d.navHome, href: "#top" },
@@ -51,27 +43,21 @@ export default function Header() {
     { label: d.navFaq, href: "#faq" },
   ];
 
-  const overHero = !scrolled && !open;
-  const navLinkCls = overHero
-    ? "text-sand-100/85 hover:bg-white/10 hover:text-white"
-    : "text-ink-soft hover:bg-brand-800/5 hover:text-brand-800 dark:text-night-muted dark:hover:bg-white/10 dark:hover:text-gold-300";
+  // Header keeps its frosted background from the very top of the page so the
+  // dark logo is always clearly readable over the dark hero.
+  const navLinkCls =
+    "text-ink-soft hover:bg-brand-800/5 hover:text-brand-800 dark:text-night-muted dark:hover:bg-white/10 dark:hover:text-gold-300";
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled || open
-          ? "border-b border-brand-800/10 bg-sand-50/85 shadow-card-light backdrop-blur-xl dark:border-white/10 dark:bg-night/85 dark:shadow-card"
-          : "border-b border-transparent bg-transparent"
-      }`}
+      className="fixed inset-x-0 top-0 z-50 border-b border-brand-800/10 bg-sand-50/85 shadow-card-light backdrop-blur-xl transition-all duration-300 dark:border-white/10 dark:bg-night/85 dark:shadow-card"
     >
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
         <Link href="#top" className="flex items-center gap-2.5" aria-label={`${SITE.name} — home`}>
           <LogoMark />
           <span className="leading-tight">
             <span
-              className={`block text-[15px] font-bold tracking-tight sm:text-base ${
-                overHero ? "text-white" : "text-ink dark:text-sand-100"
-              }`}
+              className="block text-[15px] font-bold tracking-tight text-ink dark:text-sand-100 sm:text-base"
             >
               {SITE.name}
             </span>
@@ -96,11 +82,7 @@ export default function Header() {
         <div className="flex items-center gap-2">
           {/* Live indicator */}
           <span
-            className={`hidden items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-semibold xl:inline-flex ${
-              overHero
-                ? "border-white/20 bg-white/10 text-sand-100 backdrop-blur-md"
-                : "border-brand-800/15 bg-brand-800/5 text-brand-700 dark:border-white/15 dark:bg-white/5 dark:text-gold-300"
-            }`}
+            className="hidden items-center gap-2 rounded-full border border-brand-800/15 bg-brand-800/5 px-3 py-1.5 text-xs font-semibold text-brand-700 dark:border-white/15 dark:bg-white/5 dark:text-gold-300 xl:inline-flex"
             role="status"
           >
             <span className="live-dot" aria-hidden="true" />
@@ -122,11 +104,7 @@ export default function Header() {
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
-            className={`inline-flex h-11 w-11 items-center justify-center rounded-full border transition-colors lg:hidden ${
-              overHero
-                ? "border-white/20 bg-white/10 text-white backdrop-blur-md"
-                : "glass text-ink dark:text-sand-100"
-            }`}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border glass text-ink transition-colors dark:text-sand-100 lg:hidden"
           >
             {open ? (
               <X className="h-5 w-5" aria-hidden="true" />
