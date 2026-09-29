@@ -108,7 +108,7 @@ const en = {
   pricingEyebrow: "Pricing",
   pricingTitle: "Choose your pace — not the subject",
   pricingDesc:
-    "Every plan includes reading, Tajweed and memorization. Pick how many days a week you learn.",
+    "Premium 1-on-1 teaching at honest prices — every plan includes reading, Tajweed and memorization with a qualified tutor. Pick how many days a week you learn.",
   mostPopular: "Most Popular",
   noFee: "No registration fee",
   moneyBackBadge: "7-day money-back guarantee",

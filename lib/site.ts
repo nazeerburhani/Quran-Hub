@@ -232,7 +232,11 @@ export const COURSES: Course[] = [
 ];
 
 /* ------------------------------------------------------------------ */
-/* Teachers — SAMPLE profiles (replace with real tutor data at launch) */
+/* Teachers — tutor roster.
+   t1–t8: original sample profiles (replace with real tutor data at launch).
+   t9–t11: real names provided by the academy owner; details unconfirmed.
+   t12–t15: placeholder names requested by the owner; details are placeholders.
+   Never invent credentials, experience, or ratings for any tutor. */
 /* ------------------------------------------------------------------ */
 export interface Teacher {
   id: string;
@@ -345,7 +349,7 @@ export const TEACHERS: Teacher[] = [
     name: "Qari Ateeq Ur Rahman",
     country: "Pakistan",
     languages: ["Urdu", "English", "Arabic"],
-    qualification: "Qari — Tajweed & Hifz specialist",
+    qualification: "Qualified Quran tutor",
     gender: "Male",
     subjects: ["Tajweed", "Hifz", "Quran Reading"],
   },
@@ -354,7 +358,7 @@ export const TEACHERS: Teacher[] = [
     name: "Qari Sardar Ahmad",
     country: "Pakistan",
     languages: ["Urdu", "English", "Arabic"],
-    qualification: "Qari — Noorani Qaida & Nazra specialist",
+    qualification: "Qualified Quran tutor",
     gender: "Male",
     subjects: ["Noorani Qaida", "Nazra", "Kids Quran"],
   },
@@ -363,7 +367,7 @@ export const TEACHERS: Teacher[] = [
     name: "Qari Muhammad Saqib",
     country: "Pakistan",
     languages: ["Urdu", "English", "Arabic"],
-    qualification: "Qari — Tajweed & Qira'at specialist",
+    qualification: "Qualified Quran tutor",
     gender: "Male",
     subjects: ["Tajweed", "Qira'at", "Hifz"],
   },
@@ -374,9 +378,7 @@ export const TEACHERS: Teacher[] = [
     name: "Qari Daniyal Raza",
     country: "Pakistan",
     languages: ["Urdu", "English"],
-    qualification: "Qari, Tajweed instructor",
-    experienceYears: 7,
-    rating: 4.8,
+    qualification: "Qualified Quran tutor",
     gender: "Male",
     subjects: ["Tajweed", "Noorani Qaida", "Adults"],
   },
@@ -385,9 +387,7 @@ export const TEACHERS: Teacher[] = [
     name: "Ustadha Iqra Naveed",
     country: "Pakistan",
     languages: ["Urdu", "English", "Arabic"],
-    qualification: "Hafiza, Tajweed instructor",
-    experienceYears: 5,
-    rating: 4.9,
+    qualification: "Qualified Quran tutor",
     gender: "Female",
     subjects: ["Sisters", "Kids Quran", "Hifz"],
   },
@@ -396,9 +396,7 @@ export const TEACHERS: Teacher[] = [
     name: "Mufti Kamran Aziz",
     country: "UK",
     languages: ["English", "Urdu", "Arabic"],
-    qualification: "Mufti, Ijazah in Hafs",
-    experienceYears: 11,
-    rating: 4.9,
+    qualification: "Qualified Quran tutor",
     gender: "Male",
     subjects: ["Tafseer", "Islamic Studies", "Ijazah"],
   },
@@ -407,9 +405,7 @@ export const TEACHERS: Teacher[] = [
     name: "Ustadha Sadia Farooq",
     country: "Canada",
     languages: ["English", "Urdu"],
-    qualification: "Hafiza, Ijazah in Hafs",
-    experienceYears: 6,
-    rating: 4.9,
+    qualification: "Qualified Quran tutor",
     gender: "Female",
     subjects: ["Sisters", "Tajweed", "Duas & Namaz"],
   },
@@ -439,8 +435,8 @@ export const PLANS: Plan[] = [
     name: "Foundation",
     classesPerWeek: 2,
     minutesPerClass: 30,
-    monthlyUSD: 49,
-    anchorUSD: 65,
+    monthlyUSD: 35,
+    anchorUSD: 45,
     tagline: "A gentle start for new learners",
   },
   {
@@ -448,8 +444,8 @@ export const PLANS: Plan[] = [
     name: "Consistency",
     classesPerWeek: 3,
     minutesPerClass: 30,
-    monthlyUSD: 69,
-    anchorUSD: 89,
+    monthlyUSD: 50,
+    anchorUSD: 65,
     tagline: "Steady progress, every week",
     popular: true,
   },
@@ -458,8 +454,8 @@ export const PLANS: Plan[] = [
     name: "Intensive",
     classesPerWeek: 5,
     minutesPerClass: 30,
-    monthlyUSD: 99,
-    anchorUSD: 129,
+    monthlyUSD: 80,
+    anchorUSD: 99,
     tagline: "Fast, focused momentum",
   },
   {
@@ -467,8 +463,8 @@ export const PLANS: Plan[] = [
     name: "Dedicated",
     classesPerWeek: 7,
     minutesPerClass: 30,
-    monthlyUSD: 129,
-    anchorUSD: 169,
+    monthlyUSD: 110,
+    anchorUSD: 140,
     tagline: "Daily learning, maximum results",
   },
 ];

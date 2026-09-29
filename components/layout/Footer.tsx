@@ -6,13 +6,15 @@ import { SITE, whatsappLink } from "@/lib/site";
 export default function Footer() {
   const year = new Date().getFullYear();
 
-  const courses = [
-    "Noorani Qaida",
-    "Quran Reading with Tajweed",
-    "Hifz (Memorization)",
-    "Quran for Kids",
-    "Quran for Sisters",
-    "Ijazah Program",
+  const courses: { label: string; href: string }[] = [
+    { label: "Quran Classes for Kids", href: "/courses/online-quran-classes-for-kids" },
+    { label: "Female Quran Teacher", href: "/courses/female-quran-teacher-online" },
+    { label: "Noorani Qaida Online", href: "/courses/noorani-qaida-online" },
+    { label: "Tajweed Course Online", href: "/courses/online-tajweed-course" },
+    { label: "Hifz Program Online", href: "/courses/online-hifz-program" },
+    { label: "Quran for Adults", href: "/courses/learn-quran-online-for-adults" },
+    { label: "Quran Classes for Sisters", href: "/courses/online-quran-classes-for-sisters" },
+    { label: "Ijazah Course Online", href: "/courses/online-ijazah-course" },
   ];
 
   return (
@@ -53,10 +55,10 @@ export default function Footer() {
             </p>
             <ul className="mt-4 space-y-2.5 text-sm">
               {courses.map((c) => (
-                <li key={c}>
-                  <a href="#courses" className="text-sand-100/75 transition-colors hover:text-gold-300">
-                    {c}
-                  </a>
+                <li key={c.href}>
+                  <Link href={c.href} className="text-sand-100/75 transition-colors hover:text-gold-300">
+                    {c.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -70,7 +72,8 @@ export default function Footer() {
             <ul className="mt-4 space-y-2.5 text-sm">
               <li><a href="#how" className="text-sand-100/75 transition-colors hover:text-gold-300">How it works</a></li>
               <li><a href="#teachers" className="text-sand-100/75 transition-colors hover:text-gold-300">Teachers</a></li>
-              <li><a href="#pricing" className="text-sand-100/75 transition-colors hover:text-gold-300">Pricing</a></li>
+              <li><Link href="/fees" className="text-sand-100/75 transition-colors hover:text-gold-300">Fees & Pricing</Link></li>
+              <li><Link href="/free-trial" className="text-sand-100/75 transition-colors hover:text-gold-300">Free Trial</Link></li>
               <li><a href="#reviews" className="text-sand-100/75 transition-colors hover:text-gold-300">Reviews</a></li>
               <li><a href="#faq" className="text-sand-100/75 transition-colors hover:text-gold-300">FAQ</a></li>
             </ul>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, Clock3 } from "lucide-react";
 import { COURSES, type Course, type CourseCategory } from "@/lib/site";
@@ -10,6 +11,17 @@ import { dict } from "@/lib/i18n";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
 import EnrollModal from "./EnrollModal";
+
+/** Course id → dedicated SEO landing page (internal linking web). */
+const COURSE_PAGE_LINKS: Record<string, string> = {
+  "quran-for-kids": "/courses/online-quran-classes-for-kids",
+  "quran-for-sisters": "/courses/online-quran-classes-for-sisters",
+  "noorani-qaida": "/courses/noorani-qaida-online",
+  "quran-reading-tajweed": "/courses/online-tajweed-course",
+  hifz: "/courses/online-hifz-program",
+  "quran-for-adults": "/courses/learn-quran-online-for-adults",
+  "ijazah-program": "/courses/online-ijazah-course",
+};
 
 const FILTERS: { id: "all" | CourseCategory; labelKey: "filterAll" | "filterKids" | "filterAdults" | "filterMemorization" | "filterLanguage" }[] = [
   { id: "all", labelKey: "filterAll" },
@@ -83,15 +95,25 @@ function CourseCard({
           </div>
         </dl>
 
-        <button
-          type="button"
-          onClick={() => onEnroll(course)}
-          className="mt-5 inline-flex min-h-[44px] items-center gap-1.5 self-start text-sm font-bold text-brand-700 transition-colors hover:text-brand-600 hover:gap-2.5 dark:text-gold-300 dark:hover:text-gold-200"
-          aria-label={`${d.enroll} — ${course.title}`}
-        >
-          {d.enroll}
-          <ArrowRight className="h-4 w-4 rtl:rotate-180" aria-hidden="true" />
-        </button>
+        <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
+          <button
+            type="button"
+            onClick={() => onEnroll(course)}
+            className="inline-flex min-h-[44px] items-center gap-1.5 self-start text-sm font-bold text-brand-700 transition-colors hover:text-brand-600 hover:gap-2.5 dark:text-gold-300 dark:hover:text-gold-200"
+            aria-label={`${d.enroll} — ${course.title}`}
+          >
+            {d.enroll}
+            <ArrowRight className="h-4 w-4 rtl:rotate-180" aria-hidden="true" />
+          </button>
+          {COURSE_PAGE_LINKS[course.id] ? (
+            <Link
+              href={COURSE_PAGE_LINKS[course.id]}
+              className="inline-flex min-h-[44px] items-center gap-1 text-sm font-semibold text-ink-soft underline decoration-gold-400/60 decoration-2 underline-offset-4 transition-colors hover:text-brand-700 dark:text-night-muted dark:hover:text-gold-300"
+            >
+              Course details
+            </Link>
+          ) : null}
+        </div>
       </div>
     </motion.article>
   );

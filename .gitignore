@@ -9,3 +9,14 @@ out/
 # misc
 *.log
 .DS_Store
+
+# local-only (never deploy)
+/__pycache__/
+*.pyc
+/docs/
+push_quran_hub.py
+components/ui/SectionDivider.tsx
+design-research/marketing-strategy.md
+design-research/phase-2-ux-animation-research.md
+public/videos/build/
+public/videos/assets/
