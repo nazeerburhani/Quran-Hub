@@ -10,26 +10,18 @@ import { SITE } from "@/lib/site";
 import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeToggle from "./ThemeToggle";
 
-import { useTheme } from "next-themes";
 
-function LogoMark({ chip }: { chip: boolean }) {
-  const logo = (
-    <Image
-      src="/images/logo.png"
-      alt=""
-      width={44}
-      height={44}
-      className="h-10 w-10 object-contain"
-      priority
-    />
-  );
-  if (!chip) return <span aria-hidden="true" className="grid h-10 w-10 shrink-0 place-items-center">{logo}</span>;
+function LogoMark() {
   return (
-    <span
-      aria-hidden="true"
-      className="grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-2xl bg-white shadow-card"
-    >
-      {logo}
+    <span aria-hidden="true" className="grid h-10 w-10 shrink-0 place-items-center">
+      <Image
+        src="/images/logo.png"
+        alt=""
+        width={44}
+        height={44}
+        className="h-10 w-10 object-contain drop-shadow-[0_0_12px_rgba(255,255,255,0.4)]"
+        priority
+      />
     </span>
   );
 }
@@ -43,11 +35,8 @@ export default function Header() {
   const d = dict[locale];
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
-    setMounted(true);
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -63,8 +52,6 @@ export default function Header() {
   ];
 
   const overHero = !scrolled && !open;
-  // Transparent logo needs a light chip over the dark hero and in dark mode
-  const logoChip = overHero || (mounted && resolvedTheme === "dark");
   const navLinkCls = overHero
     ? "text-sand-100/85 hover:bg-white/10 hover:text-white"
     : "text-ink-soft hover:bg-brand-800/5 hover:text-brand-800 dark:text-night-muted dark:hover:bg-white/10 dark:hover:text-gold-300";
@@ -79,7 +66,7 @@ export default function Header() {
     >
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
         <Link href="#top" className="flex items-center gap-2.5" aria-label={`${SITE.name} — home`}>
-          <LogoMark chip={logoChip} />
+          <LogoMark />
           <span className="leading-tight">
             <span
               className={`block text-[15px] font-bold tracking-tight sm:text-base ${
