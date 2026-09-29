@@ -29,6 +29,7 @@ const en = {
   heroChipStudents: "Thousands of lessons delivered",
   heroChipCountries: "10+ countries",
 
+  guaranteeEyebrow: "Our promise to you",
   guaranteeTrial: "3-Day Free Trial",
   guaranteeNoCard: "No Card Required",
   guaranteeSameTutor: "Same Tutor Every Class",
@@ -185,6 +186,7 @@ const ur: typeof en = {
   heroChipStudents: "ہزاروں اسباق",
   heroChipCountries: "10+ ممالک",
 
+  guaranteeEyebrow: "آپ سے ہمارا وعدہ",
   guaranteeTrial: "3 دن کا مفت ٹرائل",
   guaranteeNoCard: "کارڈ کی ضرورت نہیں",
   guaranteeSameTutor: "ہر کلاس میں وہی استاد",
@@ -341,6 +343,7 @@ const ar: typeof en = {
   heroChipStudents: "آلاف الدروس",
   heroChipCountries: "أكثر من 10 دول",
 
+  guaranteeEyebrow: "وعدنا لكم",
   guaranteeTrial: "تجربة مجانية ٣ أيام",
   guaranteeNoCard: "بدون بطاقة ائتمانية",
   guaranteeSameTutor: "نفس المعلم في كل درس",

@@ -11,7 +11,7 @@ export const SITE = {
   whatsappRaw: "19177225120",
   email: "info@quranhub.academy",
   /** Inbox where website lead notifications are emailed. */
-  leadsEmail: "nazeerahmad.blg@gmail.com",
+  leadsEmail: "nazeerahmad.sbg@gmail.com",
   defaultWhatsappMessage: "Assalamu Alaikum, I want to know about Quran classes.",
   url: "https://quranhub.online.nazeerahmad.dev",
   businessHours: "24/7 — teachers available in every timezone",
