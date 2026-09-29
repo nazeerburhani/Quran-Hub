@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { CheckCircle2, MessageCircle, X } from "lucide-react";
 import { useState } from "react";
 import { PLANS, SITE, whatsappLink, type Course } from "@/lib/site";
+import { sendLeadEmail } from "@/lib/leads";
 
 interface EnrollModalProps {
   course: Course | null;
@@ -28,6 +29,13 @@ export default function EnrollModal({ course, onClose }: EnrollModalProps) {
       `Name: ${name}\nContact: ${contact}`;
     // Open WhatsApp chat with the academy — the enrollment details arrive as a message
     window.open(whatsappLink(msg), "_blank", "noopener,noreferrer");
+    // Also email the enrollment details to the academy inbox (backup channel)
+    sendLeadEmail(`New enrollment request — ${course?.title ?? ""}`, {
+      Course: course?.title ?? "",
+      Plan: plan ? `${plan.name} — ${plan.classesPerWeek} classes/week` : planId,
+      Name: name,
+      Contact: contact,
+    });
     setSent(true);
   };
 

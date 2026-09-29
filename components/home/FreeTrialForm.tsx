@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { CheckCircle2, MessageCircle, Timer } from "lucide-react";
 import { SITE, whatsappLink } from "@/lib/site";
+import { sendLeadEmail } from "@/lib/leads";
 import { useLocale } from "@/components/layout/LanguageSwitcher";
 import { dict } from "@/lib/i18n";
 import Reveal from "@/components/ui/Reveal";
@@ -24,6 +25,12 @@ export default function FreeTrialForm() {
       `Name: ${name}\nContact: ${contact}\nStudent: ${student}`;
     // Open WhatsApp chat with the academy — the lead details arrive as a message
     window.open(whatsappLink(msg), "_blank", "noopener,noreferrer");
+    // Also email the lead details to the academy inbox (backup channel)
+    sendLeadEmail("New FREE trial request", {
+      Name: name,
+      Contact: contact,
+      Student: student,
+    });
     setSent(true);
   };
 
