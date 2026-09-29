@@ -29,7 +29,7 @@ function FloatingChip({
   return (
     <motion.div
       style={reduce ? undefined : { y }}
-      className={`glass pointer-events-none absolute z-20 hidden items-center gap-2 rounded-2xl px-4 py-3 shadow-card md:inline-flex ${className ?? ""}`}
+      className={`pointer-events-none absolute z-20 hidden items-center gap-2 rounded-2xl border border-white/15 bg-night-deep/60 px-4 py-3 shadow-card backdrop-blur-xl md:inline-flex ${className ?? ""}`}
     >
       {children}
     </motion.div>
@@ -89,7 +89,7 @@ export default function Hero() {
         aria-hidden="true"
         style={{
           background:
-            "linear-gradient(100deg, rgba(6,26,24,0.90) 0%, rgba(6,26,24,0.74) 42%, rgba(6,26,24,0.42) 66%, rgba(6,26,24,0.10) 86%, rgba(6,26,24,0.02) 100%)",
+            "linear-gradient(100deg, rgba(6,26,24,0.93) 0%, rgba(6,26,24,0.82) 42%, rgba(6,26,24,0.62) 66%, rgba(6,26,24,0.20) 86%, rgba(6,26,24,0.04) 100%)",
         }}
       />
       {/* Warm champagne glow over the manuscript's bokeh lights */}
