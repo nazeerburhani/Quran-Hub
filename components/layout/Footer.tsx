@@ -24,8 +24,8 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link href="#top" className="flex items-center gap-2.5" aria-label={`${SITE.name} — home`}>
-              <span className="grid h-11 w-11 place-items-center overflow-hidden rounded-2xl bg-white">
-                <Image src="/images/logo.png" alt="" width={44} height={44} className="h-11 w-11 object-contain" />
+              <span className="grid h-11 w-11 place-items-center">
+                <Image src="/images/logo.png" alt="" width={44} height={44} className="h-11 w-11 object-contain drop-shadow-[0_0_12px_rgba(255,255,255,0.25)]" />
               </span>
               <span className="leading-tight">
                 <span className="block text-base font-bold tracking-tight text-white">
