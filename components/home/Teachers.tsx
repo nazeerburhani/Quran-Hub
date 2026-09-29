@@ -11,8 +11,8 @@ import SectionHeading from "@/components/ui/SectionHeading";
 
 function badgeFor(qualification: string): string | null {
   const q = qualification.toLowerCase();
+  if (q.includes("tanzeem")) return "Tanzeem-ul-Madaris";
   if (q.includes("ijazah")) return "Ijazah";
-  if (q.includes("al-azhar")) return "Al-Azhar";
   if (q.includes("hafiz")) return "Hafiz";
   return null;
 }

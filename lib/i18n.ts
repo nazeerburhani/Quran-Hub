@@ -86,7 +86,7 @@ const en = {
   teachersEyebrow: "Our tutors",
   teachersTitle: "Qualified teachers you'll trust",
   teachersDesc:
-    "Huffaz, Qaris and Al-Azhar graduates — male and female tutors, matched to your family.",
+    "Huffaz and Qaris qualified from Tanzeem-ul-Madaris — male and female tutors, matched to your family.",
   teachersTeamNote:
     "Meet some of our 20+ qualified tutors below — you'll meet the rest in your free trial.",
   teachersMoreTitle: "20+ tutors & growing",
@@ -243,7 +243,7 @@ const ur: typeof en = {
   teachersEyebrow: "اساتذہ",
   teachersTitle: "قابلِ اعتماد مستند اساتذہ",
   teachersDesc:
-    "حفاظ، قراء اور جامعہ ازہر کے فارغ التحصیل — آپ کے خاندان کے لیے مرد و خواتین اساتذہ۔",
+    "حفاظ و قراء، تنظیم المدارس سے مستند — آپ کے خاندان کے لیے مرد و خواتین اساتذہ۔",
   teachersTeamNote:
     "ہمارے 20+ اہل اساتذہ میں سے کچھ سے نیچے ملیں — باقی سے آپ مفت ٹرائل میں ملیں گے۔",
   teachersMoreTitle: "20+ اساتذہ اور بڑھ رہے ہیں",
@@ -400,7 +400,7 @@ const ar: typeof en = {
   teachersEyebrow: "المعلمون",
   teachersTitle: "معلمون معتمدون تثق بهم",
   teachersDesc:
-    "حفّاظ وقرّاء وخريجو الأزهر — معلمون ومعلمات يناسبون عائلتك.",
+    "حفّاظ وقرّاء مؤهلون من تنظيم المدارس — معلمون ومعلمات يناسبون عائلتك.",
   teachersTeamNote:
     "تعرّف على بعض معلمينا المؤهلين (أكثر من 20) أدناه — وستلتقي بالبقية في تجربتك المجانية.",
   teachersMoreTitle: "أكثر من 20 معلمًا — والعدد في نمو",

@@ -25,7 +25,7 @@ export function OrganizationJsonLd() {
           "@type": "Person",
           name: SITE.founder,
         },
-        sameAs: [],
+        sameAs: [SITE.facebook, SITE.instagram],
       }}
     />
   );

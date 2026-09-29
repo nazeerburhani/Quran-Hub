@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Clock, Facebook, Mail, MessageCircle } from "lucide-react";
+import { Clock, Facebook, Instagram, Mail, MessageCircle } from "lucide-react";
 import { SITE, whatsappLink } from "@/lib/site";
 
 export default function Footer() {
@@ -109,15 +109,24 @@ export default function Footer() {
                 <Clock className="h-4 w-4 text-gold-300" aria-hidden="true" />
                 {SITE.businessHours}
               </li>
-              <li>
+              <li className="flex items-center gap-3">
                 <a
-                  href="https://www.facebook.com/share/19PWaieQST/"
+                  href={SITE.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${SITE.name} on Facebook`}
                   className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-sand-100/75 transition-colors hover:border-gold-400/60 hover:text-gold-300"
                 >
                   <Facebook className="h-5 w-5" aria-hidden="true" />
+                </a>
+                <a
+                  href={SITE.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${SITE.name} on Instagram`}
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-sand-100/75 transition-colors hover:border-gold-400/60 hover:text-gold-300"
+                >
+                  <Instagram className="h-5 w-5" aria-hidden="true" />
                 </a>
               </li>
             </ul>
