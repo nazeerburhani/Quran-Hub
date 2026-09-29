@@ -51,11 +51,29 @@ export default function ChatWidget() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [typing, setTyping] = useState(false);
+  const [lifted, setLifted] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, typing, open]);
+
+  /* Lift above the sticky mobile CTA bar once it appears (mobile only —
+     the bar is md:hidden, so desktop floats stay put). */
+  useEffect(() => {
+    const onScroll = () => {
+      setLifted(
+        window.scrollY > window.innerHeight * 0.85 && window.innerWidth < 768
+      );
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
 
   const pushBot = (text: string) => {
     setTyping(true);
@@ -84,7 +102,11 @@ export default function ChatWidget() {
   };
 
   return (
-    <div className="fixed bottom-24 left-5 z-40 flex flex-col items-start gap-3 md:bottom-5">
+    <div
+      className={`fixed right-5 z-40 flex flex-col items-end gap-3 transition-all duration-300 ${
+        lifted ? "bottom-[172px]" : "bottom-[104px]"
+      }`}
+    >
       <AnimatePresence>
         {open ? (
           <motion.div

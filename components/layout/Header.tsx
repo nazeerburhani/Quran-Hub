@@ -19,7 +19,7 @@ function LogoMark() {
         alt=""
         width={44}
         height={44}
-        className="h-10 w-10 object-contain drop-shadow-[0_0_12px_rgba(255,255,255,0.4)]"
+        className="h-10 w-10 object-contain drop-shadow-[0_2px_8px_rgba(22,68,73,0.28)]"
         priority
       />
     </span>
@@ -50,7 +50,7 @@ export default function Header() {
 
   return (
     <header
-      className="fixed inset-x-0 top-0 z-50 border-b border-brand-800/10 bg-sand-50/85 shadow-card-light backdrop-blur-xl transition-all duration-300 dark:border-white/10 dark:bg-night/85 dark:shadow-card"
+      className="fixed inset-x-0 top-0 z-50 border-b border-gold-500/25 bg-[#FBF8F1]/90 shadow-[0_10px_36px_rgba(18,51,50,0.10)] backdrop-blur-xl transition-all duration-300 dark:border-white/10 dark:bg-night/85 dark:shadow-card"
     >
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
         <Link href="#top" className="flex items-center gap-2.5" aria-label={`${SITE.name} — home`}>
@@ -61,7 +61,7 @@ export default function Header() {
             >
               {SITE.name}
             </span>
-            <span className="hidden text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-300 sm:block">
+            <span className="hidden text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-600 dark:text-gold-300 sm:block">
               Online Quran Academy
             </span>
           </span>
@@ -119,7 +119,7 @@ export default function Header() {
       {open ? (
         <nav
           aria-label="Mobile"
-          className="border-t border-brand-800/10 bg-sand-50/95 px-4 pb-6 pt-3 backdrop-blur-xl dark:border-white/10 dark:bg-night/95 lg:hidden"
+          className="border-t border-gold-500/20 bg-[#FBF8F1]/95 px-4 pb-6 pt-3 backdrop-blur-xl dark:border-white/10 dark:bg-night/95 lg:hidden"
         >
           <ul className="space-y-1">
             {nav.map((item) => (

@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import gsap from "gsap";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { ArrowDown, Globe2, Sparkles, Users } from "lucide-react";
+import { ArrowDown, Globe2, Sparkles, Star, Users } from "lucide-react";
 import { useLocale } from "@/components/layout/LanguageSwitcher";
 import { dict } from "@/lib/i18n";
 
@@ -82,13 +82,23 @@ export default function Hero() {
         />
       </div>
 
-      {/* Deep-teal gradient overlay: left 85% → transparent right */}
+      {/* Deep-teal gradient overlay — rich but lets the manuscript breathe:
+          left stays dark for headline contrast, right opens to warm gold light */}
       <div
         className="absolute inset-0"
         aria-hidden="true"
         style={{
           background:
-            "linear-gradient(100deg, rgba(7,33,31,0.96) 0%, rgba(7,33,31,0.88) 45%, rgba(7,33,31,0.55) 68%, rgba(7,33,31,0.15) 88%, rgba(7,33,31,0.05) 100%)",
+            "linear-gradient(100deg, rgba(6,26,24,0.90) 0%, rgba(6,26,24,0.74) 42%, rgba(6,26,24,0.42) 66%, rgba(6,26,24,0.10) 86%, rgba(6,26,24,0.02) 100%)",
+        }}
+      />
+      {/* Warm champagne glow over the manuscript's bokeh lights */}
+      <div
+        className="absolute inset-0"
+        aria-hidden="true"
+        style={{
+          background:
+            "radial-gradient(55% 45% at 76% 30%, rgba(217,164,65,0.22) 0%, rgba(217,164,65,0) 70%)",
         }}
       />
       {/* Bottom blend into page */}
@@ -105,7 +115,7 @@ export default function Hero() {
         <div className="max-w-2xl">
           <p
             data-hero-enter
-            className="inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[13px] font-semibold text-sand-100 backdrop-blur-md"
+            className="inline-flex items-center gap-2.5 rounded-full border border-gold-300/30 bg-night-deep/55 px-4 py-2 text-[13px] font-semibold text-sand-100 shadow-[0_4px_20px_rgba(0,0,0,0.35)] backdrop-blur-md"
           >
             <span className="live-dot" aria-hidden="true" />
             {d.heroEyebrow}
@@ -113,7 +123,7 @@ export default function Hero() {
 
           <h1
             data-hero-enter
-            className="mt-6 font-display text-[2.6rem] font-semibold leading-[1.08] tracking-tight text-white sm:text-6xl lg:text-[4.4rem]"
+            className="mt-6 font-display text-[2.6rem] font-semibold leading-[1.08] tracking-tight text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)] sm:text-6xl lg:text-[4.4rem]"
           >
             <span className="sr-only">Online Quran Academy — </span>
             Your child reciting the Quran{" "}
@@ -146,6 +156,25 @@ export default function Hero() {
           <p data-hero-enter className="mt-5 text-sm text-sand-100/70">
             Free 3-day trial · No credit card · Confirmed on WhatsApp
           </p>
+
+          {/* Social proof row — mobile only (desktop has the floating glass chips) */}
+          <div
+            data-hero-enter
+            className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-2 md:hidden"
+          >
+            <span className="flex items-center gap-1" aria-hidden="true">
+              {[0, 1, 2, 3, 4].map((i) => (
+                <Star key={i} className="h-4 w-4 fill-gold-400 text-gold-400" />
+              ))}
+            </span>
+            <span className="text-sm font-semibold text-sand-100">
+              {d.heroChipRating}
+            </span>
+            <span className="h-1 w-1 rounded-full bg-gold-400/70" aria-hidden="true" />
+            <span className="text-sm text-sand-100/80">{d.heroChipStudents}</span>
+            <span className="h-1 w-1 rounded-full bg-gold-400/70" aria-hidden="true" />
+            <span className="text-sm text-sand-100/80">{d.heroChipCountries}</span>
+          </div>
         </div>
       </div>
 
