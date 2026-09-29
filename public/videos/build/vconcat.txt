@@ -1,4 +1,0 @@
-file 'vseg1.mp4'
-file 'vseg2.mp4'
-file 'vseg3.mp4'
-file 'vseg4.mp4'
