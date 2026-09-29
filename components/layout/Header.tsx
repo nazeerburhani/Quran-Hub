@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { ArrowRight, Menu, X } from "lucide-react";
 import { useLocale } from "./LanguageSwitcher";
 import { dict } from "@/lib/i18n";
 import { SITE } from "@/lib/site";
@@ -13,13 +13,13 @@ import ThemeToggle from "./ThemeToggle";
 
 function LogoMark() {
   return (
-    <span aria-hidden="true" className="grid h-10 w-10 shrink-0 place-items-center">
+    <span aria-hidden="true" className="grid h-11 w-11 shrink-0 place-items-center">
       <Image
         src="/images/logo.png"
         alt=""
-        width={44}
-        height={44}
-        className="h-10 w-10 object-contain drop-shadow-[0_2px_8px_rgba(22,68,73,0.28)]"
+        width={48}
+        height={48}
+        className="h-11 w-11 object-contain drop-shadow-[0_2px_8px_rgba(22,68,73,0.28)]"
         priority
       />
     </span>
@@ -45,19 +45,20 @@ export default function Header() {
 
   // Header keeps its frosted background from the very top of the page so the
   // dark logo is always clearly readable over the dark hero.
+  // Nav links get an animated gold underline on hover for a premium feel.
   const navLinkCls =
-    "text-ink-soft hover:bg-brand-800/5 hover:text-brand-800 dark:text-night-muted dark:hover:bg-white/10 dark:hover:text-gold-300";
+    "relative text-ink-soft hover:text-brand-800 dark:text-night-muted dark:hover:text-gold-300 after:absolute after:-bottom-0.5 after:left-1/2 after:h-[2px] after:w-0 after:-translate-x-1/2 after:rounded-full after:bg-gradient-to-r after:from-gold-300 after:to-gold-500 after:transition-all after:duration-300 hover:after:w-3/4";
 
   return (
     <header
-      className="fixed inset-x-0 top-0 z-50 border-b border-gold-500/25 bg-[#FBF8F1]/90 shadow-[0_10px_36px_rgba(18,51,50,0.10)] backdrop-blur-xl transition-all duration-300 dark:border-white/10 dark:bg-night/85 dark:shadow-card"
+      className="fixed inset-x-0 top-0 z-50 border-b border-gold-500/30 bg-[#FBF8F1]/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.65),0_12px_40px_rgba(18,51,50,0.12)] backdrop-blur-xl transition-all duration-300 dark:border-white/10 dark:bg-night/85 dark:shadow-card"
     >
-      <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
+      <div className="mx-auto flex h-[68px] max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
         <Link href="#top" className="flex items-center gap-2.5" aria-label={`${SITE.name} — home`}>
           <LogoMark />
           <span className="leading-tight">
             <span
-              className="block text-[15px] font-bold tracking-tight text-ink dark:text-sand-100 sm:text-base"
+              className="block text-[17px] font-bold tracking-tight text-ink dark:text-sand-100 sm:text-lg"
             >
               {SITE.name}
             </span>
@@ -72,7 +73,7 @@ export default function Header() {
             <a
               key={item.href}
               href={item.href}
-              className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${navLinkCls}`}
+              className={`px-3 py-2 text-sm font-semibold transition-colors ${navLinkCls}`}
             >
               {item.label}
             </a>
@@ -95,9 +96,10 @@ export default function Header() {
           <ThemeToggle />
           <a
             href="#trial"
-            className="btn-gold hidden !min-h-[44px] px-5 py-2.5 text-sm md:inline-flex"
+            className="btn-gold hidden !min-h-[42px] gap-1.5 px-5 py-2 text-sm md:inline-flex"
           >
             {d.headerCta}
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </a>
           <button
             type="button"
