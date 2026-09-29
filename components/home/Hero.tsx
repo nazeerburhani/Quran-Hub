@@ -162,11 +162,6 @@ export default function Hero() {
             data-hero-enter
             className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-2 md:hidden"
           >
-            <span className="flex items-center gap-1" aria-hidden="true">
-              {[0, 1, 2, 3, 4].map((i) => (
-                <Star key={i} className="h-4 w-4 fill-gold-400 text-gold-400" />
-              ))}
-            </span>
             <span className="text-sm font-semibold text-sand-100">
               {d.heroChipRating}
             </span>

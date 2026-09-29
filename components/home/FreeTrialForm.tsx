@@ -165,6 +165,9 @@ export default function FreeTrialForm() {
                     <p className="text-center text-xs text-ink-soft dark:text-night-muted">
                       {d.formNote}
                     </p>
+                    <p className="text-center text-xs font-semibold text-brand-700 dark:text-gold-300">
+                      {d.formEmailNote}
+                    </p>
                   </form>
                 )}
               </div>

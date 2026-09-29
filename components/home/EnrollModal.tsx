@@ -14,6 +14,7 @@ interface EnrollModalProps {
 
 export default function EnrollModal({ course, onClose }: EnrollModalProps) {
   const [sent, setSent] = useState(false);
+  const [sentContact, setSentContact] = useState("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -29,13 +30,15 @@ export default function EnrollModal({ course, onClose }: EnrollModalProps) {
       `Name: ${name}\nContact: ${contact}`;
     // Open WhatsApp chat with the academy — the enrollment details arrive as a message
     window.open(whatsappLink(msg), "_blank", "noopener,noreferrer");
-    // Also email the enrollment details to the academy inbox (backup channel)
+    // Also email the enrollment details to the academy inbox — this covers
+    // visitors who don't have WhatsApp; their interest lands in the inbox.
     sendLeadEmail(`New enrollment request — ${course?.title ?? ""}`, {
       Course: course?.title ?? "",
       Plan: plan ? `${plan.name} — ${plan.classesPerWeek} classes/week` : planId,
       Name: name,
       Contact: contact,
     });
+    setSentContact(contact);
     setSent(true);
   };
 
@@ -43,6 +46,7 @@ export default function EnrollModal({ course, onClose }: EnrollModalProps) {
   useEffect(() => {
     if (!course) return;
     setSent(false);
+    setSentContact("");
     document.body.style.overflow = "hidden";
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -101,10 +105,17 @@ export default function EnrollModal({ course, onClose }: EnrollModalProps) {
                   Request received!
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-ink-soft dark:text-night-muted">
-                  Your enrollment details for <strong>{course.title}</strong> have
-                  been sent to us on WhatsApp. Our admin team will reply shortly
-                  to schedule your free trial class. If WhatsApp did not open,
-                  tap the button below.
+                  Your enrollment request for <strong>{course.title}</strong>{" "}
+                  has been received — your details were also emailed to our
+                  team, so your request is safe even without WhatsApp. We will
+                  contact you shortly
+                  {sentContact ? (
+                    <>
+                      {" "}at <strong>{sentContact}</strong>
+                    </>
+                  ) : null}{" "}
+                  to schedule your free trial class. Want a faster reply?
+                  Confirm on WhatsApp below.
                 </p>
                 <a
                   href={whatsappLink(`Assalamu Alaikum, I want to enroll in ${course.title}.`)}
@@ -176,6 +187,9 @@ export default function EnrollModal({ course, onClose }: EnrollModalProps) {
                 </button>
                 <p className="text-center text-xs text-ink-soft dark:text-night-muted">
                   Free 3-day trial included. No credit card required.
+                </p>
+                <p className="text-center text-xs font-semibold text-brand-700 dark:text-gold-300">
+                  No WhatsApp? No problem — your details are emailed to our team too.
                 </p>
               </form>
             )}

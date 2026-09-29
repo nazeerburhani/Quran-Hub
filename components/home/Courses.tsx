@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, Clock3 } from "lucide-react";
+import { ArrowRight, BadgeCheck, Clock3, Users } from "lucide-react";
 import { COURSES, type Course, type CourseCategory } from "@/lib/site";
 import { useLocale } from "@/components/layout/LanguageSwitcher";
 import { dict } from "@/lib/i18n";
@@ -50,25 +50,34 @@ function CourseCard({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.97 }}
       transition={{ duration: 0.45, delay: Math.min(index * 0.04, 0.3), ease: [0.22, 1, 0.36, 1] }}
-      className="group glass flex flex-col overflow-hidden rounded-3xl shadow-card-light transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card dark:shadow-card"
+      className="group relative flex flex-col overflow-hidden rounded-[1.75rem] border border-brand-800/10 bg-white shadow-card-light transition-all duration-300 hover:-translate-y-2 hover:border-gold-400/60 hover:shadow-[0_28px_60px_-16px_rgba(212,175,55,0.35)] dark:border-white/10 dark:bg-night-soft dark:shadow-card"
     >
+      {/* Gold top hairline that sweeps in on hover */}
+      <span
+        aria-hidden="true"
+        className="absolute inset-x-0 top-0 z-10 h-1 origin-left scale-x-0 bg-gradient-to-r from-gold-600 via-gold-300 to-gold-600 transition-transform duration-500 ease-out group-hover:scale-x-100"
+      />
       {/* Photo + glyph art */}
-      <div className="photo-duotone relative aspect-[16/10] shrink-0">
+      <div className="photo-duotone relative aspect-[16/10] shrink-0 overflow-hidden">
         <Image
           src={course.image}
           alt={course.imageAlt}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           loading="lazy"
-          className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-t from-night-deep/70 via-night-deep/10 to-transparent"
         />
         <span
           aria-hidden="true"
-          className="absolute end-4 top-4 grid h-14 w-14 place-items-center rounded-2xl border border-white/20 bg-night-deep/70 font-arabic text-3xl text-gold-300 backdrop-blur-md"
+          className="absolute end-4 top-4 grid h-14 w-14 place-items-center rounded-2xl border border-gold-300/40 bg-night-deep/70 font-arabic text-3xl text-gold-300 shadow-lg backdrop-blur-md"
         >
           {course.glyph}
         </span>
-        <span className="absolute bottom-3 start-4 rounded-full bg-night-deep/70 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-sand-100 backdrop-blur-md">
+        <span className="absolute bottom-3 start-4 rounded-full bg-gold-400 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-950 shadow-md">
           {course.level}
         </span>
       </div>
@@ -82,24 +91,28 @@ function CourseCard({
           {course.description}
         </p>
 
-        <dl className="mt-4 space-y-1.5 text-[13px]">
-          <div className="flex gap-2">
-            <dt className="font-semibold text-brand-700 dark:text-gold-300">{d.whoFor}:</dt>
-            <dd className="text-ink-soft dark:text-night-muted">{course.whoFor}</dd>
-          </div>
-          <div className="flex items-center gap-2 text-ink-soft dark:text-night-muted">
-            <Clock3 className="h-3.5 w-3.5 shrink-0 text-brand-600 dark:text-gold-300" aria-hidden="true" />
-            <span>
-              {course.duration} · {course.outcome}
-            </span>
-          </div>
-        </dl>
+        {/* Meta chips */}
+        <div className="mt-4 flex flex-wrap gap-2">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-800/10 bg-brand-800/[0.04] px-3 py-1.5 text-xs font-semibold text-ink-soft dark:border-white/10 dark:bg-white/[0.05] dark:text-night-muted">
+            <Users className="h-3.5 w-3.5 text-brand-600 dark:text-gold-300" aria-hidden="true" />
+            {course.whoFor}
+          </span>
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-800/10 bg-brand-800/[0.04] px-3 py-1.5 text-xs font-semibold text-ink-soft dark:border-white/10 dark:bg-white/[0.05] dark:text-night-muted">
+            <Clock3 className="h-3.5 w-3.5 text-brand-600 dark:text-gold-300" aria-hidden="true" />
+            {course.duration}
+          </span>
+        </div>
+        <p className="mt-3 flex items-start gap-2 text-[13px] leading-relaxed text-ink-soft dark:text-night-muted">
+          <BadgeCheck className="mt-0.5 h-4 w-4 shrink-0 text-gold-600 dark:text-gold-300" aria-hidden="true" />
+          {course.outcome}
+        </p>
 
-        <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
+        {/* CTAs */}
+        <div className="mt-5 border-t border-brand-800/10 pt-5 dark:border-white/10">
           <button
             type="button"
             onClick={() => onEnroll(course)}
-            className="inline-flex min-h-[44px] items-center gap-1.5 self-start text-sm font-bold text-brand-700 transition-colors hover:text-brand-600 hover:gap-2.5 dark:text-gold-300 dark:hover:text-gold-200"
+            className="btn-gold inline-flex w-full items-center justify-center gap-2 text-sm"
             aria-label={`${d.enroll} — ${course.title}`}
           >
             {d.enroll}
@@ -108,7 +121,7 @@ function CourseCard({
           {COURSE_PAGE_LINKS[course.id] ? (
             <Link
               href={COURSE_PAGE_LINKS[course.id]}
-              className="inline-flex min-h-[44px] items-center gap-1 text-sm font-semibold text-ink-soft underline decoration-gold-400/60 decoration-2 underline-offset-4 transition-colors hover:text-brand-700 dark:text-night-muted dark:hover:text-gold-300"
+              className="mt-3 inline-flex min-h-[44px] w-full items-center justify-center gap-1 text-sm font-semibold text-ink-soft underline decoration-gold-400/60 decoration-2 underline-offset-4 transition-colors hover:text-brand-700 dark:text-night-muted dark:hover:text-gold-300"
             >
               Course details
             </Link>

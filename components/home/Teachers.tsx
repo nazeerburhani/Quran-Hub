@@ -136,6 +136,12 @@ export default function Teachers() {
           description={d.teachersDesc}
         />
 
+        <Reveal className="mt-5">
+          <p className="mx-auto max-w-2xl text-center text-sm font-medium text-ink-soft dark:text-night-muted">
+            {d.teachersTeamNote}
+          </p>
+        </Reveal>
+
         {/* Gender filter */}
         <Reveal className="mt-8 flex justify-center gap-2">
           {(["All", "Male", "Female"] as const).map((g) => {
@@ -164,6 +170,48 @@ export default function Teachers() {
             {visible.map((t, i) => (
               <TeacherCard key={t.id} teacher={t} index={i} />
             ))}
+            {/* "+ more" card — the team is 20–25 tutors, only some are profiled */}
+            {gender === "All" ? (
+              <motion.div
+                layout
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.97 }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                className="relative flex h-full flex-col items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-brand-800 via-brand-900 to-brand-950 p-6 text-center shadow-card"
+              >
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 opacity-30"
+                  style={{
+                    backgroundImage:
+                      "radial-gradient(circle at 50% 20%, rgba(212,175,55,0.5), transparent 60%)",
+                  }}
+                />
+                <span
+                  aria-hidden="true"
+                  className="grid h-16 w-16 place-items-center rounded-2xl border border-gold-300/40 bg-white/10 font-display text-xl font-semibold text-gold-300 backdrop-blur-sm"
+                >
+                  +
+                </span>
+                <p className="mt-4 font-display text-2xl font-semibold text-white">
+                  {d.teachersMoreTitle}
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-sand-100/80">
+                  {d.teachersMoreDesc}
+                </p>
+                <a
+                  href={whatsappLink(
+                    "Assalamu Alaikum, I want to meet my Quran tutor and book a FREE trial class."
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-gold mt-5 inline-flex min-h-[44px] items-center text-sm"
+                >
+                  {d.teachersMoreCta}
+                </a>
+              </motion.div>
+            ) : null}
           </AnimatePresence>
         </motion.div>
 

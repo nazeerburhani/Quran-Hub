@@ -28,8 +28,11 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const saved = window.localStorage.getItem("naq-locale");
-    if (saved === "ur" || saved === "ar" || saved === "en") {
+    if (saved === "ar" || saved === "en") {
       setLocaleState(saved);
+    } else if (saved === "ur") {
+      // Urdu option removed — fall back to English
+      setLocaleState("en");
     }
     setReady(true);
   }, []);
@@ -52,7 +55,7 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
   );
 }
 
-/** EN / اردو / العربية switcher. */
+/** EN / العربية switcher. */
 export default function LanguageSwitcher() {
   const { locale, setLocale } = useLocale();
   const [open, setOpen] = useState(false);

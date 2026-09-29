@@ -102,17 +102,16 @@ export default function Reviews() {
         <Reveal className="mt-10">
           <div className="mx-auto flex max-w-3xl flex-col items-center gap-3 rounded-3xl border border-gold-400/30 bg-white/60 px-6 py-7 text-center shadow-card-light backdrop-blur-xl dark:bg-white/[0.04] dark:shadow-card sm:flex-row sm:justify-center sm:gap-8">
             <p className="font-display text-6xl font-semibold text-ink dark:text-sand-100">
-              4.9<span className="text-2xl text-ink-soft dark:text-night-muted">/5</span>
+              5<span className="text-2xl text-ink-soft dark:text-night-muted">/5</span>
             </p>
             <div className="sm:text-start">
-              <StarRow rating={5} label="4.9 out of 5 stars" />
+              <StarRow rating={5} label="5 out of 5 stars" />
               <p className="mt-1.5 text-sm text-ink-soft dark:text-night-muted">
                 {d.reviewsFrom}
               </p>
               <p className="mt-2 flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-widest text-ink-soft/80 dark:text-night-muted/80 sm:justify-start">
-                <span className="rounded-md border border-brand-800/15 px-2 py-1 dark:border-white/15">Google</span>
-                <span className="rounded-md border border-brand-800/15 px-2 py-1 dark:border-white/15">Trustpilot</span>
                 <span className="rounded-md border border-brand-800/15 px-2 py-1 dark:border-white/15">Facebook</span>
+                <span className="rounded-md border border-brand-800/15 px-2 py-1 dark:border-white/15">Verified reviews</span>
               </p>
             </div>
           </div>

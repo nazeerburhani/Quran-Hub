@@ -19,7 +19,7 @@ import FinalCTA from "@/components/home/FinalCTA";
 export const metadata: Metadata = {
   title: `${SITE.name} — Online Quran Academy | Learn Quran Online`,
   description:
-    "Live 1-on-1 online Quran classes for kids & adults: Noorani Qaida, Tajweed, Hifz, Tafseer, Arabic & more. Qualified male & female tutors, 40+ countries, free 3-day trial — no credit card.",
+    "Live 1-on-1 online Quran classes for kids & adults: Noorani Qaida, Tajweed, Hifz, Tafseer, Arabic & more. Qualified male & female tutors, 10+ countries, free 3-day trial — no credit card.",
   alternates: {
     canonical: SITE.url,
   },

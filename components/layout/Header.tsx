@@ -53,6 +53,11 @@ export default function Header() {
     <header
       className="fixed inset-x-0 top-0 z-50 border-b border-gold-500/30 bg-[#FBF8F1]/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.65),0_12px_40px_rgba(18,51,50,0.12)] backdrop-blur-xl transition-all duration-300 dark:border-white/10 dark:bg-night/85 dark:shadow-card"
     >
+      {/* Gold hairline glow along the bottom edge */}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gold-400/80 to-transparent"
+      />
       <div className="mx-auto flex h-[68px] max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
         <Link href="#top" className="flex items-center gap-2.5" aria-label={`${SITE.name} — home`}>
           <LogoMark />

@@ -259,8 +259,6 @@ export const TEACHERS: Teacher[] = [
     country: "Pakistan",
     languages: ["Urdu", "English", "Arabic"],
     qualification: "Ijazah in Hafs, Wafaq-ul-Madaris",
-    experienceYears: 12,
-    rating: 4.9,
     gender: "Male",
     subjects: ["Tajweed", "Hifz", "Noorani Qaida"],
   },
@@ -270,8 +268,6 @@ export const TEACHERS: Teacher[] = [
     country: "Egypt",
     languages: ["Arabic", "English"],
     qualification: "Ijazah, Al-Azhar University graduate",
-    experienceYears: 9,
-    rating: 5.0,
     gender: "Female",
     subjects: ["Tajweed", "Kids Quran", "Arabic"],
   },
@@ -281,8 +277,6 @@ export const TEACHERS: Teacher[] = [
     country: "USA",
     languages: ["English", "Arabic"],
     qualification: "Ijazah in Hafs & Shu'bah",
-    experienceYears: 15,
-    rating: 4.9,
     gender: "Male",
     subjects: ["Tafseer", "Ijazah", "New Muslims"],
   },
@@ -292,8 +286,6 @@ export const TEACHERS: Teacher[] = [
     country: "UK",
     languages: ["English", "Urdu"],
     qualification: "Hafiza, Ijazah in Hafs",
-    experienceYears: 7,
-    rating: 4.8,
     gender: "Female",
     subjects: ["Sisters", "Kids Quran", "Duas & Namaz"],
   },
@@ -303,8 +295,6 @@ export const TEACHERS: Teacher[] = [
     country: "Canada",
     languages: ["English", "Urdu", "Arabic"],
     qualification: "Ijazah in Hafs",
-    experienceYears: 10,
-    rating: 4.9,
     gender: "Male",
     subjects: ["Tajweed", "Hifz", "Arabic"],
   },
@@ -314,8 +304,6 @@ export const TEACHERS: Teacher[] = [
     country: "Australia",
     languages: ["English", "Arabic"],
     qualification: "Hafiza, qualified Tajweed instructor",
-    experienceYears: 8,
-    rating: 5.0,
     gender: "Female",
     subjects: ["Sisters", "Tajweed", "Islamic Studies"],
   },
@@ -325,8 +313,6 @@ export const TEACHERS: Teacher[] = [
     country: "UAE",
     languages: ["Arabic", "English"],
     qualification: "Ijazah in Hafs & Warsh",
-    experienceYears: 14,
-    rating: 4.9,
     gender: "Male",
     subjects: ["Qira'at", "Ijazah", "Tafseer"],
   },
@@ -336,8 +322,6 @@ export const TEACHERS: Teacher[] = [
     country: "Pakistan",
     languages: ["Urdu", "English"],
     qualification: "Hafiza, Ijazah in Hafs",
-    experienceYears: 6,
-    rating: 4.8,
     gender: "Female",
     subjects: ["Kids Quran", "Noorani Qaida", "Duas & Namaz"],
   },
@@ -640,15 +624,16 @@ export const REVIEWS: Review[] = [
 /* Animated stats                                                      */
 /* ------------------------------------------------------------------ */
 export interface Stat {
-  value: number;
+  /** Numeric stats count up on scroll; string stats (e.g. "Thousands") render as-is. */
+  value: number | string;
   suffix: string;
   label: string;
   decimals?: number;
 }
 
 export const STATS: Stat[] = [
-  { value: 120, suffix: "+", label: "Qualified tutors" },
-  { value: 500000, suffix: "+", label: "Lessons delivered" },
-  { value: 4.9, suffix: "/5", label: "Average rating", decimals: 1 },
-  { value: 40, suffix: "+", label: "Countries served" },
+  { value: 20, suffix: "+", label: "Qualified tutors" },
+  { value: "Thousands", suffix: "", label: "Lessons delivered" },
+  { value: "24/7", suffix: "", label: "Live classes, every timezone" },
+  { value: 10, suffix: "+", label: "Countries served" },
 ];

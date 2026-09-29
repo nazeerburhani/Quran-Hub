@@ -7,7 +7,6 @@ export type Locale = "en" | "ur" | "ar";
 
 export const LOCALES: { code: Locale; label: string; dir: "ltr" | "rtl" }[] = [
   { code: "en", label: "English", dir: "ltr" },
-  { code: "ur", label: "اردو", dir: "rtl" },
   { code: "ar", label: "العربية", dir: "rtl" },
 ];
 
@@ -26,9 +25,9 @@ const en = {
     "Live, personal Quran classes for kids and adults with qualified male and female tutors — in every timezone.",
   heroCtaPrimary: "Claim My Child's Free Trial",
   heroCtaSecondary: "See How It Works",
-  heroChipRating: "4.9★ parent rating",
-  heroChipStudents: "2,500+ students",
-  heroChipCountries: "40+ countries",
+  heroChipRating: "20+ qualified tutors",
+  heroChipStudents: "Thousands of lessons delivered",
+  heroChipCountries: "10+ countries",
 
   guaranteeTrial: "3-Day Free Trial",
   guaranteeNoCard: "No Card Required",
@@ -37,7 +36,7 @@ const en = {
 
   statTutors: "Qualified tutors",
   statLessons: "Lessons delivered",
-  statRating: "Average rating",
+  stat247: "Live classes, every timezone",
   statCountries: "Countries served",
 
   coursesEyebrow: "Programs",
@@ -87,6 +86,12 @@ const en = {
   teachersTitle: "Qualified teachers you'll trust",
   teachersDesc:
     "Huffaz, Qaris and Al-Azhar graduates — male and female tutors, matched to your family.",
+  teachersTeamNote:
+    "Meet some of our 20+ qualified tutors below — you'll meet the rest in your free trial.",
+  teachersMoreTitle: "20+ tutors & growing",
+  teachersMoreDesc:
+    "Male & female tutors for every age, level, and timezone — matched to your family.",
+  teachersMoreCta: "Meet your tutor",
   filterMale: "Male",
   filterFemale: "Female",
   yearsExp: "yrs experience",
@@ -120,8 +125,8 @@ const en = {
   resultsTitle: "Progress you can hear",
 
   reviewsEyebrow: "Parent reviews",
-  reviewsTitle: "Loved by families in 40+ countries",
-  reviewsFrom: "from 300+ parent reviews",
+  reviewsTitle: "Loved by families in 10+ countries",
+  reviewsFrom: "from verified Facebook reviews",
   featuredReview: "Featured review",
 
   trialEyebrow: "Free 3-day trial",
@@ -137,9 +142,10 @@ const en = {
   formStudentAdult: "Me (adult)",
   formSubmit: "Claim My Free Trial",
   formNote: "Free 3-day trial · No credit card · Reply within hours",
+  formEmailNote: "No WhatsApp? No problem — your details are emailed to our team too.",
   formSuccessTitle: "Request received!",
   formSuccessText:
-    "JazakAllahu Khairan! Your details have been sent to us on WhatsApp — our team will reply shortly to schedule your free trial. If WhatsApp did not open, tap the button below.",
+    "JazakAllahu Khairan! Your details have been received — they were also emailed to our team, so your request is safe even without WhatsApp. We will contact you shortly to schedule your free trial. If WhatsApp did not open and you want a faster reply, tap the button below.",
 
   faqEyebrow: "FAQ",
   faqTitle: "Questions, answered",
@@ -175,9 +181,9 @@ const ur: typeof en = {
     "بچوں اور بڑوں کے لیے مستند مرد و خواتین اساتذہ کے ساتھ براہِ راست قرآن کلاسز — ہر ٹائم زون میں۔",
   heroCtaPrimary: "میرے بچے کا مفت ٹرائل حاصل کریں",
   heroCtaSecondary: "طریقہ کار دیکھیں",
-  heroChipRating: "والدین کی 4.9★ درجہ بندی",
-  heroChipStudents: "2,500+ طلبہ",
-  heroChipCountries: "40+ ممالک",
+  heroChipRating: "20+ اہل اساتذہ",
+  heroChipStudents: "ہزاروں اسباق",
+  heroChipCountries: "10+ ممالک",
 
   guaranteeTrial: "3 دن کا مفت ٹرائل",
   guaranteeNoCard: "کارڈ کی ضرورت نہیں",
@@ -186,7 +192,7 @@ const ur: typeof en = {
 
   statTutors: "مستند اساتذہ",
   statLessons: "دیے گئے اسباق",
-  statRating: "اوسط درجہ بندی",
+  stat247: "براہِ راست کلاسز، ہر ٹائم زون",
   statCountries: "ممالک",
 
   coursesEyebrow: "پروگرامز",
@@ -236,6 +242,12 @@ const ur: typeof en = {
   teachersTitle: "قابلِ اعتماد مستند اساتذہ",
   teachersDesc:
     "حفاظ، قراء اور جامعہ ازہر کے فارغ التحصیل — آپ کے خاندان کے لیے مرد و خواتین اساتذہ۔",
+  teachersTeamNote:
+    "ہمارے 20+ اہل اساتذہ میں سے کچھ سے نیچے ملیں — باقی سے آپ مفت ٹرائل میں ملیں گے۔",
+  teachersMoreTitle: "20+ اساتذہ اور بڑھ رہے ہیں",
+  teachersMoreDesc:
+    "ہر عمر، ہر سطح اور ہر ٹائم زون کے لیے مرد و خواتین اساتذہ — آپ کے خاندان کے مطابق۔",
+  teachersMoreCta: "اپنے استاد سے ملیں",
   filterMale: "مرد",
   filterFemale: "خواتین",
   yearsExp: "سال تجربہ",
@@ -269,8 +281,8 @@ const ur: typeof en = {
   resultsTitle: "ایسی ترقی جو سنی جا سکے",
 
   reviewsEyebrow: "والدین کی آراء",
-  reviewsTitle: "40+ ممالک کے خاندانوں کی پسند",
-  reviewsFrom: "300+ والدین کی آراء سے",
+  reviewsTitle: "10+ ممالک کے خاندانوں کی پسند",
+  reviewsFrom: "تصدیق شدہ فیس بک جائزوں سے",
   featuredReview: "نمایاں تبصرہ",
 
   trialEyebrow: "3 دن کا مفت ٹرائل",
@@ -286,9 +298,10 @@ const ur: typeof en = {
   formStudentAdult: "میں (بالغ)",
   formSubmit: "میرا مفت ٹرائل حاصل کریں",
   formNote: "3 دن مفت ٹرائل · کارڈ نہیں · چند گھنٹوں میں جواب",
+  formEmailNote: "واٹس ایپ نہیں؟ کوئی مسئلہ نہیں — آپ کی تفصیلات ہماری ٹیم کو ای میل بھی کر دی جاتی ہیں۔",
   formSuccessTitle: "درخواست موصول ہو گئی!",
   formSuccessText:
-    "جزاک اللہ خیر! آپ کی تفصیلات واٹس ایپ پر ہمیں موصول ہو گئی ہیں — ہماری ٹیم جلد رابطہ کر کے آپ کا مفت ٹرائل طے کرے گی۔ اگر واٹس ایپ نہیں کھلا تو نیچے بٹن دبائیں۔",
+    "جزاک اللہ خیر! آپ کی تفصیلات موصول ہو گئی ہیں — یہ ہماری ٹیم کو ای میل بھی کر دی گئی ہیں، اس لیے واٹس ایپ کے بغیر بھی آپ کی درخواست محفوظ ہے۔ ہم جلد رابطہ کر کے آپ کا مفت ٹرائل طے کریں گے۔",
 
   faqEyebrow: "سوالات",
   faqTitle: "عام سوالات کے جوابات",
@@ -324,18 +337,18 @@ const ar: typeof en = {
     "دروس قرآن مباشرة للأطفال والكبار مع معلمين ومعلمات معتمدين — في جميع المناطق الزمنية.",
   heroCtaPrimary: "احجز التجربة المجانية لطفلي",
   heroCtaSecondary: "شاهد كيف نعمل",
-  heroChipRating: "تقييم الأهالي 4.9★",
-  heroChipStudents: "+2,500 طالب",
-  heroChipCountries: "+40 دولة",
+  heroChipRating: "أكثر من 20 معلمًا مؤهلًا",
+  heroChipStudents: "آلاف الدروس",
+  heroChipCountries: "أكثر من 10 دول",
 
   guaranteeTrial: "تجربة مجانية ٣ أيام",
   guaranteeNoCard: "بدون بطاقة ائتمانية",
   guaranteeSameTutor: "نفس المعلم في كل درس",
   guaranteeReports: "تقارير أسبوعية للأهالي",
 
-  statTutors: "معلمون معتمدون",
+  statTutors: "معلمون مؤهلون",
   statLessons: "درس مُقدَّم",
-  statRating: "متوسط التقييم",
+  stat247: "دروس مباشرة، كل المناطق الزمنية",
   statCountries: "دولة نخدمها",
 
   coursesEyebrow: "البرامج",
@@ -385,6 +398,12 @@ const ar: typeof en = {
   teachersTitle: "معلمون معتمدون تثق بهم",
   teachersDesc:
     "حفّاظ وقرّاء وخريجو الأزهر — معلمون ومعلمات يناسبون عائلتك.",
+  teachersTeamNote:
+    "تعرّف على بعض معلمينا المؤهلين (أكثر من 20) أدناه — وستلتقي بالبقية في تجربتك المجانية.",
+  teachersMoreTitle: "أكثر من 20 معلمًا — والعدد في نمو",
+  teachersMoreDesc:
+    "معلمون ومعلمات لكل عمر ومستوى ومنطقة زمنية — بما يناسب عائلتك.",
+  teachersMoreCta: "تعرّف على معلمك",
   filterMale: "معلمون",
   filterFemale: "معلمات",
   yearsExp: "سنوات خبرة",
@@ -418,8 +437,8 @@ const ar: typeof en = {
   resultsTitle: "تقدّم يُسمَع",
 
   reviewsEyebrow: "آراء الأهالي",
-  reviewsTitle: "محبوبون لدى العائلات في +40 دولة",
-  reviewsFrom: "من أكثر من ٣٠٠ تقييم للأهالي",
+  reviewsTitle: "محبوبون لدى العائلات في أكثر من 10 دول",
+  reviewsFrom: "من تقييمات فيسبوك الموثقة",
   featuredReview: "تقييم مميّز",
 
   trialEyebrow: "تجربة مجانية ٣ أيام",
@@ -435,9 +454,10 @@ const ar: typeof en = {
   formStudentAdult: "أنا (بالغ)",
   formSubmit: "احصل على تجربتي المجانية",
   formNote: "تجربة ٣ أيام مجانًا · بدون بطاقة · نرد خلال ساعات",
+  formEmailNote: "لا تملك واتساب؟ لا مشكلة — تُرسَل بياناتك إلى فريقنا عبر البريد الإلكتروني أيضًا.",
   formSuccessTitle: "تم استلام طلبك!",
   formSuccessText:
-    "جزاك الله خيرًا! تم إرسال بياناتك إلينا عبر واتساب — سيتواصل معك فريقنا قريبًا لتحديد موعد تجربتك المجانية. إذا لم يُفتح واتساب، اضغط الزر أدناه.",
+    "جزاك الله خيرًا! تم استلام بياناتك — وأُرسلت أيضًا إلى فريقنا عبر البريد الإلكتروني، فطلبك محفوظ حتى بدون واتساب. سنتواصل معك قريبًا لتحديد موعد تجربتك المجانية.",
 
   faqEyebrow: "الأسئلة",
   faqTitle: "الأسئلة الشائعة",
