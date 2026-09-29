@@ -14,6 +14,23 @@ interface EnrollModalProps {
 export default function EnrollModal({ course, onClose }: EnrollModalProps) {
   const [sent, setSent] = useState(false);
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const planId = String(data.get("plan") || "");
+    const plan = PLANS.find((p) => p.id === planId);
+    const name = String(data.get("name") || "").trim();
+    const contact = String(data.get("contact") || "").trim();
+    const msg =
+      `Assalamu Alaikum! New enrollment request from the QuranHub website.\n\n` +
+      `Course: ${course?.title ?? ""}\n` +
+      `Plan: ${plan ? `${plan.name} — ${plan.classesPerWeek} classes/week` : planId}\n` +
+      `Name: ${name}\nContact: ${contact}`;
+    // Open WhatsApp chat with the academy — the enrollment details arrive as a message
+    window.open(whatsappLink(msg), "_blank", "noopener,noreferrer");
+    setSent(true);
+  };
+
   /* Reset + lock scroll while open; close on Escape */
   useEffect(() => {
     if (!course) return;
@@ -76,8 +93,10 @@ export default function EnrollModal({ course, onClose }: EnrollModalProps) {
                   Request received!
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-ink-soft dark:text-night-muted">
-                  Our admin team will contact you shortly to schedule your free
-                  trial class for <strong>{course.title}</strong>.
+                  Your enrollment details for <strong>{course.title}</strong> have
+                  been sent to us on WhatsApp. Our admin team will reply shortly
+                  to schedule your free trial class. If WhatsApp did not open,
+                  tap the button below.
                 </p>
                 <a
                   href={whatsappLink(`Assalamu Alaikum, I want to enroll in ${course.title}.`)}
@@ -95,10 +114,7 @@ export default function EnrollModal({ course, onClose }: EnrollModalProps) {
             ) : (
               <form
                 className="mt-6 space-y-4"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setSent(true);
-                }}
+                onSubmit={handleSubmit}
               >
                 <div>
                   <label htmlFor="enroll-plan" className="mb-1.5 block text-sm font-medium text-ink dark:text-sand-100">
@@ -106,6 +122,7 @@ export default function EnrollModal({ course, onClose }: EnrollModalProps) {
                   </label>
                   <select
                     id="enroll-plan"
+                    name="plan"
                     required
                     defaultValue={PLANS[1].id}
                     className="h-12 w-full rounded-2xl border border-brand-800/15 bg-white/80 px-3 text-sm text-ink outline-none focus:border-gold-400 dark:border-white/15 dark:bg-white/[0.06] dark:text-sand-100"
@@ -123,6 +140,7 @@ export default function EnrollModal({ course, onClose }: EnrollModalProps) {
                   </label>
                   <input
                     id="enroll-name"
+                    name="name"
                     required
                     autoComplete="name"
                     placeholder="Your name"
@@ -135,6 +153,7 @@ export default function EnrollModal({ course, onClose }: EnrollModalProps) {
                   </label>
                   <input
                     id="enroll-contact"
+                    name="contact"
                     required
                     autoComplete="tel"
                     placeholder="you@example.com or +1 555 000 1234"

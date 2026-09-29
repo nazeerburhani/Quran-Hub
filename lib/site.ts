@@ -67,7 +67,7 @@ export const COURSES: Course[] = [
     slug: "quran-reading-tajweed",
     title: "Quran Reading with Tajweed",
     description:
-      "Read the Quran fluently and beautifully with correct Tajweed rules, guided live by a certified Qari or Qaria.",
+      "Read the Quran fluently and beautifully with correct Tajweed rules, guided live by a qualified Qari or Qaria.",
     level: "All levels",
     duration: "6–12 months",
     glyph: "ت",
@@ -193,7 +193,7 @@ export const COURSES: Course[] = [
     glyph: "ن",
     categories: ["adults", "kids"],
     whoFor: "Sisters of all ages",
-    outcome: "Learn comfortably with a certified Qariah",
+    outcome: "Learn comfortably with a qualified Qariah",
     image: "/images/course-sisters.jpg",
     imageAlt: "Elegant Quran still life with soft floral tones",
   },
@@ -217,13 +217,13 @@ export const COURSES: Course[] = [
     slug: "ijazah-program",
     title: "Ijazah Program",
     description:
-      "Earn an unbroken-chain Ijazah in Hafs (or other Qira'at) by reciting the full Quran to a certified Sheikh.",
+      "Earn an unbroken-chain Ijazah in Hafs (or other Qira'at) by reciting the full Quran to a qualified Sheikh.",
     level: "Advanced",
     duration: "12–24 months",
     glyph: "ج",
     categories: ["memorization", "adults"],
     whoFor: "Advanced reciters and Huffaz",
-    outcome: "Certified Ijazah with unbroken sanad",
+    outcome: "Authentic Ijazah with unbroken sanad",
     image: "/images/course-ijazah.jpg",
     imageAlt: "Ornate Quran binding with gold embellishment",
   },
@@ -238,8 +238,10 @@ export interface Teacher {
   country: string;
   languages: string[];
   qualification: string;
-  experienceYears: number;
-  rating: number;
+  /** Optional — omitted for tutors whose public stats aren't confirmed yet. */
+  experienceYears?: number;
+  /** Optional — omitted for tutors whose public stats aren't confirmed yet. */
+  rating?: number;
   gender: "Male" | "Female";
   subjects: string[];
 }
@@ -305,7 +307,7 @@ export const TEACHERS: Teacher[] = [
     name: "Ustadha Maryam Siddiq",
     country: "Australia",
     languages: ["English", "Arabic"],
-    qualification: "Hafiza, certified Tajweed instructor",
+    qualification: "Hafiza, qualified Tajweed instructor",
     experienceYears: 8,
     rating: 5.0,
     gender: "Female",
@@ -332,6 +334,82 @@ export const TEACHERS: Teacher[] = [
     rating: 4.8,
     gender: "Female",
     subjects: ["Kids Quran", "Noorani Qaida", "Duas & Namaz"],
+  },
+  /* -- Tutors provided by the academy owner (Sep 2026). Details such as
+     country, qualification and subjects are placeholders — the owner will
+     confirm/replace them. Stats (rating/years) intentionally omitted. -- */
+  {
+    id: "t9",
+    name: "Qari Ateeq Ur Rahman",
+    country: "Pakistan",
+    languages: ["Urdu", "English", "Arabic"],
+    qualification: "Qari — Tajweed & Hifz specialist",
+    gender: "Male",
+    subjects: ["Tajweed", "Hifz", "Quran Reading"],
+  },
+  {
+    id: "t10",
+    name: "Qari Sardar Ahmad",
+    country: "Pakistan",
+    languages: ["Urdu", "English", "Arabic"],
+    qualification: "Qari — Noorani Qaida & Nazra specialist",
+    gender: "Male",
+    subjects: ["Noorani Qaida", "Nazra", "Kids Quran"],
+  },
+  {
+    id: "t11",
+    name: "Qari Muhammad Saqib",
+    country: "Pakistan",
+    languages: ["Urdu", "English", "Arabic"],
+    qualification: "Qari — Tajweed & Qira'at specialist",
+    gender: "Male",
+    subjects: ["Tajweed", "Qira'at", "Hifz"],
+  },
+  /* -- Additional placeholder tutors so the roster feels complete.
+     PLACEHOLDER DATA — replace with real tutor details before launch. -- */
+  {
+    id: "t12",
+    name: "Qari Daniyal Raza",
+    country: "Pakistan",
+    languages: ["Urdu", "English"],
+    qualification: "Qari, Tajweed instructor",
+    experienceYears: 7,
+    rating: 4.8,
+    gender: "Male",
+    subjects: ["Tajweed", "Noorani Qaida", "Adults"],
+  },
+  {
+    id: "t13",
+    name: "Ustadha Iqra Naveed",
+    country: "Pakistan",
+    languages: ["Urdu", "English", "Arabic"],
+    qualification: "Hafiza, Tajweed instructor",
+    experienceYears: 5,
+    rating: 4.9,
+    gender: "Female",
+    subjects: ["Sisters", "Kids Quran", "Hifz"],
+  },
+  {
+    id: "t14",
+    name: "Mufti Kamran Aziz",
+    country: "UK",
+    languages: ["English", "Urdu", "Arabic"],
+    qualification: "Mufti, Ijazah in Hafs",
+    experienceYears: 11,
+    rating: 4.9,
+    gender: "Male",
+    subjects: ["Tafseer", "Islamic Studies", "Ijazah"],
+  },
+  {
+    id: "t15",
+    name: "Ustadha Sadia Farooq",
+    country: "Canada",
+    languages: ["English", "Urdu"],
+    qualification: "Hafiza, Ijazah in Hafs",
+    experienceYears: 6,
+    rating: 4.9,
+    gender: "Female",
+    subjects: ["Sisters", "Tajweed", "Duas & Namaz"],
   },
 ];
 
@@ -414,7 +492,7 @@ export interface Faq {
 export const FAQS: Faq[] = [
   {
     q: "How do online Quran classes work?",
-    a: "After booking your free trial, we assess your level and match you with a certified tutor. Classes are live, one-on-one video sessions (30 minutes each) at times you choose. Your teacher shares their screen, listens to your recitation, corrects you in real time, and assigns short homework after every class.",
+    a: "After booking your free trial, we assess your level and match you with a qualified tutor. Classes are live, one-on-one video sessions (30 minutes each) at times you choose. Your teacher shares their screen, listens to your recitation, corrects you in real time, and assigns short homework after every class.",
   },
   {
     q: "Is the free trial really free? Do I need a credit card?",
@@ -422,7 +500,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "Are female teachers available?",
-    a: "Absolutely. We have qualified, certified female tutors (Qariahs and Hafizas) from around the world. Many sisters and young children prefer learning with a female teacher — just mention your preference when booking and we will arrange it.",
+    a: "Absolutely. We have qualified female tutors (Qariahs and Hafizas) from around the world. Many sisters and young children prefer learning with a female teacher — just mention your preference when booking and we will arrange it.",
   },
   {
     q: "What do I need to join a class?",
@@ -439,6 +517,18 @@ export const FAQS: Faq[] = [
   {
     q: "What if I am not satisfied? Is there a refund?",
     a: "Yes. We offer a money-back guarantee: if you are not happy after your first paid week, we refund you — no questions asked. You can also pause or cancel your plan at any time.",
+  },
+  {
+    q: "Can my child learn Quran online with a female Quran teacher?",
+    a: "Yes. Many parents choose a female Quran teacher online for their daughters and young children. Our qualified Qariahs and Hafizas teach Noorani Qaida, Nazra, Hifz and Tajweed in patient, kid-friendly one-on-one classes — just request a female tutor when you book your free trial.",
+  },
+  {
+    q: "Do you offer online Quran classes for kids in the USA, UK and Canada?",
+    a: "Yes — we are an online Quran academy built for families abroad. Our tutors cover every timezone, so kids in the USA, UK, Canada and Australia can learn Quran online after school at times that suit them. Adults and new Muslims are welcome too, with male and female teachers available.",
+  },
+  {
+    q: "How long does it take to learn to read the Quran online?",
+    a: "Most complete beginners read the Quran fluently within 6–12 months: 3–4 months for Noorani Qaida foundations, then guided Quran reading with Tajweed. Children in our Hifz (memorization) program typically memorize one Juz per 2–4 months with daily revision. Your free trial includes a level assessment and a personalized timeline.",
   },
   {
     q: "Can I reschedule or pause classes?",
@@ -559,7 +649,7 @@ export interface Stat {
 }
 
 export const STATS: Stat[] = [
-  { value: 120, suffix: "+", label: "Certified tutors" },
+  { value: 120, suffix: "+", label: "Qualified tutors" },
   { value: 500000, suffix: "+", label: "Lessons delivered" },
   { value: 4.9, suffix: "/5", label: "Average rating", decimals: 1 },
   { value: 40, suffix: "+", label: "Countries served" },

@@ -1,4 +1,4 @@
-import { SITE, FAQS } from "@/lib/site";
+import { SITE, FAQS, COURSES } from "@/lib/site";
 import type { Faq } from "@/lib/site";
 
 function JsonLdScript({ data }: { data: Record<string, unknown> }) {
@@ -57,6 +57,40 @@ export function FaqJsonLd({ faqs = FAQS }: { faqs?: Faq[] }) {
           "@type": "Question",
           name: f.q,
           acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      }}
+    />
+  );
+}
+
+/** Course catalog schema — every course as a schema.org Course. */
+export function CoursesJsonLd() {
+  return (
+    <JsonLdScript
+      data={{
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name: `${SITE.name} courses`,
+        itemListElement: COURSES.map((c, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          item: {
+            "@type": "Course",
+            name: `${c.title} — Online Quran Classes`,
+            description: c.description,
+            url: `${SITE.url}/#courses`,
+            provider: {
+              "@type": "EducationalOrganization",
+              name: SITE.name,
+              url: SITE.url,
+            },
+            educationalLevel: c.level,
+            teaches: c.outcome,
+            audience: {
+              "@type": "EducationalAudience",
+              educationalRole: c.whoFor,
+            },
+          },
         })),
       }}
     />

@@ -115,6 +115,7 @@ export default function Hero() {
             data-hero-enter
             className="mt-6 font-display text-[2.6rem] font-semibold leading-[1.08] tracking-tight text-white sm:text-6xl lg:text-[4.4rem]"
           >
+            <span className="sr-only">Online Quran Academy — </span>
             Your child reciting the Quran{" "}
             <em className="text-gold-gradient">beautifully</em> — within
             months.

@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { BadgeCheck, Star, UserCheck } from "lucide-react";
-import { TEACHERS, type Teacher } from "@/lib/site";
+import { BadgeCheck, MessageCircle, Star, UserCheck } from "lucide-react";
+import { TEACHERS, whatsappLink, type Teacher } from "@/lib/site";
 import { useLocale } from "@/components/layout/LanguageSwitcher";
 import { dict } from "@/lib/i18n";
 import Reveal from "@/components/ui/Reveal";
@@ -56,13 +56,15 @@ function TeacherCard({ teacher, index }: { teacher: Teacher; index: number }) {
           <p className="mt-0.5 text-[13px] text-ink-soft dark:text-night-muted">
             {teacher.country}
           </p>
-          <p className="mt-1 inline-flex items-center gap-1 text-[13px] font-semibold text-gold-700 dark:text-gold-300">
-            <Star className="h-3.5 w-3.5 fill-current" aria-hidden="true" />
-            {teacher.rating.toFixed(1)}
-            <span className="font-normal text-ink-soft dark:text-night-muted">
-              · {teacher.experienceYears} {d.yearsExp}
-            </span>
-          </p>
+          {teacher.rating != null && teacher.experienceYears != null ? (
+            <p className="mt-1 inline-flex items-center gap-1 text-[13px] font-semibold text-gold-700 dark:text-gold-300">
+              <Star className="h-3.5 w-3.5 fill-current" aria-hidden="true" />
+              {teacher.rating.toFixed(1)}
+              <span className="font-normal text-ink-soft dark:text-night-muted">
+                · {teacher.experienceYears} {d.yearsExp}
+              </span>
+            </p>
+          ) : null}
         </div>
       </div>
 
@@ -75,7 +77,7 @@ function TeacherCard({ teacher, index }: { teacher: Teacher; index: number }) {
         ) : null}
         <span className="inline-flex items-center gap-1 rounded-full bg-brand-800/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-brand-700 dark:bg-gold-400/15 dark:text-gold-300">
           <UserCheck className="h-3.5 w-3.5" aria-hidden="true" />
-          Certified Tutor
+          Qualified Tutor
         </span>
       </div>
 
@@ -94,9 +96,24 @@ function TeacherCard({ teacher, index }: { teacher: Teacher; index: number }) {
         ))}
       </div>
 
-      <p className="mt-auto pt-4 text-xs text-ink-soft dark:text-night-muted">
+      <p className="mt-3 text-xs text-ink-soft dark:text-night-muted">
         {teacher.languages.join(" · ")}
       </p>
+
+      <div className="mt-auto pt-4">
+        {/* Enrollment CTA — request this specific tutor on WhatsApp */}
+        <a
+          href={whatsappLink(
+            `Assalamu Alaikum, I want to book a FREE trial class with ${teacher.name}.`
+          )}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-full bg-waDark px-5 py-2.5 text-[13px] font-bold text-white transition-colors hover:bg-wa"
+        >
+          <MessageCircle className="h-4 w-4" aria-hidden="true" />
+          {d.requestTutor}
+        </a>
+      </div>
     </motion.article>
   );
 }

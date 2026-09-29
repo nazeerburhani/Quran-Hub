@@ -12,6 +12,21 @@ export default function FreeTrialForm() {
   const d = dict[locale];
   const [sent, setSent] = useState(false);
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const name = String(data.get("name") || "").trim();
+    const contact = String(data.get("contact") || "").trim();
+    const student =
+      String(data.get("student") || "kid") === "adult" ? "Adult" : "Kid";
+    const msg =
+      `Assalamu Alaikum! New FREE trial request from the QuranHub website.\n\n` +
+      `Name: ${name}\nContact: ${contact}\nStudent: ${student}`;
+    // Open WhatsApp chat with the academy — the lead details arrive as a message
+    window.open(whatsappLink(msg), "_blank", "noopener,noreferrer");
+    setSent(true);
+  };
+
   const inputCls =
     "h-12 w-full rounded-2xl border border-brand-800/15 bg-white/80 px-4 text-[15px] text-ink outline-none transition-colors placeholder:text-ink-soft/60 focus:border-gold-400 dark:border-white/15 dark:bg-white/[0.06] dark:text-sand-100 dark:placeholder:text-night-muted/60";
 
@@ -83,10 +98,7 @@ export default function FreeTrialForm() {
                   </div>
                 ) : (
                   <form
-                    onSubmit={(e) => {
-                      e.preventDefault();
-                      setSent(true);
-                    }}
+                    onSubmit={handleSubmit}
                     className="space-y-4"
                   >
                     <div>

@@ -27,13 +27,13 @@ function botReply(input: string): string {
     return "We offer 12 courses: Noorani Qaida, Quran Reading with Tajweed, Hifz, Translation & Tafseer, Arabic Language, Islamic Studies, Daily Duas & Namaz, and dedicated tracks for Kids, Adults, Sisters and New Muslims — plus an Ijazah program.";
   }
   if (/female|woman|sister|lady|girl/.test(s)) {
-    return "Yes! We have qualified, certified female teachers from several countries. Just mention your preference when booking your trial and we will match you with a Qariah or Hafiza.";
+    return "Yes! We have qualified, qualified female teachers from several countries. Just mention your preference when booking your trial and we will match you with a Qariah or Hafiza.";
   }
   if (/time|schedule|when|hour|timezone/.test(s)) {
     return "We teach 24/7 across all timezones — USA, UK, Canada, Australia, UAE, Europe, Pakistan and more. You choose the days and times; we match a teacher to your schedule.";
   }
   if (/teacher|tutor|qari|male/.test(s)) {
-    return "All our tutors are certified — many hold Ijazah with an unbroken chain. We have both male and female teachers, and you can switch tutors any time if you wish.";
+    return "All our tutors are qualified — many hold Ijazah with an unbroken chain. We have both male and female teachers, and you can switch tutors any time if you wish.";
   }
   if (/refund|money back|cancel/.test(s)) {
     return "We offer a money-back guarantee: if you are not happy after your first paid week, we refund you. You can pause or cancel your plan at any time.";

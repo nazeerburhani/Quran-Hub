@@ -23,7 +23,7 @@ const en = {
   heroEyebrow: "Live 1-on-1 classes · Tutors online now",
   heroTitle: "Your child reciting the Quran beautifully — within months.",
   heroSubtitle:
-    "Live, personal Quran classes for kids and adults with certified male and female tutors — in every timezone.",
+    "Live, personal Quran classes for kids and adults with qualified male and female tutors — in every timezone.",
   heroCtaPrimary: "Claim My Child's Free Trial",
   heroCtaSecondary: "See How It Works",
   heroChipRating: "4.9★ parent rating",
@@ -36,7 +36,7 @@ const en = {
   guaranteeReports: "Weekly Parent Progress Reports",
   guaranteeMoneyBack: "7-Day Money-Back",
 
-  statTutors: "Certified tutors",
+  statTutors: "Qualified tutors",
   statLessons: "Lessons delivered",
   statRating: "Average rating",
   statCountries: "Countries served",
@@ -74,7 +74,7 @@ const en = {
   step1Title: "Book your free trial",
   step1Desc: "Takes 30 seconds — fill the form or message us on WhatsApp.",
   step2Title: "Meet your tutor",
-  step2Desc: "We confirm on WhatsApp within 24 hours and match a certified tutor to your level.",
+  step2Desc: "We confirm on WhatsApp within 24 hours and match a qualified tutor to your level.",
   step3Title: "Same tutor, every week",
   step3Desc: "Weekly live classes with your own tutor, plus progress reports for parents.",
   lessonStructure: "Inside every lesson",
@@ -85,13 +85,25 @@ const en = {
   lessonStep5: "Recap",
 
   teachersEyebrow: "Our tutors",
-  teachersTitle: "Certified teachers you'll trust",
+  teachersTitle: "Qualified teachers you'll trust",
   teachersDesc:
     "Huffaz, Qaris and Al-Azhar graduates — male and female tutors, matched to your family.",
   filterMale: "Male",
   filterFemale: "Female",
   yearsExp: "yrs experience",
+  requestTutor: "Request this tutor",
   sameTutorStrip: "Our promise: the same tutor in every class. No rotations, no strangers.",
+
+  founderEyebrow: "Meet the founder",
+  founderTitle: "The person behind QuranHub",
+  founderBioShort:
+    "QuranHub was built by a founder who cares about one thing: your family learning the Quran the right way.",
+  founderName: "Nazeer Ahmad",
+  founderRole: "Founder, QuranHub",
+  founderBio:
+    "Assalamu Alaikum — I'm Nazeer Ahmad. I started QuranHub with one simple belief: every Muslim child and adult deserves a teacher who genuinely cares. Our tutors are hand-picked and qualified, every class is one-on-one and live, and we treat your child like our own. That is my personal promise to you.",
+  founderQuote: "The best of you are those who learn the Quran and teach it.",
+  founderCta: "Chat with me on WhatsApp",
 
   pricingEyebrow: "Pricing",
   pricingTitle: "Choose your pace — not the subject",
@@ -129,7 +141,7 @@ const en = {
   formNote: "Free 3-day trial · No credit card · Reply within hours",
   formSuccessTitle: "Request received!",
   formSuccessText:
-    "JazakAllahu Khairan! Our team will message you on WhatsApp shortly to schedule your free trial.",
+    "JazakAllahu Khairan! Your details have been sent to us on WhatsApp — our team will reply shortly to schedule your free trial. If WhatsApp did not open, tap the button below.",
 
   faqEyebrow: "FAQ",
   faqTitle: "Questions, answered",
@@ -141,7 +153,7 @@ const en = {
   stickyTrial: "Free 3-Day Trial",
   stickyWhatsapp: "WhatsApp Us",
 
-  footerTagline: "Live one-on-one online Quran classes for kids and adults — certified male and female tutors, in every timezone.",
+  footerTagline: "Live one-on-one online Quran classes for kids and adults — qualified male and female tutors, in every timezone.",
   footerCourses: "Courses",
   footerCompany: "Academy",
   footerContact: "Contact",
@@ -230,7 +242,19 @@ const ur: typeof en = {
   filterMale: "مرد",
   filterFemale: "خواتین",
   yearsExp: "سال تجربہ",
+  requestTutor: "اس استاد سے ٹرائل بک کریں",
   sameTutorStrip: "ہمارا وعدہ: ہر کلاس میں وہی استاد۔ کوئی تبدیلی نہیں۔",
+
+  founderEyebrow: "بانی سے ملیں",
+  founderTitle: "قرآن ہب کے پیچھے شخص",
+  founderBioShort:
+    "قرآن ہب ایک ایسے بانی نے بنایا ہے جو صرف ایک چیز کی پرواہ کرتا ہے: آپ کے خاندان کا قرآن صحیح طریقے سے سیکھنا۔",
+  founderName: "نذیر احمد",
+  founderRole: "بانی، قرآن ہب",
+  founderBio:
+    "السلام علیکم — میں نذیر احمد ہوں۔ میں نے قرآن ہب ایک سادہ یقین کے ساتھ شروع کیا: ہر مسلمان بچے اور بڑے کو ایسا استاد ملنا چاہیے جو واقعی ان کی پرواہ کرے۔ ہمارے اساتذہ منتخب اور اہل ہیں، ہر کلاس انفرادی اور براہِ راست ہے، اور ہم آپ کے بچے کو اپنے بچے کی طرح پڑھاتے ہیں۔ یہ میرا آپ سے ذاتی وعدہ ہے۔",
+  founderQuote: "تم میں سے بہترین وہ ہے جو قرآن سیکھے اور سکھائے۔",
+  founderCta: "واٹس ایپ پر مجھ سے بات کریں",
 
   pricingEyebrow: "فیس",
   pricingTitle: "اپنی رفتار منتخب کریں",
@@ -268,7 +292,7 @@ const ur: typeof en = {
   formNote: "3 دن مفت ٹرائل · کارڈ نہیں · چند گھنٹوں میں جواب",
   formSuccessTitle: "درخواست موصول ہو گئی!",
   formSuccessText:
-    "جزاک اللہ خیر! ہماری ٹیم جلد واٹس ایپ پر رابطہ کر کے آپ کا مفت ٹرائل طے کرے گی۔",
+    "جزاک اللہ خیر! آپ کی تفصیلات واٹس ایپ پر ہمیں موصول ہو گئی ہیں — ہماری ٹیم جلد رابطہ کر کے آپ کا مفت ٹرائل طے کرے گی۔ اگر واٹس ایپ نہیں کھلا تو نیچے بٹن دبائیں۔",
 
   faqEyebrow: "سوالات",
   faqTitle: "عام سوالات کے جوابات",
@@ -369,7 +393,19 @@ const ar: typeof en = {
   filterMale: "معلمون",
   filterFemale: "معلمات",
   yearsExp: "سنوات خبرة",
+  requestTutor: "احجز درسًا تجريبيًا مع هذا المعلم",
   sameTutorStrip: "وعدنا: معلمك نفسه في كل درس. لا تبديل ولا غرباء.",
+
+  founderEyebrow: "تعرّف على المؤسس",
+  founderTitle: "الشخص وراء قرآن هَب",
+  founderBioShort:
+    "بنى قرآن هَب مؤسسٌ يهتم بشيء واحد: أن تتعلّم عائلتك القرآن بالطريقة الصحيحة.",
+  founderName: "نذير أحمد",
+  founderRole: "المؤسس، قرآن هَب",
+  founderBio:
+    "السلام عليكم — أنا نذير أحمد. أسّست قرآن هَب بإيمان بسيط: كل طفل وبالغ مسلم يستحق معلمًا يهتم به حقًا. معلمونا مختارون بعناية ومؤهلون، وكل درس فردي ومباشر، ونعامل طفلك كأنه طفلنا. هذا وعدي الشخصي لك.",
+  founderQuote: "خيركم من تعلّم القرآن وعلّمه.",
+  founderCta: "تحدث معي عبر واتساب",
 
   pricingEyebrow: "الرسوم",
   pricingTitle: "اختر إيقاعك — لا الموضوع",
@@ -407,7 +443,7 @@ const ar: typeof en = {
   formNote: "تجربة ٣ أيام مجانًا · بدون بطاقة · نرد خلال ساعات",
   formSuccessTitle: "تم استلام طلبك!",
   formSuccessText:
-    "جزاك الله خيرًا! سيتواصل معك فريقنا عبر واتساب قريبًا لتحديد موعد تجربتك المجانية.",
+    "جزاك الله خيرًا! تم إرسال بياناتك إلينا عبر واتساب — سيتواصل معك فريقنا قريبًا لتحديد موعد تجربتك المجانية. إذا لم يُفتح واتساب، اضغط الزر أدناه.",
 
   faqEyebrow: "الأسئلة",
   faqTitle: "الأسئلة الشائعة",

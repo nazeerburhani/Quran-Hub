@@ -23,7 +23,7 @@ export default function Footer() {
           <div>
             <Link href="#top" className="flex items-center gap-2.5" aria-label={`${SITE.name} — home`}>
               <span className="grid h-11 w-11 place-items-center overflow-hidden rounded-2xl bg-white">
-                <Image src="/images/logo.jpg" alt="" width={44} height={44} className="h-11 w-11 object-cover" />
+                <Image src="/images/logo.png" alt="" width={44} height={44} className="h-11 w-11 object-contain" />
               </span>
               <span className="leading-tight">
                 <span className="block text-base font-bold tracking-tight text-white">
@@ -35,7 +35,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-sand-100/70">
-              Live one-on-one online Quran classes for kids and adults — certified
+              Live one-on-one online Quran classes for kids and adults — qualified
               male and female tutors, in every timezone.
             </p>
             <a
