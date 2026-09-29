@@ -11,7 +11,7 @@ export const SITE = {
   whatsappRaw: "19177225120",
   email: "info@quranhub.academy",
   defaultWhatsappMessage: "Assalamu Alaikum, I want to know about Quran classes.",
-  url: "https://www.quranhub.academy",
+  url: "https://quranhub.online.nazeerahmad.dev",
   businessHours: "24/7 — teachers available in every timezone",
 } as const;
 
