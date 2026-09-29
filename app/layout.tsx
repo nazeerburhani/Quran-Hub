@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Amiri, Inter } from "next/font/google";
+import { Amiri, Fraunces, Inter } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import { SITE } from "@/lib/site";
@@ -8,6 +8,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppFloat from "@/components/layout/WhatsAppFloat";
 import ChatWidget from "@/components/layout/ChatWidget";
+import StickyMobileCTA from "@/components/home/StickyMobileCTA";
 import { Analytics } from "@/lib/analytics";
 import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/seo/JsonLd";
 
@@ -15,6 +16,15 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
+});
+
+/** High-contrast serif display face for headlines (editorial, premium). */
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 const amiri = Amiri({
@@ -80,8 +90,8 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#070b1d" },
+    { media: "(prefers-color-scheme: light)", color: "#faf6ef" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a1f1e" },
   ],
 };
 
@@ -89,9 +99,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" dir="ltr" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${amiri.variable} bg-white font-sans text-slate-900 antialiased transition-colors duration-300 dark:bg-navy-950 dark:text-slate-100`}
+        className={`${inter.variable} ${fraunces.variable} ${amiri.variable} bg-sand-50 font-sans text-ink antialiased transition-colors duration-300 dark:bg-night dark:text-sand-100`}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <LocaleProvider>
             <a href="#main" className="skip-link">
               Skip to content
@@ -99,6 +109,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Header />
             <main id="main">{children}</main>
             <Footer />
+            <StickyMobileCTA />
             <WhatsAppFloat />
             <ChatWidget />
           </LocaleProvider>

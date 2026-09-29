@@ -1,19 +1,3 @@
-import {
-  Award,
-  BookA,
-  BookMarked,
-  BookOpen,
-  Brain,
-  Compass,
-  Flower2,
-  Languages,
-  MoonStar,
-  Smile,
-  Sunrise,
-  Users,
-  type LucideIcon,
-} from "lucide-react";
-
 /* ------------------------------------------------------------------ */
 /* Brand — change these values to rebrand the whole site               */
 /* ------------------------------------------------------------------ */
@@ -39,6 +23,8 @@ export function whatsappLink(message: string = SITE.defaultWhatsappMessage): str
 /* ------------------------------------------------------------------ */
 /* Courses (12)                                                        */
 /* ------------------------------------------------------------------ */
+export type CourseCategory = "kids" | "adults" | "memorization" | "language";
+
 export interface Course {
   id: string;
   slug: string;
@@ -46,7 +32,13 @@ export interface Course {
   description: string;
   level: string;
   duration: string;
-  icon: LucideIcon;
+  /** Single Arabic-letter glyph used as course iconography. */
+  glyph: string;
+  categories: CourseCategory[];
+  whoFor: string;
+  outcome: string;
+  image: string;
+  imageAlt: string;
 }
 
 export const COURSES: Course[] = [
@@ -58,7 +50,12 @@ export const COURSES: Course[] = [
       "Master the Arabic alphabet, pronunciation points (Makharij) and joining rules — the perfect foundation before reading the Quran.",
     level: "Beginner",
     duration: "3–4 months",
-    icon: BookOpen,
+    glyph: "ا",
+    categories: ["kids", "adults"],
+    whoFor: "Ages 4+ and complete beginners",
+    outcome: "Reading Arabic fluently in ~3 months",
+    image: "/images/course-noorani.jpg",
+    imageAlt: "Close-up of elegant Arabic calligraphy letters on paper",
   },
   {
     id: "quran-reading-tajweed",
@@ -68,7 +65,12 @@ export const COURSES: Course[] = [
       "Read the Quran fluently and beautifully with correct Tajweed rules, guided live by a certified Qari or Qaria.",
     level: "All levels",
     duration: "6–12 months",
-    icon: BookMarked,
+    glyph: "ت",
+    categories: ["kids", "adults"],
+    whoFor: "Anyone who can read Arabic script",
+    outcome: "Beautiful, correct recitation with Tajweed",
+    image: "/images/course-tajweed.jpg",
+    imageAlt: "Open Quran showing Arabic verses in close-up",
   },
   {
     id: "hifz",
@@ -78,7 +80,12 @@ export const COURSES: Course[] = [
       "A proven Sabaq / Sabqi / Manzil system with daily revision tracking to help you memorize the entire Quran with retention.",
     level: "Intermediate",
     duration: "2–4 years",
-    icon: Brain,
+    glyph: "ح",
+    categories: ["memorization", "kids", "adults"],
+    whoFor: "Serious students of all ages",
+    outcome: "Full Quran memorized — and retained",
+    image: "/images/course-hifz.jpg",
+    imageAlt: "Quran with tasbih prayer beads resting on it",
   },
   {
     id: "translation-tafseer",
@@ -88,7 +95,12 @@ export const COURSES: Course[] = [
       "Understand what you recite — word-by-word translation and authentic Tafseer explained in simple, clear language.",
     level: "Intermediate+",
     duration: "12+ months",
-    icon: Languages,
+    glyph: "ف",
+    categories: ["adults", "language"],
+    whoFor: "Adults and advanced teens",
+    outcome: "Understand what you recite",
+    image: "/images/course-tafseer.jpg",
+    imageAlt: "Stack of Islamic study books beside the Quran",
   },
   {
     id: "arabic-language",
@@ -98,7 +110,12 @@ export const COURSES: Course[] = [
       "From the alphabet to Quranic grammar (Sarf & Nahw) — learn the language of the Quran step by step.",
     level: "Beginner",
     duration: "6–12 months",
-    icon: BookA,
+    glyph: "ض",
+    categories: ["language", "adults", "kids"],
+    whoFor: "Anyone wanting Quranic Arabic",
+    outcome: "Read and understand Quranic Arabic",
+    image: "/images/course-arabic.jpg",
+    imageAlt: "Detailed Arabic calligraphy artwork in gold",
   },
   {
     id: "islamic-studies",
@@ -108,7 +125,12 @@ export const COURSES: Course[] = [
       "Aqeedah, Fiqh, Seerah, Hadith and Akhlaq — a complete essentials program for kids, teens and adults.",
     level: "All levels",
     duration: "6–12 months",
-    icon: MoonStar,
+    glyph: "س",
+    categories: ["kids", "adults"],
+    whoFor: "Kids, teens and adults",
+    outcome: "A complete foundation in Islamic essentials",
+    image: "/images/course-islamic-studies.jpg",
+    imageAlt: "Geometric arches of a mosque interior",
   },
   {
     id: "daily-duas-namaz",
@@ -118,7 +140,12 @@ export const COURSES: Course[] = [
       "Learn Salah step by step with correct postures, plus essential daily duas and adhkar with meanings.",
     level: "Beginner",
     duration: "2–3 months",
-    icon: Sunrise,
+    glyph: "د",
+    categories: ["kids", "adults"],
+    whoFor: "New learners of all ages",
+    outcome: "Confident Salah within ~2 months",
+    image: "/images/course-duas.jpg",
+    imageAlt: "Open Quran on a rehal with prayer beads on a prayer rug in sunlight",
   },
   {
     id: "quran-for-kids",
@@ -128,7 +155,12 @@ export const COURSES: Course[] = [
       "Fun, patient, activity-based classes designed for children ages 4+ — with progress reports for parents.",
     level: "Kids 4+",
     duration: "Ongoing",
-    icon: Smile,
+    glyph: "ق",
+    categories: ["kids"],
+    whoFor: "Children ages 4–12",
+    outcome: "A love for the Quran with steady progress",
+    image: "/images/course-kids.jpg",
+    imageAlt: "A child's hands resting on an open Quran",
   },
   {
     id: "quran-for-adults",
@@ -138,7 +170,12 @@ export const COURSES: Course[] = [
       "Flexible timings for busy professionals and homemakers — start from any level, even from zero.",
     level: "All levels",
     duration: "Ongoing",
-    icon: Users,
+    glyph: "ب",
+    categories: ["adults"],
+    whoFor: "Professionals and homemakers",
+    outcome: "Learn at your own pace, from any level",
+    image: "/images/course-adults.jpg",
+    imageAlt: "Quran on a wooden rehal at a quiet study desk",
   },
   {
     id: "quran-for-sisters",
@@ -148,7 +185,12 @@ export const COURSES: Course[] = [
       "Learn comfortably with qualified female teachers — Tajweed, Hifz and Islamic studies for sisters of all ages.",
     level: "All levels",
     duration: "Ongoing",
-    icon: Flower2,
+    glyph: "ن",
+    categories: ["adults", "kids"],
+    whoFor: "Sisters of all ages",
+    outcome: "Learn comfortably with a certified Qariah",
+    image: "/images/course-sisters.jpg",
+    imageAlt: "Elegant Quran still life with soft floral tones",
   },
   {
     id: "quran-for-new-muslims",
@@ -158,7 +200,12 @@ export const COURSES: Course[] = [
       "A gentle, welcoming path: Shahada essentials, Salah, duas and first steps into Quran reading.",
     level: "Beginner",
     duration: "3–6 months",
-    icon: Compass,
+    glyph: "م",
+    categories: ["adults"],
+    whoFor: "New Muslims and reverts",
+    outcome: "Salah and essentials within weeks",
+    image: "/images/course-new-muslims.jpg",
+    imageAlt: "Open Quran glowing in warm light",
   },
   {
     id: "ijazah-program",
@@ -168,12 +215,17 @@ export const COURSES: Course[] = [
       "Earn an unbroken-chain Ijazah in Hafs (or other Qira'at) by reciting the full Quran to a certified Sheikh.",
     level: "Advanced",
     duration: "12–24 months",
-    icon: Award,
+    glyph: "ج",
+    categories: ["memorization", "adults"],
+    whoFor: "Advanced reciters and Huffaz",
+    outcome: "Certified Ijazah with unbroken sanad",
+    image: "/images/course-ijazah.jpg",
+    imageAlt: "Ornate Quran binding with gold embellishment",
   },
 ];
 
 /* ------------------------------------------------------------------ */
-/* Teachers (8 sample profiles — replace with real data later)         */
+/* Teachers — SAMPLE profiles (replace with real tutor data at launch) */
 /* ------------------------------------------------------------------ */
 export interface Teacher {
   id: string;
@@ -279,7 +331,9 @@ export const TEACHERS: Teacher[] = [
 ];
 
 /* ------------------------------------------------------------------ */
-/* Pricing plans — PLACEHOLDER prices (replace with final pricing)      */
+/* Pricing plans — named by FREQUENCY.                                 */
+/* NOTE: prices are PLACEHOLDERS. Replace with final pricing before    */
+/* launch. Strike-through anchors are illustrative.                    */
 /* ------------------------------------------------------------------ */
 export interface Plan {
   id: string;
@@ -288,26 +342,30 @@ export interface Plan {
   minutesPerClass: number;
   /** Placeholder USD price per month. Replace with real pricing. */
   monthlyUSD: number;
+  /** Illustrative strike-through anchor. Replace with real pricing. */
+  anchorUSD: number;
   tagline: string;
   popular?: boolean;
 }
 
 export const PLANS: Plan[] = [
   {
-    id: "starter",
-    name: "Starter",
+    id: "foundation",
+    name: "Foundation",
     classesPerWeek: 2,
     minutesPerClass: 30,
     monthlyUSD: 49,
+    anchorUSD: 65,
     tagline: "A gentle start for new learners",
   },
   {
-    id: "regular",
-    name: "Regular",
+    id: "consistency",
+    name: "Consistency",
     classesPerWeek: 3,
     minutesPerClass: 30,
     monthlyUSD: 69,
-    tagline: "Our most loved plan",
+    anchorUSD: 89,
+    tagline: "Steady progress, every week",
     popular: true,
   },
   {
@@ -316,7 +374,8 @@ export const PLANS: Plan[] = [
     classesPerWeek: 5,
     minutesPerClass: 30,
     monthlyUSD: 99,
-    tagline: "Fast, steady progress",
+    anchorUSD: 129,
+    tagline: "Fast, focused momentum",
   },
   {
     id: "dedicated",
@@ -324,6 +383,7 @@ export const PLANS: Plan[] = [
     classesPerWeek: 7,
     minutesPerClass: 30,
     monthlyUSD: 129,
+    anchorUSD: 169,
     tagline: "Daily learning, maximum results",
   },
 ];
@@ -382,54 +442,120 @@ export const FAQS: Faq[] = [
 ];
 
 /* ------------------------------------------------------------------ */
-/* Testimonials                                                        */
+/* Reviews — !!! SAMPLE DATA !!!                                       */
+/* Every review below is illustrative placeholder copy written for     */
+/* design purposes. The owner MUST replace these with real, verified  */
+/* parent reviews before launch. Never present them as genuine.        */
 /* ------------------------------------------------------------------ */
-export interface Testimonial {
+export interface Review {
+  id: string;
   name: string;
   country: string;
+  /** Emoji flag for the reviewer's country. */
+  flag: string;
+  course: string;
   rating: number;
   text: string;
+  featured?: boolean;
 }
 
-export const TESTIMONIALS: Testimonial[] = [
+export const REVIEWS: Review[] = [
+  // SAMPLE DATA — replace with a real verified parent review before launch.
   {
+    id: "r1",
     name: "Sarah M.",
     country: "United States",
+    flag: "🇺🇸",
+    course: "Quran for Kids",
     rating: 5,
-    text: "My 7-year-old went from not knowing the alphabet to reading short surahs in four months. His teacher is so patient — he actually looks forward to class.",
+    text: "My 7-year-old went from not knowing the alphabet to reading short surahs in four months. His teacher is so patient — he actually reminds me when it's class time.",
+    featured: true,
   },
+  // SAMPLE DATA — replace with a real verified parent review before launch.
   {
+    id: "r2",
     name: "Ahmed R.",
     country: "United Kingdom",
+    flag: "🇬🇧",
+    course: "Tajweed",
     rating: 5,
-    text: "As a working father I thought I had missed my chance. The flexible timings and my Sheikh's corrections in Tajweed have transformed my recitation.",
+    text: "As a working father I thought I'd missed my chance. My Sheikh corrected years of Tajweed mistakes in weeks, and the evening slots fit around my job perfectly.",
   },
+  // SAMPLE DATA — replace with a real verified parent review before launch.
   {
+    id: "r3",
     name: "Fatima K.",
     country: "Canada",
+    flag: "🇨🇦",
+    course: "Hifz",
     rating: 5,
-    text: "Learning with a female teacher made all the difference for me. The Hifz program's revision system is excellent — I have memorized 5 paras so far.",
+    text: "Learning with a female teacher made all the difference for me. The Sabaq–Sabqi–Manzil system keeps my memorization strong — five paras and counting, Alhamdulillah.",
   },
+  // SAMPLE DATA — replace with a real verified parent review before launch.
   {
+    id: "r4",
     name: "Bilal S.",
     country: "Australia",
+    flag: "🇦🇺",
+    course: "Quran for Kids",
     rating: 5,
-    text: "The free trial convinced us immediately. Two of my kids learn with the academy now, and the monthly parent report keeps us fully in the loop.",
+    text: "The free trial convinced us on day one. Both my kids learn here now, and the weekly parent report means I always know exactly how they're progressing.",
   },
+  // SAMPLE DATA — replace with a real verified parent review before launch.
   {
+    id: "r5",
     name: "Amina Y.",
     country: "UAE",
+    flag: "🇦🇪",
+    course: "New Muslims",
     rating: 5,
-    text: "I reverted last year and the New Muslims course gave me confidence in Salah within weeks. The teachers are kind, never judgmental, always encouraging.",
+    text: "I reverted last year and was nervous about starting. The New Muslims course had me praying confidently within weeks — kind teachers, never judgmental, always encouraging.",
+  },
+  // SAMPLE DATA — replace with a real verified parent review before launch.
+  {
+    id: "r6",
+    name: "Hassan T.",
+    country: "Germany",
+    flag: "🇩🇪",
+    course: "Noorani Qaida",
+    rating: 5,
+    text: "My 5-year-old daughter finished Noorani Qaida in three months and started reading the Quran. The teacher makes every lesson feel like play, but the progress is real.",
+  },
+  // SAMPLE DATA — replace with a real verified parent review before launch.
+  {
+    id: "r7",
+    name: "Maryam A.",
+    country: "Malaysia",
+    flag: "🇲🇾",
+    course: "Sisters",
+    rating: 5,
+    text: "As a sister I wanted a female teacher, and Ustadha's Tajweed corrections are precise and gentle. My recitation in Taraweeh this Ramadan was unrecognizable.",
+  },
+  // SAMPLE DATA — replace with a real verified parent review before launch.
+  {
+    id: "r8",
+    name: "Omar F.",
+    country: "South Africa",
+    flag: "🇿🇦",
+    course: "Ijazah",
+    rating: 5,
+    text: "I recited the full Quran to my Sheikh over eighteen months and earned my Ijazah in Hafs. The discipline of the program changed not just my recitation, but my life.",
   },
 ];
 
 /* ------------------------------------------------------------------ */
 /* Animated stats                                                      */
 /* ------------------------------------------------------------------ */
-export const STATS = [
-  { value: 2500, suffix: "+", label: "Students learning worldwide" },
-  { value: 120, suffix: "+", label: "Certified male & female teachers" },
+export interface Stat {
+  value: number;
+  suffix: string;
+  label: string;
+  decimals?: number;
+}
+
+export const STATS: Stat[] = [
+  { value: 120, suffix: "+", label: "Certified tutors" },
+  { value: 500000, suffix: "+", label: "Lessons delivered" },
+  { value: 4.9, suffix: "/5", label: "Average rating", decimals: 1 },
   { value: 40, suffix: "+", label: "Countries served" },
-  { value: 500000, suffix: "+", label: "Hours of classes taught" },
-] as const;
+];

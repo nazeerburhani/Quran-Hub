@@ -1,188 +1,156 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { CheckCircle2, Clock3, Globe2, MessageCircle } from "lucide-react";
-import { COURSES, SITE, whatsappLink } from "@/lib/site";
+import { useState } from "react";
+import { CheckCircle2, MessageCircle, Timer } from "lucide-react";
+import { SITE, whatsappLink } from "@/lib/site";
+import { useLocale } from "@/components/layout/LanguageSwitcher";
+import { dict } from "@/lib/i18n";
 import Reveal from "@/components/ui/Reveal";
-import SectionHeading from "@/components/ui/SectionHeading";
-
-const inputCls =
-  "h-12 w-full rounded-xl border border-white/10 bg-white/70 px-4 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-gold/60 dark:bg-white/5 dark:text-white";
-
-function Field({
-  id,
-  label,
-  children,
-}: {
-  id: string;
-  label: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div>
-      <label htmlFor={id} className="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-200">
-        {label}
-      </label>
-      {children}
-    </div>
-  );
-}
 
 export default function FreeTrialForm() {
-  const [timezone, setTimezone] = useState("");
-  const [status, setStatus] = useState<"idle" | "sending" | "done">("idle");
+  const { locale } = useLocale();
+  const d = dict[locale];
+  const [sent, setSent] = useState(false);
 
-  /* Auto-detect the visitor's timezone */
-  useEffect(() => {
-    try {
-      setTimezone(Intl.DateTimeFormat().resolvedOptions().timeZone || "");
-    } catch {
-      setTimezone("");
-    }
-  }, []);
+  const inputCls =
+    "h-12 w-full rounded-2xl border border-brand-800/15 bg-white/80 px-4 text-[15px] text-ink outline-none transition-colors placeholder:text-ink-soft/60 focus:border-gold-400 dark:border-white/15 dark:bg-white/[0.06] dark:text-sand-100 dark:placeholder:text-night-muted/60";
 
   return (
-    <section id="trial" aria-labelledby="trial-heading" className="relative scroll-mt-20 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gold/[0.04] to-transparent" aria-hidden="true" />
-      <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
-        <SectionHeading
-          id="trial-heading"
-          eyebrow="Free 3-Day Trial"
-          title="Book your free trial class"
-          description="No credit card. No commitment. Just three days of live classes with a certified tutor — and a personal learning plan for you or your child."
-        />
+    <section
+      id="trial"
+      aria-labelledby="trial-heading"
+      className="relative scroll-mt-20 overflow-hidden"
+    >
+      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24">
+        <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-800 via-brand-900 to-night-deep shadow-card">
+          {/* geo texture */}
+          <div className="geo-pattern-dark absolute inset-0 opacity-60" aria-hidden="true" />
+          <div
+            className="pointer-events-none absolute -end-24 -top-24 h-80 w-80 rounded-full bg-gold-400/15 blur-3xl"
+            aria-hidden="true"
+          />
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-5">
-          {/* Form */}
-          <Reveal className="lg:col-span-3">
-            <div className="glass rounded-3xl p-6 shadow-card sm:p-8">
-              {status === "done" ? (
-                <div className="py-8 text-center" role="status">
-                  <CheckCircle2 className="mx-auto h-16 w-16 text-emerald-500" aria-hidden="true" />
-                  <h3 className="mt-4 text-2xl font-bold text-slate-900 dark:text-white">
-                    Request received!
-                  </h3>
-                  <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-                    JazakAllahu Khairan! Our admissions team will contact you
-                    within a few hours to confirm your trial slot
-                    {timezone ? ` (we detected your timezone as ${timezone})` : ""}.
-                    You will also receive confirmation by email and WhatsApp once connected.
-                  </p>
-                  <a
-                    href={whatsappLink("Assalamu Alaikum, I just booked a free trial on the website.")}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#1faa53] px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#25d366]"
-                  >
-                    <MessageCircle className="h-4 w-4" aria-hidden="true" />
-                    Get instant confirmation on WhatsApp
-                  </a>
-                </div>
-              ) : (
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    setStatus("sending");
-                    /* Demo mode: simulate a network request. At launch this
-                       POSTs to Supabase (trial_requests table). */
-                    window.setTimeout(() => setStatus("done"), 900);
-                  }}
-                  className="grid gap-5 sm:grid-cols-2"
-                >
-                  <Field id="trial-name" label="Full name">
-                    <input id="trial-name" required placeholder="Your name" autoComplete="name" className={inputCls} />
-                  </Field>
-                  <Field id="trial-email" label="Email address">
-                    <input id="trial-email" type="email" required placeholder="you@example.com" autoComplete="email" className={inputCls} />
-                  </Field>
-                  <Field id="trial-whatsapp" label="WhatsApp number">
-                    <input id="trial-whatsapp" type="tel" required placeholder="+1 555 000 1234" autoComplete="tel" className={inputCls} />
-                  </Field>
-                  <Field id="trial-country" label="Country">
-                    <input id="trial-country" required placeholder="e.g. United States" autoComplete="country-name" className={inputCls} />
-                  </Field>
-                  <Field id="trial-course" label="Course of interest">
-                    <select id="trial-course" required defaultValue="" className={`${inputCls} [&>option]:text-slate-900`}>
-                      <option value="" disabled>
-                        Select a course…
-                      </option>
-                      {COURSES.map((c) => (
-                        <option key={c.id} value={c.slug}>
-                          {c.title}
-                        </option>
-                      ))}
-                    </select>
-                  </Field>
-                  <Field id="trial-timezone" label="Your timezone (auto-detected)">
-                    <input
-                      id="trial-timezone"
-                      value={timezone || "Detecting…"}
-                      readOnly
-                      aria-readonly="true"
-                      className={`${inputCls} opacity-70`}
-                    />
-                  </Field>
-                  <div className="sm:col-span-2">
-                    <button
-                      type="submit"
-                      disabled={status === "sending"}
-                      className="btn-gold w-full text-base disabled:opacity-60"
+          <div className="relative grid gap-10 p-8 sm:p-12 lg:grid-cols-2 lg:gap-14">
+            {/* Copy */}
+            <Reveal>
+              <p className="inline-flex items-center gap-2 rounded-full border border-gold-400/40 bg-gold-400/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-gold-300">
+                <Timer className="h-4 w-4" aria-hidden="true" />
+                {d.trialEyebrow}
+              </p>
+              <h2
+                id="trial-heading"
+                className="mt-5 font-display text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-[2.75rem]"
+              >
+                {d.trialTitle}
+              </h2>
+              <p className="mt-4 max-w-md leading-relaxed text-sand-100/80">
+                {d.trialSub}
+              </p>
+              <ul className="mt-6 space-y-2.5 text-sm text-sand-100/85">
+                {[d.guaranteeTrial, d.guaranteeNoCard, d.guaranteeSameTutor].map((g) => (
+                  <li key={g} className="flex items-center gap-2.5">
+                    <CheckCircle2 className="h-5 w-5 shrink-0 text-gold-300" aria-hidden="true" />
+                    {g}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+
+            {/* Form card */}
+            <Reveal delay={0.1}>
+              <div className="rounded-3xl bg-white/95 p-6 shadow-card backdrop-blur-xl dark:bg-night-soft/95 sm:p-8">
+                {sent ? (
+                  <div className="py-8 text-center">
+                    <CheckCircle2 className="mx-auto h-14 w-14 text-brand-600 dark:text-gold-300" aria-hidden="true" />
+                    <p className="mt-4 font-display text-2xl font-semibold text-ink dark:text-sand-100">
+                      {d.formSuccessTitle}
+                    </p>
+                    <p className="mx-auto mt-2 max-w-sm text-sm leading-relaxed text-ink-soft dark:text-night-muted">
+                      {d.formSuccessText}
+                    </p>
+                    <a
+                      href={whatsappLink("Assalamu Alaikum, I just requested a free trial on the website.")}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-6 inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full bg-waDark px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-wa"
                     >
-                      {status === "sending" ? "Sending…" : "Book My Free Trial"}
-                    </button>
-                    <p className="mt-3 text-center text-xs text-slate-500 dark:text-slate-400">
-                      By submitting, you agree to be contacted about your trial. We never share your details.
+                      <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                      {d.stickyWhatsapp}
+                    </a>
+                    <p className="mt-2 text-[11px] text-ink-soft dark:text-night-muted">
+                      {SITE.whatsappDisplay}
                     </p>
                   </div>
-                </form>
-              )}
-            </div>
-          </Reveal>
-
-          {/* What happens next */}
-          <Reveal delay={0.1} className="lg:col-span-2">
-            <div className="flex h-full flex-col gap-4">
-              <div className="glass rounded-3xl p-6">
-                <h3 className="flex items-center gap-2 text-base font-bold text-slate-900 dark:text-white">
-                  <Clock3 className="h-5 w-5 text-gold" aria-hidden="true" />
-                  What happens next?
-                </h3>
-                <ol className="mt-4 space-y-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-                  <li className="flex gap-3">
-                    <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-gold/15 text-xs font-bold text-gold-dark dark:text-gold-light">1</span>
-                    We call or message you within a few hours to fix your trial time.
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-gold/15 text-xs font-bold text-gold-dark dark:text-gold-light">2</span>
-                    You meet your tutor live and get a free level assessment.
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-gold/15 text-xs font-bold text-gold-dark dark:text-gold-light">3</span>
-                    You receive a personal learning plan — continue only if you love it.
-                  </li>
-                </ol>
+                ) : (
+                  <form
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      setSent(true);
+                    }}
+                    className="space-y-4"
+                  >
+                    <div>
+                      <label htmlFor="trial-name" className="mb-1.5 block text-sm font-semibold text-ink dark:text-sand-100">
+                        {d.formName}
+                      </label>
+                      <input
+                        id="trial-name"
+                        name="name"
+                        required
+                        autoComplete="name"
+                        placeholder={d.formNamePh}
+                        className={inputCls}
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="trial-contact" className="mb-1.5 block text-sm font-semibold text-ink dark:text-sand-100">
+                        {d.formContact}
+                      </label>
+                      <input
+                        id="trial-contact"
+                        name="contact"
+                        required
+                        autoComplete="tel"
+                        placeholder={d.formContactPh}
+                        className={inputCls}
+                      />
+                    </div>
+                    <fieldset>
+                      <legend className="mb-1.5 text-sm font-semibold text-ink dark:text-sand-100">
+                        {d.formStudent}
+                      </legend>
+                      <div className="grid grid-cols-2 gap-2">
+                        {[
+                          { id: "kid", label: d.formStudentKid },
+                          { id: "adult", label: d.formStudentAdult },
+                        ].map((o) => (
+                          <label
+                            key={o.id}
+                            className="flex min-h-[48px] cursor-pointer items-center justify-center gap-2 rounded-2xl border border-brand-800/15 px-3 text-sm font-semibold text-ink-soft transition-colors has-[:checked]:border-gold-400 has-[:checked]:bg-gold-400/15 has-[:checked]:text-ink dark:border-white/15 dark:text-night-muted dark:has-[:checked]:text-sand-100"
+                          >
+                            <input
+                              type="radio"
+                              name="student"
+                              value={o.id}
+                              defaultChecked={o.id === "kid"}
+                              className="sr-only"
+                            />
+                            {o.label}
+                          </label>
+                        ))}
+                      </div>
+                    </fieldset>
+                    <button type="submit" className="btn-gold w-full text-base">
+                      {d.formSubmit}
+                    </button>
+                    <p className="text-center text-xs text-ink-soft dark:text-night-muted">
+                      {d.formNote}
+                    </p>
+                  </form>
+                )}
               </div>
-              <div className="glass rounded-3xl p-6">
-                <h3 className="flex items-center gap-2 text-base font-bold text-slate-900 dark:text-white">
-                  <Globe2 className="h-5 w-5 text-gold" aria-hidden="true" />
-                  Prefer to talk first?
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-                  Message our admin directly — we usually reply within minutes,
-                  any time of day.
-                </p>
-                <a
-                  href={whatsappLink()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#1faa53] px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#25d366]"
-                >
-                  <MessageCircle className="h-4 w-4" aria-hidden="true" />
-                  {SITE.whatsappDisplay}
-                </a>
-              </div>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
         </div>
       </div>
     </section>

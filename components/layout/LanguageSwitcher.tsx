@@ -85,9 +85,9 @@ export default function LanguageSwitcher() {
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-label="Change language"
-        className="glass inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-gold/50 dark:text-slate-200"
+        className="glass inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-gold-400/60 dark:text-slate-200"
       >
-        <Globe className="h-4 w-4 text-gold" aria-hidden="true" />
+        <Globe className="h-4 w-4 text-gold-500" aria-hidden="true" />
         <span>{current.label}</span>
       </button>
 
@@ -105,9 +105,9 @@ export default function LanguageSwitcher() {
                   setLocale(l.code);
                   setOpen(false);
                 }}
-                className={`flex w-full items-center justify-between rounded-xl px-3 py-2.5 text-sm transition-colors hover:bg-gold/10 ${
+                className={`flex w-full items-center justify-between rounded-xl px-3 py-2.5 text-sm transition-colors hover:bg-gold-400/10 ${
                   l.code === locale
-                    ? "font-semibold text-gold-dark dark:text-gold-light"
+                    ? "font-semibold text-gold-700 dark:text-gold-300"
                     : "text-slate-700 dark:text-slate-200"
                 }`}
               >

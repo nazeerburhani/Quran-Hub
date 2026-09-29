@@ -21,9 +21,9 @@ export default function ThemeToggle() {
       className="glass inline-flex h-10 w-10 items-center justify-center rounded-full text-slate-700 transition-colors hover:border-gold/50 dark:text-slate-200"
     >
       {isDark ? (
-        <Sun className="h-[18px] w-[18px] text-gold" aria-hidden="true" />
+        <Sun className="h-[18px] w-[18px] text-gold-400" aria-hidden="true" />
       ) : (
-        <Moon className="h-[18px] w-[18px] text-navy" aria-hidden="true" />
+        <Moon className="h-[18px] w-[18px] text-brand-800" aria-hidden="true" />
       )}
     </button>
   );

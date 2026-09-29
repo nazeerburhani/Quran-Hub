@@ -21,12 +21,12 @@ interface ButtonProps {
 
 const variantCls: Record<Variant, string> = {
   primary:
-    "bg-gradient-to-r from-gold-dark via-gold to-gold-light text-navy-950 shadow-glow hover:shadow-glow-lg",
+    "bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 text-brand-950 shadow-glow hover:shadow-glow-lg",
   secondary:
-    "glass text-slate-900 hover:border-gold/60 dark:text-white",
+    "glass text-ink hover:border-gold-400/60 dark:text-sand-100",
   whatsapp:
-    "bg-[#1faa53] text-white shadow-[0_0_24px_rgba(37,211,102,0.35)] hover:bg-[#25d366]",
-  ghost: "text-slate-700 hover:text-gold-dark dark:text-slate-200 dark:hover:text-gold-light",
+    "bg-waDark text-white shadow-[0_0_24px_rgba(37,211,102,0.35)] hover:bg-wa",
+  ghost: "text-ink-soft hover:text-brand-700 dark:text-night-muted dark:hover:text-gold-300",
 };
 
 const sizeCls: Record<Size, string> = {
@@ -76,7 +76,7 @@ export default function Button({
     y.set(0);
   };
 
-  const cls = `inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-shadow duration-300 ${variantCls[variant]} ${sizeCls[size]} ${className}`;
+  const cls = `inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full font-semibold transition-shadow duration-300 ${variantCls[variant]} ${sizeCls[size]} ${className}`;
   const motionProps = {
     className: cls,
     style: { x: sx, y: sy },

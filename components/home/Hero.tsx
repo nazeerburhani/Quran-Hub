@@ -1,114 +1,190 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { useEffect, useRef } from "react";
+import dynamic from "next/dynamic";
+import Image from "next/image";
 import gsap from "gsap";
-import { MessageCircle, Sparkles } from "lucide-react";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { ArrowDown, Globe2, Sparkles, Users } from "lucide-react";
 import { useLocale } from "@/components/layout/LanguageSwitcher";
 import { dict } from "@/lib/i18n";
-import { whatsappLink } from "@/lib/site";
-import Button from "@/components/ui/Button";
 
-/** 3D scene loads only in the browser (never on the server). */
-const HeroScene = dynamic(() => import("./HeroScene"), {
-  ssr: false,
-  loading: () => <div className="geo-pattern absolute inset-0 opacity-40" aria-hidden="true" />,
-});
+/** 3D particle layer — client-only, restyled teal/gold */
+const HeroScene = dynamic(() => import("./HeroScene"), { ssr: false });
+
+function FloatingChip({
+  className,
+  children,
+  depth,
+  scrollY,
+  reduce,
+}: {
+  className?: string;
+  children: React.ReactNode;
+  depth: number;
+  scrollY: ReturnType<typeof useScroll>["scrollY"];
+  reduce: boolean;
+}) {
+  const y = useTransform(scrollY, [0, 600], [0, depth * 60]);
+  return (
+    <motion.div
+      style={reduce ? undefined : { y }}
+      className={`glass pointer-events-none absolute z-20 hidden items-center gap-2 rounded-2xl px-4 py-3 shadow-card md:inline-flex ${className ?? ""}`}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
 export default function Hero() {
   const { locale } = useLocale();
   const d = dict[locale];
+  const reduce = useReducedMotion();
   const rootRef = useRef<HTMLElement>(null);
+  const { scrollY } = useScroll();
 
-  /* Gentle GSAP entrance for the headline block (skipped for reduced motion). */
+  /* GSAP entrance — skipped entirely under prefers-reduced-motion */
   useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (mq.matches || !rootRef.current) return;
+    if (reduce || !rootRef.current) return;
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        "[data-hero-anim]",
-        { opacity: 0, y: 34 },
-        { opacity: 1, y: 0, duration: 0.9, stagger: 0.12, ease: "power3.out", delay: 0.15 }
+        "[data-hero-enter]",
+        { opacity: 0, y: 36 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.9,
+          stagger: 0.12,
+          ease: "power3.out",
+          delay: 0.15,
+        }
       );
     }, rootRef);
     return () => ctx.revert();
-  }, []);
+  }, [reduce]);
 
   return (
     <section
-      id="top"
       ref={rootRef}
-      aria-labelledby="hero-heading"
-      className="relative flex min-h-[100svh] items-center overflow-hidden"
+      id="top"
+      aria-label="QuranHub — online Quran classes"
+      className="relative flex min-h-[100svh] items-center overflow-hidden bg-night-deep"
     >
-      {/* 3D particle background */}
+      {/* Cinematic background photo: open Quran on a rehal, no people */}
+      <div className="absolute inset-0" aria-hidden="true">
+        <Image
+          src="/images/hero-quran.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+      </div>
+
+      {/* Deep-teal gradient overlay: left 85% → transparent right */}
+      <div
+        className="absolute inset-0"
+        aria-hidden="true"
+        style={{
+          background:
+            "linear-gradient(100deg, rgba(7,33,31,0.96) 0%, rgba(7,33,31,0.88) 45%, rgba(7,33,31,0.55) 68%, rgba(7,33,31,0.15) 88%, rgba(7,33,31,0.05) 100%)",
+        }}
+      />
+      {/* Bottom blend into page */}
+      <div
+        className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-night-deep/90 to-transparent"
+        aria-hidden="true"
+      />
+
+      {/* 3D particle atmosphere */}
       <HeroScene />
 
-      {/* Readability overlays */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/70 via-white/40 to-white dark:from-navy-950/80 dark:via-navy-950/50 dark:to-navy-950" aria-hidden="true" />
-      <div className="geo-pattern-soft pointer-events-none absolute inset-0" aria-hidden="true" />
-
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-24 pt-36 sm:px-6">
-        <div className="max-w-3xl">
+      {/* Content */}
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-24 pt-36 sm:px-6 md:pb-28 md:pt-40">
+        <div className="max-w-2xl">
           <p
-            data-hero-anim
-            className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-gold-dark dark:text-gold-light"
+            data-hero-enter
+            className="inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[13px] font-semibold text-sand-100 backdrop-blur-md"
           >
-            <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-            {d.heroBadge}
+            <span className="live-dot" aria-hidden="true" />
+            {d.heroEyebrow}
           </p>
 
-          {/* The single H1 of the page */}
           <h1
-            id="hero-heading"
-            data-hero-anim
-            className="mt-6 text-4xl font-extrabold leading-[1.12] tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl"
+            data-hero-enter
+            className="mt-6 font-display text-[2.6rem] font-semibold leading-[1.08] tracking-tight text-white sm:text-6xl lg:text-[4.4rem]"
           >
-            Learn the Quran Online{" "}
-            <span className="text-gold-gradient">with Certified Tutors</span>
-            <span className="sr-only"> — {d.heroTitle}</span>
+            Your child reciting the Quran{" "}
+            <em className="text-gold-gradient">beautifully</em> — within
+            months.
           </h1>
-          {locale !== "en" ? (
-            <p data-hero-anim className="mt-3 text-xl font-semibold text-slate-700 dark:text-slate-200" lang={locale}>
-              {d.heroTitle}
-            </p>
-          ) : null}
 
-          <p data-hero-anim className="mt-5 max-w-xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+          <p
+            data-hero-enter
+            className="mt-6 max-w-xl text-base leading-relaxed text-sand-100/85 sm:text-lg"
+          >
             {d.heroSubtitle}
           </p>
 
-          <div data-hero-anim className="mt-8 flex flex-wrap items-center gap-4">
-            <Button href="#trial" size="lg">
-              {d.heroCtaTrial}
-            </Button>
-            <Button href={whatsappLink()} external size="lg" variant="secondary">
-              <MessageCircle className="h-5 w-5 text-[#25d366]" aria-hidden="true" />
-              {d.heroCtaWhatsapp}
-            </Button>
+          <div
+            data-hero-enter
+            className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
+          >
+            <a href="#trial" className="btn-gold text-base">
+              {d.heroCtaPrimary}
+            </a>
+            <a
+              href="#how"
+              className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full border border-white/25 bg-white/5 px-7 py-3.5 font-semibold text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white/50 hover:bg-white/10"
+            >
+              {d.heroCtaSecondary}
+            </a>
           </div>
 
-          <figure data-hero-anim className="mt-10 max-w-xl border-s-2 border-gold/60 ps-4">
-            <blockquote
-              className="font-arabic text-2xl leading-loose text-slate-800 dark:text-gold-light"
-              lang="ar"
-              dir="rtl"
-            >
-              ﴿ خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ ﴾
-            </blockquote>
-            <figcaption className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-              “{d.heroHadith}” — {d.heroHadithSource}
-            </figcaption>
-          </figure>
+          <p data-hero-enter className="mt-5 text-sm text-sand-100/70">
+            Free 3-day trial · No credit card · Confirmed on WhatsApp
+          </p>
         </div>
       </div>
 
+      {/* Floating glass stat chips with slow parallax drift */}
+      <FloatingChip
+        className="right-[8%] top-[24%] animate-float"
+        depth={0.8}
+        scrollY={scrollY}
+        reduce={!!reduce}
+      >
+        <Sparkles className="h-4 w-4 text-gold-300" aria-hidden="true" />
+        <span className="text-sm font-semibold text-white">{d.heroChipRating}</span>
+      </FloatingChip>
+      <FloatingChip
+        className="right-[16%] top-[52%] animate-float-slow"
+        depth={1.3}
+        scrollY={scrollY}
+        reduce={!!reduce}
+      >
+        <Users className="h-4 w-4 text-gold-300" aria-hidden="true" />
+        <span className="text-sm font-semibold text-white">{d.heroChipStudents}</span>
+      </FloatingChip>
+      <FloatingChip
+        className="right-[6%] top-[74%] animate-float"
+        depth={1.8}
+        scrollY={scrollY}
+        reduce={!!reduce}
+      >
+        <Globe2 className="h-4 w-4 text-gold-300" aria-hidden="true" />
+        <span className="text-sm font-semibold text-white">{d.heroChipCountries}</span>
+      </FloatingChip>
+
       {/* Scroll cue */}
-      <div className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2" aria-hidden="true">
-        <div className="flex h-12 w-7 items-start justify-center rounded-full border-2 border-gold/50 p-1.5">
-          <div className="h-2.5 w-2.5 animate-bounce rounded-full bg-gold" />
-        </div>
-      </div>
+      <a
+        href="#guarantee"
+        aria-label="Scroll to see more"
+        className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 text-sand-100/60 transition-colors hover:text-sand-100 md:block"
+      >
+        <ArrowDown className="h-6 w-6 animate-bounce" aria-hidden="true" />
+      </a>
     </section>
   );
 }

@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { SITE } from "@/lib/site";
 import { FaqJsonLd } from "@/components/seo/JsonLd";
 import Hero from "@/components/home/Hero";
-import TrustBadges from "@/components/home/TrustBadges";
-import Stats from "@/components/home/Stats";
-import CourseShowcase from "@/components/home/CourseShowcase";
+import GuaranteeStrip from "@/components/home/GuaranteeStrip";
+import StatBand from "@/components/home/StatBand";
+import Courses from "@/components/home/Courses";
 import HowItWorks from "@/components/home/HowItWorks";
-import TeacherCarousel from "@/components/home/TeacherCarousel";
-import PricingPreview from "@/components/home/PricingPreview";
+import Teachers from "@/components/home/Teachers";
+import Pricing from "@/components/home/Pricing";
 import Results from "@/components/home/Results";
-import Testimonials from "@/components/home/Testimonials";
+import Reviews from "@/components/home/Reviews";
 import FreeTrialForm from "@/components/home/FreeTrialForm";
 import FAQ from "@/components/home/FAQ";
 import FinalCTA from "@/components/home/FinalCTA";
@@ -28,14 +28,14 @@ export default function HomePage() {
     <>
       <FaqJsonLd />
       <Hero />
-      <TrustBadges />
-      <Stats />
-      <CourseShowcase />
+      <GuaranteeStrip />
+      <StatBand />
+      <Courses />
       <HowItWorks />
-      <TeacherCarousel />
-      <PricingPreview />
+      <Teachers />
+      <Pricing />
       <Results />
-      <Testimonials />
+      <Reviews />
       <FreeTrialForm />
       <FAQ />
       <FinalCTA />

@@ -1,145 +1,133 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Clock, Facebook, Mail, MessageCircle } from "lucide-react";
-import { COURSES, SITE, whatsappLink } from "@/lib/site";
-
-const quickLinks = [
-  { label: "Home", href: "#top" },
-  { label: "Courses", href: "#courses" },
-  { label: "Teachers", href: "#teachers" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Free Trial", href: "#trial" },
-  { label: "FAQ", href: "#faq" },
-];
-
-const legalLinks = [
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Terms of Service", href: "/terms" },
-  { label: "Refund Policy", href: "/refund" },
-];
+import { SITE, whatsappLink } from "@/lib/site";
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
+  const courses = [
+    "Noorani Qaida",
+    "Quran Reading with Tajweed",
+    "Hifz (Memorization)",
+    "Quran for Kids",
+    "Quran for Sisters",
+    "Ijazah Program",
+  ];
+
   return (
-    <footer className="border-t border-white/10 bg-navy-950 text-slate-300">
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
+    <footer className="geo-pattern-dark relative overflow-hidden bg-night-deep text-sand-100">
+      <div className="relative mx-auto max-w-7xl px-4 pb-28 pt-16 sm:px-6 md:pb-10">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3">
-              <span className="grid h-11 w-11 shrink-0 place-items-center overflow-hidden rounded-2xl bg-white">
-                <Image src="/images/logo.jpg" alt={`${SITE.name} logo`} width={44} height={44} className="h-11 w-11 object-cover" />
+            <Link href="#top" className="flex items-center gap-2.5" aria-label={`${SITE.name} — home`}>
+              <span className="grid h-11 w-11 place-items-center overflow-hidden rounded-2xl bg-white">
+                <Image src="/images/logo.jpg" alt="" width={44} height={44} className="h-11 w-11 object-cover" />
               </span>
-              <span>
-                <p className="text-lg font-bold text-white">{SITE.name}</p>
-                <p className="text-xs font-medium uppercase tracking-[0.18em] text-gold-light">
+              <span className="leading-tight">
+                <span className="block text-base font-bold tracking-tight text-white">
+                  {SITE.name}
+                </span>
+                <span className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-300">
                   Online Quran Academy
-                </p>
+                </span>
               </span>
-            </div>
-            <p className="mt-4 text-sm leading-relaxed text-slate-400">
-              Live one-on-one Quran classes for kids and adults with certified
-              male and female tutors — serving families in the USA, UK, Canada,
-              Australia, UAE, Europe, Pakistan and worldwide.
+            </Link>
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-sand-100/70">
+              Live one-on-one online Quran classes for kids and adults — certified
+              male and female tutors, in every timezone.
             </p>
-            <p className="mt-4 text-sm text-slate-400">
-              Founded by <span className="font-semibold text-slate-200">{SITE.founder}</span>
-            </p>
+            <a
+              href="#trial"
+              className="btn-gold mt-6 px-6 py-3 text-sm"
+            >
+              Free Trial
+            </a>
           </div>
 
-          {/* Quick links */}
-          <nav aria-label="Footer">
-            <p className="text-sm font-semibold uppercase tracking-wider text-white">Explore</p>
+          {/* Courses */}
+          <nav aria-label="Footer courses">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-gold-300">
+              Courses
+            </p>
             <ul className="mt-4 space-y-2.5 text-sm">
-              {quickLinks.map((l) => (
-                <li key={l.href}>
-                  <a href={l.href} className="text-slate-400 transition-colors hover:text-gold-light">
-                    {l.label}
+              {courses.map((c) => (
+                <li key={c}>
+                  <a href="#courses" className="text-sand-100/75 transition-colors hover:text-gold-300">
+                    {c}
                   </a>
                 </li>
               ))}
             </ul>
           </nav>
 
-          {/* Courses */}
-          <nav aria-label="Popular courses">
-            <p className="text-sm font-semibold uppercase tracking-wider text-white">Popular courses</p>
+          {/* Academy */}
+          <nav aria-label="Footer academy">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-gold-300">
+              Academy
+            </p>
             <ul className="mt-4 space-y-2.5 text-sm">
-              {COURSES.slice(0, 6).map((c) => (
-                <li key={c.id}>
-                  <a href="#courses" className="text-slate-400 transition-colors hover:text-gold-light">
-                    {c.title}
-                  </a>
-                </li>
-              ))}
+              <li><a href="#how" className="text-sand-100/75 transition-colors hover:text-gold-300">How it works</a></li>
+              <li><a href="#teachers" className="text-sand-100/75 transition-colors hover:text-gold-300">Teachers</a></li>
+              <li><a href="#pricing" className="text-sand-100/75 transition-colors hover:text-gold-300">Pricing</a></li>
+              <li><a href="#reviews" className="text-sand-100/75 transition-colors hover:text-gold-300">Reviews</a></li>
+              <li><a href="#faq" className="text-sand-100/75 transition-colors hover:text-gold-300">FAQ</a></li>
             </ul>
           </nav>
 
           {/* Contact */}
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-white">Contact</p>
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-gold-300">
+              Contact
+            </p>
             <ul className="mt-4 space-y-3 text-sm">
               <li>
                 <a
                   href={whatsappLink()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-slate-300 transition-colors hover:text-gold-light"
+                  className="inline-flex items-center gap-2 text-sand-100/75 transition-colors hover:text-gold-300"
                 >
-                  <MessageCircle className="h-4 w-4 text-[#25d366]" aria-hidden="true" />
-                  WhatsApp: {SITE.whatsappDisplay}
+                  <MessageCircle className="h-4 w-4 text-wa" aria-hidden="true" />
+                  {SITE.whatsappDisplay}
                 </a>
               </li>
               <li>
                 <a
                   href={`mailto:${SITE.email}`}
-                  className="inline-flex items-center gap-2 text-slate-300 transition-colors hover:text-gold-light"
+                  className="inline-flex items-center gap-2 text-sand-100/75 transition-colors hover:text-gold-300"
                 >
-                  <Mail className="h-4 w-4 text-gold" aria-hidden="true" />
+                  <Mail className="h-4 w-4 text-gold-300" aria-hidden="true" />
                   {SITE.email}
                 </a>
+              </li>
+              <li className="inline-flex items-center gap-2 text-sand-100/75">
+                <Clock className="h-4 w-4 text-gold-300" aria-hidden="true" />
+                {SITE.businessHours}
               </li>
               <li>
                 <a
                   href="https://www.facebook.com/share/19PWaieQST/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-slate-300 transition-colors hover:text-gold-light"
+                  aria-label={`${SITE.name} on Facebook`}
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-sand-100/75 transition-colors hover:border-gold-400/60 hover:text-gold-300"
                 >
-                  <Facebook className="h-4 w-4 text-gold" aria-hidden="true" />
-                  Follow us on Facebook
+                  <Facebook className="h-5 w-5" aria-hidden="true" />
                 </a>
               </li>
-              <li className="inline-flex items-center gap-2 text-slate-400">
-                <Clock className="h-4 w-4 text-gold" aria-hidden="true" />
-                {SITE.businessHours}
-              </li>
             </ul>
-            <div className="mt-5 flex flex-wrap gap-2" aria-label="Accepted payment methods">
-              {["Visa", "Mastercard", "Stripe", "PayPal"].map((p) => (
-                <span
-                  key={p}
-                  className="rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] font-semibold tracking-wide text-slate-300"
-                >
-                  {p}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-slate-500 sm:flex-row">
-          <p>© {year} {SITE.name}. All rights reserved.</p>
-          <ul className="flex flex-wrap items-center gap-5">
-            {legalLinks.map((l) => (
-              <li key={l.href}>
-                <Link href={l.href} className="transition-colors hover:text-gold-light">
-                  {l.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs text-sand-100/55 sm:flex-row">
+          <p>
+            © {year} {SITE.name}. All rights reserved.
+          </p>
+          <p className="font-arabic text-sm text-gold-300/80" aria-hidden="true">
+            خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ
+          </p>
         </div>
       </div>
     </footer>

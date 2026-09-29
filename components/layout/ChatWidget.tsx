@@ -84,7 +84,7 @@ export default function ChatWidget() {
   };
 
   return (
-    <div className="fixed bottom-5 left-5 z-40 flex flex-col items-start gap-3">
+    <div className="fixed bottom-24 left-5 z-40 flex flex-col items-start gap-3 md:bottom-5">
       <AnimatePresence>
         {open ? (
           <motion.div
@@ -97,16 +97,16 @@ export default function ChatWidget() {
             className="glass flex h-[440px] w-[320px] flex-col overflow-hidden rounded-3xl shadow-card sm:w-[360px]"
           >
             {/* Header */}
-            <div className="flex items-center gap-3 border-b border-white/10 bg-navy-950/60 px-4 py-3">
-              <span className="grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br from-emeralddeep to-emerald-600">
-                <Bot className="h-5 w-5 text-gold-light" aria-hidden="true" />
+            <div className="flex items-center gap-3 border-b border-brand-800/10 bg-brand-800/5 px-4 py-3 dark:border-white/10 dark:bg-night-deep/60">
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br from-brand-700 to-brand-950">
+                <Bot className="h-5 w-5 text-gold-300" aria-hidden="true" />
               </span>
               <div className="flex-1">
-                <p className="text-sm font-semibold text-slate-900 dark:text-white">
+                <p className="text-sm font-semibold text-ink dark:text-sand-100">
                   QuranHub Assistant
                 </p>
-                <p className="flex items-center gap-1.5 text-xs text-emerald-600 dark:text-emerald-400">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden="true" />
+                <p className="flex items-center gap-1.5 text-xs text-brand-600 dark:text-gold-300">
+                  <span className="h-1.5 w-1.5 rounded-full bg-wa" aria-hidden="true" />
                   Online — replies instantly
                 </p>
               </div>
@@ -114,7 +114,7 @@ export default function ChatWidget() {
                 type="button"
                 onClick={() => setOpen(false)}
                 aria-label="Close chat"
-                className="rounded-full p-1.5 text-slate-500 transition-colors hover:bg-black/5 dark:text-slate-300 dark:hover:bg-white/10"
+                className="rounded-full p-1.5 text-ink-soft transition-colors hover:bg-black/5 dark:text-night-muted dark:hover:bg-white/10"
               >
                 <X className="h-5 w-5" aria-hidden="true" />
               </button>
@@ -127,18 +127,18 @@ export default function ChatWidget() {
                   key={m.id}
                   className={`max-w-[85%] rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed ${
                     m.from === "bot"
-                      ? "bg-navy-950/5 text-slate-800 dark:bg-white/10 dark:text-slate-100"
-                      : "ml-auto bg-gradient-to-r from-gold-dark to-gold text-navy-950"
+                      ? "bg-brand-800/5 text-ink dark:bg-white/10 dark:text-sand-100"
+                      : "ml-auto bg-gradient-to-r from-gold-500 to-gold-400 text-brand-950"
                   }`}
                 >
                   {m.text}
                 </div>
               ))}
               {typing ? (
-                <div className="w-fit rounded-2xl bg-navy-950/5 px-4 py-3 dark:bg-white/10" aria-label="Assistant is typing">
+                <div className="w-fit rounded-2xl bg-brand-800/5 px-4 py-3 dark:bg-white/10" aria-label="Assistant is typing">
                   <span className="flex gap-1">
                     {[0, 1, 2].map((i) => (
-                      <span key={i} className="h-1.5 w-1.5 animate-pulse rounded-full bg-gold" style={{ animationDelay: `${i * 0.2}s` }} />
+                      <span key={i} className="h-1.5 w-1.5 animate-pulse rounded-full bg-gold-400" style={{ animationDelay: `${i * 0.2}s` }} />
                     ))}
                   </span>
                 </div>
@@ -153,7 +153,7 @@ export default function ChatWidget() {
                   key={q}
                   type="button"
                   onClick={() => send(q)}
-                  className="shrink-0 rounded-full border border-gold/40 px-3 py-1.5 text-xs font-medium text-gold-dark transition-colors hover:bg-gold/10 dark:text-gold-light"
+                  className="shrink-0 rounded-full border border-gold-400/40 px-3 py-1.5 text-xs font-medium text-gold-700 transition-colors hover:bg-gold-400/10 dark:text-gold-300"
                 >
                   {q}
                 </button>
@@ -162,7 +162,7 @@ export default function ChatWidget() {
 
             {/* Input */}
             <form
-              className="flex items-center gap-2 border-t border-white/10 p-3"
+              className="flex items-center gap-2 border-t border-brand-800/10 p-3 dark:border-white/10"
               onSubmit={(e) => {
                 e.preventDefault();
                 send(input);
@@ -176,19 +176,19 @@ export default function ChatWidget() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Type your question…"
-                className="h-10 flex-1 rounded-full border border-white/10 bg-white/70 px-4 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-gold/60 dark:bg-white/5 dark:text-white"
+                className="h-11 flex-1 rounded-full border border-brand-800/15 bg-white/80 px-4 text-sm text-ink outline-none placeholder:text-ink-soft/60 focus:border-gold-400 dark:border-white/15 dark:bg-white/[0.06] dark:text-sand-100 dark:placeholder:text-night-muted/60"
               />
               <button
                 type="submit"
                 aria-label="Send message"
-                className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gradient-to-r from-gold-dark to-gold text-navy-950 shadow-glow transition-transform hover:scale-105"
+                className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-gradient-to-r from-gold-500 to-gold-400 text-brand-950 shadow-glow transition-transform hover:scale-105"
               >
                 <Send className="h-4 w-4" aria-hidden="true" />
               </button>
             </form>
 
             {/* Handoff */}
-            <div className="border-t border-white/10 p-3">
+            <div className="border-t border-brand-800/10 p-3 dark:border-white/10">
               <Button
                 href={whatsappLink("Assalamu Alaikum, I chatted with the website assistant and have a question.")}
                 external
@@ -199,7 +199,7 @@ export default function ChatWidget() {
                 <MessageCircle className="h-4 w-4" aria-hidden="true" />
                 Chat with Admin on WhatsApp
               </Button>
-              <p className="mt-1.5 text-center text-[11px] text-slate-500 dark:text-slate-400">
+              <p className="mt-1.5 text-center text-[11px] text-ink-soft dark:text-night-muted">
                 {SITE.whatsappDisplay} — usually replies within minutes
               </p>
             </div>
@@ -212,7 +212,7 @@ export default function ChatWidget() {
         onClick={handleOpen}
         aria-expanded={open}
         aria-label={open ? "Close chat assistant" : "Open chat assistant"}
-        className="grid h-14 w-14 place-items-center rounded-full border border-gold/40 bg-navy-950 text-gold-light shadow-glow transition-transform duration-300 hover:scale-110 dark:bg-navy-900"
+        className="grid h-14 w-14 place-items-center rounded-full border border-gold-400/40 bg-brand-800 text-gold-300 shadow-glow transition-transform duration-300 hover:scale-110 dark:bg-night-soft"
       >
         {open ? <X className="h-6 w-6" aria-hidden="true" /> : <MessageCircle className="h-6 w-6" aria-hidden="true" />}
       </button>

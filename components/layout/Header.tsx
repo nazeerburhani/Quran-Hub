@@ -9,19 +9,29 @@ import { dict } from "@/lib/i18n";
 import { SITE } from "@/lib/site";
 import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeToggle from "./ThemeToggle";
-import Button from "@/components/ui/Button";
 
 function LogoMark() {
   return (
     <span
       aria-hidden="true"
-      className="grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-2xl bg-white shadow-glow"
+      className="grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-2xl bg-white shadow-card"
     >
-      <Image src="/images/logo.jpg" alt="" width={40} height={40} className="h-10 w-10 object-cover" priority />
+      <Image
+        src="/images/logo.jpg"
+        alt=""
+        width={40}
+        height={40}
+        className="h-10 w-10 object-cover"
+        priority
+      />
     </span>
   );
 }
 
+/**
+ * Sticky glass header. Over the dark hero it starts transparent with light
+ * text; once scrolled it gains a frosted theme-aware background.
+ */
 export default function Header() {
   const { locale } = useLocale();
   const d = dict[locale];
@@ -43,22 +53,31 @@ export default function Header() {
     { label: d.navFaq, href: "#faq" },
   ];
 
+  const overHero = !scrolled && !open;
+  const navLinkCls = overHero
+    ? "text-sand-100/85 hover:bg-white/10 hover:text-white"
+    : "text-ink-soft hover:bg-brand-800/5 hover:text-brand-800 dark:text-night-muted dark:hover:bg-white/10 dark:hover:text-gold-300";
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "border-b border-white/10 bg-white/80 shadow-card backdrop-blur-xl dark:bg-navy-950/80"
-          : "bg-transparent"
+        scrolled || open
+          ? "border-b border-brand-800/10 bg-sand-50/85 shadow-card-light backdrop-blur-xl dark:border-white/10 dark:bg-night/85 dark:shadow-card"
+          : "border-b border-transparent bg-transparent"
       }`}
     >
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
         <Link href="#top" className="flex items-center gap-2.5" aria-label={`${SITE.name} — home`}>
           <LogoMark />
           <span className="leading-tight">
-            <span className="block text-[15px] font-bold tracking-tight text-slate-900 dark:text-white sm:text-base">
+            <span
+              className={`block text-[15px] font-bold tracking-tight sm:text-base ${
+                overHero ? "text-white" : "text-ink dark:text-sand-100"
+              }`}
+            >
               {SITE.name}
             </span>
-            <span className="hidden text-[11px] font-medium uppercase tracking-[0.18em] text-gold-dark dark:text-gold-light sm:block">
+            <span className="hidden text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-300 sm:block">
               Online Quran Academy
             </span>
           </span>
@@ -69,7 +88,7 @@ export default function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="rounded-full px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-gold/10 hover:text-gold-dark dark:text-slate-200 dark:hover:text-gold-light"
+              className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${navLinkCls}`}
             >
               {item.label}
             </a>
@@ -77,23 +96,45 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
+          {/* Live indicator */}
+          <span
+            className={`hidden items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-semibold xl:inline-flex ${
+              overHero
+                ? "border-white/20 bg-white/10 text-sand-100 backdrop-blur-md"
+                : "border-brand-800/15 bg-brand-800/5 text-brand-700 dark:border-white/15 dark:bg-white/5 dark:text-gold-300"
+            }`}
+            role="status"
+          >
+            <span className="live-dot" aria-hidden="true" />
+            {d.liveNow}
+          </span>
+
           <div className="hidden sm:block">
             <LanguageSwitcher />
           </div>
           <ThemeToggle />
-          <div className="hidden md:block">
-            <Button href="#trial" size="sm">
-              {d.bookTrial}
-            </Button>
-          </div>
+          <a
+            href="#trial"
+            className="btn-gold hidden !min-h-[44px] px-5 py-2.5 text-sm md:inline-flex"
+          >
+            {d.headerCta}
+          </a>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
-            className="glass inline-flex h-10 w-10 items-center justify-center rounded-full text-slate-700 dark:text-slate-200 lg:hidden"
+            className={`inline-flex h-11 w-11 items-center justify-center rounded-full border transition-colors lg:hidden ${
+              overHero
+                ? "border-white/20 bg-white/10 text-white backdrop-blur-md"
+                : "glass text-ink dark:text-sand-100"
+            }`}
           >
-            {open ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
+            {open ? (
+              <X className="h-5 w-5" aria-hidden="true" />
+            ) : (
+              <Menu className="h-5 w-5" aria-hidden="true" />
+            )}
           </button>
         </div>
       </div>
@@ -102,7 +143,7 @@ export default function Header() {
       {open ? (
         <nav
           aria-label="Mobile"
-          className="border-t border-white/10 bg-white/95 px-4 pb-6 pt-3 backdrop-blur-xl dark:bg-navy-950/95 lg:hidden"
+          className="border-t border-brand-800/10 bg-sand-50/95 px-4 pb-6 pt-3 backdrop-blur-xl dark:border-white/10 dark:bg-night/95 lg:hidden"
         >
           <ul className="space-y-1">
             {nav.map((item) => (
@@ -110,7 +151,7 @@ export default function Header() {
                 <a
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="block rounded-xl px-4 py-3 text-[15px] font-medium text-slate-800 transition-colors hover:bg-gold/10 dark:text-slate-100"
+                  className="block rounded-xl px-4 py-3 text-[15px] font-medium text-ink transition-colors hover:bg-brand-800/5 dark:text-sand-100 dark:hover:bg-white/10"
                 >
                   {item.label}
                 </a>
@@ -118,12 +159,23 @@ export default function Header() {
             ))}
           </ul>
           <div className="mt-4 flex items-center gap-3 px-1">
+            <span
+              className="inline-flex items-center gap-2 rounded-full border border-brand-800/15 bg-brand-800/5 px-3 py-1.5 text-xs font-semibold text-brand-700 dark:border-white/15 dark:bg-white/5 dark:text-gold-300"
+              role="status"
+            >
+              <span className="live-dot" aria-hidden="true" />
+              {d.liveNow}
+            </span>
             <div className="sm:hidden">
               <LanguageSwitcher />
             </div>
-            <Button href="#trial" size="sm" className="md:hidden" onClick={() => setOpen(false)}>
-              {d.bookTrial}
-            </Button>
+            <a
+              href="#trial"
+              onClick={() => setOpen(false)}
+              className="btn-gold !min-h-[44px] px-5 py-2.5 text-sm md:hidden"
+            >
+              {d.headerCta}
+            </a>
           </div>
         </nav>
       ) : null}
