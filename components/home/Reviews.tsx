@@ -1,27 +1,27 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { Quote, Star } from "lucide-react";
-import { REVIEWS, type Review } from "@/lib/site";
+import { BadgeCheck, ExternalLink, Facebook, Quote, ThumbsUp } from "lucide-react";
+import { REVIEWS, SITE, type Review } from "@/lib/site";
 import { useLocale } from "@/components/layout/LanguageSwitcher";
 import { dict } from "@/lib/i18n";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
 
-function StarRow({ rating, label }: { rating: number; label: string }) {
+function VerifiedBadge() {
   return (
-    <span
-      role="img"
-      aria-label={label}
-      className="inline-flex items-center gap-0.5 text-gold-500 dark:text-gold-300"
-    >
-      {Array.from({ length: 5 }, (_, i) => (
-        <Star
-          key={i}
-          className={`h-4 w-4 ${i < rating ? "fill-current" : "opacity-30"}`}
-          aria-hidden="true"
-        />
-      ))}
+    <span className="inline-flex items-center gap-1.5 rounded-full bg-[#1877F2]/10 px-3 py-1 text-[11px] font-bold text-[#1877F2] dark:bg-[#1877F2]/20 dark:text-sky-300">
+      <BadgeCheck className="h-3.5 w-3.5" aria-hidden="true" />
+      Verified Facebook review
+    </span>
+  );
+}
+
+function RecommendsPill() {
+  return (
+    <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-600/10 px-3 py-1 text-[11px] font-bold text-emerald-700 dark:bg-emerald-400/15 dark:text-emerald-300">
+      <ThumbsUp className="h-3.5 w-3.5" aria-hidden="true" />
+      Recommends
     </span>
   );
 }
@@ -30,13 +30,11 @@ function ReviewCard({ review }: { review: Review }) {
   return (
     <article
       className="glass w-[300px] shrink-0 rounded-3xl p-6 shadow-card-light dark:shadow-card sm:w-[360px]"
-      aria-label={`Review by ${review.name}`}
+      aria-label={`Facebook review by ${review.name}`}
     >
-      <div className="flex items-center justify-between gap-2">
-        <StarRow rating={review.rating} label={`${review.rating} out of 5 stars`} />
-        <span className="rounded-full bg-brand-800/10 px-3 py-1 text-[11px] font-semibold text-brand-700 dark:bg-gold-400/15 dark:text-gold-300">
-          {review.course}
-        </span>
+      <div className="flex flex-wrap items-center gap-2">
+        <VerifiedBadge />
+        {review.recommends ? <RecommendsPill /> : null}
       </div>
       <blockquote className="mt-4 text-[15px] leading-relaxed text-ink dark:text-sand-100">
         “{review.text}”
@@ -44,15 +42,15 @@ function ReviewCard({ review }: { review: Review }) {
       <footer className="mt-5 flex items-center gap-3">
         <span
           aria-hidden="true"
-          className="text-2xl"
-          role="img"
-          aria-label={`Flag of ${review.country}`}
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1877F2]/10 text-[#1877F2] dark:bg-[#1877F2]/20 dark:text-sky-300"
         >
-          {review.flag}
+          <Facebook className="h-5 w-5" />
         </span>
         <div>
           <p className="text-sm font-bold text-ink dark:text-sand-100">{review.name}</p>
-          <p className="text-xs text-ink-soft dark:text-night-muted">{review.country}</p>
+          <p className="text-xs text-ink-soft dark:text-night-muted">
+            Posted on Facebook · {review.date}
+          </p>
         </div>
       </footer>
     </article>
@@ -98,51 +96,80 @@ export default function Reviews() {
           title={d.reviewsTitle}
         />
 
-        {/* Summary bar */}
+        {/* Summary bar — genuine Facebook page rating */}
         <Reveal className="mt-10">
-          <div className="mx-auto flex max-w-3xl flex-col items-center gap-3 rounded-3xl border border-gold-400/30 bg-white/60 px-6 py-7 text-center shadow-card-light backdrop-blur-xl dark:bg-white/[0.04] dark:shadow-card sm:flex-row sm:justify-center sm:gap-8">
-            <p className="font-display text-6xl font-semibold text-ink dark:text-sand-100">
-              5<span className="text-2xl text-ink-soft dark:text-night-muted">/5</span>
+          <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-3xl border border-gold-400/30 bg-white/60 px-6 py-7 text-center shadow-card-light backdrop-blur-xl dark:bg-white/[0.04] dark:shadow-card sm:flex-row sm:justify-center sm:gap-8 sm:text-start">
+            <p className="font-display text-5xl font-semibold text-ink dark:text-sand-100 sm:text-6xl">
+              100%
             </p>
-            <div className="sm:text-start">
-              <StarRow rating={5} label="5 out of 5 stars" />
-              <p className="mt-1.5 text-sm text-ink-soft dark:text-night-muted">
+            <div>
+              <p className="text-lg font-bold text-ink dark:text-sand-100">
+                recommend on Facebook
+              </p>
+              <p className="mt-1 text-sm text-ink-soft dark:text-night-muted">
                 {d.reviewsFrom}
               </p>
-              <p className="mt-2 flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-widest text-ink-soft/80 dark:text-night-muted/80 sm:justify-start">
-                <span className="rounded-md border border-brand-800/15 px-2 py-1 dark:border-white/15">Facebook</span>
-                <span className="rounded-md border border-brand-800/15 px-2 py-1 dark:border-white/15">Verified reviews</span>
+              <p className="mt-3 flex flex-wrap items-center justify-center gap-2 sm:justify-start">
+                <span className="inline-flex items-center gap-1.5 rounded-md border border-brand-800/15 px-2 py-1 text-xs font-bold text-ink-soft dark:border-white/15 dark:text-night-muted">
+                  <Facebook className="h-3.5 w-3.5 text-[#1877F2]" aria-hidden="true" />
+                  Facebook
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-md border border-brand-800/15 px-2 py-1 text-xs font-bold text-ink-soft dark:border-white/15 dark:text-night-muted">
+                  <BadgeCheck className="h-3.5 w-3.5 text-emerald-600" aria-hidden="true" />
+                  Verified reviews
+                </span>
+                <a
+                  href={SITE.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 rounded-md bg-[#1877F2] px-3 py-1.5 text-xs font-bold text-white transition hover:bg-[#1464cc]"
+                >
+                  Read all reviews
+                  <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+                </a>
               </p>
             </div>
           </div>
         </Reveal>
 
-        {/* Featured spotlight */}
+        {/* Featured spotlight — genuine review */}
         <Reveal className="mt-8">
           <article
             className="relative mx-auto max-w-3xl overflow-hidden rounded-3xl bg-gradient-to-br from-brand-800 to-brand-950 p-8 shadow-card sm:p-10"
             aria-label={`${d.featuredReview}: ${featured.name}`}
           >
             <Quote className="absolute end-6 top-6 h-16 w-16 text-gold-400/20" aria-hidden="true" />
-            <p className="text-xs font-bold uppercase tracking-[0.22em] text-gold-300">
-              {d.featuredReview}
-            </p>
+            <div className="flex flex-wrap items-center gap-2">
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-gold-300">
+                {d.featuredReview}
+              </p>
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-[11px] font-bold text-sky-200">
+                <BadgeCheck className="h-3.5 w-3.5" aria-hidden="true" />
+                Verified Facebook review
+              </span>
+            </div>
             <blockquote className="mt-4 font-display text-xl italic leading-relaxed text-white sm:text-2xl">
               “{featured.text}”
             </blockquote>
             <footer className="mt-6 flex items-center gap-3">
-              <span className="text-3xl" role="img" aria-label={`Flag of ${featured.country}`}>
-                {featured.flag}
+              <span
+                aria-hidden="true"
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-sky-200"
+              >
+                <Facebook className="h-5 w-5" />
               </span>
               <div>
                 <p className="font-bold text-white">{featured.name}</p>
                 <p className="text-sm text-sand-100/70">
-                  {featured.country} · {featured.course}
+                  Posted on Facebook · {featured.date}
                 </p>
               </div>
-              <span className="ms-auto">
-                <StarRow rating={featured.rating} label={`${featured.rating} out of 5 stars`} />
-              </span>
+              {featured.recommends ? (
+                <span className="ms-auto inline-flex items-center gap-1.5 rounded-full bg-emerald-400/15 px-3 py-1 text-[11px] font-bold text-emerald-200">
+                  <ThumbsUp className="h-3.5 w-3.5" aria-hidden="true" />
+                  Recommends
+                </span>
+              ) : null}
             </footer>
           </article>
         </Reveal>
@@ -153,7 +180,7 @@ export default function Reviews() {
         ref={marqueeRef}
         className="marquee relative pb-20"
         role="region"
-        aria-label="Parent reviews carousel"
+        aria-label="Facebook reviews carousel"
       >
         <div
           className="marquee-track flex w-max gap-5 px-4"
@@ -173,10 +200,6 @@ export default function Reviews() {
           aria-hidden="true"
         />
       </div>
-
-      <p className="sr-only">
-        Sample reviews shown for design purposes — replace with verified parent reviews before launch.
-      </p>
     </section>
   );
 }

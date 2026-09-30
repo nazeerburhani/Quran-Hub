@@ -36,6 +36,23 @@ const amiri = Amiri({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
+  /**
+   * Facebook domain verification for Meta Business Suite
+   * (Business Settings → Brand Safety → Domains → Add quranhub.online).
+   * Paste the token Meta gives you into the NEXT_PUBLIC_FB_DOMAIN_VERIFICATION
+   * env var in Vercel; the meta tag renders only when the token is set.
+   * Until then this stays empty and harmless.
+   */
+  verification: {
+    other: {
+      ...(process.env.NEXT_PUBLIC_FB_DOMAIN_VERIFICATION
+        ? {
+            "facebook-domain-verification":
+              process.env.NEXT_PUBLIC_FB_DOMAIN_VERIFICATION,
+          }
+        : {}),
+    },
+  },
   title: {
     default: `${SITE.name} — Online Quran Academy | Learn Quran Online`,
     template: `%s | ${SITE.name}`,

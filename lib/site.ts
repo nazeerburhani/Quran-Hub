@@ -523,104 +523,61 @@ export const FAQS: Faq[] = [
 ];
 
 /* ------------------------------------------------------------------ */
-/* Reviews — !!! SAMPLE DATA !!!                                       */
-/* Every review below is illustrative placeholder copy written for     */
-/* design purposes. The owner MUST replace these with real, verified  */
-/* parent reviews before launch. Never present them as genuine.        */
+/* ------------------------------------------------------------------ */
+/* Reviews — GENUINE Facebook reviews                               */
+/* Verbatim from the "QuranHub - Online Quran Academy" Facebook     */
+/* Page Reviews tab (page header: "100% recommend"). Read 2026-09-29. */
+/* Facebook reviews carry a "recommends" label, not star ratings —   */
+/* never convert them into star scores. Text is never paraphrased.  */
 /* ------------------------------------------------------------------ */
 export interface Review {
   id: string;
   name: string;
-  country: string;
-  /** Emoji flag for the reviewer's country. */
-  flag: string;
-  course: string;
-  rating: number;
+  /** Date the review was posted on Facebook. */
+  date: string;
+  /** Verbatim review text, exactly as written by the reviewer. */
   text: string;
+  /** Facebook's "recommends" label — the only rating Facebook reviews carry. */
+  recommends: boolean;
   featured?: boolean;
 }
 
 export const REVIEWS: Review[] = [
-  // SAMPLE DATA — replace with a real verified parent review before launch.
   {
-    id: "r1",
-    name: "Sarah M.",
-    country: "United States",
-    flag: "🇺🇸",
-    course: "Quran for Kids",
-    rating: 5,
-    text: "My 7-year-old went from not knowing the alphabet to reading short surahs in four months. His teacher is so patient — he actually reminds me when it's class time.",
+    id: "fb-osama-hassan",
+    name: "Osama Hassan",
+    date: "December 4, 2023",
+    text: "QuranHub is great! The teachers are good, and the services they offer are top-notch. Perfect for anyone wanting to learn about the Quran.",
+    recommends: true,
     featured: true,
   },
-  // SAMPLE DATA — replace with a real verified parent review before launch.
   {
-    id: "r2",
-    name: "Ahmed R.",
-    country: "United Kingdom",
-    flag: "🇬🇧",
-    course: "Tajweed",
-    rating: 5,
-    text: "As a working father I thought I'd missed my chance. My Sheikh corrected years of Tajweed mistakes in weeks, and the evening slots fit around my job perfectly.",
+    id: "fb-mounira-chettouh",
+    name: "Mounira Chettouh",
+    date: "December 3, 2023",
+    text: "its very good. You will learn a lot from it. before this I didn't even know anything about the Quran but now I have learned a lot Mashallah. It was all because of this.",
+    recommends: true,
   },
-  // SAMPLE DATA — replace with a real verified parent review before launch.
   {
-    id: "r3",
-    name: "Fatima K.",
-    country: "Canada",
-    flag: "🇨🇦",
-    course: "Hifz",
-    rating: 5,
-    text: "Learning with a female teacher made all the difference for me. The Sabaq–Sabqi–Manzil system keeps my memorization strong — five paras and counting, Alhamdulillah.",
+    id: "fb-kamran-shinwaari",
+    name: "Kamran ShinWaari",
+    date: "December 2, 2023",
+    text: "Absolutely recommend QuranHub! It's super easy and one of the best places to learn the Quran online. Whether you want to read, memorize, or understand, it's a top pick. Give it a go \u2013 you won't be disappointed!",
+    recommends: true,
   },
-  // SAMPLE DATA — replace with a real verified parent review before launch.
   {
-    id: "r4",
-    name: "Bilal S.",
-    country: "Australia",
-    flag: "🇦🇺",
-    course: "Quran for Kids",
-    rating: 5,
-    text: "The free trial convinced us on day one. Both my kids learn here now, and the weekly parent report means I always know exactly how they're progressing.",
+    id: "fb-muhammad-yahya-aziz",
+    name: "Muhammad Yahya Aziz",
+    date: "August 12, 2023",
+    text: "Great Efforts, skilled Tutors \u2013May your efforts be accepted. QuranHub is the excellent way to learn Quran in correct way with Tajweed. the teacher is great in teaching and the admin act really efficiently I would recommend QuranHub.",
+    recommends: true,
   },
-  // SAMPLE DATA — replace with a real verified parent review before launch.
   {
-    id: "r5",
-    name: "Amina Y.",
-    country: "UAE",
-    flag: "🇦🇪",
-    course: "New Muslims",
-    rating: 5,
-    text: "I reverted last year and was nervous about starting. The New Muslims course had me praying confidently within weeks — kind teachers, never judgmental, always encouraging.",
-  },
-  // SAMPLE DATA — replace with a real verified parent review before launch.
-  {
-    id: "r6",
-    name: "Hassan T.",
-    country: "Germany",
-    flag: "🇩🇪",
-    course: "Noorani Qaida",
-    rating: 5,
-    text: "My 5-year-old daughter finished Noorani Qaida in three months and started reading the Quran. The teacher makes every lesson feel like play, but the progress is real.",
-  },
-  // SAMPLE DATA — replace with a real verified parent review before launch.
-  {
-    id: "r7",
-    name: "Maryam A.",
-    country: "Malaysia",
-    flag: "🇲🇾",
-    course: "Sisters",
-    rating: 5,
-    text: "As a sister I wanted a female teacher, and Ustadha's Tajweed corrections are precise and gentle. My recitation in Taraweeh this Ramadan was unrecognizable.",
-  },
-  // SAMPLE DATA — replace with a real verified parent review before launch.
-  {
-    id: "r8",
-    name: "Omar F.",
-    country: "South Africa",
-    flag: "🇿🇦",
-    course: "Ijazah",
-    rating: 5,
-    text: "I recited the full Quran to my Sheikh over eighteen months and earned my Ijazah in Hafs. The discipline of the program changed not just my recitation, but my life.",
+    id: "fb-amir-hashmi",
+    name: "Amir Hashmi",
+    date: "August 12, 2023",
+    text: "\u2b50\u2b50\u2b50\u2b50\u2b50 (5 Stars) Definitely i would recommend QuranHub - Online Quran Academy. Top-notch instruction, interactive platform, and flexible learning. Ideal for all levels of learners seeking a convenient and enriching Quranic education.",
+    recommends: true,
   },
 ];
 
