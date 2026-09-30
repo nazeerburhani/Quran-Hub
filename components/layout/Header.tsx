@@ -168,19 +168,19 @@ export default function Header() {
           />
           <div className="relative flex h-full flex-col">
             {/* Top bar mirrors the header */}
-            <div className="flex h-[68px] shrink-0 items-center justify-between border-b border-gold-500/25 px-4 sm:px-6">
+            <div className="flex h-[60px] shrink-0 items-center justify-between border-b border-gold-500/25 px-4 sm:px-6">
               <Link
                 href="#top"
                 onClick={() => setOpen(false)}
-                className="flex items-center gap-2.5"
+                className="flex items-center gap-2"
                 aria-label={`${SITE.name} — home`}
               >
                 <LogoMark />
                 <span className="leading-tight">
-                  <span className="block text-[17px] font-bold tracking-tight text-ink dark:text-sand-100">
+                  <span className="block text-base font-bold tracking-tight text-ink dark:text-sand-100">
                     {SITE.name}
                   </span>
-                  <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-gold-600 dark:text-gold-300">
+                  <span className="block text-[9px] font-semibold uppercase tracking-[0.18em] text-gold-600 dark:text-gold-300">
                     Online Quran Academy
                   </span>
                 </span>
@@ -199,26 +199,26 @@ export default function Header() {
             </div>
 
             {/* Nav links */}
-            <nav aria-label="Mobile" className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
-              <ul className="mx-auto w-full max-w-md space-y-2">
+            <nav aria-label="Mobile" className="flex-1 overflow-y-auto px-4 py-4 sm:px-6">
+              <ul className="mx-auto w-full max-w-md space-y-1">
                 {nav.map((item, i) => (
                   <li
                     key={item.href}
                     className="animate-menu-item"
-                    style={{ animationDelay: `${90 + i * 70}ms` }}
+                    style={{ animationDelay: `${60 + i * 50}ms` }}
                   >
                     <a
                       href={item.href}
                       onClick={() => setOpen(false)}
-                      className="group flex items-center gap-4 rounded-2xl border border-transparent px-4 py-3.5 transition-all duration-200 hover:border-gold-500/30 hover:bg-white/70 hover:shadow-[0_8px_24px_rgba(18,51,50,0.08)] dark:hover:border-gold-400/20 dark:hover:bg-white/5"
+                      className="group flex items-center gap-3 rounded-2xl border border-transparent px-3 py-2.5 transition-all duration-200 hover:border-gold-500/30 hover:bg-white/70 hover:shadow-[0_8px_24px_rgba(18,51,50,0.08)] dark:hover:border-gold-400/20 dark:hover:bg-white/5"
                     >
-                      <span className="w-7 shrink-0 font-display text-sm font-semibold text-gold-600 dark:text-gold-400">
+                      <span className="w-6 shrink-0 font-display text-[13px] font-semibold text-gold-600 dark:text-gold-400">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-800/10 text-brand-800 transition-colors duration-200 group-hover:bg-brand-800 group-hover:text-sand-100 dark:bg-gold-400/10 dark:text-gold-300 dark:group-hover:bg-gold-400 dark:group-hover:text-night">
+                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-brand-800/10 text-brand-800 transition-colors duration-200 group-hover:bg-brand-800 group-hover:text-sand-100 dark:bg-gold-400/10 dark:text-gold-300 dark:group-hover:bg-gold-400 dark:group-hover:text-night">
                         <item.Icon className="h-5 w-5" aria-hidden="true" />
                       </span>
-                      <span className="flex-1 text-xl font-bold tracking-tight text-ink dark:text-sand-100">
+                      <span className="flex-1 text-lg font-bold tracking-tight text-ink dark:text-sand-100">
                         {item.label}
                       </span>
                       <ChevronRight
@@ -232,8 +232,8 @@ export default function Header() {
 
               {/* Trial CTA card */}
               <div
-                className="animate-menu-item relative mx-auto mt-6 w-full max-w-md overflow-hidden rounded-3xl bg-gradient-to-br from-brand-800 via-brand-900 to-night-deep p-6 text-sand-100 shadow-[0_20px_50px_rgba(10,31,30,0.35)]"
-                style={{ animationDelay: "480ms" }}
+                className="animate-menu-item relative mx-auto mt-4 w-full max-w-md overflow-hidden rounded-3xl bg-gradient-to-br from-brand-800 via-brand-900 to-night-deep p-5 text-sand-100 shadow-[0_20px_50px_rgba(10,31,30,0.35)]"
+                style={{ animationDelay: "340ms" }}
               >
                 <span
                   aria-hidden="true"
@@ -246,7 +246,7 @@ export default function Header() {
                 <p className="relative text-[11px] font-bold uppercase tracking-[0.22em] text-gold-300">
                   {d.guaranteeTrial}
                 </p>
-                <p className="relative mt-2 font-display text-2xl font-bold leading-snug">
+                <p className="relative mt-2 font-display text-xl font-bold leading-snug">
                   {d.heroCtaPrimary}
                 </p>
                 <p className="relative mt-2 flex items-center gap-2 text-sm text-sand-100/75">
@@ -256,7 +256,7 @@ export default function Header() {
                 <a
                   href="#trial"
                   onClick={() => setOpen(false)}
-                  className="btn-gold relative mt-5 w-full !min-h-[52px] text-base"
+                  className="btn-gold relative mt-4 w-full !min-h-[48px] text-[15px]"
                 >
                   {d.headerCta}
                   <ArrowRight className="h-5 w-5" aria-hidden="true" />
@@ -265,7 +265,7 @@ export default function Header() {
                   href={whatsappLink()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="relative mt-3 flex items-center justify-center gap-2 rounded-full border border-white/15 px-4 py-3 text-sm font-semibold text-sand-100/90 transition-colors hover:border-wa/60 hover:text-white"
+                  className="relative mt-2.5 flex items-center justify-center gap-2 rounded-full border border-white/15 px-4 py-2.5 text-[13px] font-semibold text-sand-100/90 transition-colors hover:border-wa/60 hover:text-white"
                 >
                   <MessageCircle className="h-4 w-4 text-wa" aria-hidden="true" />
                   WhatsApp: {SITE.whatsappDisplay}
@@ -274,7 +274,7 @@ export default function Header() {
             </nav>
 
             {/* Bottom bar */}
-            <div className="shrink-0 border-t border-gold-500/25 px-4 py-4 sm:px-6">
+            <div className="shrink-0 border-t border-gold-500/25 px-4 py-3 sm:px-6">
               <div className="mx-auto flex w-full max-w-md items-center justify-between gap-3">
                 <span
                   className="inline-flex items-center gap-2 rounded-full border border-brand-800/15 bg-brand-800/5 px-3 py-1.5 text-xs font-semibold text-brand-700 dark:border-white/15 dark:bg-white/5 dark:text-gold-300"
