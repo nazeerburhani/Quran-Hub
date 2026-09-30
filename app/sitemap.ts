@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { SITE } from "@/lib/site";
+import { GUIDE_LIST } from "@/lib/guides";
 
 const COURSE_SLUGS = [
   "online-quran-classes-for-kids",
@@ -12,10 +13,10 @@ const COURSE_SLUGS = [
   "online-ijazah-course",
 ];
 
-const TOP_PAGES = ["fees", "free-trial", "usa", "uk", "canada", "australia"];
+const TOP_PAGES = ["fees", "free-trial", "usa", "uk", "canada", "australia", "guides"];
 
 /**
- * XML sitemap — homepage + all SEO landing pages (courses, fees, trial, geo).
+ * XML sitemap — homepage + all SEO landing pages (courses, fees, trial, geo, guides).
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -31,6 +32,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.9,
+    })),
+    ...GUIDE_LIST.map((g) => ({
+      url: `${SITE.url}/guides/${g.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
     })),
     ...TOP_PAGES.map((slug) => ({
       url: `${SITE.url}/${slug}`,

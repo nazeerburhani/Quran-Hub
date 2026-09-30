@@ -54,13 +54,14 @@ export function pageUrl(d: LandingPageData): string {
 
 function LandingJsonLd({ data }: { data: LandingPageData }) {
   const url = pageUrl(data);
+  const crumbName =
+    data.basePath === "/courses" ? "Courses" : data.basePath === "/guides" ? "Guides" : "QuranHub";
   const breadcrumbItems = [
     { name: "Home", url: SITE.url },
-    ...(data.basePath
-      ? [{ name: data.basePath === "/courses" ? "Courses" : "QuranHub", url: `${SITE.url}${data.basePath}` }]
-      : []),
+    ...(data.basePath ? [{ name: crumbName, url: `${SITE.url}${data.basePath}` }] : []),
     { name: data.breadcrumb, url },
   ];
+  const isGuide = data.basePath === "/guides";
   const jsonLd = [
     {
       "@context": "https://schema.org",
@@ -72,23 +73,46 @@ function LandingJsonLd({ data }: { data: LandingPageData }) {
         item: b.url,
       })),
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "Course",
-      name: data.courseName,
-      description: data.courseDescription,
-      url,
-      provider: {
-        "@type": "EducationalOrganization",
-        name: SITE.name,
-        url: SITE.url,
-      },
-      hasCourseInstance: {
-        "@type": "CourseInstance",
-        courseMode: "online",
-        courseWorkload: "P30D",
-      },
-    },
+    ...(isGuide
+      ? [
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: data.h1,
+            description: data.courseDescription,
+            url,
+            inLanguage: "en-US",
+            author: {
+              "@type": "EducationalOrganization",
+              name: SITE.name,
+              url: SITE.url,
+            },
+            publisher: {
+              "@type": "EducationalOrganization",
+              name: SITE.name,
+              url: SITE.url,
+            },
+          },
+        ]
+      : [
+          {
+            "@context": "https://schema.org",
+            "@type": "Course",
+            name: data.courseName,
+            description: data.courseDescription,
+            url,
+            provider: {
+              "@type": "EducationalOrganization",
+              name: SITE.name,
+              url: SITE.url,
+            },
+            hasCourseInstance: {
+              "@type": "CourseInstance",
+              courseMode: "online",
+              courseWorkload: "P30D",
+            },
+          },
+        ]),
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -119,6 +143,10 @@ const TRUST_CHIPS = [
 ];
 
 export default function LandingPage({ data }: { data: LandingPageData }) {
+  const crumbName =
+    data.basePath === "/courses" ? "Courses" : data.basePath === "/guides" ? "Guides" : "QuranHub";
+  const crumbHref =
+    data.basePath === "/courses" ? "/#courses" : data.basePath === "/guides" ? "/guides" : "/";
   return (
     <>
       <LandingJsonLd data={data} />
@@ -135,8 +163,8 @@ export default function LandingPage({ data }: { data: LandingPageData }) {
             <>
               <li aria-hidden="true"><ChevronRight className="h-3.5 w-3.5" /></li>
               <li>
-                <Link href={data.basePath === "/courses" ? "/#courses" : "/"} className="transition-colors hover:text-brand-700 dark:hover:text-gold-300">
-                  {data.basePath === "/courses" ? "Courses" : "QuranHub"}
+                <Link href={crumbHref} className="transition-colors hover:text-brand-700 dark:hover:text-gold-300">
+                  {crumbName}
                 </Link>
               </li>
             </>
