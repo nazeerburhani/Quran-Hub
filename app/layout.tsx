@@ -114,7 +114,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" dir="ltr" suppressHydrationWarning>
+    <html lang="en-US" dir="ltr" suppressHydrationWarning>
       <body
         className={`${inter.variable} ${fraunces.variable} ${amiri.variable} bg-sand-50 font-sans text-ink antialiased transition-colors duration-300 dark:bg-night dark:text-sand-100`}
       >
