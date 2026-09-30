@@ -40,7 +40,7 @@ export function WebSiteJsonLd() {
         "@type": "WebSite",
         name: SITE.name,
         url: SITE.url,
-        inLanguage: ["en", "ur", "ar"],
+        inLanguage: ["en"],
       }}
     />
   );

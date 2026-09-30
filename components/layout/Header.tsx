@@ -21,7 +21,6 @@ import {
 import { useLocale } from "./LanguageSwitcher";
 import { dict } from "@/lib/i18n";
 import { SITE, whatsappLink } from "@/lib/site";
-import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeToggle from "./ThemeToggle";
 
 
@@ -124,9 +123,6 @@ export default function Header() {
             {d.liveNow}
           </span>
 
-          <div className="hidden sm:block">
-            <LanguageSwitcher />
-          </div>
           <ThemeToggle />
           <a
             href="#trial"
@@ -283,7 +279,7 @@ export default function Header() {
                   <span className="live-dot" aria-hidden="true" />
                   {d.liveNow}
                 </span>
-                <LanguageSwitcher />
+                <ThemeToggle />
               </div>
             </div>
           </div>
