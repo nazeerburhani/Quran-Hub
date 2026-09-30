@@ -9,9 +9,11 @@ export const SITE = {
   whatsappDisplay: "+1 917 722 5120",
   /** Digits only, for wa.me links. */
   whatsappRaw: "19177225120",
-  email: "info@quranhub.academy",
+  email: "info@quranhub.online",
+  /** Second official inbox, shown alongside the primary email. */
+  supportEmail: "support@quranhub.online",
   /** Inbox where website lead notifications are emailed. */
-  leadsEmail: "nazeerahmad.sbg@gmail.com",
+  leadsEmail: "info@quranhub.online",
   defaultWhatsappMessage: "Assalamu Alaikum, I want to know about Quran classes.",
   url: "https://quranhub.online",
   facebook: "https://www.facebook.com/share/19PWaieQST/",

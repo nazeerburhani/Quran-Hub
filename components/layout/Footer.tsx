@@ -105,6 +105,15 @@ export default function Footer() {
                   {SITE.email}
                 </a>
               </li>
+              <li>
+                <a
+                  href={`mailto:${SITE.supportEmail}`}
+                  className="inline-flex items-center gap-2 text-sand-100/75 transition-colors hover:text-gold-300"
+                >
+                  <Mail className="h-4 w-4 text-gold-300" aria-hidden="true" />
+                  {SITE.supportEmail}
+                </a>
+              </li>
               <li className="inline-flex items-center gap-2 text-sand-100/75">
                 <Clock className="h-4 w-4 text-gold-300" aria-hidden="true" />
                 {SITE.businessHours}
