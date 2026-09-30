@@ -4,6 +4,16 @@ const nextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.quranhub.online" }],
+        destination: "https://quranhub.online/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

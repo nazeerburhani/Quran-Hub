@@ -13,7 +13,7 @@ export const SITE = {
   /** Inbox where website lead notifications are emailed. */
   leadsEmail: "nazeerahmad.sbg@gmail.com",
   defaultWhatsappMessage: "Assalamu Alaikum, I want to know about Quran classes.",
-  url: "https://quranhub.online.nazeerahmad.dev",
+  url: "https://quranhub.online",
   facebook: "https://www.facebook.com/share/19PWaieQST/",
   instagram: "https://www.instagram.com/quran_hub_online",
   businessHours: "24/7 — teachers available in every timezone",
