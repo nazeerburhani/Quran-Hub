@@ -1,12 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Menu, X } from "lucide-react";
+import {
+  ArrowRight,
+  BookOpen,
+  Check,
+  ChevronRight,
+  HelpCircle,
+  Home,
+  Menu,
+  MessageCircle,
+  Tag,
+  Users,
+  X,
+  type LucideIcon,
+} from "lucide-react";
 import { useLocale } from "./LanguageSwitcher";
 import { dict } from "@/lib/i18n";
-import { SITE } from "@/lib/site";
+import { SITE, whatsappLink } from "@/lib/site";
 import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeToggle from "./ThemeToggle";
 
@@ -35,13 +49,28 @@ export default function Header() {
   const d = dict[locale];
   const [open, setOpen] = useState(false);
 
-  const nav = [
-    { label: d.navHome, href: "#top" },
-    { label: d.navCourses, href: "#courses" },
-    { label: d.navTeachers, href: "#teachers" },
-    { label: d.navPricing, href: "#pricing" },
-    { label: d.navFaq, href: "#faq" },
+  const nav: { label: string; href: string; Icon: LucideIcon }[] = [
+    { label: d.navHome, href: "#top", Icon: Home },
+    { label: d.navCourses, href: "#courses", Icon: BookOpen },
+    { label: d.navTeachers, href: "#teachers", Icon: Users },
+    { label: d.navPricing, href: "#pricing", Icon: Tag },
+    { label: d.navFaq, href: "#faq", Icon: HelpCircle },
   ];
+
+  // Lock body scroll + close on Escape while the mobile menu is open.
+  useEffect(() => {
+    if (!open) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prev;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [open ]);
 
   // Header keeps its frosted background from the very top of the page so the
   // dark logo is always clearly readable over the dark hero.
@@ -122,46 +151,146 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile menu */}
-      {open ? (
-        <nav
-          aria-label="Mobile"
-          className="border-t border-gold-500/20 bg-[#FBF8F1]/95 px-4 pb-6 pt-3 backdrop-blur-xl dark:border-white/10 dark:bg-night/95 lg:hidden"
-        >
-          <ul className="space-y-1">
-            {nav.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
+      {/* Mobile menu — premium full-screen overlay.
+          Rendered in a portal because the header's backdrop-blur would
+          otherwise trap `fixed` positioning inside the header box. */}
+      {open
+        ? createPortal(
+            <div
+              className="fixed inset-0 z-[70] lg:hidden"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Site menu"
+            >
+          <div
+            aria-hidden="true"
+            className="animate-menu-fade absolute inset-0 bg-sand-50/[0.98] backdrop-blur-2xl dark:bg-night-deep/[0.98]"
+          />
+          <div className="relative flex h-full flex-col">
+            {/* Top bar mirrors the header */}
+            <div className="flex h-[68px] shrink-0 items-center justify-between border-b border-gold-500/25 px-4 sm:px-6">
+              <Link
+                href="#top"
+                onClick={() => setOpen(false)}
+                className="flex items-center gap-2.5"
+                aria-label={`${SITE.name} — home`}
+              >
+                <LogoMark />
+                <span className="leading-tight">
+                  <span className="block text-[17px] font-bold tracking-tight text-ink dark:text-sand-100">
+                    {SITE.name}
+                  </span>
+                  <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-gold-600 dark:text-gold-300">
+                    Online Quran Academy
+                  </span>
+                </span>
+              </Link>
+              <div className="flex items-center gap-2">
+                <ThemeToggle />
+                <button
+                  type="button"
                   onClick={() => setOpen(false)}
-                  className="block rounded-xl px-4 py-3 text-[15px] font-medium text-ink transition-colors hover:bg-brand-800/5 dark:text-sand-100 dark:hover:bg-white/10"
+                  aria-label="Close menu"
+                  className="glass inline-flex h-11 w-11 items-center justify-center rounded-full text-ink transition-transform hover:scale-105 dark:text-sand-100"
                 >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-4 flex items-center gap-3 px-1">
-            <span
-              className="inline-flex items-center gap-2 rounded-full border border-brand-800/15 bg-brand-800/5 px-3 py-1.5 text-xs font-semibold text-brand-700 dark:border-white/15 dark:bg-white/5 dark:text-gold-300"
-              role="status"
-            >
-              <span className="live-dot" aria-hidden="true" />
-              {d.liveNow}
-            </span>
-            <div className="sm:hidden">
-              <LanguageSwitcher />
+                  <X className="h-5 w-5" aria-hidden="true" />
+                </button>
+              </div>
             </div>
-            <a
-              href="#trial"
-              onClick={() => setOpen(false)}
-              className="btn-gold !min-h-[44px] px-5 py-2.5 text-sm md:hidden"
-            >
-              {d.headerCta}
-            </a>
+
+            {/* Nav links */}
+            <nav aria-label="Mobile" className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
+              <ul className="mx-auto w-full max-w-md space-y-2">
+                {nav.map((item, i) => (
+                  <li
+                    key={item.href}
+                    className="animate-menu-item"
+                    style={{ animationDelay: `${90 + i * 70}ms` }}
+                  >
+                    <a
+                      href={item.href}
+                      onClick={() => setOpen(false)}
+                      className="group flex items-center gap-4 rounded-2xl border border-transparent px-4 py-3.5 transition-all duration-200 hover:border-gold-500/30 hover:bg-white/70 hover:shadow-[0_8px_24px_rgba(18,51,50,0.08)] dark:hover:border-gold-400/20 dark:hover:bg-white/5"
+                    >
+                      <span className="w-7 shrink-0 font-display text-sm font-semibold text-gold-600 dark:text-gold-400">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-800/10 text-brand-800 transition-colors duration-200 group-hover:bg-brand-800 group-hover:text-sand-100 dark:bg-gold-400/10 dark:text-gold-300 dark:group-hover:bg-gold-400 dark:group-hover:text-night">
+                        <item.Icon className="h-5 w-5" aria-hidden="true" />
+                      </span>
+                      <span className="flex-1 text-xl font-bold tracking-tight text-ink dark:text-sand-100">
+                        {item.label}
+                      </span>
+                      <ChevronRight
+                        className="h-5 w-5 shrink-0 text-ink-soft/40 transition-all duration-200 group-hover:translate-x-1 group-hover:text-gold-600 dark:text-sand-100/40 dark:group-hover:text-gold-300"
+                        aria-hidden="true"
+                      />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Trial CTA card */}
+              <div
+                className="animate-menu-item relative mx-auto mt-6 w-full max-w-md overflow-hidden rounded-3xl bg-gradient-to-br from-brand-800 via-brand-900 to-night-deep p-6 text-sand-100 shadow-[0_20px_50px_rgba(10,31,30,0.35)]"
+                style={{ animationDelay: "480ms" }}
+              >
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gold-400/20 blur-2xl"
+                />
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -bottom-12 -left-8 h-36 w-36 rounded-full bg-gold-300/10 blur-2xl"
+                />
+                <p className="relative text-[11px] font-bold uppercase tracking-[0.22em] text-gold-300">
+                  {d.guaranteeTrial}
+                </p>
+                <p className="relative mt-2 font-display text-2xl font-bold leading-snug">
+                  {d.heroCtaPrimary}
+                </p>
+                <p className="relative mt-2 flex items-center gap-2 text-sm text-sand-100/75">
+                  <Check className="h-4 w-4 text-gold-300" aria-hidden="true" />
+                  {d.guaranteeNoCard}
+                </p>
+                <a
+                  href="#trial"
+                  onClick={() => setOpen(false)}
+                  className="btn-gold relative mt-5 w-full !min-h-[52px] text-base"
+                >
+                  {d.headerCta}
+                  <ArrowRight className="h-5 w-5" aria-hidden="true" />
+                </a>
+                <a
+                  href={whatsappLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative mt-3 flex items-center justify-center gap-2 rounded-full border border-white/15 px-4 py-3 text-sm font-semibold text-sand-100/90 transition-colors hover:border-wa/60 hover:text-white"
+                >
+                  <MessageCircle className="h-4 w-4 text-wa" aria-hidden="true" />
+                  WhatsApp: {SITE.whatsappDisplay}
+                </a>
+              </div>
+            </nav>
+
+            {/* Bottom bar */}
+            <div className="shrink-0 border-t border-gold-500/25 px-4 py-4 sm:px-6">
+              <div className="mx-auto flex w-full max-w-md items-center justify-between gap-3">
+                <span
+                  className="inline-flex items-center gap-2 rounded-full border border-brand-800/15 bg-brand-800/5 px-3 py-1.5 text-xs font-semibold text-brand-700 dark:border-white/15 dark:bg-white/5 dark:text-gold-300"
+                  role="status"
+                >
+                  <span className="live-dot" aria-hidden="true" />
+                  {d.liveNow}
+                </span>
+                <LanguageSwitcher />
+              </div>
+            </div>
           </div>
-        </nav>
-      ) : null}
+            </div>,
+            document.body
+          )
+        : null}
     </header>
   );
 }
