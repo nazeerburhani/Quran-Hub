@@ -29,17 +29,17 @@ function RecommendsPill() {
 function ReviewCard({ review }: { review: Review }) {
   return (
     <article
-      className="glass w-[300px] shrink-0 rounded-3xl p-6 shadow-card-light dark:shadow-card sm:w-[360px]"
+      className="glass w-[240px] shrink-0 snap-center rounded-2xl p-4 shadow-card-light dark:shadow-card sm:w-[360px] sm:rounded-3xl sm:p-6"
       aria-label={`Facebook review by ${review.name}`}
     >
       <div className="flex flex-wrap items-center gap-2">
         <VerifiedBadge />
         {review.recommends ? <RecommendsPill /> : null}
       </div>
-      <blockquote className="mt-4 text-[15px] leading-relaxed text-ink dark:text-sand-100">
+      <blockquote className="mt-3 text-sm leading-relaxed text-ink dark:text-sand-100 sm:mt-4 sm:text-[15px]">
         “{review.text}”
       </blockquote>
-      <footer className="mt-5 flex items-center gap-3">
+      <footer className="mt-4 flex items-center gap-3 sm:mt-5">
         <span
           aria-hidden="true"
           className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1877F2]/10 text-[#1877F2] dark:bg-[#1877F2]/20 dark:text-sky-300"
@@ -200,7 +200,7 @@ export default function Reviews() {
       {/* Auto-scrolling marquee */}
       <div
         ref={marqueeRef}
-        className="marquee relative pb-20"
+        className="marquee relative pb-12 sm:pb-20"
         role="region"
         aria-label="Facebook reviews carousel"
       >

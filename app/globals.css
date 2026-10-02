@@ -140,18 +140,27 @@ body {
     color: transparent;
   }
 
-  /* Review marquee */
+  /* Review marquee — auto-scroll on desktop, swipeable by hand on mobile */
   .marquee-track {
-    animation: marquee 60s linear infinite;
+    animation: marquee 35s linear infinite;
   }
   .marquee:hover .marquee-track,
   .marquee:focus-within .marquee-track {
     animation-play-state: paused;
   }
-  @media (hover: none) {
-    /* touch: keep it gentle — JS also pauses on touch */
+  @media (max-width: 639px) {
+    /* touch: native swipe strip instead of the slow auto animation */
+    .marquee {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+    }
+    .marquee::-webkit-scrollbar {
+      display: none;
+    }
     .marquee-track {
-      animation-duration: 90s;
+      animation: none;
     }
   }
 
