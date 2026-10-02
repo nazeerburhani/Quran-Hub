@@ -50,20 +50,20 @@ function CourseCard({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.97 }}
       transition={{ duration: 0.45, delay: Math.min(index * 0.04, 0.3), ease: [0.22, 1, 0.36, 1] }}
-      className="group relative flex flex-col overflow-hidden rounded-[1.25rem] border border-brand-800/10 bg-white shadow-card-light transition-all duration-300 hover:-translate-y-2 hover:border-gold-400/60 hover:shadow-[0_28px_60px_-16px_rgba(212,175,55,0.35)] dark:border-white/10 dark:bg-night-soft dark:shadow-card sm:rounded-[1.75rem]"
+      className="group relative flex flex-row overflow-hidden rounded-2xl border border-brand-800/10 bg-white shadow-card-light transition-all duration-300 hover:-translate-y-2 hover:border-gold-400/60 hover:shadow-[0_28px_60px_-16px_rgba(212,175,55,0.35)] dark:border-white/10 dark:bg-night-soft dark:shadow-card sm:flex-col sm:rounded-[1.75rem]"
     >
       {/* Gold top hairline that sweeps in on hover */}
       <span
         aria-hidden="true"
         className="absolute inset-x-0 top-0 z-10 h-1 origin-left scale-x-0 bg-gradient-to-r from-gold-600 via-gold-300 to-gold-600 transition-transform duration-500 ease-out group-hover:scale-x-100"
       />
-      {/* Photo + glyph art */}
-      <div className="photo-duotone relative aspect-[16/8] shrink-0 overflow-hidden sm:aspect-[16/10]">
+      {/* Photo + glyph art — left thumbnail on mobile, top banner on desktop */}
+      <div className="photo-duotone relative w-[104px] shrink-0 overflow-hidden sm:aspect-[16/10] sm:w-auto">
         <Image
           src={course.image}
           alt={course.imageAlt}
           fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          sizes="(max-width: 639px) 112px, (max-width: 1024px) 50vw, 33vw"
           loading="lazy"
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
         />
@@ -77,26 +77,32 @@ function CourseCard({
         />
         <span
           aria-hidden="true"
-          className="absolute end-3 top-3 grid h-11 w-11 place-items-center rounded-xl border border-gold-300/40 bg-night-deep/70 font-arabic text-2xl text-gold-300 shadow-lg backdrop-blur-md sm:end-4 sm:top-4 sm:h-14 sm:w-14 sm:rounded-2xl sm:text-3xl"
+          className="absolute end-2 top-2 grid h-8 w-8 place-items-center rounded-lg border border-gold-300/40 bg-night-deep/70 font-arabic text-lg text-gold-300 shadow-lg backdrop-blur-md sm:end-4 sm:top-4 sm:h-14 sm:w-14 sm:rounded-2xl sm:text-3xl"
         >
           {course.glyph}
         </span>
-        <span className="absolute bottom-2.5 start-3 rounded-full bg-gold-400 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-950 shadow-md sm:bottom-3 sm:start-4">
+        <span className="absolute bottom-2.5 start-3 hidden rounded-full bg-gold-400 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-950 shadow-md sm:bottom-3 sm:start-4 sm:inline-flex">
           {course.level}
         </span>
       </div>
 
-      {/* Body */}
-      <div className="flex flex-1 flex-col p-4 sm:p-6">
-        <h3 className="font-display text-lg font-semibold tracking-tight text-ink dark:text-sand-100 sm:text-xl">
+      {/* Body — compact row on mobile, full card on desktop */}
+      <div className="flex min-w-0 flex-1 flex-col p-3 sm:p-6">
+        <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-gold-700 dark:text-gold-300 sm:hidden">
+          {course.level}
+        </span>
+        <h3 className="mt-0.5 font-display text-[15px] font-semibold leading-snug tracking-tight text-ink dark:text-sand-100 sm:mt-0 sm:text-xl">
           {course.title}
         </h3>
-        <p className="mt-1.5 text-[13px] leading-relaxed text-ink-soft dark:text-night-muted sm:mt-2 sm:text-sm">
+        <p className="mt-1 truncate text-[11px] text-ink-soft dark:text-night-muted sm:hidden">
+          {course.whoFor} · {course.duration}
+        </p>
+        <p className="mt-1.5 hidden text-[13px] leading-relaxed text-ink-soft dark:text-night-muted sm:mt-2 sm:block sm:text-sm">
           {course.description}
         </p>
 
-        {/* Meta chips */}
-        <div className="mt-3 flex flex-wrap gap-2 sm:mt-4">
+        {/* Meta chips — desktop only */}
+        <div className="mt-3 hidden flex-wrap gap-2 sm:mt-4 sm:flex">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-800/10 bg-brand-800/[0.04] px-2.5 py-1 text-xs font-semibold text-ink-soft dark:border-white/10 dark:bg-white/[0.05] dark:text-night-muted sm:px-3 sm:py-1.5">
             <Users className="h-3.5 w-3.5 text-brand-600 dark:text-gold-300" aria-hidden="true" />
             {course.whoFor}
@@ -106,26 +112,26 @@ function CourseCard({
             {course.duration}
           </span>
         </div>
-        <p className="mt-2.5 flex items-start gap-2 text-xs leading-relaxed text-ink-soft dark:text-night-muted sm:mt-3 sm:text-[13px]">
+        <p className="mt-2.5 hidden items-start gap-2 text-xs leading-relaxed text-ink-soft dark:text-night-muted sm:mt-3 sm:flex sm:text-[13px]">
           <BadgeCheck className="mt-0.5 h-4 w-4 shrink-0 text-gold-600 dark:text-gold-300" aria-hidden="true" />
           {course.outcome}
         </p>
 
-        {/* CTAs */}
-        <div className="mt-4 border-t border-brand-800/10 pt-4 dark:border-white/10 sm:mt-5 sm:pt-5">
+        {/* CTAs — compact inline row on mobile, stacked on desktop */}
+        <div className="mt-2.5 flex items-center gap-3 border-t border-brand-800/10 pt-2.5 dark:border-white/10 sm:mt-5 sm:block sm:pt-5">
           <button
             type="button"
             onClick={() => onEnroll(course)}
-            className="btn-gold inline-flex w-full items-center justify-center gap-2 text-sm"
+            className="btn-gold inline-flex min-h-0 shrink-0 items-center justify-center gap-1.5 px-4 py-2 text-xs sm:w-full sm:gap-2 sm:px-7 sm:py-3.5 sm:text-sm"
             aria-label={`${d.enroll} — ${course.title}`}
           >
             {d.enroll}
-            <ArrowRight className="h-4 w-4 rtl:rotate-180" aria-hidden="true" />
+            <ArrowRight className="h-3.5 w-3.5 rtl:rotate-180 sm:h-4 sm:w-4" aria-hidden="true" />
           </button>
           {COURSE_PAGE_LINKS[course.id] ? (
             <Link
               href={COURSE_PAGE_LINKS[course.id]}
-              className="mt-3 inline-flex min-h-[44px] w-full items-center justify-center gap-1 text-sm font-semibold text-ink-soft underline decoration-gold-400/60 decoration-2 underline-offset-4 transition-colors hover:text-brand-700 dark:text-night-muted dark:hover:text-gold-300"
+              className="shrink-0 text-xs font-semibold text-ink-soft underline decoration-gold-400/60 decoration-2 underline-offset-4 transition-colors hover:text-brand-700 dark:text-night-muted dark:hover:text-gold-300 sm:mt-3 sm:inline-flex sm:min-h-[44px] sm:w-full sm:items-center sm:justify-center sm:gap-1 sm:text-sm"
             >
               Course details
             </Link>
@@ -204,7 +210,7 @@ export default function Courses() {
         {/* Grid */}
         <motion.div
           layout
-          className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-8 grid grid-cols-1 gap-3 sm:mt-10 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3"
           role="list"
           aria-live="polite"
         >
