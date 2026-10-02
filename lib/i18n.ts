@@ -26,7 +26,7 @@ const en = {
   heroCtaPrimary: "Claim My Child's Free Trial",
   heroCtaSecondary: "See How It Works",
   heroChipRating: "20+ qualified tutors",
-  heroChipStudents: "Thousands of lessons delivered",
+  heroChipStudents: "1,000+ lessons delivered",
   heroChipCountries: "10+ countries",
 
   guaranteeEyebrow: "Our promise to you",
@@ -183,7 +183,7 @@ const ur: typeof en = {
   heroCtaPrimary: "میرے بچے کا مفت ٹرائل حاصل کریں",
   heroCtaSecondary: "طریقہ کار دیکھیں",
   heroChipRating: "20+ اہل اساتذہ",
-  heroChipStudents: "ہزاروں اسباق",
+  heroChipStudents: "1,000+ اسباق",
   heroChipCountries: "10+ ممالک",
 
   guaranteeEyebrow: "آپ سے ہمارا وعدہ",
@@ -340,7 +340,7 @@ const ar: typeof en = {
   heroCtaPrimary: "احجز التجربة المجانية لطفلي",
   heroCtaSecondary: "شاهد كيف نعمل",
   heroChipRating: "أكثر من 20 معلمًا مؤهلًا",
-  heroChipStudents: "آلاف الدروس",
+  heroChipStudents: "1,000+ درس",
   heroChipCountries: "أكثر من 10 دول",
 
   guaranteeEyebrow: "وعدنا لكم",

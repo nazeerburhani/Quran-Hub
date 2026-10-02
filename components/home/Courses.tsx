@@ -50,7 +50,7 @@ function CourseCard({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.97 }}
       transition={{ duration: 0.45, delay: Math.min(index * 0.04, 0.3), ease: [0.22, 1, 0.36, 1] }}
-      className="group relative flex flex-row overflow-hidden rounded-2xl border border-brand-800/10 bg-white shadow-card-light transition-all duration-300 hover:-translate-y-2 hover:border-gold-400/60 hover:shadow-[0_28px_60px_-16px_rgba(212,175,55,0.35)] dark:border-white/10 dark:bg-night-soft dark:shadow-card sm:flex-col sm:rounded-[1.75rem]"
+      className="group relative flex flex-row items-center gap-2.5 overflow-hidden rounded-2xl border border-brand-800/10 bg-white p-2 shadow-card-light transition-all duration-300 hover:-translate-y-2 hover:border-gold-400/60 hover:shadow-[0_28px_60px_-16px_rgba(212,175,55,0.35)] dark:border-white/10 dark:bg-night-soft dark:shadow-card sm:flex-col sm:items-stretch sm:gap-0 sm:rounded-[1.75rem] sm:p-0"
     >
       {/* Gold top hairline that sweeps in on hover */}
       <span
@@ -58,7 +58,7 @@ function CourseCard({
         className="absolute inset-x-0 top-0 z-10 h-1 origin-left scale-x-0 bg-gradient-to-r from-gold-600 via-gold-300 to-gold-600 transition-transform duration-500 ease-out group-hover:scale-x-100"
       />
       {/* Photo + glyph art — left thumbnail on mobile, top banner on desktop */}
-      <div className="photo-duotone relative w-[104px] shrink-0 overflow-hidden sm:aspect-[16/10] sm:w-auto">
+      <div className="photo-duotone relative h-[72px] w-[72px] shrink-0 overflow-hidden rounded-xl sm:h-auto sm:w-auto sm:rounded-none sm:aspect-[16/10]">
         <Image
           src={course.image}
           alt={course.imageAlt}
@@ -77,7 +77,7 @@ function CourseCard({
         />
         <span
           aria-hidden="true"
-          className="absolute end-2 top-2 grid h-8 w-8 place-items-center rounded-lg border border-gold-300/40 bg-night-deep/70 font-arabic text-lg text-gold-300 shadow-lg backdrop-blur-md sm:end-4 sm:top-4 sm:h-14 sm:w-14 sm:rounded-2xl sm:text-3xl"
+          className="absolute end-1.5 top-1.5 grid h-7 w-7 place-items-center rounded-lg border border-gold-300/40 bg-night-deep/70 font-arabic text-base text-gold-300 shadow-lg backdrop-blur-md sm:end-4 sm:top-4 sm:h-14 sm:w-14 sm:rounded-2xl sm:text-3xl"
         >
           {course.glyph}
         </span>
@@ -87,15 +87,12 @@ function CourseCard({
       </div>
 
       {/* Body — compact row on mobile, full card on desktop */}
-      <div className="flex min-w-0 flex-1 flex-col p-3 sm:p-6">
-        <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-gold-700 dark:text-gold-300 sm:hidden">
-          {course.level}
-        </span>
-        <h3 className="mt-0.5 font-display text-[15px] font-semibold leading-snug tracking-tight text-ink dark:text-sand-100 sm:mt-0 sm:text-xl">
+      <div className="flex min-w-0 flex-1 flex-col justify-center px-1 py-1.5 sm:p-6">
+        <h3 className="font-display text-sm font-semibold leading-snug tracking-tight text-ink dark:text-sand-100 sm:text-xl">
           {course.title}
         </h3>
-        <p className="mt-1 truncate text-[11px] text-ink-soft dark:text-night-muted sm:hidden">
-          {course.whoFor} · {course.duration}
+        <p className="mt-0.5 truncate text-[10px] text-ink-soft dark:text-night-muted sm:hidden">
+          {course.level} · {course.whoFor} · {course.duration}
         </p>
         <p className="mt-1.5 hidden text-[13px] leading-relaxed text-ink-soft dark:text-night-muted sm:mt-2 sm:block sm:text-sm">
           {course.description}
@@ -118,11 +115,11 @@ function CourseCard({
         </p>
 
         {/* CTAs — compact inline row on mobile, stacked on desktop */}
-        <div className="mt-2.5 flex items-center gap-3 border-t border-brand-800/10 pt-2.5 dark:border-white/10 sm:mt-5 sm:block sm:pt-5">
+        <div className="mt-1.5 flex items-center gap-2 sm:mt-5 sm:block sm:border-t sm:border-brand-800/10 sm:pt-5 sm:dark:border-white/10">
           <button
             type="button"
             onClick={() => onEnroll(course)}
-            className="btn-gold inline-flex min-h-0 shrink-0 items-center justify-center gap-1.5 px-4 py-2 text-xs sm:w-full sm:gap-2 sm:px-7 sm:py-3.5 sm:text-sm"
+            className="btn-gold inline-flex min-h-0 shrink-0 items-center justify-center gap-1 px-3 py-1.5 text-[11px] sm:w-full sm:gap-2 sm:px-7 sm:py-3.5 sm:text-sm"
             aria-label={`${d.enroll} — ${course.title}`}
           >
             {d.enroll}
@@ -131,7 +128,7 @@ function CourseCard({
           {COURSE_PAGE_LINKS[course.id] ? (
             <Link
               href={COURSE_PAGE_LINKS[course.id]}
-              className="shrink-0 text-xs font-semibold text-ink-soft underline decoration-gold-400/60 decoration-2 underline-offset-4 transition-colors hover:text-brand-700 dark:text-night-muted dark:hover:text-gold-300 sm:mt-3 sm:inline-flex sm:min-h-[44px] sm:w-full sm:items-center sm:justify-center sm:gap-1 sm:text-sm"
+              className="shrink-0 text-[11px] font-semibold text-ink-soft underline decoration-gold-400/60 decoration-2 underline-offset-4 transition-colors hover:text-brand-700 dark:text-night-muted dark:hover:text-gold-300 sm:mt-3 sm:inline-flex sm:min-h-[44px] sm:w-full sm:items-center sm:justify-center sm:gap-1 sm:text-sm"
             >
               Course details
             </Link>
@@ -161,7 +158,7 @@ export default function Courses() {
         <div className="absolute -bottom-32 -start-24 h-96 w-96 rounded-full bg-brand-600/10 blur-3xl dark:bg-brand-400/[0.06]" />
         <div className="absolute -end-24 top-1/3 h-80 w-80 rounded-full bg-emerald-500/[0.07] blur-3xl" />
       </div>
-      <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24">
+      <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-24">
         <SectionHeading
           id="courses-heading"
           eyebrow={d.coursesEyebrow}
@@ -170,7 +167,7 @@ export default function Courses() {
         />
 
         {/* Premium segmented filter bar */}
-        <Reveal className="mt-8 flex justify-center">
+        <Reveal className="mt-6 flex justify-center sm:mt-8">
           <div
             role="tablist"
             aria-label="Filter courses"
@@ -186,7 +183,7 @@ export default function Courses() {
                   role="tab"
                   aria-selected={active}
                   onClick={() => setFilter(f.id)}
-                  className={`relative flex min-h-[44px] shrink-0 items-center gap-2 rounded-full px-4 text-sm font-semibold transition-colors duration-300 sm:px-5 ${
+                  className={`relative flex min-h-[38px] shrink-0 items-center gap-2 rounded-full px-3.5 text-[13px] font-semibold transition-colors duration-300 sm:min-h-[44px] sm:px-5 sm:text-sm ${
                     active
                       ? "text-white dark:text-brand-950"
                       : "text-ink-soft hover:text-ink dark:text-night-muted dark:hover:text-sand-100"
@@ -210,7 +207,7 @@ export default function Courses() {
         {/* Grid */}
         <motion.div
           layout
-          className="mt-8 grid grid-cols-1 gap-3 sm:mt-10 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3"
+          className="mt-6 grid grid-cols-1 gap-2.5 sm:mt-10 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3"
           role="list"
           aria-live="polite"
         >

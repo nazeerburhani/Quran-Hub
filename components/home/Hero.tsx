@@ -70,10 +70,10 @@ export default function Hero() {
       aria-label="QuranHub — online Quran classes"
       className="relative flex min-h-[100svh] items-center overflow-hidden bg-night-deep"
     >
-      {/* Cinematic background photo: open Quran on a rehal, no people */}
+      {/* Cinematic background photo: warm mosque interior, no people */}
       <div className="absolute inset-0" aria-hidden="true">
         <Image
-          src="/images/hero-quran.jpg"
+          src="/images/mosque-arch.jpg"
           alt=""
           fill
           priority
