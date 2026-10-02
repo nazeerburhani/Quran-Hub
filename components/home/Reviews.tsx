@@ -197,12 +197,15 @@ export default function Reviews() {
         </Reveal>
       </div>
 
-      {/* Auto-scrolling marquee */}
+      {/* Auto-scrolling marquee on desktop, swipe strip on mobile */}
       <div
-        ref={marqueeRef}
-        className="marquee relative pb-12 sm:pb-20"
+        className="relative pb-12 sm:pb-20"
         role="region"
         aria-label="Facebook reviews carousel"
+      >
+      <div
+        ref={marqueeRef}
+        className="marquee"
       >
         <div
           className="marquee-track flex w-max gap-5 px-4"
@@ -212,6 +215,7 @@ export default function Reviews() {
             <ReviewCard key={`${r.id}-${i}`} review={r} />
           ))}
         </div>
+      </div>
         {/* Edge fades */}
         <div
           className="pointer-events-none absolute inset-y-0 start-0 w-16 bg-gradient-to-r from-sand-50 to-transparent dark:from-night"
