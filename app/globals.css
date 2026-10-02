@@ -68,6 +68,15 @@ body {
     @apply border border-brand-800/10 bg-white/70 backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.05];
   }
 
+  /* Hide scrollbars on swipe strips (filter bar, etc.) */
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
   /* Primary gold CTA: solid gold, dark-teal text (7.2:1, AA) */
   .btn-gold {
     @apply relative inline-flex min-h-[48px] items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 px-7 py-3.5 font-bold text-brand-950 shadow-glow transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glow-lg active:translate-y-0;

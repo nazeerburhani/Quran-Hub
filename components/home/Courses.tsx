@@ -50,7 +50,7 @@ function CourseCard({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.97 }}
       transition={{ duration: 0.45, delay: Math.min(index * 0.04, 0.3), ease: [0.22, 1, 0.36, 1] }}
-      className="group relative flex flex-col overflow-hidden rounded-[1.75rem] border border-brand-800/10 bg-white shadow-card-light transition-all duration-300 hover:-translate-y-2 hover:border-gold-400/60 hover:shadow-[0_28px_60px_-16px_rgba(212,175,55,0.35)] dark:border-white/10 dark:bg-night-soft dark:shadow-card"
+      className="group relative flex flex-col overflow-hidden rounded-[1.25rem] border border-brand-800/10 bg-white shadow-card-light transition-all duration-300 hover:-translate-y-2 hover:border-gold-400/60 hover:shadow-[0_28px_60px_-16px_rgba(212,175,55,0.35)] dark:border-white/10 dark:bg-night-soft dark:shadow-card sm:rounded-[1.75rem]"
     >
       {/* Gold top hairline that sweeps in on hover */}
       <span
@@ -58,7 +58,7 @@ function CourseCard({
         className="absolute inset-x-0 top-0 z-10 h-1 origin-left scale-x-0 bg-gradient-to-r from-gold-600 via-gold-300 to-gold-600 transition-transform duration-500 ease-out group-hover:scale-x-100"
       />
       {/* Photo + glyph art */}
-      <div className="photo-duotone relative aspect-[16/10] shrink-0 overflow-hidden">
+      <div className="photo-duotone relative aspect-[16/8] shrink-0 overflow-hidden sm:aspect-[16/10]">
         <Image
           src={course.image}
           alt={course.imageAlt}
@@ -77,42 +77,42 @@ function CourseCard({
         />
         <span
           aria-hidden="true"
-          className="absolute end-4 top-4 grid h-14 w-14 place-items-center rounded-2xl border border-gold-300/40 bg-night-deep/70 font-arabic text-3xl text-gold-300 shadow-lg backdrop-blur-md"
+          className="absolute end-3 top-3 grid h-11 w-11 place-items-center rounded-xl border border-gold-300/40 bg-night-deep/70 font-arabic text-2xl text-gold-300 shadow-lg backdrop-blur-md sm:end-4 sm:top-4 sm:h-14 sm:w-14 sm:rounded-2xl sm:text-3xl"
         >
           {course.glyph}
         </span>
-        <span className="absolute bottom-3 start-4 rounded-full bg-gold-400 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-950 shadow-md">
+        <span className="absolute bottom-2.5 start-3 rounded-full bg-gold-400 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-950 shadow-md sm:bottom-3 sm:start-4">
           {course.level}
         </span>
       </div>
 
       {/* Body */}
-      <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <h3 className="font-display text-xl font-semibold tracking-tight text-ink dark:text-sand-100">
+      <div className="flex flex-1 flex-col p-4 sm:p-6">
+        <h3 className="font-display text-lg font-semibold tracking-tight text-ink dark:text-sand-100 sm:text-xl">
           {course.title}
         </h3>
-        <p className="mt-2 text-sm leading-relaxed text-ink-soft dark:text-night-muted">
+        <p className="mt-1.5 text-[13px] leading-relaxed text-ink-soft dark:text-night-muted sm:mt-2 sm:text-sm">
           {course.description}
         </p>
 
         {/* Meta chips */}
-        <div className="mt-4 flex flex-wrap gap-2">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-800/10 bg-brand-800/[0.04] px-3 py-1.5 text-xs font-semibold text-ink-soft dark:border-white/10 dark:bg-white/[0.05] dark:text-night-muted">
+        <div className="mt-3 flex flex-wrap gap-2 sm:mt-4">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-800/10 bg-brand-800/[0.04] px-2.5 py-1 text-xs font-semibold text-ink-soft dark:border-white/10 dark:bg-white/[0.05] dark:text-night-muted sm:px-3 sm:py-1.5">
             <Users className="h-3.5 w-3.5 text-brand-600 dark:text-gold-300" aria-hidden="true" />
             {course.whoFor}
           </span>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-800/10 bg-brand-800/[0.04] px-3 py-1.5 text-xs font-semibold text-ink-soft dark:border-white/10 dark:bg-white/[0.05] dark:text-night-muted">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-800/10 bg-brand-800/[0.04] px-2.5 py-1 text-xs font-semibold text-ink-soft dark:border-white/10 dark:bg-white/[0.05] dark:text-night-muted sm:px-3 sm:py-1.5">
             <Clock3 className="h-3.5 w-3.5 text-brand-600 dark:text-gold-300" aria-hidden="true" />
             {course.duration}
           </span>
         </div>
-        <p className="mt-3 flex items-start gap-2 text-[13px] leading-relaxed text-ink-soft dark:text-night-muted">
+        <p className="mt-2.5 flex items-start gap-2 text-xs leading-relaxed text-ink-soft dark:text-night-muted sm:mt-3 sm:text-[13px]">
           <BadgeCheck className="mt-0.5 h-4 w-4 shrink-0 text-gold-600 dark:text-gold-300" aria-hidden="true" />
           {course.outcome}
         </p>
 
         {/* CTAs */}
-        <div className="mt-5 border-t border-brand-800/10 pt-5 dark:border-white/10">
+        <div className="mt-4 border-t border-brand-800/10 pt-4 dark:border-white/10 sm:mt-5 sm:pt-5">
           <button
             type="button"
             onClick={() => onEnroll(course)}
@@ -168,7 +168,7 @@ export default function Courses() {
           <div
             role="tablist"
             aria-label="Filter courses"
-            className="glass flex max-w-full items-center gap-1 overflow-x-auto rounded-full p-1.5 shadow-card-light dark:shadow-card"
+            className="glass no-scrollbar flex max-w-full items-center gap-1 overflow-x-auto rounded-full p-1.5 shadow-card-light dark:shadow-card"
           >
             {FILTERS.map((f) => {
               const active = filter === f.id;
