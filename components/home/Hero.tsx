@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import gsap from "gsap";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { ArrowDown, Globe2, Sparkles, Star, Users } from "lucide-react";
+import { ArrowDown, BadgeCheck, BookOpenCheck, Globe2, Sparkles, Star, Users } from "lucide-react";
 import { useLocale } from "@/components/layout/LanguageSwitcher";
 import { dict } from "@/lib/i18n";
 
@@ -70,10 +70,10 @@ export default function Hero() {
       aria-label="QuranHub — online Quran classes"
       className="relative flex min-h-[100svh] items-center overflow-hidden bg-night-deep"
     >
-      {/* Cinematic background photo: warm mosque interior, no people */}
+      {/* Cinematic background photo: open Quran on a rehal, no people */}
       <div className="absolute inset-0" aria-hidden="true">
         <Image
-          src="/images/mosque-arch.jpg"
+          src="/images/hero-quran.jpg"
           alt=""
           fill
           priority
@@ -153,22 +153,33 @@ export default function Hero() {
             </a>
           </div>
 
-          <p data-hero-enter className="mt-5 text-sm text-sand-100/70">
-            Free 3-day trial · No credit card · Confirmed on WhatsApp
-          </p>
-
-          {/* Social proof row — mobile only (desktop has the floating glass chips) */}
-          <div
-            data-hero-enter
-            className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-2 md:hidden"
-          >
-            <span className="text-sm font-semibold text-sand-100">
-              {d.heroChipRating}
-            </span>
-            <span className="h-1 w-1 rounded-full bg-gold-400/70" aria-hidden="true" />
-            <span className="text-sm text-sand-100/80">{d.heroChipStudents}</span>
-            <span className="h-1 w-1 rounded-full bg-gold-400/70" aria-hidden="true" />
-            <span className="text-sm text-sand-100/80">{d.heroChipCountries}</span>
+          {/* Trust + proof — glass pills on mobile (desktop has the floating glass chips) */}
+          <div data-hero-enter className="mt-6 md:hidden">
+            <p className="inline-flex max-w-full items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[13px] font-semibold leading-snug text-white shadow-[0_8px_24px_rgba(0,0,0,0.35)] backdrop-blur-md">
+              <BadgeCheck
+                className="h-4 w-4 shrink-0 text-gold-300"
+                aria-hidden="true"
+              />
+              <span>Free 3-day trial · No credit card · Confirmed on WhatsApp</span>
+            </p>
+            <div className="mt-2.5 flex flex-wrap gap-2">
+              {[
+                { icon: Users, label: d.heroChipRating },
+                { icon: BookOpenCheck, label: d.heroChipStudents },
+                { icon: Globe2, label: d.heroChipCountries },
+              ].map(({ icon: Icon, label }) => (
+                <span
+                  key={label}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-night-deep/55 px-3 py-1.5 text-xs font-semibold text-sand-100 backdrop-blur-md"
+                >
+                  <Icon
+                    className="h-3.5 w-3.5 shrink-0 text-gold-300"
+                    aria-hidden="true"
+                  />
+                  {label}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
