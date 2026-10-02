@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, BadgeCheck, Clock3, Users } from "lucide-react";
+import { ArrowRight, BadgeCheck, Brain, Clock3, Languages, LayoutGrid, Smile, Users, type LucideIcon } from "lucide-react";
 import { COURSES, type Course, type CourseCategory } from "@/lib/site";
 import { useLocale } from "@/components/layout/LanguageSwitcher";
 import { dict } from "@/lib/i18n";
@@ -23,12 +23,12 @@ const COURSE_PAGE_LINKS: Record<string, string> = {
   "ijazah-program": "/courses/online-ijazah-course",
 };
 
-const FILTERS: { id: "all" | CourseCategory; labelKey: "filterAll" | "filterKids" | "filterAdults" | "filterMemorization" | "filterLanguage" }[] = [
-  { id: "all", labelKey: "filterAll" },
-  { id: "kids", labelKey: "filterKids" },
-  { id: "adults", labelKey: "filterAdults" },
-  { id: "memorization", labelKey: "filterMemorization" },
-  { id: "language", labelKey: "filterLanguage" },
+const FILTERS: { id: "all" | CourseCategory; labelKey: "filterAll" | "filterKids" | "filterAdults" | "filterMemorization" | "filterLanguage"; icon: LucideIcon }[] = [
+  { id: "all", labelKey: "filterAll", icon: LayoutGrid },
+  { id: "kids", labelKey: "filterKids", icon: Smile },
+  { id: "adults", labelKey: "filterAdults", icon: Users },
+  { id: "memorization", labelKey: "filterMemorization", icon: Brain },
+  { id: "language", labelKey: "filterLanguage", icon: Languages },
 ];
 
 function CourseCard({
@@ -69,7 +69,11 @@ function CourseCard({
         />
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-t from-night-deep/70 via-night-deep/10 to-transparent"
+          className="absolute inset-0 bg-gradient-to-t from-night-deep/85 via-night-deep/25 to-night-deep/5"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gold-400/0 mix-blend-overlay transition-colors duration-700 group-hover:bg-gold-400/15"
         />
         <span
           aria-hidden="true"
@@ -144,8 +148,14 @@ export default function Courses() {
       : COURSES.filter((c) => c.categories.includes(filter));
 
   return (
-    <section id="courses" aria-labelledby="courses-heading" className="relative scroll-mt-20">
-      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24">
+    <section id="courses" aria-labelledby="courses-heading" className="relative scroll-mt-20 overflow-hidden">
+      {/* Premium ambient backdrop */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-24 left-1/2 h-80 w-[46rem] max-w-none -translate-x-1/2 rounded-full bg-gold-400/15 blur-3xl dark:bg-gold-400/[0.08]" />
+        <div className="absolute -bottom-32 -start-24 h-96 w-96 rounded-full bg-brand-600/10 blur-3xl dark:bg-brand-400/[0.06]" />
+        <div className="absolute -end-24 top-1/3 h-80 w-80 rounded-full bg-emerald-500/[0.07] blur-3xl" />
+      </div>
+      <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24">
         <SectionHeading
           id="courses-heading"
           eyebrow={d.coursesEyebrow}
@@ -153,26 +163,42 @@ export default function Courses() {
           description={d.coursesDesc}
         />
 
-        {/* Filter chips */}
-        <Reveal className="mt-8 flex flex-wrap justify-center gap-2">
-          {FILTERS.map((f) => {
-            const active = filter === f.id;
-            return (
-              <button
-                key={f.id}
-                type="button"
-                onClick={() => setFilter(f.id)}
-                aria-pressed={active}
-                className={`min-h-[44px] rounded-full px-5 text-sm font-semibold transition-all duration-300 ${
-                  active
-                    ? "bg-brand-800 text-white shadow-card dark:bg-gold-400 dark:text-brand-950"
-                    : "glass text-ink-soft hover:border-gold-400/60 hover:text-ink dark:text-night-muted dark:hover:text-sand-100"
-                }`}
-              >
-                {d[f.labelKey]}
-              </button>
-            );
-          })}
+        {/* Premium segmented filter bar */}
+        <Reveal className="mt-8 flex justify-center">
+          <div
+            role="tablist"
+            aria-label="Filter courses"
+            className="glass flex max-w-full items-center gap-1 overflow-x-auto rounded-full p-1.5 shadow-card-light dark:shadow-card"
+          >
+            {FILTERS.map((f) => {
+              const active = filter === f.id;
+              const Icon = f.icon;
+              return (
+                <button
+                  key={f.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={active}
+                  onClick={() => setFilter(f.id)}
+                  className={`relative flex min-h-[44px] shrink-0 items-center gap-2 rounded-full px-4 text-sm font-semibold transition-colors duration-300 sm:px-5 ${
+                    active
+                      ? "text-white dark:text-brand-950"
+                      : "text-ink-soft hover:text-ink dark:text-night-muted dark:hover:text-sand-100"
+                  }`}
+                >
+                  {active ? (
+                    <motion.span
+                      layoutId="course-filter-active"
+                      className="absolute inset-0 rounded-full bg-gradient-to-r from-brand-800 to-brand-600 shadow-card dark:from-gold-300 dark:to-gold-500"
+                      transition={{ type: "spring", stiffness: 420, damping: 34 }}
+                    />
+                  ) : null}
+                  <Icon className="relative z-10 h-4 w-4" aria-hidden="true" />
+                  <span className="relative z-10 whitespace-nowrap">{d[f.labelKey]}</span>
+                </button>
+              );
+            })}
+          </div>
         </Reveal>
 
         {/* Grid */}
