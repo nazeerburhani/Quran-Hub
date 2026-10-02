@@ -23,30 +23,52 @@ import { dict } from "@/lib/i18n";
 import { SITE, whatsappLink } from "@/lib/site";
 import ThemeToggle from "./ThemeToggle";
 
-
+/** Logo in a crisp white tile — readable on any background. */
 function LogoMark() {
   return (
-    <span aria-hidden="true" className="grid h-11 w-11 shrink-0 place-items-center">
+    <span
+      aria-hidden="true"
+      className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white shadow-[0_2px_10px_rgba(18,51,50,0.16)] ring-1 ring-brand-900/10"
+    >
       <Image
         src="/images/logo.png"
         alt=""
-        width={48}
-        height={48}
-        className="h-11 w-11 object-contain drop-shadow-[0_2px_8px_rgba(22,68,73,0.28)]"
+        width={36}
+        height={36}
+        className="h-8 w-8 object-contain"
         priority
       />
     </span>
   );
 }
 
+/** Wordmark lockup: serif name + always-visible tagline. */
+function Wordmark({ compact = false }: { compact?: boolean }) {
+  return (
+    <span className="leading-none">
+      <span
+        className={`block font-display font-bold tracking-tight text-ink dark:text-sand-100 ${
+          compact ? "text-base" : "text-[19px]"
+        }`}
+      >
+        {SITE.name}
+      </span>
+      <span className="mt-1 block text-[9px] font-bold uppercase tracking-[0.24em] text-gold-600 dark:text-gold-300">
+        Online Quran Academy
+      </span>
+    </span>
+  );
+}
+
 /**
- * Sticky glass header. Always frosted with a light theme-aware background so
- * the dark logo stays clearly readable, including at the very top of the page.
+ * Sticky glass header. Compacts on scroll; logo sits in a white tile so it
+ * stays crisp over the hero, and the menu button is a solid brand tile.
  */
 export default function Header() {
   const { locale } = useLocale();
   const d = dict[locale];
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const nav: { label: string; href: string; Icon: LucideIcon }[] = [
     { label: d.navHome, href: "#top", Icon: Home },
@@ -71,34 +93,45 @@ export default function Header() {
     };
   }, [open ]);
 
-  // Header keeps its frosted background from the very top of the page so the
-  // dark logo is always clearly readable over the dark hero.
+  // Compact the bar once the user scrolls.
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   // Nav links get an animated gold underline on hover for a premium feel.
   const navLinkCls =
     "relative text-ink-soft hover:text-brand-800 dark:text-night-muted dark:hover:text-gold-300 after:absolute after:-bottom-0.5 after:left-1/2 after:h-[2px] after:w-0 after:-translate-x-1/2 after:rounded-full after:bg-gradient-to-r after:from-gold-300 after:to-gold-500 after:transition-all after:duration-300 hover:after:w-3/4";
 
   return (
     <header
-      className="fixed inset-x-0 top-0 z-50 border-b border-gold-500/30 bg-[#FBF8F1]/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.65),0_12px_40px_rgba(18,51,50,0.12)] backdrop-blur-xl transition-all duration-300 dark:border-white/10 dark:bg-night/85 dark:shadow-card"
+      className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-xl transition-all duration-300 ${
+        scrolled
+          ? "border-gold-500/25 bg-[#FBF8F1]/95 shadow-[0_10px_36px_rgba(18,51,50,0.14)] dark:border-white/10 dark:bg-night/90"
+          : "border-gold-500/15 bg-[#FBF8F1]/80 shadow-[0_8px_28px_rgba(18,51,50,0.08)] dark:border-white/5 dark:bg-night/70"
+      }`}
     >
       {/* Gold hairline glow along the bottom edge */}
       <span
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gold-400/80 to-transparent"
       />
-      <div className="mx-auto flex h-[68px] max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
-        <Link href="#top" className="flex items-center gap-2.5" aria-label={`${SITE.name} — home`}>
-          <LogoMark />
-          <span className="leading-tight">
-            <span
-              className="block text-[17px] font-bold tracking-tight text-ink dark:text-sand-100 sm:text-lg"
-            >
-              {SITE.name}
-            </span>
-            <span className="hidden text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-600 dark:text-gold-300 sm:block">
-              Online Quran Academy
-            </span>
+      <div
+        className={`mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 transition-all duration-300 sm:px-6 ${
+          scrolled ? "h-[60px]" : "h-[68px]"
+        }`}
+      >
+        <Link
+          href="#top"
+          className="group flex items-center gap-2.5"
+          aria-label={`${SITE.name} — home`}
+        >
+          <span className="transition-transform duration-300 group-hover:scale-105">
+            <LogoMark />
           </span>
+          <Wordmark />
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
@@ -136,7 +169,7 @@ export default function Header() {
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border glass text-ink transition-colors dark:text-sand-100 lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-800 text-sand-100 shadow-[0_4px_14px_rgba(22,68,73,0.35)] transition-all hover:bg-brand-900 active:scale-95 dark:bg-gold-400 dark:text-night dark:shadow-[0_4px_14px_rgba(217,164,65,0.35)] lg:hidden"
           >
             {open ? (
               <X className="h-5 w-5" aria-hidden="true" />
@@ -168,18 +201,11 @@ export default function Header() {
               <Link
                 href="#top"
                 onClick={() => setOpen(false)}
-                className="flex items-center gap-2"
+                className="flex items-center gap-2.5"
                 aria-label={`${SITE.name} — home`}
               >
                 <LogoMark />
-                <span className="leading-tight">
-                  <span className="block text-base font-bold tracking-tight text-ink dark:text-sand-100">
-                    {SITE.name}
-                  </span>
-                  <span className="block text-[9px] font-semibold uppercase tracking-[0.18em] text-gold-600 dark:text-gold-300">
-                    Online Quran Academy
-                  </span>
-                </span>
+                <Wordmark compact />
               </Link>
               <div className="flex items-center gap-2">
                 <ThemeToggle />
@@ -187,7 +213,7 @@ export default function Header() {
                   type="button"
                   onClick={() => setOpen(false)}
                   aria-label="Close menu"
-                  className="glass inline-flex h-11 w-11 items-center justify-center rounded-full text-ink transition-transform hover:scale-105 dark:text-sand-100"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-800 text-sand-100 shadow-[0_4px_14px_rgba(22,68,73,0.35)] transition-transform hover:scale-105 active:scale-95 dark:bg-gold-400 dark:text-night"
                 >
                   <X className="h-5 w-5" aria-hidden="true" />
                 </button>

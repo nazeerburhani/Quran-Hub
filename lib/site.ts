@@ -17,6 +17,8 @@ export const SITE = {
   defaultWhatsappMessage: "Assalamu Alaikum, I want to know about Quran classes.",
   url: "https://quranhub.online",
   facebook: "https://www.facebook.com/share/19PWaieQST/",
+  /** Direct link to the Facebook Page Reviews tab (resolved 2026-10-02). */
+  facebookReviews: "https://www.facebook.com/share/19PWaieQST/",
   instagram: "https://www.instagram.com/quran_hub_online",
   businessHours: "24/7 — teachers available in every timezone",
 } as const;

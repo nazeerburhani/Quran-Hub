@@ -53,6 +53,17 @@ function ReviewCard({ review }: { review: Review }) {
           </p>
         </div>
       </footer>
+      <a
+        href={SITE.facebookReviews}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-[#1877F2] transition hover:underline dark:text-sky-300"
+        aria-label={`View ${review.name}'s review on Facebook`}
+      >
+        <Facebook className="h-3.5 w-3.5" aria-hidden="true" />
+        View on Facebook
+        <ExternalLink className="h-3 w-3" aria-hidden="true" />
+      </a>
     </article>
   );
 }
@@ -119,7 +130,7 @@ export default function Reviews() {
                   Verified reviews
                 </span>
                 <a
-                  href={SITE.facebook}
+                  href={SITE.facebookReviews}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 rounded-md bg-[#1877F2] px-3 py-1.5 text-xs font-bold text-white transition hover:bg-[#1464cc]"
@@ -171,6 +182,17 @@ export default function Reviews() {
                 </span>
               ) : null}
             </footer>
+            <a
+              href={SITE.facebookReviews}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-xs font-bold text-white transition hover:border-gold-400/60 hover:text-gold-300"
+              aria-label={`View ${featured.name}'s review on Facebook`}
+            >
+              <Facebook className="h-4 w-4" aria-hidden="true" />
+              View on Facebook
+              <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+            </a>
           </article>
         </Reveal>
       </div>
