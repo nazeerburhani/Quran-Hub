@@ -146,38 +146,38 @@ export default function Reviews() {
         {/* Featured spotlight — genuine review */}
         <Reveal className="mt-8">
           <article
-            className="relative mx-auto max-w-3xl overflow-hidden rounded-3xl bg-gradient-to-br from-brand-800 to-brand-950 p-8 shadow-card sm:p-10"
+            className="relative mx-auto max-w-3xl overflow-hidden rounded-2xl bg-gradient-to-br from-brand-800 to-brand-950 p-5 shadow-card sm:rounded-3xl sm:p-10"
             aria-label={`${d.featuredReview}: ${featured.name}`}
           >
-            <Quote className="absolute end-6 top-6 h-16 w-16 text-gold-400/20" aria-hidden="true" />
+            <Quote className="absolute end-4 top-4 h-10 w-10 text-gold-400/20 sm:end-6 sm:top-6 sm:h-16 sm:w-16" aria-hidden="true" />
             <div className="flex flex-wrap items-center gap-2">
-              <p className="text-xs font-bold uppercase tracking-[0.22em] text-gold-300">
+              <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-gold-300 sm:text-xs">
                 {d.featuredReview}
               </p>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-[11px] font-bold text-sky-200">
-                <BadgeCheck className="h-3.5 w-3.5" aria-hidden="true" />
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-bold text-sky-200 sm:px-3 sm:text-[11px]">
+                <BadgeCheck className="h-3 w-3 sm:h-3.5 sm:w-3.5" aria-hidden="true" />
                 Verified Facebook review
               </span>
             </div>
-            <blockquote className="mt-4 font-display text-xl italic leading-relaxed text-white sm:text-2xl">
+            <blockquote className="mt-3 font-display text-base italic leading-relaxed text-white sm:mt-4 sm:text-2xl">
               “{featured.text}”
             </blockquote>
-            <footer className="mt-6 flex items-center gap-3">
+            <footer className="mt-4 flex items-center gap-2.5 sm:mt-6 sm:gap-3">
               <span
                 aria-hidden="true"
-                className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-sky-200"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-sky-200 sm:h-11 sm:w-11"
               >
-                <Facebook className="h-5 w-5" />
+                <Facebook className="h-4 w-4 sm:h-5 sm:w-5" />
               </span>
               <div>
-                <p className="font-bold text-white">{featured.name}</p>
-                <p className="text-sm text-sand-100/70">
+                <p className="text-sm font-bold text-white sm:text-base">{featured.name}</p>
+                <p className="text-xs text-sand-100/70 sm:text-sm">
                   Posted on Facebook · {featured.date}
                 </p>
               </div>
               {featured.recommends ? (
-                <span className="ms-auto inline-flex items-center gap-1.5 rounded-full bg-emerald-400/15 px-3 py-1 text-[11px] font-bold text-emerald-200">
-                  <ThumbsUp className="h-3.5 w-3.5" aria-hidden="true" />
+                <span className="ms-auto inline-flex items-center gap-1.5 rounded-full bg-emerald-400/15 px-2.5 py-1 text-[10px] font-bold text-emerald-200 sm:px-3 sm:text-[11px]">
+                  <ThumbsUp className="h-3 w-3 sm:h-3.5 sm:w-3.5" aria-hidden="true" />
                   Recommends
                 </span>
               ) : null}
@@ -186,12 +186,12 @@ export default function Reviews() {
               href={SITE.facebookReviews}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-xs font-bold text-white transition hover:border-gold-400/60 hover:text-gold-300"
+              className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/20 px-3.5 py-1.5 text-[11px] font-bold text-white transition hover:border-gold-400/60 hover:text-gold-300 sm:mt-6 sm:px-4 sm:py-2 sm:text-xs"
               aria-label={`View ${featured.name}'s review on Facebook`}
             >
-              <Facebook className="h-4 w-4" aria-hidden="true" />
+              <Facebook className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />
               View on Facebook
-              <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+              <ExternalLink className="h-3 w-3 sm:h-3.5 sm:w-3.5" aria-hidden="true" />
             </a>
           </article>
         </Reveal>
