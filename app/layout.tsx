@@ -11,6 +11,8 @@ import ChatWidget from "@/components/layout/ChatWidget";
 import StickyMobileCTA from "@/components/home/StickyMobileCTA";
 import { Analytics } from "@/lib/analytics";
 import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/seo/JsonLd";
+import { USA_PAGE, UK_PAGE, CANADA_PAGE, AUSTRALIA_PAGE } from "@/lib/landing-pages";
+import { pageUrl } from "@/components/seo/LandingPage";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -86,6 +88,15 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: SITE.url,
+    // Regional targeting: tells Google which page serves which English-speaking
+    // market (US is the primary target). x-default = global homepage.
+    languages: {
+      "x-default": SITE.url,
+      "en-US": pageUrl(USA_PAGE),
+      "en-GB": pageUrl(UK_PAGE),
+      "en-CA": pageUrl(CANADA_PAGE),
+      "en-AU": pageUrl(AUSTRALIA_PAGE),
+    },
   },
   openGraph: {
     type: "website",

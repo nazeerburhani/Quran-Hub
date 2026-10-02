@@ -819,6 +819,12 @@ export const USA_PAGE: LandingPageData = {
       ],
     },
     {
+      heading: "One academy, every US timezone",
+      paragraphs: [
+        "Because classes are live and online, your child learns at your local time — after school in New York, after homework in Chicago and Houston, evening slots in Dallas–Fort Worth and Atlanta, weekend mornings in Minneapolis–St. Paul, Columbus, or the San Francisco Bay Area. You pick the days and hours; we match a tutor whose schedule fits yours, wherever in the US you live.",
+      ],
+    },
+    {
       heading: "How to start",
       paragraphs: [
         "Message us on WhatsApp (+1 917 722 5120) — yes, a US number — tell us your state and preferred times, and we'll match a tutor and book your 3 free trial classes. No credit card, no forms that disappear into the void.",

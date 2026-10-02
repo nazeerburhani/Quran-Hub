@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """One-time FormSubmit activation for the QuranHub lead inbox.
 
-Flow: POST a TEST lead to formsubmit.co/ajax/nazeerahmad.sbg@gmail.com
+Flow: POST a TEST lead to formsubmit.co/ajax/info@quranhub.online
 (the same call the website makes). FormSubmit then emails a one-time
-activation link to that inbox; this script finds it in Gmail and opens it.
+activation link to that inbox (Zoho); the link is clicked via the
+Zoho webmail browser session (see cron body), after which the marker
+file is written and this script no-ops.
 
 Idempotent: exits quietly if ~/workspace/quran-academy/.formsubmit_activated
 exists. Safe to run on a schedule until it succeeds.
@@ -18,7 +20,7 @@ import urllib.request
 import urllib.error
 
 MARKER = os.path.expanduser("~/workspace/quran-academy/.formsubmit_activated")
-EMAIL = "nazeerahmad.sbg@gmail.com"
+EMAIL = "info@quranhub.online"
 ENDPOINT = f"https://formsubmit.co/ajax/{EMAIL}"
 
 
@@ -97,37 +99,19 @@ def main():
         print("already activated (marker exists) — nothing to do")
         return 0
 
-    # 1. Maybe the activation email already arrived (e.g. an earlier attempt worked).
-    mid = find_activation_email()
-    if not mid:
-        # 2. Trigger it with a TEST submission (same call the website makes).
-        status, body = submit_test_lead()
-        print(f"test submission -> HTTP {status}: {body[:120]}")
-        if status != 200 or "Server Error" in body:
-            print("FormSubmit is erroring right now; will retry on next run.")
-            return 1
-        time.sleep(90)  # give the activation email time to arrive
-        mid = find_activation_email()
-
-    if not mid:
-        print("no activation email in Gmail yet; will retry on next run.")
+    # 1. Trigger the activation email with a TEST submission (same call the website makes).
+    status, body = submit_test_lead()
+    print(f"test submission -> HTTP {status}: {body[:120]}")
+    if status != 200 or "Server Error" in body:
+        print("FormSubmit is erroring right now; will retry on next run.")
         return 1
-
-    link = extract_activation_link(mid)
-    if not link:
-        print(f"activation email {mid} found but no link extracted; will retry.")
-        return 1
-
-    try:
-        st = open_url(link)
-        print(f"opened activation link -> HTTP {st}")
-    except Exception as e:
-        print(f"failed to open activation link: {e}; will retry.")
-        return 1
-
-    open(MARKER, "w").write("activated\n")
-    print("ACTIVATION COMPLETE")
-    return 0
+    # 2. Submission accepted: FormSubmit emailed the one-time activation link to
+    #    info@quranhub.online (Zoho webmail). The link click is handled via the
+    #    browser session (see cron body); this run stays incomplete until the
+    #    marker file exists.
+    print("SUBMITTED-OK: activation email sent to info@quranhub.online; "
+          "activation link must be clicked in Zoho webmail.")
+    return 1
 
 
 if __name__ == "__main__":
