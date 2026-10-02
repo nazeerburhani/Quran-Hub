@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { SITE } from "@/lib/site";
+import { USA_PAGE, UK_PAGE, CANADA_PAGE, AUSTRALIA_PAGE } from "@/lib/landing-pages";
+import { pageUrl } from "@/components/seo/LandingPage";
 import { FaqJsonLd, CoursesJsonLd } from "@/components/seo/JsonLd";
 import Hero from "@/components/home/Hero";
 import GuaranteeStrip from "@/components/home/GuaranteeStrip";
@@ -22,6 +24,13 @@ export const metadata: Metadata = {
     "Live 1-on-1 online Quran classes for kids & adults: Noorani Qaida, Tajweed, Hifz, Tafseer, Arabic & more. Qualified male & female tutors, 10+ countries, free 3-day trial — no credit card.",
   alternates: {
     canonical: SITE.url,
+    languages: {
+      "x-default": SITE.url,
+      "en-US": pageUrl(USA_PAGE),
+      "en-GB": pageUrl(UK_PAGE),
+      "en-CA": pageUrl(CANADA_PAGE),
+      "en-AU": pageUrl(AUSTRALIA_PAGE),
+    },
   },
 };
 
