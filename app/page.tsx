@@ -32,6 +32,7 @@ export default function HomePage() {
       <CoursesJsonLd />
       <Hero />
       <GuaranteeStrip />
+      <Reviews />
       <StatBand />
       <Courses />
       <HowItWorks />
@@ -39,7 +40,6 @@ export default function HomePage() {
       <Founder />
       <Pricing />
       <Results />
-      <Reviews />
       <FreeTrialForm />
       <FAQ />
       <GlobalReach />
