@@ -1132,6 +1132,331 @@ export const GUIDE_FREE_TRIAL: LandingPageData = {
     "Day-by-day walkthrough of a real free trial Quran class: assessment, live lessons, honest feedback — no credit card, no obligation.",
 };
 
+export const GUIDE_HIFZ_TIMELINE: LandingPageData = {
+  slug: "how-long-does-it-take-to-memorize-the-quran",
+  basePath: "/guides",
+  breadcrumb: "How Long Hifz Takes",
+  metaTitle: "How Long Does It Take to Memorize the Quran? (Honest Answer)",
+  metaDescription:
+    "How long does it take to memorize the Quran? Honest ranges: days for short surahs, 3–6 months for Juz Amma, 2–5 years for the full Quran — plus the 7 factors that change your timeline.",
+  keywords: [
+    "how long does it take to memorize the quran",
+    "how long to memorize the quran",
+    "how long does it take to memorize the whole quran",
+    "how long to memorize juz amma",
+    "quran memorization timeline",
+    "how long does hifz take",
+  ],
+  h1: "How Long Does It Take to Memorize the Quran? (An Honest Answer)",
+  intro: [
+    "If you're considering Hifz — for your child or yourself — this is the first question everyone asks, and the one most academies answer with vague optimism. So here is the honest version: there is no single number. A short surah takes days. Juz Amma takes months. The entire Quran takes years. What decides where you land in those ranges is consistency, qualified feedback, and a serious revision system — not talent.",
+    "This guide gives you realistic ranges for every milestone, the seven factors that speed memorization up or slow it down, a sample weekly routine that actually fits a US family's life, and how structured online 1-on-1 Hifz classes work. Every range below is labeled for what it is: a commonly reported benchmark, not a promise. Individual progress varies — enormously.",
+  ],
+  sections: [
+    {
+      heading: "The short answer: realistic ranges",
+      paragraphs: [
+        "Memorization time scales with the size of the goal and the intensity of the routine. The ranges below reflect what memorization programs and experienced tutors commonly report — think of them as weather forecasts, not train schedules. Two students with identical schedules can still differ by months, because memory, focus, and revision discipline are personal.",
+        "The single most important variable is daily contact with the Quran. A student who recites a little every day will reliably outpace a student who crams for hours on weekends, at every level from short surahs to the complete Quran.",
+      ],
+      bullets: [
+        "Short surahs (Al-Ikhlas, Al-Kawthar, Al-Asr): days to a few weeks each",
+        "Surah Al-Fatihah: our tutors report 7–14 days with daily 15-minute practice",
+        "Juz Amma (the 30th juz): typically 3–6 months with 3–5 classes per week plus daily practice",
+        "Half the Quran: commonly 1–2.5 years for part-time students",
+        "The full Quran: full-time students in dedicated programs often take 2–3 years; part-time students balancing school or work typically take 3–5 years or more",
+      ],
+    },
+    {
+      heading: "Why the full Quran takes years — and why that's fine",
+      paragraphs: [
+        "The Quran has 6,236 verses across 114 surahs. Memorizing it isn't one task; it's thousands of small tasks — new verses learned, then kept alive through revision — stacked over years. The students who finish aren't the fastest; they're the most consistent. Almost every Hafiz will tell you the same thing: the secret was showing up every single day.",
+        "Parents sometimes worry the timeline is too long for a child. Reframe it: a child who starts Hifz at 8 and finishes at 12 has spent four years building daily discipline, deep familiarity with the Quran, and a habit of structured effort — benefits that outlast the memorization itself. And a child who memorizes even three or four juz has achieved something permanent and precious.",
+      ],
+      bullets: [
+        "Memorization = learning new verses + revising old ones, every day, for years",
+        "Finishers are consistent, not necessarily fast — daily contact beats long sessions",
+        "Partial Hifz is a real achievement: even a few juz, retained well, is precious",
+        "The discipline and routine built along the way benefit school and life",
+      ],
+    },
+    {
+      heading: "The 7 factors that change your timeline",
+      paragraphs: [
+        "When two students start together and finish months apart, it's almost always one of these seven factors. The good news: most of them are within your control.",
+      ],
+      bullets: [
+        "1. Age and memory: children roughly 7–14 tend to memorize fastest — memory is at its most absorbent. Adults memorize more slowly but compensate with discipline and understanding.",
+        "2. Consistency: five 30-minute classes a week with daily practice beats sporadic long sessions. Missed weeks cost more than slow weeks.",
+        "3. A qualified tutor listening daily: mistakes memorized without correction fossilize and take ten times longer to fix than to prevent. A tutor who hears every verse keeps the foundation clean.",
+        "4. A real revision system: new memorization (Sabaq) is only a third of the work. Recent revision (Sabqi) and old revision (Manzil) are what make memorization permanent.",
+        "5. Fluent reading first: students who complete Nazra (fluent Quran reading) before Hifz memorize significantly faster, because they're memorizing words they can already read.",
+        "6. Daily practice time: 20–30 focused minutes of revision at home compounds dramatically over months. Ten minutes beats zero; thirty beats ten.",
+        "7. Arabic familiarity: students who understand basic Arabic vocabulary connect with meanings faster, which anchors memorization. It's a bonus, not a requirement.",
+      ],
+    },
+    {
+      heading: "A realistic weekly routine for a US family",
+      paragraphs: [
+        "Theory is nice; schedules are what matter. Here's what a sustainable Hifz routine looks like for a school-aged child in the US — demanding enough to progress, light enough to survive a real week of homework, activities, and family life.",
+        "Adults follow the same structure with longer sessions: the pattern matters more than the minutes. And one non-negotiable rule across all ages: revision is never skipped to 'make room' for new memorization. New verses without revision are verses you'll relearn later.",
+      ],
+      bullets: [
+        "Classes: 3–5 one-on-one sessions per week, 30–45 minutes each, at a consistent after-school time",
+        "Sabaq (new lesson): assigned each class, typically a few verses — small enough to perfect, large enough to progress",
+        "Sabqi (recent revision): the last several lessons recited back each class, keeping new material fresh",
+        "Manzil (old revision): a rotating portion of everything memorized so far, so nothing fades",
+        "Home practice: 15–30 minutes daily — recite the Sabaq, then the Sabqi, then a Manzil portion",
+        "Weekly rhythm: most families progress steadily at 3–4 classes/week; 5/week suits dedicated Hifz-track students",
+      ],
+    },
+    {
+      heading: "How online 1-on-1 Hifz classes actually work",
+      paragraphs: [
+        "Online Hifz works because memorization is fundamentally an audio task: a student recites, a teacher listens and corrects. Video calls deliver exactly that, with one decisive advantage over group settings — the tutor's ear is on your child 100% of the time, not divided among twenty students.",
+        "A typical class opens with the student reciting yesterday's Sabaq from memory while the tutor corrects pronunciation and Tajweed on the spot. Then Sabqi — recent lessons recited back — then a Manzil portion. Only then is the new Sabaq assigned: the tutor recites it, the student repeats until it's clean, and the home assignment is set. Progress is tracked lesson by lesson, and parents receive regular updates on what's been memorized and what's due for revision.",
+        "Because classes are one-on-one and online, scheduling bends around American school life — real after-school hours in every US timezone, no commute, and the same qualified tutor every session. A student in Texas and a student in California both get their ideal slot.",
+      ],
+      bullets: [
+        "The tutor listens to every verse your child recites — instant, specific correction",
+        "Each class covers Sabaq (new), Sabqi (recent), and Manzil (old revision)",
+        "New material is assigned only when the previous lesson is solid",
+        "Parents get regular progress updates: what's memorized, what's being revised",
+        "Same qualified tutor every class, scheduled in your US timezone",
+      ],
+    },
+    {
+      heading: "Mistakes that quietly add months to the timeline",
+      paragraphs: [
+        "Most slowdowns aren't about ability — they're about avoidable mistakes. If your timeline is stretching, check these first before doubting the student.",
+      ],
+      bullets: [
+        "Starting Hifz before fluent reading: memorizing sounds you can't read doubles the work — complete Nazra first",
+        "Skipping revision: every skipped Manzil session is a future re-memorization session",
+        "Inconsistent schedule: two great weeks followed by a missed week erases the gains",
+        "Memorizing alone without a teacher: uncorrected mistakes become permanent and painful to fix",
+        "Too much new material per day: an overloaded Sabaq collapses the whole system — small and perfect beats large and shaky",
+        "No fixed daily time: 'whenever we get to it' becomes never; anchor practice to an existing routine",
+      ],
+    },
+    {
+      heading: "Is Hifz right for your child? How to decide",
+      paragraphs: [
+        "Hifz is a multi-year commitment, and it's not the right path for every child at every age. The honest prerequisites: fluent Quran reading, the ability to revise the previous day's lesson accurately, and genuine willingness from the child. Memorization imposed on an unwilling child breeds resentment; memorization chosen by an eager one flourishes.",
+        "You don't have to decide alone. Our free 3-day trial includes an honest Hifz-readiness assessment: the tutor evaluates reading fluency, focus, and attitude, then tells you plainly whether to start now, build foundations first, or wait. We'd rather recommend six more months of Nazra than start memorization prematurely.",
+      ],
+      bullets: [
+        "Prerequisites: fluent reading, accurate revision, and the child's own willingness",
+        "Not every child is ready at the same age — readiness beats the calendar",
+        "The trial includes an honest Hifz-readiness assessment, not a sales pitch",
+        "Starting with strong foundations is faster than starting early and stalling",
+      ],
+    },
+  ],
+  faqs: [
+    {
+      q: "How long does it take to memorize the entire Quran?",
+      a: "Full-time students in dedicated memorization programs commonly take 2–3 years. Part-time students balancing school or work typically take 3–5 years or more. These are widely reported benchmarks, not guarantees — consistency, daily revision, and qualified feedback matter more than raw speed.",
+    },
+    {
+      q: "How long does it take to memorize Juz Amma?",
+      a: "Typically 3–6 months with 3–5 classes per week plus daily practice. Juz Amma's short surahs are the most approachable starting point, which is why many Hifz programs begin there.",
+    },
+    {
+      q: "How long does it take to memorize Surah Al-Fatihah?",
+      a: "Our tutors report 7–14 days with daily 15-minute practice for most beginners. Because it's recited in every prayer, it also gets constant natural revision — which is why it sticks so well.",
+    },
+    {
+      q: "Can an adult memorize the whole Quran?",
+      a: "Yes — adults complete Hifz regularly. Expect a longer timeline than a child's (often 4–6+ years part-time), but adults compensate with discipline, better time management, and deeper engagement with meanings. Many of our adult students memorize steadily alongside work and family.",
+    },
+    {
+      q: "Does my child need to read the Quran fluently before starting Hifz?",
+      a: "Yes — this is the single most important prerequisite. Children should complete Nazra (fluent Quran reading) before memorizing, so they're memorizing words they can already read rather than pure sounds. Starting Hifz too early is one of the most common reasons memorization stalls.",
+    },
+    {
+      q: "How much should we practice at home each day?",
+      a: "15–30 focused minutes daily: recite the new lesson, then recent revision, then a portion of old revision. Consistency matters far more than length — 20 minutes every day beats two hours on Sunday.",
+    },
+    {
+      q: "Is online Hifz as effective as in-person memorization?",
+      a: "Yes, when it's structured 1-on-1 with a qualified tutor. Memorization is an audio task — the tutor listens to every verse and corrects instantly, which video classes deliver fully. One-on-one online instruction actually gives your child more individual correction time than a typical in-person group class.",
+    },
+  ],
+  related: [
+    { href: "/courses/online-hifz-program", label: "Online Hifz Program" },
+    { href: "/free-trial", label: "Book Your Free 3-Day Trial" },
+    { href: "/fees", label: "Fees & Plans" },
+    { href: "/guides/what-age-should-child-start-quran-classes", label: "What Age Should a Child Start Quran Classes?" },
+    { href: "/guides/online-quran-classes-for-7-year-olds", label: "Quran Classes for 7-Year-Olds" },
+    { href: "/guides/how-much-do-online-quran-classes-cost", label: "How Much Do Online Quran Classes Cost?" },
+  ],
+  whatsappMessage:
+    "Assalamu Alaikum, I'm interested in the Hifz (Quran memorization) program. Please share details about the free trial and a readiness assessment.",
+  courseName: "How Long Does It Take to Memorize the Quran?",
+  courseDescription:
+    "Honest Hifz timelines: days for short surahs, months for Juz Amma, years for the full Quran — the 7 factors that change your timeline, a realistic weekly routine, and how online 1-on-1 memorization works. Free 3-day trial.",
+};
+
+/** Article #2 (drafted 2026-10-05, uncommitted, awaiting user review): long-tail guide. */
+export const GUIDE_QAIDA_TIMELINE: LandingPageData = {
+  slug: "how-long-does-it-take-to-learn-noorani-qaida",
+  basePath: "/guides",
+  breadcrumb: "Noorani Qaida Timeline",
+  metaTitle: "How Long Does It Take to Learn Noorani Qaida? (Honest Answer)",
+  metaDescription:
+    "How long does it take to learn Noorani Qaida? Honest ranges: children typically take 2–6 months, adults often finish in weeks — plus the 7 factors that change your timeline and what comes after.",
+  keywords: [
+    "how long does it take to learn noorani qaida",
+    "how long to learn noorani qaida",
+    "how long does noorani qaida take",
+    "noorani qaida duration for kids",
+    "how long to finish qaida",
+    "noorani qaida for beginners timeline",
+  ],
+  h1: "How Long Does It Take to Learn Noorani Qaida? (An Honest Answer)",
+  intro: [
+    "Noorani Qaida is the foundation of all Quran reading — the primer booklet that teaches the Arabic alphabet, correct pronunciation, and the joining and vowel rules that make Quran reading possible. Every parent asks the same first question: how long will this take my child? Most academies answer with a single confident number. Here is the honest version: children typically take 2–6 months to complete the Qaida, while motivated adults often finish in weeks. What decides where your family lands in those ranges is consistency, daily home practice, and a tutor who corrects every letter — not age alone.",
+    "This guide gives you realistic ranges for kids and adults, the five stages of the Qaida so you can see where your child actually is, the seven factors that speed the timeline up or slow it down, a sample weekly routine that fits a US family's life, and what comes after Qaida is complete. Every range below is labeled for what it is: a commonly reported benchmark, not a promise. Children progress at their own pace — enormously.",
+  ],
+  sections: [
+    {
+      heading: "The short answer: realistic ranges",
+      paragraphs: [
+        "Qaida programs commonly report that a child aged 4–10, attending 3–5 classes per week with 15–20 minutes of daily home practice, completes the full Noorani Qaida in about 2–6 months. Our tutors report that with daily classes and consistent home revision, many children finish closer to 3 months; with irregular schedules it can stretch beyond 6 months. Adults and teens learning from zero typically move much faster — often 4–8 weeks — because they can sit through longer practice sessions and self-correct between classes.",
+        "These are widely reported benchmarks, not guarantees. The single most important variable is daily contact with the letters. A child who practices 15 focused minutes every day will reliably outpace a child who has brilliant 45-minute classes but never opens the Qaida between them.",
+      ],
+      bullets: [
+        "Young children (4–7), 3–5 classes/week + daily home practice: typically 2–6 months",
+        "Our tutors report: with daily classes, many children finish in about 3 months",
+        "Older kids (8–12): commonly 1–3 months with the same routine",
+        "Teens and adults starting from zero: often 4–8 weeks with regular practice",
+        "Irregular schedules or no home practice: can stretch well beyond 6 months",
+      ],
+    },
+    {
+      heading: "What \"learning Noorani Qaida\" actually covers",
+      paragraphs: [
+        "Parents often imagine the Qaida as one skill, but it's really five progressive stages. Knowing which stage your child is in is the best way to judge whether the timeline is on track — \"half the book\" means very different things depending on the stage.",
+      ],
+      bullets: [
+        "Stage 1 — Individual letters: recognizing and pronouncing all 29 Arabic letters correctly (makharij)",
+        "Stage 2 — Compound and joined letters: reading letters in their connected forms",
+        "Stage 3 — Harakat (fatha, damma, kasra): reading short vowels fluently and accurately",
+        "Stage 4 — Tanween, madd, and advanced rules: the longer vowel and elongation rules",
+        "Stage 5 — Fluency drills: reading full Qaida lines smoothly at speed, with correct pronunciation throughout",
+      ],
+    },
+    {
+      heading: "The 7 factors that change the timeline",
+      paragraphs: [
+        "Two children with the same schedule can differ by months. These are the seven factors that decide which end of the range your child lands on — and the good news is that five of them are entirely in your control.",
+      ],
+      bullets: [
+        "Daily home practice: 15–20 minutes of revision between classes is the #1 accelerator — more than any curriculum",
+        "1-on-1 correction: in a group, a mispronounced letter goes unheard; 1-on-1, the tutor fixes every letter the same day",
+        "Age and readiness: a focused 6-year-old often finishes faster than a distracted 4-year-old — readiness beats the calendar",
+        "Consistency over intensity: five 20-minute sessions a week beat one marathon weekend session",
+        "Correct makharij from day one: letters learned wrong must be unlearned — early correction saves months",
+        "Prior Arabic exposure: children who hear Arabic at home usually recognize the sounds faster",
+        "Same tutor every class: continuity means the tutor knows exactly which letters are shaky and drills them",
+      ],
+    },
+    {
+      heading: "A realistic weekly routine for a US family",
+      paragraphs: [
+        "You don't need to restructure your life around the Qaida. The routine that works for most of our US families is modest: regular short classes plus a tiny daily anchor at home. Here is a sample that families actually sustain.",
+      ],
+      bullets: [
+        "3–5 one-on-one classes per week, 30 minutes each, scheduled in your US timezone (many families choose 5:00–7:00 PM)",
+        "15–20 minutes of home revision daily — recite today's lesson, then yesterday's, then one old page",
+        "One weekend session: read any 3–4 old Qaida pages aloud at speed — fluency lives here",
+        "Anchor practice to an existing routine (after dinner, before bedtime) so it happens without negotiation",
+        "Parents don't need to know Arabic — just sit nearby, listen, and praise the effort; the tutor handles correction",
+      ],
+    },
+    {
+      heading: "Signs your child has finished the Qaida",
+      paragraphs: [
+        "A qualified tutor should be able to tell you, plainly and specifically, when your child is done. Here are the benchmarks worth hearing from them before you move on.",
+      ],
+      bullets: [
+        "Reads any line of the Qaida fluently, with correct makharij on every letter",
+        "Handles harakat, tanween, and madd rules accurately without guessing",
+        "Can read connected words and phrases smoothly, not letter-by-letter",
+        "The tutor confirms readiness for Nazra (Quran reading) — don't rush the transition",
+        "Red flag: a program that 'finishes' the book while the child still stumbles — fluent reading, not page-turning, is the finish line",
+      ],
+    },
+    {
+      heading: "What comes after Noorani Qaida?",
+      paragraphs: [
+        "Completing the Qaida is a real milestone — celebrate it. It unlocks the next three paths, and your tutor should discuss which fits your family's goals.",
+      ],
+      bullets: [
+        "Nazra (Quran reading): fluent reading of the entire Quran with correct pronunciation — the standard next step",
+        "Tajweed foundations: for students who want precision in the rules of recitation from the start",
+        "Hifz (memorization): children move into memorization only after fluent reading is solid — Qaida alone isn't enough",
+      ],
+    },
+    {
+      heading: "How online 1-on-1 Qaida classes work",
+      paragraphs: [
+        "Qaida learning is an audio task: the tutor must hear every letter your child produces. That's exactly what 1-on-1 video classes deliver — the tutor listens to each letter, stops the mispronounced ones immediately, and assigns the right revision for tomorrow. In a typical in-person group class, a child's wrong letter can go unnoticed for weeks; online 1-on-1, it's corrected in the same minute.",
+      ],
+      bullets: [
+        "The tutor hears and corrects every letter, every class — instant makharij correction",
+        "New material is assigned only when the current page is solid",
+        "Same qualified tutor every class, scheduled in your US timezone",
+        "Parents get regular updates: which stage the child is in and what's coming next",
+      ],
+    },
+  ],
+  faqs: [
+    {
+      q: "How long does it take to learn Noorani Qaida?",
+      a: "Children typically take 2–6 months with 3–5 classes per week plus 15–20 minutes of daily home practice. Older kids (8–12) commonly take 1–3 months; teens and adults often finish in 4–8 weeks. These are widely reported benchmarks, not guarantees — daily practice and qualified 1-on-1 correction matter more than age.",
+    },
+    {
+      q: "At what age should my child start Noorani Qaida?",
+      a: "Most children start between ages 4 and 6, when they can sit for 20–30 minutes and repeat sounds after the teacher. Readiness matters more than the birthday: can your child focus on a short task, repeat sounds back accurately, and sit through a 30-minute class? If yes, they're ready.",
+    },
+    {
+      q: "Can an adult learn Noorani Qaida from zero?",
+      a: "Absolutely — and adults usually progress faster than children, often completing the Qaida in 4–8 weeks with regular practice. There's no shame in starting from zero; many of our adult students begin with the Qaida before moving to Quran reading.",
+    },
+    {
+      q: "Does my child need to know Arabic before starting?",
+      a: "No. Noorani Qaida is designed for complete beginners and assumes zero Arabic. It teaches the alphabet, sounds, and rules from the very first letter. Prior Arabic exposure can help with pronunciation, but it is not a requirement.",
+    },
+    {
+      q: "How many classes per week does my child need?",
+      a: "We recommend 3–5 one-on-one classes per week, 30 minutes each, plus 15–20 minutes of home revision daily. Fewer than 3 classes per week works but stretches the timeline noticeably, because too much is forgotten between sessions.",
+    },
+    {
+      q: "How do I know when my child is done with Qaida?",
+      a: "Your child is done when they can read any line of the Qaida fluently with correct pronunciation of every letter, handle harakat, tanween, and madd accurately, and read connected words smoothly. Your tutor should confirm this specifically before transitioning to Nazra (Quran reading).",
+    },
+    {
+      q: "Is online Qaida learning as effective as in-person?",
+      a: "Yes — Qaida learning is an audio task, and 1-on-1 video classes deliver exactly that: the tutor hears every letter your child recites and corrects mispronunciations instantly. One-on-one online instruction typically gives more individual correction time per class than an in-person group setting.",
+    },
+  ],
+  related: [
+    { href: "/courses/noorani-qaida-online", label: "Noorani Qaida Course" },
+    { href: "/free-trial", label: "Book Your Free 3-Day Trial" },
+    { href: "/fees", label: "Fees & Plans" },
+    { href: "/guides/what-age-should-child-start-quran-classes", label: "What Age Should a Child Start Quran Classes?" },
+    { href: "/guides/online-quran-classes-for-4-year-olds", label: "Quran Classes for 4-Year-Olds" },
+    { href: "/guides/online-quran-classes-for-5-year-olds", label: "Quran Classes for 5-Year-Olds" },
+  ],
+  whatsappMessage:
+    "Assalamu Alaikum, I'm interested in the Noorani Qaida program for my child. Please share details about the free trial.",
+  courseName: "How Long Does It Take to Learn Noorani Qaida?",
+  courseDescription:
+    "Honest Noorani Qaida timelines: 2–6 months for children, weeks for adults — the 5 stages of the Qaida, the 7 factors that change your timeline, a realistic US-family routine, and what comes after. Free 3-day trial.",
+};
+
 /** All guides, keyed for the [slug] route. */
 export const GUIDES: Record<string, LandingPageData> = {
   [GUIDE_4_YEAR_OLDS.slug]: GUIDE_4_YEAR_OLDS,
@@ -1142,6 +1467,8 @@ export const GUIDES: Record<string, LandingPageData> = {
   [GUIDE_ONLINE_VS_MASJID.slug]: GUIDE_ONLINE_VS_MASJID,
   [GUIDE_CHOOSE_TEACHER.slug]: GUIDE_CHOOSE_TEACHER,
   [GUIDE_FREE_TRIAL.slug]: GUIDE_FREE_TRIAL,
+  [GUIDE_HIFZ_TIMELINE.slug]: GUIDE_HIFZ_TIMELINE,
+  [GUIDE_QAIDA_TIMELINE.slug]: GUIDE_QAIDA_TIMELINE,
 };
 
 /** Ordered list for the guides index page and sitemap. */
@@ -1154,4 +1481,6 @@ export const GUIDE_LIST: LandingPageData[] = [
   GUIDE_ONLINE_VS_MASJID,
   GUIDE_CHOOSE_TEACHER,
   GUIDE_FREE_TRIAL,
+  GUIDE_HIFZ_TIMELINE,
+  GUIDE_QAIDA_TIMELINE,
 ];
