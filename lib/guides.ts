@@ -1457,8 +1457,171 @@ export const GUIDE_QAIDA_TIMELINE: LandingPageData = {
     "Honest Noorani Qaida timelines: 2–6 months for children, weeks for adults — the 5 stages of the Qaida, the 7 factors that change your timeline, a realistic US-family routine, and what comes after. Free 3-day trial.",
 };
 
-/** All guides, keyed for the [slug] route. */
-export const GUIDES: Record<string, LandingPageData> = {
+/** Article #3 (drafted 2026-10-05, uncommitted, awaiting user review): objection-handling long-tail guide. */
+export const GUIDE_ONLINE_EFFECTIVENESS: LandingPageData = {
+  slug: "is-online-quran-classes-effective-for-kids",
+  basePath: "/guides",
+  breadcrumb: "Online Class Effectiveness",
+  metaTitle: "Is Online Quran Classes Effective for Kids? (Honest Answer)",
+  metaDescription:
+    "Is online Quran classes effective for kids? Honest answer: yes — when it's 1-on-1 with a qualified tutor. Why Quran learning suits video classes, when in-person wins, and a parent's first-month checklist.",
+  keywords: [
+    "is online quran classes effective for kids",
+    "are online quran classes effective",
+    "do online quran classes work for children",
+    "online quran classes for kids effectiveness",
+    "is learning quran online good for kids",
+    "online vs in-person quran classes kids",
+  ],
+  h1: "Is Online Quran Classes Effective for Kids? (An Honest Answer)",
+  intro: [
+    "Every parent asks this before enrolling, and it's the right question: can a child really learn the Quran through a screen? Here is the honest answer — yes, online Quran classes work for kids, and in one specific way they work better than the alternative. Quran learning is fundamentally an audio task: a child recites, a teacher listens and corrects. A video call delivers exactly that, and in a 1-on-1 class your child gets the tutor's full attention for every minute — something no group setting can match.",
+    "But 'online' is not one thing. A 1-on-1 class with a qualified tutor is a different universe from a 20-student Zoom call. This guide explains why Quran instruction suits online learning, when in-person may genuinely suit your family better, the five factors that decide effectiveness, the red flags to watch for in any program, and a parent's checklist for judging whether it's working in the first month. No invented statistics, no sales pitch — just the mechanics of what makes it work.",
+  ],
+  sections: [
+    {
+      heading: "The short answer: why Quran learning suits the screen",
+      paragraphs: [
+        "Quran instruction is not like a school lesson. There are no worksheets to hand out, no whiteboard diagrams to follow, no group activities to manage. At its core it is a loop: the child recites, the tutor listens, the tutor corrects — letter by letter, verse by verse. Everything that matters in that loop is sound, and sound travels perfectly over a video call.",
+        "Our tutors report the same pattern across hundreds of lessons: the students who progress fastest online are not the most tech-comfortable — they're the ones with consistent schedules and daily practice. The screen itself is rarely the barrier. The real variables are the tutor's attention, the regularity of classes, and what happens between them — exactly the same variables that decide success in person.",
+      ],
+      bullets: [
+        "Quran learning is an audio loop — recite, listen, correct — and video calls carry it fully",
+        "1-on-1 online: the tutor's ear is on your child 100% of the time, never split among a group",
+        "No commute means classes happen on schedule, in your US timezone, even in bad weather or busy weeks",
+        "Same qualified tutor every class — continuity a group program can't easily provide",
+      ],
+    },
+    {
+      heading: "The real comparison: 1-on-1 online vs. group in-person",
+      paragraphs: [
+        "Parents usually frame this as 'online vs. in-person,' but the honest comparison is different. Most in-person Quran instruction for kids happens in groups — weekend masjid schools with 15–30 children per teacher. In that setting, your child gets a few minutes of individual correction per hour, if they're lucky enough to be heard at all. A mispronounced letter can go unnoticed for weeks.",
+        "Put that next to a 1-on-1 online class: every letter your child recites is heard and corrected in the same minute. That's not a small difference — it's the difference between mistakes being prevented and mistakes being fossilized. When parents ask whether online is 'as good as' in-person, the follow-up question is: in-person what? Against a private in-home tutor, online is roughly equivalent on learning quality (with scheduling and cost advantages). Against a group class, 1-on-1 online wins on correction time — decisively.",
+      ],
+      bullets: [
+        "Group in-person: minutes of individual attention per hour, mistakes can go unheard for weeks",
+        "1-on-1 online: every recitation heard and corrected instantly — prevention beats repair",
+        "Private in-person tutor: equivalent learning quality, but harder to schedule and usually costs more",
+        "The format matters less than the ratio: one tutor, one child, full attention",
+      ],
+    },
+    {
+      heading: "When in-person may genuinely suit your family better",
+      paragraphs: [
+        "Honesty requires the other side. Online is not the best answer for every child, and a program that claims otherwise is selling, not advising. Here are the situations where we'd tell a parent to consider in-person options.",
+        "Very young children — typically ages 4 and under — often struggle to sit with a screen independently. Online can still work at this age, but only with a parent sitting beside the child for the full 30 minutes. If no adult is available during class time, an in-person setting with physical presence is the better choice. Similarly, children who are deeply social learners and feed off the masjid environment may thrive in a weekend school — not because the instruction is better, but because the community keeps them coming back. And online requires basics: a quiet corner, a working device, and a stable connection. If those aren't reliably available, don't force it.",
+      ],
+      bullets: [
+        "Ages 4 and under: online works only with a parent present for the full class",
+        "Social learners who need the masjid community to stay motivated",
+        "Households without a quiet corner, reliable device, or stable internet",
+        "Children with attention difficulties who respond better to physical presence",
+        "Note: most of these are about the child and the setup — not about online instruction being weaker",
+      ],
+    },
+    {
+      heading: "The 5 factors that actually decide effectiveness",
+      paragraphs: [
+        "When online Quran classes 'don't work' for a family, the cause is almost never the screen. It's one of these five factors — and four of them are fully within your control as a parent.",
+      ],
+      bullets: [
+        "1. A qualified tutor who corrects every letter: credentials matter less than ears — a tutor who hears and fixes mispronunciations in the moment is the entire difference",
+        "2. Genuinely 1-on-1: some programs sell 'online classes' that are really group calls — individual correction time is the metric that matters",
+        "3. Consistency of schedule: three fixed classes a week beat five irregular ones — the brain learns on rhythm",
+        "4. Daily home practice: 15–20 minutes of revision between classes is what converts a lesson into a skill",
+        "5. Parent involvement: you don't need to know Arabic — sitting nearby, keeping the routine, and asking the tutor for updates multiplies everything else",
+      ],
+    },
+    {
+      heading: "Red flags: how to spot a weak online program",
+      paragraphs: [
+        "The online Quran space has excellent academies and some poor ones, and the poor ones share recognizable patterns. Run any program — including ours — against this list before you commit.",
+        "The biggest red flag is vagueness: tutors who change every class, no named teacher your child builds a relationship with, and no progress updates telling you specifically what your child learned this month. A program that can't tell you, in concrete terms, where your child stands is a program that isn't tracking it. Also beware the no-trial program — any academy confident in its teaching offers a genuine free trial with no card required. And watch for pressure: countdown timers, 'seats almost gone,' and aggressive follow-up calls are sales tactics, not signs of quality teaching.",
+      ],
+      bullets: [
+        "Rotating tutors with no consistent teacher your child knows",
+        "No concrete progress updates — vague 'your child is doing well' with no specifics",
+        "No real free trial, or a trial that requires payment details upfront",
+        "Group classes marketed with 1-on-1 language — ask directly: how many students per class?",
+        "High-pressure sales tactics: fake scarcity, countdown timers, relentless follow-up calls",
+        "No clear path: the program can't explain what comes after the current stage",
+      ],
+    },
+    {
+      heading: "A parent's checklist: is it working in the first month?",
+      paragraphs: [
+        "Don't wait a semester to judge. After four weeks of classes, these are the signals that the program is effective — observable at home, no expertise required.",
+        "The strongest signal is specific correction: your child mentions that the teacher fixed a particular letter or rule. That means the tutor is actually listening, which is the whole mechanism. Next, look for forward motion you can hear: recitation that's audibly more accurate than week one, even slightly. Your child should also be able to tell you what they're working on — 'we're on the joined letters' — because a good tutor narrates the journey. And the emotional signal matters: a child who resists every class after a month is telling you something real, whether about the format or the tutor fit. Finally, you should have received at least one concrete progress update from the tutor or academy without having to chase it.",
+      ],
+      bullets: [
+        "Your child mentions specific corrections ('my teacher fixed my ق') — the tutor is truly listening",
+        "Recitation is audibly more accurate than in week one",
+        "Your child can tell you what they're currently learning and what's next",
+        "No persistent dread of class time after the first couple of weeks",
+        "You've received at least one concrete progress update without asking",
+        "The tutor knows your child's weak letters by name — ask them directly",
+      ],
+    },
+    {
+      heading: "How effective online Quran classes work day to day",
+      paragraphs: [
+        "So the decision is made — what should a good week actually look like? A typical effective setup for a school-aged child in the US: three 30-minute 1-on-1 classes per week at a fixed after-school time, in your timezone. Each class follows the same loop — recite yesterday's lesson while the tutor corrects, revise recent material, then learn the next small portion.",
+        "Between classes, the home routine is simple and short: 15–20 minutes of reciting today's lesson, then yesterday's, then one older page. Anchor it to an existing habit — after dinner, before bedtime — so it happens without negotiation. Parents don't need to correct anything; just be nearby, keep the time protected, and once a month ask the tutor two questions: what has my child mastered, and what's the current weak spot? Those two answers tell you everything about whether the program is working.",
+      ],
+      bullets: [
+        "3 one-on-one classes per week, 30 minutes each, fixed after-school slot in your US timezone",
+        "Each class: recite and correct, revise recent material, learn the next small portion",
+        "15–20 minutes of home revision daily, anchored to an existing routine",
+        "Parents protect the time and ask the tutor monthly: what's mastered, what's the weak spot?",
+        "Same qualified tutor every class — the relationship is part of the method",
+      ],
+    },
+  ],
+  faqs: [
+    {
+      q: "Is online Quran classes effective for kids?",
+      a: "Yes — when it's genuinely 1-on-1 with a qualified tutor. Quran learning is an audio loop of recite, listen, and correct, which video classes carry fully. In a 1-on-1 online class your child gets the tutor's complete attention every minute, with every letter corrected instantly — more individual correction time than a typical in-person group class.",
+    },
+    {
+      q: "What age is best for starting online Quran classes?",
+      a: "Most children start between ages 4 and 6. At ages 4–5, online classes work well with a parent sitting nearby for the full session. From around age 6, most children can attend independently. Readiness — the ability to sit for 30 minutes and repeat sounds — matters more than the exact birthday.",
+    },
+    {
+      q: "Is online or in-person Quran learning better for my child?",
+      a: "It depends on what 'in-person' means. Against a private in-home tutor, 1-on-1 online is roughly equivalent in learning quality, with easier scheduling. Against a group weekend class, 1-on-1 online wins on individual correction time. In-person suits children who need physical presence or the masjid community to stay motivated.",
+    },
+    {
+      q: "How many online classes per week does my child need?",
+      a: "Three 30-minute 1-on-1 classes per week is the standard effective routine for school-aged children, plus 15–20 minutes of home revision daily. Fewer than three classes stretches progress noticeably, because too much is forgotten between sessions.",
+    },
+    {
+      q: "Do I need to know Arabic to help my child with online classes?",
+      a: "No. Your role is protecting the routine, sitting nearby for younger children, and asking the tutor for monthly progress updates. Correction is the tutor's job — parents who try to correct without training can accidentally reinforce mistakes.",
+    },
+    {
+      q: "How do I know if the online classes are actually working?",
+      a: "After one month, look for: specific corrections your child mentions, audibly more accurate recitation, your child knowing what they're learning and what's next, no persistent dread of class, and at least one concrete progress update from the tutor. If several of these are missing, raise it with the academy before continuing.",
+    },
+    {
+      q: "Can I try online Quran classes before committing?",
+      a: "Any academy confident in its teaching should offer a genuine free trial — ours is 3 days with no card required. Use the trial to test exactly what this guide describes: does the tutor correct your child's letters specifically, is the class truly 1-on-1, and do you get a clear picture of where your child stands?",
+    },
+  ],
+  related: [
+    { href: "/free-trial", label: "Book Your Free 3-Day Trial" },
+    { href: "/fees", label: "Fees & Plans" },
+    { href: "/guides/what-age-should-child-start-quran-classes", label: "What Age Should a Child Start Quran Classes?" },
+    { href: "/guides/how-long-does-it-take-to-learn-noorani-qaida", label: "How Long Does It Take to Learn Noorani Qaida?" },
+    { href: "/guides/how-much-do-online-quran-classes-cost", label: "How Much Do Online Quran Classes Cost?" },
+  ],
+  whatsappMessage:
+    "Assalamu Alaikum, I have questions about how online Quran classes work for kids. Please share details about the free trial.",
+  courseName: "Is Online Quran Classes Effective for Kids?",
+  courseDescription:
+    "Honest answer: yes, when it's 1-on-1 with a qualified tutor — why Quran learning suits video classes, when in-person wins, red flags to avoid, and a parent's first-month effectiveness checklist. Free 3-day trial.",
+};
+
+/** All guides, keyed for the [slug] route. */export const GUIDES: Record<string, LandingPageData> = {
   [GUIDE_4_YEAR_OLDS.slug]: GUIDE_4_YEAR_OLDS,
   [GUIDE_5_YEAR_OLDS.slug]: GUIDE_5_YEAR_OLDS,
   [GUIDE_7_YEAR_OLDS.slug]: GUIDE_7_YEAR_OLDS,
@@ -1469,6 +1632,7 @@ export const GUIDES: Record<string, LandingPageData> = {
   [GUIDE_FREE_TRIAL.slug]: GUIDE_FREE_TRIAL,
   [GUIDE_HIFZ_TIMELINE.slug]: GUIDE_HIFZ_TIMELINE,
   [GUIDE_QAIDA_TIMELINE.slug]: GUIDE_QAIDA_TIMELINE,
+  [GUIDE_ONLINE_EFFECTIVENESS.slug]: GUIDE_ONLINE_EFFECTIVENESS,
 };
 
 /** Ordered list for the guides index page and sitemap. */
@@ -1483,4 +1647,5 @@ export const GUIDE_LIST: LandingPageData[] = [
   GUIDE_FREE_TRIAL,
   GUIDE_HIFZ_TIMELINE,
   GUIDE_QAIDA_TIMELINE,
+  GUIDE_ONLINE_EFFECTIVENESS,
 ];
