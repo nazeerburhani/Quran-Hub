@@ -5,12 +5,12 @@ import { SITE, whatsappLink } from "@/lib/site";
 import { GUIDE_LIST } from "@/lib/guides";
 
 export const metadata: Metadata = {
-  title: "Parent Guides: Online Quran Learning, Explained Honestly | QuranHub",
+  title: "Parent Guides: Online Quran Learning, Explained Honestly",
   description:
     "Honest, practical guides for US Muslim parents: starting ages, costs, choosing a teacher, online vs masjid classes, and what a free trial really includes.",
   alternates: { canonical: `${SITE.url}/guides` },
   openGraph: {
-    title: "Parent Guides: Online Quran Learning, Explained Honestly | QuranHub",
+    title: "Parent Guides: Online Quran Learning, Explained Honestly",
     description:
       "Honest, practical guides for US Muslim parents: starting ages, costs, choosing a teacher, online vs masjid classes, and what a free trial really includes.",
     url: `${SITE.url}/guides`,

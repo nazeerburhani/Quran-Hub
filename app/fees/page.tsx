@@ -4,7 +4,7 @@ import { MessageCircle, BadgeCheck, Sparkles, ShieldCheck, CalendarClock } from 
 import { SITE, PLANS, whatsappLink } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Quran Classes Fees & Pricing | Affordable 1-on-1 Plans from $35/mo | QuranHub",
+  title: "Quran Classes Fees & Pricing | Affordable 1-on-1 Plans from $35/mo",
   description:
     "Transparent online Quran classes pricing: 1-on-1 live tuition from just $35/month. Premium quality, qualified tutors, no hidden fees. Free 3-day trial included.",
   keywords: [

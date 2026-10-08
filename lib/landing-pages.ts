@@ -9,7 +9,7 @@ export const KIDS_PAGE: LandingPageData = {
   slug: "online-quran-classes-for-kids",
   basePath: "/courses",
   breadcrumb: "Online Quran Classes for Kids",
-  metaTitle: "Online Quran Classes for Kids | Live 1-on-1 Quran Learning | QuranHub",
+  metaTitle: "Online Quran Classes for Kids | Live 1-on-1 Quran Learning",
   metaDescription:
     "Online Quran classes for kids with live 1-on-1 tutors — Noorani Qaida, Nazra, Tajweed & Hifz for ages 4+. Patient qualified teachers, free 3-day trial, no credit card.",
   keywords: [
@@ -123,7 +123,7 @@ export const FEMALE_TEACHER_PAGE: LandingPageData = {
   slug: "female-quran-teacher-online",
   basePath: "/courses",
   breadcrumb: "Female Quran Teacher Online",
-  metaTitle: "Female Quran Teacher Online | Learn with a Qualified Qariah | QuranHub",
+  metaTitle: "Female Quran Teacher Online | Learn with a Qualified Qariah",
   metaDescription:
     "Learn Quran online with a qualified female Quran teacher — 1-on-1 Tajweed, Hifz & Qaida classes for sisters and kids. Choose your Qariah. Free 3-day trial.",
   keywords: [
@@ -222,7 +222,7 @@ export const QAIDA_PAGE: LandingPageData = {
   slug: "noorani-qaida-online",
   basePath: "/courses",
   breadcrumb: "Noorani Qaida Online",
-  metaTitle: "Noorani Qaida Online | Learn to Read Quran from Zero | QuranHub",
+  metaTitle: "Noorani Qaida Online | Learn to Read Quran from Zero",
   metaDescription:
     "Learn Noorani Qaida online with a live 1-on-1 tutor — Arabic alphabet, Makharij & joining rules for kids & adults. Start from zero. Free 3-day trial.",
   keywords: [
@@ -315,7 +315,7 @@ export const TAJWEED_PAGE: LandingPageData = {
   slug: "online-tajweed-course",
   basePath: "/courses",
   breadcrumb: "Online Tajweed Course",
-  metaTitle: "Online Tajweed Course | Learn Quran Recitation with Tajweed | QuranHub",
+  metaTitle: "Online Tajweed Course | Learn Quran Recitation with Tajweed",
   metaDescription:
     "Master Tajweed online with a qualified Qari — 1-on-1 live classes covering Makharij, Noon Sakinah, Madd, Waqf & all Tajweed rules. Free 3-day trial.",
   keywords: [
@@ -416,7 +416,7 @@ export const HIFZ_PAGE: LandingPageData = {
   slug: "online-hifz-program",
   basePath: "/courses",
   breadcrumb: "Online Hifz Program",
-  metaTitle: "Online Hifz Program | Quran Memorization Course Online | QuranHub",
+  metaTitle: "Online Hifz Program | Quran Memorization Course Online",
   metaDescription:
     "Memorize the Quran online with a structured Hifz program — Sabaq, Sabqi & Manzil revision with a dedicated tutor. For kids & adults. Free 3-day trial.",
   keywords: [
@@ -511,7 +511,7 @@ export const ADULTS_PAGE: LandingPageData = {
   slug: "learn-quran-online-for-adults",
   basePath: "/courses",
   breadcrumb: "Learn Quran Online for Adults",
-  metaTitle: "Learn Quran Online for Adults | 1-on-1 Classes from Any Level | QuranHub",
+  metaTitle: "Learn Quran Online for Adults | 1-on-1 Classes from Any Level",
   metaDescription:
     "It's never too late. Learn Quran online as an adult — 1-on-1 classes from zero: Qaida, Tajweed, Hifz & Tafseer at your pace. Flexible timings. Free 3-day trial.",
   keywords: [
@@ -599,7 +599,7 @@ export const SISTERS_PAGE: LandingPageData = {
   slug: "online-quran-classes-for-sisters",
   basePath: "/courses",
   breadcrumb: "Online Quran Classes for Sisters",
-  metaTitle: "Online Quran Classes for Sisters | Learn with Female Teachers | QuranHub",
+  metaTitle: "Online Quran Classes for Sisters | Learn with Female Teachers",
   metaDescription:
     "Online Quran classes for sisters — 1-on-1 Tajweed, Hifz, Qaida & Islamic studies with qualified female teachers. Private, flexible, comfortable. Free 3-day trial.",
   keywords: [
@@ -692,7 +692,7 @@ export const IJAZAH_PAGE: LandingPageData = {
   slug: "online-ijazah-course",
   basePath: "/courses",
   breadcrumb: "Online Ijazah Course",
-  metaTitle: "Online Ijazah Course | Get Ijazah with Unbroken Sanad | QuranHub",
+  metaTitle: "Online Ijazah Course | Get Ijazah with Unbroken Sanad",
   metaDescription:
     "Earn an authentic Ijazah online — recite the full Quran to a qualified Sheikh with an unbroken chain (Sanad) in Hafs. 1-on-1. Free trial assessment.",
   keywords: [
@@ -784,7 +784,7 @@ export const USA_PAGE: LandingPageData = {
   slug: "usa",
   basePath: "",
   breadcrumb: "USA",
-  metaTitle: "Online Quran Classes in the USA | Live 1-on-1 Tutors | QuranHub",
+  metaTitle: "Online Quran Classes in the USA | Live 1-on-1 Tutors",
   metaDescription:
     "Online Quran classes in the USA — live 1-on-1 tutors in every US timezone (EST–PST). After-school slots for kids, flexible timings for adults. Free 3-day trial.",
   keywords: [
@@ -866,7 +866,7 @@ export const UK_PAGE: LandingPageData = {
   slug: "uk",
   basePath: "",
   breadcrumb: "UK",
-  metaTitle: "Online Quran Classes in the UK | 1-on-1 Quran Tutors | QuranHub",
+  metaTitle: "Online Quran Classes in the UK | 1-on-1 Quran Tutors",
   metaDescription:
     "Online Quran classes in the UK — live 1-on-1 tutors on GMT/BST, after-school slots, qualified male & female teachers. A flexible alternative to madrasah. Free 3-day trial.",
   keywords: [
@@ -942,7 +942,7 @@ export const CANADA_PAGE: LandingPageData = {
   slug: "canada",
   basePath: "",
   breadcrumb: "Canada",
-  metaTitle: "Online Quran Classes in Canada | Live 1-on-1 Tutors | QuranHub",
+  metaTitle: "Online Quran Classes in Canada | Live 1-on-1 Tutors",
   metaDescription:
     "Online Quran classes in Canada — live 1-on-1 Quran tutors across EST–PST, from Toronto to Vancouver. After-school slots, CAD-friendly pricing. Free 3-day trial.",
   keywords: [
@@ -1012,7 +1012,7 @@ export const AUSTRALIA_PAGE: LandingPageData = {
   slug: "australia",
   basePath: "",
   breadcrumb: "Australia",
-  metaTitle: "Online Quran Classes in Australia | Live 1-on-1 Tutors | QuranHub",
+  metaTitle: "Online Quran Classes in Australia | Live 1-on-1 Tutors",
   metaDescription:
     "Online Quran classes in Australia — live 1-on-1 Quran tutors on AEST/AWST, after-school slots for kids in Sydney, Melbourne, Perth & beyond. Free 3-day trial.",
   keywords: [

@@ -4,7 +4,7 @@ import { SITE, whatsappLink } from "@/lib/site";
 import FreeTrialForm from "@/components/home/FreeTrialForm";
 
 export const metadata: Metadata = {
-  title: "Free Trial — 3 Free Online Quran Classes | No Credit Card | QuranHub",
+  title: "Free Trial — 3 Free Online Quran Classes | No Credit Card",
   description:
     "Claim 3 free online Quran classes: meet your tutor, get a free level assessment, and experience live 1-on-1 learning. No credit card, no obligation.",
   keywords: [
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: `${SITE.url}/free-trial` },
   openGraph: {
-    title: "3 Free Online Quran Classes — No Credit Card | QuranHub",
+    title: "3 Free Online Quran Classes — No Credit Card",
     description: "Meet your tutor, get a free assessment, experience real 1-on-1 classes.",
     url: `${SITE.url}/free-trial`,
     type: "article",

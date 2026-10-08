@@ -1621,6 +1621,300 @@ export const GUIDE_ONLINE_EFFECTIVENESS: LandingPageData = {
     "Honest answer: yes, when it's 1-on-1 with a qualified tutor — why Quran learning suits video classes, when in-person wins, red flags to avoid, and a parent's first-month effectiveness checklist. Free 3-day trial.",
 };
 
+/** Article #4 (drafted 2026-10-06, uncommitted, awaiting user review): beginner long-tail guide targeting "tajweed for beginners". NOT registered in GUIDES / GUIDE_LIST until approved — do not register without the user's verdict. */
+export const GUIDE_TAJWEED_BEGINNERS: LandingPageData = {
+  slug: "tajweed-for-beginners",
+  basePath: "/guides",
+  breadcrumb: "Tajweed for Beginners",
+  metaTitle: "Tajweed for Beginners: Where to Start (Simple Guide)",
+  metaDescription:
+    "Tajweed for beginners explained simply: what tajweed is, the 7 rules to learn first, whether you need it before reading the Quran, and how 1-on-1 classes build your recitation step by step.",
+  keywords: [
+    "tajweed for beginners",
+    "learn tajweed for beginners",
+    "basic tajweed rules",
+    "tajweed rules for beginners",
+    "how to start learning tajweed",
+    "beginner tajweed course online",
+  ],
+  h1: "Tajweed for Beginners: A Simple, Honest Starting Guide",
+  intro: [
+    "Tajweed is the set of rules that teach you to recite the Quran the way it was revealed — each letter given its proper sound, each word its proper weight. The Quran itself commands it: \u201cAnd recite the Quran with measured recitation\u201d (Surah Al-Muzzammil, 73:4). If you have finished Noorani Qaida and can read the Arabic script, tajweed is your natural next step — and this guide is written for exactly where you are: the very beginning.",
+    "This guide answers the questions every beginner asks: what tajweed actually is (and isn't), whether you need it before you can read the Quran, the seven rules worth learning first, the mistakes that slow beginners down, how long basic tajweed realistically takes, and how 1-on-1 classes build it step by step. No invented timelines, no pressure — just the honest mechanics of learning to recite correctly.",
+  ],
+  sections: [
+    {
+      heading: "What tajweed actually is",
+      paragraphs: [
+        "The word tajweed comes from an Arabic root meaning \u201cto make better\u201d or \u201cto beautify.\u201d In practice, tajweed is the science of giving every letter of the Quran its due: pronouncing it from its correct articulation point, with its correct characteristics, for its correct length. Nothing mystical — it is a pronunciation system, refined over centuries of oral transmission from teacher to student.",
+        "The basis is the verse quoted above: \u201cAnd recite the Quran with measured recitation\u201d (73:4). The scholars of recitation understood this as a command to recite deliberately and correctly — not rushed, not careless. That is the entire spirit of tajweed: slow, deliberate, correct recitation.",
+      ],
+      bullets: [
+        "Tajweed = giving each letter its right: correct sound, correct length, correct quality",
+        "Commanded in the Quran itself: \u201crecite the Quran with measured recitation\u201d (73:4)",
+        "A pronunciation system refined over centuries — learnable step by step",
+        "Correctness comes first; beauty of voice follows naturally",
+      ],
+    },
+    {
+      heading: "Do you need tajweed before you can read the Quran?",
+      paragraphs: [
+        "No — and this matters, because the fear that \u201cI'm not ready\u201d keeps many people from starting at all. If you can read the Arabic script with correct letter sounds (which is what Noorani Qaida gives you), you can begin reading the Quran now and build tajweed alongside your reading. Waiting until your tajweed is perfect before opening the Mushaf gets the order backwards.",
+        "There is a well-known encouragement for exactly this situation. The Prophet (peace be upon him) said that the one who recites the Quran proficiently will be with the noble angels, and the one who recites with difficulty, stumbling as they read, will have a double reward (reported in Sahih al-Bukhari and Sahih Muslim). The struggling beginner is not excluded from reward — they are promised more of it.",
+      ],
+      bullets: [
+        "Finish Noorani Qaida first — correct letters are the real prerequisite, not tajweed mastery",
+        "Start reading the Quran now; add tajweed rules gradually as you go",
+        "The struggling reciter is promised double reward (Bukhari & Muslim) — difficulty is not disqualification",
+        "Tajweed perfects your recitation over time; it doesn't gatekeep it",
+      ],
+    },
+    {
+      heading: "The 7 rules beginners should learn first",
+      paragraphs: [
+        "Tajweed has dozens of rules, but beginners don't need all of them at once. Learn in this order — each layer makes the next one easier. Notice what is NOT on the list: the fine characteristics of letters (sifaat), the advanced madd categories, and rare rules. Those come later. A beginner who masters the seven below recites recognizably well — and that is the right first milestone.",
+      ],
+      bullets: [
+        "1. Makharij (articulation points): exactly where each letter is produced — the foundation everything else stands on",
+        "2. Harakat (short vowels): fatha, damma, kasra — read accurately and at the right speed, never stretched",
+        "3. Madd basics (elongation): which vowels stretch, and the natural two-count length — before the advanced madd rules",
+        "4. Noon sakinah & tanween: the four behaviors — izhar (clear), idgham (merging), iqlab (converting), ikhfa (hiding)",
+        "5. Meem sakinah: the three simple rules for a still meem — quicker to learn than noon sakinah",
+        "6. Qalqalah (echoing): the five letters that \u201cbounce\u201d when still — qaf, ta, ba, jeem, dal",
+        "7. Waqf basics (stopping): where to pause and where not to — so your recitation doesn't break the meaning",
+      ],
+    },
+    {
+      heading: "5 mistakes that slow beginners down",
+      paragraphs: [
+        "Most beginners don't fail at tajweed — they fail at how they approach it. These five patterns waste months.",
+      ],
+      bullets: [
+        "Rushing rules before letters are correct: if your makharij are shaky, rules built on top of them will be too — fix the letters first",
+        "Memorizing rule names without applying them: knowing the word \u201cidgham\u201d means nothing if your recitation doesn't change",
+        "Learning only from videos with no correction: you can't hear your own mistakes — every beginner needs a trained ear on their recitation",
+        "Trying advanced rules too early: fine details before the big seven are solid just creates confusion",
+        "Inconsistent practice: tajweed is muscle memory — 15 minutes daily beats a 2-hour weekend session",
+      ],
+    },
+    {
+      heading: "How long does beginner tajweed take?",
+      paragraphs: [
+        "Honest ranges, with the usual caveat that consistency decides everything. After completing Noorani Qaida, a student in regular 1-on-1 classes (3–5 sessions a week with daily practice) typically develops functional beginner tajweed — the seven rules above applied correctly in recitation — within about 3–6 months. Children often take the longer end; focused adults the shorter.",
+        "Full tajweed proficiency — every rule, applied fluently at speed, across the whole Quran — takes years, and that is normal. Even the great reciters studied for years. The beginner milestone is not mastery; it is reciting correctly and confidently, knowing what you are doing and why. Aim for that first.",
+      ],
+      bullets: [
+        "Functional beginner tajweed (the 7 rules, applied correctly): commonly 3–6 months after Qaida, with regular classes + daily practice",
+        "Children often take longer; adults with consistent practice often take less",
+        "Full proficiency takes years — that's normal, not failure",
+        "The right first milestone: correct, confident recitation, knowing what you're doing and why",
+      ],
+    },
+    {
+      heading: "How 1-on-1 classes build tajweed step by step",
+      paragraphs: [
+        "Tajweed cannot be learned from a book alone — it is a sound science, and your ears need training before your tongue follows. In a 1-on-1 class, the tutor demonstrates each rule, listens to your attempt, and corrects the exact point where your recitation drifts. That loop — demonstrate, attempt, correct — repeated across hundreds of recitations, is how tajweed is actually acquired.",
+      ],
+      bullets: [
+        "The tutor demonstrates each rule, then listens to your recitation and corrects it in the same minute",
+        "Mistakes are caught before they become habits — the #1 advantage over self-study",
+        "New rules are introduced only when the current ones are stable",
+        "Same qualified tutor every class, scheduled in your US timezone; parents get progress updates",
+      ],
+    },
+  ],
+  faqs: [
+    {
+      q: "What is tajweed in simple terms?",
+      a: "Tajweed is the set of rules for reciting the Quran correctly — giving every letter its proper sound, length, and quality, as the Quran commands: \u201crecite the Quran with measured recitation\u201d (73:4). Think of it as the pronunciation system of Quranic recitation.",
+    },
+    {
+      q: "Do I need to learn tajweed before reading the Quran?",
+      a: "No. Learn to read the Arabic script correctly first (Noorani Qaida), then start reading the Quran and add tajweed rules gradually. The Prophet (peace be upon him) promised double reward to the one who recites with difficulty (reported in Sahih al-Bukhari and Sahih Muslim) — struggling beginners are encouraged, not excluded.",
+    },
+    {
+      q: "What should I learn before tajweed?",
+      a: "Noorani Qaida: the Arabic alphabet, correct letter pronunciation (makharij), joining letters, and short vowels. Correct letters are the real prerequisite — tajweed rules built on shaky makharij won't hold.",
+    },
+    {
+      q: "Can I learn tajweed online?",
+      a: "Yes — tajweed is a sound science, and 1-on-1 video classes deliver exactly what's needed: the tutor hears every letter you recite and corrects mistakes instantly. What online learning can't replace is the correction itself — videos alone leave your mistakes unheard.",
+    },
+    {
+      q: "How long does it take to learn basic tajweed?",
+      a: "After completing Noorani Qaida, most students develop functional beginner tajweed within 3–6 months of regular classes (3–5 sessions/week) with daily practice. Full proficiency takes years — aim first for correct, confident recitation of the core rules.",
+    },
+    {
+      q: "Is tajweed hard for kids?",
+      a: "Not when taught in the right order. Children learn the rules one at a time through recitation practice, not theory lectures. A qualified tutor introduces each rule when the child is ready and drills it through actual verses. Most kids find qalqalah and the \u201chiding\u201d rule (ikhfa) fun once they hear them.",
+    },
+    {
+      q: "What is the first tajweed rule I should learn?",
+      a: "Makharij — the articulation points of the letters. Every tajweed rule assumes you can produce each letter from its correct place. Get the letters right first, then harakat accuracy, then madd basics, then the noon sakinah rules.",
+    },
+  ],
+  related: [
+    { href: "/courses/online-tajweed-course", label: "Online Tajweed Course" },
+    { href: "/courses/noorani-qaida-online", label: "Noorani Qaida Course" },
+    { href: "/free-trial", label: "Book Your Free 3-Day Trial" },
+    { href: "/fees", label: "Fees & Plans" },
+    { href: "/guides/how-long-does-it-take-to-learn-noorani-qaida", label: "How Long Does It Take to Learn Noorani Qaida?" },
+    { href: "/guides/is-online-quran-classes-effective-for-kids", label: "Is Online Quran Learning Effective for Kids?" },
+  ],
+  whatsappMessage:
+    "Assalamu Alaikum, I want to start learning Tajweed from the basics. Please share details about the free trial.",
+  courseName: "Tajweed for Beginners",
+  courseDescription:
+    "Tajweed for beginners, explained simply: what tajweed is, the 7 rules to learn first, whether you need it before reading the Quran, and realistic timelines. Free 3-day trial.",
+};
+
+/** Article #5 (drafted 2026-10-08, uncommitted, awaiting user review): US-parent long-tail guide targeting "female quran teacher for kids online" (30-day plan, Week 3 sprint-1 article 4). NOT registered in GUIDES / GUIDE_LIST until approved — do not register without the user's verdict. */
+export const GUIDE_FEMALE_TEACHER_KIDS: LandingPageData = {
+  slug: "female-quran-teacher-for-kids",
+  basePath: "/guides",
+  breadcrumb: "Female Quran Teacher for Kids",
+  metaTitle: "Female Quran Teacher for Kids Online: A Parent's Guide",
+  metaDescription:
+    "Why many mothers choose a Qariah for their kids: comfort, learning fit, what to check in a female teacher's qualifications, and how the free trial works.",
+  keywords: [
+    "female quran teacher for kids online",
+    "qariah for kids",
+    "female quran tutor for children",
+    "lady quran teacher online",
+    "female quran teacher for daughters",
+    "qariah online classes kids",
+  ],
+  h1: "Female Quran Teacher for Kids: Why Many Parents Choose a Qariah",
+  intro: [
+    "If you're looking for a female Quran teacher for your child, you're not alone — it's one of the most common requests online Quran academies receive from mothers. The reasons are practical, not complicated: many parents want their daughter learning with a woman, many mothers of young children simply find a Qariah's teaching style a better fit, and sisters who study alongside their kids prefer the comfort of a female tutor.",
+    "There is no religious rule that says your child must learn the Quran from a woman — and no honest academy will claim there is. It is a family preference, and a good one. This guide explains why so many mothers choose a Qariah for their kids, what to look for when choosing one, what your child will actually study, and how to arrange it — so you can decide with confidence rather than guesswork.",
+  ],
+  sections: [
+    {
+      heading: "Why mothers ask for a Qariah",
+      paragraphs: [
+        "Ask a hundred Muslim mothers in the US, UK, or Canada why they want a female Quran teacher, and the answers cluster around three themes. The first is comfort for daughters: as girls grow, many families prefer a learning environment where a girl can recite freely, ask questions openly, and build a mentoring relationship with a woman. That preference is natural, and it deserves respect — not a lecture.",
+        "The second is the early years. Mothers of children aged 4 to 8 often find that a Qariah's classroom manner — patient, encouraging, unhurried — matches how young children actually learn. Young kids respond to warmth and repetition, and many female tutors specialize in exactly that age group.",
+        "The third is the whole family learning together. When a mother studies Quran herself — Tajweed, revision, Islamic studies — having a female teacher removes every barrier of hesitation. Several of our students are mothers who enrolled after watching their child's class and wanting the same for themselves.",
+      ],
+      bullets: [
+        "Comfort for daughters: recite freely, ask openly, learn from a woman's example",
+        "Early-years fit: patient, encouraging teaching style suited to ages 4–8",
+        "Whole-family learning: mothers and sisters study comfortably with a Qariah",
+        "Your preference needs no justification — a good academy honors it without fuss",
+      ],
+    },
+    {
+      heading: "Is a female teacher better for kids?",
+      paragraphs: [
+        "Honest answer: it depends on the child and the teacher, not the gender. A great Qari and a great Qariah will both teach your child to read beautifully — and a poor teacher of either gender will waste your child's time. What matters is the teacher's Tajweed mastery, their experience with children, and whether your child feels comfortable with them.",
+        "That said, comfort is not a small thing in learning. A child who is relaxed asks more questions, recites more confidently, and looks forward to class. For many daughters — and plenty of sons in their early years — that comfort comes more easily with a female teacher. Parents know their children; trust your judgment over anyone's blanket claim.",
+        "One thing to avoid: don't choose based on assumptions about strictness or leniency. We've seen strict Qariahs and gentle Qaris, and vice versa. Judge the teacher, not the stereotype — which is exactly what a real free trial lets you do.",
+      ],
+      bullets: [
+        "Teacher quality beats teacher gender: Tajweed mastery and kid-experience come first",
+        "Comfort drives learning: a relaxed child recites more and progresses faster",
+        "Judge the individual teacher during the trial — not stereotypes",
+        "Many families start with a preference and confirm it (or change it) after the trial",
+      ],
+    },
+    {
+      heading: "What to check in a Qariah's qualifications",
+      paragraphs: [
+        "A female Quran teacher should be held to exactly the same standard as a male one — no softer criteria, no vague praise. Ask the academy the same questions you'd ask about any tutor: what is her formal religious education? Where did she study Tajweed? How much experience does she have teaching children specifically?",
+        "At QuranHub, our Qariahs meet the same bar as our Qaris: Tanzeem-ul-Madaris qualified with M.A. degrees in Arabic & Islamiyat, with strong Tajweed training and real experience teaching kids, sisters, and beginners. The qualification standard doesn't change with the teacher's gender — and any academy that can't state its female tutors' credentials plainly is one to avoid.",
+        "Two practical checks matter as much as credentials. First, English fluency: if your child is raised in the US, the teacher must explain rules, answer 'why' questions, and build rapport in fluent English. Second, consistency: your child should keep the same Qariah every class, with the freedom to switch if the fit isn't right.",
+      ],
+      bullets: [
+        "Same standard as male teachers: formal qualification (Tanzeem-ul-Madaris, M.A. Arabic & Islamiyat) — never vague claims",
+        "Demonstrated Tajweed mastery and real experience with children's age groups",
+        "Fluent English for US-raised kids — explanations and rapport in your child's language",
+        "Same Qariah every class; free switching if the fit isn't right",
+      ],
+    },
+    {
+      heading: "What your child studies with a Qariah",
+      paragraphs: [
+        "One misconception to clear up: learning with a female teacher is not a limited track. Our Qariahs teach the complete curriculum — from a child's very first Arabic letters all the way to advanced memorization. Your daughter or son follows the same structured path as every other student.",
+        "Most young children begin with Noorani Qaida: the Arabic alphabet, pronunciation points (Makharij), and joining rules. From there they move into Nazra (fluent Quran reading), then Tajweed (beautiful, correct recitation), with Hifz available for those who want structured memorization with daily revision. Daily duas, Salah practice, and Islamic manners are woven into lessons for kids.",
+        "For sisters and mothers studying themselves, the same Qariah can teach Tajweed refinement, Hifz, Quran translation, and Islamic studies — many families end up with mother and child learning side by side, each at their own level.",
+      ],
+      bullets: [
+        "Noorani Qaida: alphabet, Makharij, and joining rules — the full foundation",
+        "Nazra and Tajweed: fluent, beautiful, correct recitation",
+        "Hifz with structured daily revision for memorization students",
+        "Duas, Salah, and Islamic manners woven into children's lessons",
+        "Sisters and mothers can study Tajweed, translation, and Islamic studies too",
+      ],
+    },
+    {
+      heading: "Practical notes for US parents",
+      paragraphs: [
+        "If you're in the USA, the logistics are the same as any of our classes: live 1-on-1 sessions scheduled in your timezone — after school for kids, flexible hours for adults — across Eastern, Central, Mountain, and Pacific. Choosing a female teacher changes nothing about scheduling or pricing; there is no extra charge for the preference.",
+        "Because classes happen in your home on video, you can sit nearby during your child's class — many mothers do, especially in the first weeks. You'll hear exactly how the Qariah teaches, how she corrects, and how your child responds. That transparency is worth more than any brochure.",
+        "Communication runs on WhatsApp (+1 917 722 5120): scheduling, feedback, and any tutor change requests. If the teacher-student fit ever feels off, one message switches your tutor — no penalty, no awkward conversation.",
+      ],
+      bullets: [
+        "Real after-school hours in your US timezone — no odd-hour slots",
+        "No extra charge for choosing a female teacher — same $35–$110/month plans",
+        "Sit nearby during class, especially in the first weeks",
+        "WhatsApp communication for scheduling, feedback, and tutor changes",
+      ],
+    },
+    {
+      heading: "How to arrange it: say the word",
+      paragraphs: [
+        "Requesting a female teacher takes one sentence. When you book your free trial, simply mention that you'd like a Qariah — for your daughter, your son, yourself, or the whole family. We'll match you with a qualified female tutor whose schedule fits yours, and your 3 free trial classes will be with her.",
+        "The trial is the real test: three live classes, a friendly level assessment, and honest feedback — no credit card, no obligation. If the fit feels right, you continue with the same Qariah. If not, you can try a different tutor or a different approach entirely. The choice stays yours at every step.",
+      ],
+      bullets: [
+        "Mention 'female teacher' when booking — that's all it takes",
+        "Your 3 free trial classes are with the actual Qariah you'd continue with",
+        "No credit card, no obligation, honest feedback after the trial",
+        "Switch tutors free anytime if the fit isn't right",
+      ],
+    },
+  ],
+  faqs: [
+    {
+      q: "Is there a religious reason my daughter should learn from a female teacher?",
+      a: "There's no religious obligation requiring it — children may learn the Quran from qualified teachers of either gender. For many families it's simply a preference: comfort, modesty as girls grow, and a mentoring relationship with a woman. Good academies respect the preference without making absolute claims about it.",
+    },
+    {
+      q: "Are female Quran teachers as qualified as male teachers?",
+      a: "They should be held to the identical standard — and at QuranHub they are: our Qariahs are Tanzeem-ul-Madaris qualified with M.A. degrees in Arabic & Islamiyat and strong Tajweed training. Be wary of any academy that can't state its female tutors' credentials as plainly as its male tutors'.",
+    },
+    {
+      q: "Can a Qariah teach my son too?",
+      a: "Yes. Many mothers choose female teachers for young sons as well as daughters, especially in the early years. The preference is entirely yours — mention it when booking and we'll match accordingly.",
+    },
+    {
+      q: "What will my child study with a female teacher?",
+      a: "The full curriculum — nothing is limited. Noorani Qaida, Nazra, Tajweed, Hifz with structured revision, plus duas, Salah, and Islamic manners for kids. Sisters and mothers can also study Tajweed, translation, and Islamic studies with a Qariah.",
+    },
+    {
+      q: "Can I sit with my daughter during her online class?",
+      a: "Absolutely — classes happen in your home and parents are welcome to observe anytime, especially in the first weeks. Hearing how the Qariah teaches and corrects is the best possible reassurance.",
+    },
+    {
+      q: "Does choosing a female teacher cost extra?",
+      a: "No. At QuranHub there's no surcharge for teacher preference — plans are $35–$110/month based on classes per week, and the 3-day trial is free regardless of which tutor you choose.",
+    },
+  ],
+  related: [
+    { href: "/courses/female-quran-teacher-online", label: "Female Quran Teacher Online" },
+    { href: "/courses/online-quran-classes-for-kids", label: "Online Quran Classes for Kids" },
+    { href: "/guides/what-happens-in-free-trial-quran-class", label: "What Happens in a Free Trial Class?" },
+    { href: "/fees", label: "Fees & Plans" },
+    { href: "/free-trial", label: "Book Your Free 3-Day Trial" },
+  ],
+  whatsappMessage:
+    "Assalamu Alaikum, I'd like a female Quran teacher for my child. Please share details about the free trial.",
+  courseName: "Female Quran Teacher for Kids",
+  courseDescription:
+    "Why many mothers choose a Qariah for their kids: comfort, learning fit, what to check in a female teacher's qualifications, and how the free trial works. Free 3-day trial.",
+};
+
 /** All guides, keyed for the [slug] route. */export const GUIDES: Record<string, LandingPageData> = {
   [GUIDE_4_YEAR_OLDS.slug]: GUIDE_4_YEAR_OLDS,
   [GUIDE_5_YEAR_OLDS.slug]: GUIDE_5_YEAR_OLDS,
