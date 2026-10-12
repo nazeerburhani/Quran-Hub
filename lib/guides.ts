@@ -1621,7 +1621,7 @@ export const GUIDE_ONLINE_EFFECTIVENESS: LandingPageData = {
     "Honest answer: yes, when it's 1-on-1 with a qualified tutor — why Quran learning suits video classes, when in-person wins, red flags to avoid, and a parent's first-month effectiveness checklist. Free 3-day trial.",
 };
 
-/** Article #4 (drafted 2026-10-06, uncommitted, awaiting user review): beginner long-tail guide targeting "tajweed for beginners". NOT registered in GUIDES / GUIDE_LIST until approved — do not register without the user's verdict. */
+/** Article #4 (drafted 2026-10-06, approved 2026-10-12): beginner long-tail guide targeting "tajweed for beginners". */
 export const GUIDE_TAJWEED_BEGINNERS: LandingPageData = {
   slug: "tajweed-for-beginners",
   basePath: "/guides",
@@ -1768,7 +1768,7 @@ export const GUIDE_TAJWEED_BEGINNERS: LandingPageData = {
     "Tajweed for beginners, explained simply: what tajweed is, the 7 rules to learn first, whether you need it before reading the Quran, and realistic timelines. Free 3-day trial.",
 };
 
-/** Article #5 (drafted 2026-10-08, uncommitted, awaiting user review): US-parent long-tail guide targeting "female quran teacher for kids online" (30-day plan, Week 3 sprint-1 article 4). NOT registered in GUIDES / GUIDE_LIST until approved — do not register without the user's verdict. */
+/** Article #5 (drafted 2026-10-08, approved 2026-10-12): US-parent long-tail guide targeting "female quran teacher for kids online" (30-day plan, Week 3 sprint-1 article 4). */
 export const GUIDE_FEMALE_TEACHER_KIDS: LandingPageData = {
   slug: "female-quran-teacher-for-kids",
   basePath: "/guides",
@@ -1915,7 +1915,491 @@ export const GUIDE_FEMALE_TEACHER_KIDS: LandingPageData = {
     "Why many mothers choose a Qariah for their kids: comfort, learning fit, what to check in a female teacher's qualifications, and how the free trial works. Free 3-day trial.",
 };
 
-/** All guides, keyed for the [slug] route. */export const GUIDES: Record<string, LandingPageData> = {
+/** Article #6 (drafted 2026-10-09, approved 2026-10-12): US-parent long-tail guide targeting "how to choose an online quran academy" (30-day plan, Week 4 sprint-2 article 5). */
+export const GUIDE_CHOOSE_ACADEMY: LandingPageData = {
+  slug: "how-to-choose-online-quran-academy",
+  basePath: "/guides",
+  breadcrumb: "How to Choose an Online Quran Academy",
+  metaTitle: "How to Choose an Online Quran Academy: 7 Questions to Ask",
+  metaDescription:
+    "Choosing an online Quran academy for your child? Ask these 7 questions about tutor qualifications, trial classes, child safety, communication, curriculum, scheduling, and pricing before you enroll.",
+  keywords: [
+    "how to choose an online quran academy",
+    "choosing online quran classes for kids",
+    "best online quran academy checklist",
+    "questions to ask online quran teacher",
+    "online quran academy reviews parents",
+    "is online quran academy legit",
+  ],
+  h1: "How to Choose an Online Quran Academy: 7 Questions to Ask",
+  intro: [
+    "Dozens of websites promise your child will learn the Quran online — and many will. The hard part isn't finding an academy; it's telling a good one from a weak one before you pay. Parents usually figure it out three months in, after the money is spent and the child's enthusiasm is gone. This guide exists so you can tell the difference in twenty minutes, before you commit.",
+    "Below are the seven questions that actually reveal an academy's quality. They're the questions sharp US Muslim parents ask on the trial call — the ones that separate organized academies from those winging it. Ask them before you enroll anywhere, including with us. A good academy will welcome every one of them.",
+  ],
+  sections: [
+    {
+      heading: "1. Who exactly will teach my child — and how are they qualified?",
+      paragraphs: [
+        "This is the single most important question, and the answer should be specific. Ask for the teacher's formal religious education: where did they study Tajweed? What Quranic qualification do they hold? How many years have they taught children, specifically — not adults, children?",
+        "Vague answers are a red flag. 'Our teachers are highly qualified' tells you nothing. A real academy names its standard plainly. At QuranHub, our tutors are Tanzeem-ul-Madaris qualified with M.A. degrees in Arabic & Islamiyat — you'll always know your child's tutor is a trained, credentialed teacher, not someone reading along from a book.",
+        "One honest note: we say 'qualified,' never 'certified' — because we won't dress up a credential with a word that implies a body that doesn't exist. Academies throwing around 'certified' without naming the certifier deserve a follow-up question.",
+      ],
+      bullets: [
+        "Ask for the specific qualification and Tajweed training of the actual tutor",
+        "Children's teaching experience matters separately from general experience",
+        "'Highly qualified' without specifics is a red flag",
+        "We name ours: Tanzeem-ul-Madaris qualified, M.A. Arabic & Islamiyat",
+      ],
+    },
+    {
+      heading: "2. Can my child try real classes before I pay anything?",
+      paragraphs: [
+        "Never pay for the first month blind. A legitimate academy offers a real trial — actual classes with the actual tutor, not a 10-minute sales call. During the trial your child should get a level assessment and you should get honest feedback about where your child stands.",
+        "Our trial is three full days of real classes with the same tutor you'd continue with — no credit card, no obligation. If an academy asks for payment before a single class, or offers only a recorded demo, that tells you something about how they treat parents.",
+      ],
+      bullets: [
+        "Insist on real trial classes, not a sales call or recorded demo",
+        "The trial should include a level assessment and parent feedback",
+        "No credit card before the trial — never",
+        "Our trial: 3 days of real classes, same tutor, zero obligation",
+      ],
+    },
+    {
+      heading: "3. How is my child's safety handled online?",
+      paragraphs: [
+        "Your child will spend hours on video with a stranger. Take this question seriously. Ask: are classes 1-on-1 (private) or group? Can parents observe classes? Who can contact my child outside class hours?",
+        "Private 1-on-1 classes are inherently safer and better for learning: no unknown adults or other children in the room. Classes happen in your home, on your screen, where you can sit nearby anytime — especially in the early weeks. All communication should run through you, the parent, not directly to your child.",
+      ],
+      bullets: [
+        "Prefer 1-on-1 private classes over group video rooms",
+        "You should be able to observe any class, anytime",
+        "All scheduling and communication should run through the parent",
+        "Classes at home means you hear exactly what's taught",
+      ],
+    },
+    {
+      heading: "4. Will my child keep the same tutor every class?",
+      paragraphs: [
+        "Children learn Quran from relationships, not just curricula. A rotating cast of tutors means your child is re-explaining their level every week, and no teacher owns your child's progress. Ask point-blank: is my child's tutor fixed?",
+        "Equally important is the escape hatch: what happens if the fit isn't right? A good academy lets you switch tutors freely — no penalty, no awkward conversation. Fit matters enormously for kids; locking families into one tutor signals a business priority, not a learning one.",
+      ],
+      bullets: [
+        "Same tutor every class — ask for this explicitly",
+        "Free, easy tutor switching if the fit isn't right",
+        "Progress tracking should follow the child, not reset with each teacher",
+      ],
+    },
+    {
+      heading: "5. What will my child actually learn — and how do you measure it?",
+      paragraphs: [
+        "Ask for the learning path: where does my child start, and what's next? A real academy describes a structured sequence — Arabic letters, Noorani Qaida, fluent reading (Nazra), Tajweed rules, memorization (Hifz) with revision — and can place your child on it after the trial assessment.",
+        "Then ask how progress is reported to you. Weekly parent updates with specifics ('finished Qaida lesson 7, now reading joined letters') are worth more than any marketing claim. You should never have to guess whether your child is improving.",
+      ],
+      bullets: [
+        "Demand a structured curriculum sequence, not just 'Quran classes'",
+        "Your child should be level-assessed before placement",
+        "Weekly parent progress reports with specifics, not generalities",
+        "Ask what a typical month of progress looks like for your child's level",
+      ],
+    },
+    {
+      heading: "6. How does scheduling work in my timezone?",
+      paragraphs: [
+        "This is where many academies serving the US fall apart: classes scheduled at times that suit the tutor's country, not your child's evening. Ask for real after-school slots in your timezone — Eastern, Central, Mountain, or Pacific — and whether the schedule flexes around your family when needed.",
+        "Also ask the practical backup questions: what happens if the tutor is absent? Are missed classes made up? A serious academy has substitute coverage and make-up policies it can state in one sentence.",
+      ],
+      bullets: [
+        "Real after-school slots in YOUR US timezone, not the tutor's convenience",
+        "Ask about substitute coverage when the tutor is absent",
+        "Ask the make-up policy for missed classes — before you need it",
+      ],
+    },
+    {
+      heading: "7. What does it cost — and is the price honest?",
+      paragraphs: [
+        "Pricing should be published, in your currency, before the trial call. $35–$110/month for 2–7 classes per week is the normal range for quality 1-on-1 Quran teaching — that's the range our plans sit in. Be cautious of prices dramatically lower (underpaid tutors teach accordingly) or pressure tactics ('enroll today or the price doubles').",
+        "And read the fine print before you ask anyone to: is there a registration fee? Can you pause or cancel anytime? Are there sibling discounts? A no-refunds policy is fine if there's a free trial — you can test-drive before committing. A no-refunds policy with no trial is a warning sign.",
+      ],
+      bullets: [
+        "Published prices in USD before the trial call — no 'call for pricing'",
+        "Typical fair range: $35–$110/month for 2–7 weekly 1-on-1 classes",
+        "No registration fee; pause or cancel anytime",
+        "Free trial + clear policies beats the cheapest price every time",
+      ],
+    },
+  ],
+  faqs: [
+    {
+      q: "What is the most important question to ask an online Quran academy?",
+      a: "Ask who will teach your child and how they're qualified — demand specifics (formal Tajweed training, children's teaching experience), not 'highly qualified.' Tutor quality determines everything else; curriculum and scheduling can't fix a weak teacher.",
+    },
+    {
+      q: "How much should online Quran classes cost?",
+      a: "For quality live 1-on-1 classes, $35–$110/month for 2–7 classes per week is the normal range. Prices far below this usually mean underpaid, unvetted tutors; pressure tactics around pricing are a red flag regardless of the number.",
+    },
+    {
+      q: "Are online Quran classes safe for kids?",
+      a: "Private 1-on-1 classes at home on video are safe when the academy communicates through parents and lets you observe any class. Avoid group video rooms with unknown participants, and confirm the academy has a clear tutor-conduct and communication policy.",
+    },
+    {
+      q: "Should I pay before the trial?",
+      a: "No — never pay before real trial classes. A legitimate academy offers actual classes with the actual tutor (ours is 3 days, no credit card) including a level assessment. Payment-first academies are asking you to trust them before they've earned it.",
+    },
+    {
+      q: "What curriculum should an online Quran academy follow?",
+      a: "A structured sequence: Arabic letters and Noorani Qaida, then fluent reading (Nazra), then Tajweed rules, then Hifz with structured revision for memorizers — plus duas, Salah, and manners for kids. Your child should be level-assessed and placed on this path, with weekly progress reports to you.",
+    },
+    {
+      q: "What are red flags when choosing an online Quran academy?",
+      a: "Vague teacher qualifications, no real trial (payment before any class), group video rooms for young kids, rotating tutors with no free switching, hidden pricing or 'call for pricing,' pressure-tactics discounts, and the word 'certified' without a named certifier.",
+    },
+  ],
+  related: [
+    { href: "/guides/how-to-choose-online-quran-teacher", label: "How to Choose an Online Quran Teacher" },
+    { href: "/guides/how-much-do-online-quran-classes-cost", label: "How Much Do Online Quran Classes Cost?" },
+    { href: "/guides/what-happens-in-free-trial-quran-class", label: "What Happens in a Free Trial Class?" },
+    { href: "/fees", label: "Fees & Plans" },
+    { href: "/free-trial", label: "Book Your Free 3-Day Trial" },
+  ],
+  whatsappMessage:
+    "Assalamu Alaikum, I'm comparing online Quran academies for my child. Please share details about your tutors and free trial.",
+  courseName: "How to Choose an Online Quran Academy",
+  courseDescription:
+    "Seven questions US Muslim parents should ask before enrolling: tutor qualifications, trial, safety, scheduling, curriculum, and honest pricing. Free 3-day trial.",
+};
+
+/** Article #7 (drafted 2026-10-10, approved 2026-10-12): US-parent long-tail guide targeting "how many days a week should my child take quran classes" (keyword-research P2 long-tail; no dedicated article exists from competitors). No ayah/hadith cited; no stats invented — "qualified" used throughout. */
+export const GUIDE_CLASS_FREQUENCY: LandingPageData = {
+  slug: "how-many-days-a-week-quran-classes",
+  basePath: "/guides",
+  breadcrumb: "How Many Days a Week for Quran Classes?",
+  metaTitle: "How Many Days a Week Should My Child Take Quran Classes?",
+  metaDescription:
+    "Wondering how many days a week your child needs Quran classes? A practical guide: 2–3 days for most kids, daily for Hifz — plus how class length, practice, and the right tutor change the answer.",
+  keywords: [
+    "how many days a week should my child take quran classes",
+    "how often should kids take quran classes",
+    "quran class frequency for kids",
+    "how many quran classes per week",
+    "daily quran classes for kids",
+    "quran class schedule for children",
+  ],
+  h1: "How Many Days a Week Should My Child Take Quran Classes?",
+  intro: [
+    "Every parent who's ever booked a trial class asks this question next: how many days a week should my child actually come? One day feels too little, daily feels like a lot — and every academy's answer conveniently matches their most expensive plan. So let's give you the honest answer first, and the reasoning second.",
+    "For most children learning to read the Quran (Qaida, Nazra, Tajweed): 2–3 days a week of live 1-on-1 classes is the sweet spot. For memorizers in a Hifz program: 5 days a week, sometimes 6. For everything in between, the right answer depends on your child's age, goal, and how much short practice happens at home between classes. This guide walks you through each case so you pick the schedule that fits your child — not the one that fits someone's revenue target.",
+  ],
+  sections: [
+    {
+      heading: "1. The short answer, by learning goal",
+      paragraphs: [
+        "If you just want the number, here it is. A beginner child (ages 4–8) learning the Arabic alphabet and Noorani Qaida does best with 2–3 classes per week. A child reading the Quran with Tajweed (Nazra) also thrives on 2–3 days. A child memorizing the Quran (Hifz) genuinely needs 5 days a week — memorization is a daily discipline, and a weekend gap can undo a week's careful work.",
+        "Why does the same answer cover both beginners and readers? Because what moves a child forward isn't class count alone — it's the rhythm: class, short practice at home, class again. Two classes a week with five minutes of daily revision at home beats four classes a week with zero practice between them. Frequency gives the tutor more chances to correct mistakes early; home practice locks in what the tutor taught.",
+      ],
+      bullets: [
+        "Qaida / Nazra / Tajweed (most kids): 2–3 days a week",
+        "Hifz (memorization): 5 days a week",
+        "Adults starting from scratch: 2–3 days a week",
+        "Supplementary or maintenance: 1–2 days a week",
+      ],
+    },
+    {
+      heading: "2. Why 2–3 days is the sweet spot for most kids",
+      paragraphs: [
+        "Think of Quran classes like any skill a child learns — swimming, piano, math tutoring. One session a week means the tutor spends half the class re-teaching what faded over six idle days. Two or three sessions a week keep the material fresh: the tutor corrects a mistake on Monday, hears it corrected again on Wednesday, and by Friday it's gone.",
+        "There's also the child's week to respect. School, homework, weekend activities — a schedule the family can't sustain for months is worse than a lighter one they keep. Parents who start at 2 days a week and find their child asking for more can always add a day. Parents who start at 5 and watch their child dread class usually can't take a day away without it feeling like a punishment.",
+        "This is exactly how our plans are built: $35/month for 2 classes a week, $50 for 3 — the two tiers most families choose and stay on for years. Start where the rhythm feels easy, and let progress, not pressure, add days.",
+      ],
+      bullets: [
+        "2–3 sessions/week keeps material fresh without overwhelming the family",
+        "One day a week loses too much to forgetting between classes",
+        "Start light and add a day later — easier than cutting back",
+        "A sustainable schedule kept for a year beats an intense one kept for a month",
+      ],
+    },
+    {
+      heading: "3. When 5 days a week genuinely makes sense",
+      paragraphs: [
+        "Daily classes aren't an upsell trick — for Hifz students they're the standard. Memorization has a cruel forgetting curve: a new portion (sabaq) memorized Monday without revision Tuesday starts slipping by Wednesday. The Hifz day has three parts — new memorization, revision of recent portions, and revision of old portions — and that cycle only works when the tutor hears the child nearly every day.",
+        "There are a few other cases for 4–5 days. A teenager who can already read and wants to finish the Quran with proper Tajweed before Ramadan. An adult with a fixed deadline, like an upcoming Umrah. A child who's fallen behind and needs a focused catch-up month — though even then, two intensive months beat a year of burnout.",
+        "If your child is in Hifz, don't split the difference at 3 days and hope. Memorization on a light schedule drags on for years and frustrates everyone. Either commit to the daily rhythm or pick a lighter goal (Tajweed-perfect reading) that fits 2–3 days. An honest academy will tell you this even if it costs them the enrollment.",
+      ],
+      bullets: [
+        "Hifz: 5 days a week — memorization needs a near-daily cycle",
+        "Catch-up before a deadline (Ramadan, Umrah): 4–5 days, short-term",
+        "Light schedule + Hifz goal = years of frustration; pick the schedule to match the goal",
+        "Ask the academy directly: 'Is my child's goal realistic on 2 days a week?'",
+      ],
+    },
+    {
+      heading: "4. When 1 day a week is enough",
+      paragraphs: [
+        "Not every family needs the full rhythm. If your child attends a weekend madrasa or after-school Islamic school and you want a private tutor to fix their reading and Tajweed, one focused 1-on-1 session a week is a legitimate supplement — the group setting does the drilling, the tutor does the precision work.",
+        "One day a week also works as maintenance: your child finished the Qaida, reads well, and you want a weekly check-in to keep the standard from slipping while school takes priority. Be honest about which category you're in, though. One day a week will not teach a beginner to read from scratch — the gaps between classes are too long for new material to stick.",
+      ],
+      bullets: [
+        "Supplementary to madrasa/Islamic school: 1 day a week works",
+        "Maintenance for a fluent reader: 1–2 days a week works",
+        "Complete beginner on 1 day a week: progress will crawl — expect it",
+      ],
+    },
+    {
+      heading: "5. Class length matters as much as frequency",
+      paragraphs: [
+        "A 4-year-old doing 60-minute classes twice a week will learn less than the same child doing 30-minute classes three times a week. Young children's focus has a hard ceiling: around 25–30 minutes for under-8s, stretching to 45–60 minutes only in the early teens. An academy that puts your 5-year-old in hour-long classes isn't giving you more value — it's selling you a tired child.",
+        "This is why every class at QuranHub is 30 minutes, 1-on-1. Thirty focused minutes with the tutor's full attention beats an hour of a child's mind wandering. If you're comparing academies, ask about class length for your child's age before you ask about days per week — it's the number that actually determines whether the class works.",
+      ],
+      bullets: [
+        "Under 8s: 30 minutes max per class — longer classes teach less, not more",
+        "8–12s: 30–45 minutes; teens and adults: up to 60",
+        "Two 30-minute classes beat one 60-minute class for young kids",
+        "1-on-1 means every minute is your child's minute — no waiting while 10 others read",
+      ],
+    },
+    {
+      heading: "6. The real formula: frequency × practice × tutor",
+      paragraphs: [
+        "Here's what the plan brochures leave out: class frequency is only one of three multipliers, and it's not the biggest one. Five minutes of revision at home each day does more for retention than a third weekly class. And a qualified tutor who corrects Makharij (pronunciation points) properly in two sessions a week moves a child faster than a careless tutor in five.",
+        "So when you choose days per week, budget for the other two. Can your family do five minutes of practice between classes? Then 2 days a week will carry your child a long way. Is the tutor Tanzeem-ul-Madaris qualified with real Tajweed training — the kind that catches the mistakes a casual reader misses? Then every session counts double. (We say 'qualified' deliberately — never 'certified' without naming the certifier, because we won't dress up credentials.)",
+        "Practically: pick the frequency you can sustain, protect five minutes of home practice on the off-days, and make sure the tutor is worth the slot. That combination beats any 'maximum classes' package.",
+      ],
+      bullets: [
+        "5 minutes of home practice daily > an extra weekly class",
+        "A qualified tutor multiplies every session; a weak tutor wastes them",
+        "Same tutor every class — continuity matters more than an extra day",
+        "Ask for weekly progress reports so you can see the formula working",
+      ],
+    },
+    {
+      heading: "7. Signs your child needs more — or fewer — classes",
+      paragraphs: [
+        "Start at 2–3 days and watch. Your child needs MORE classes when: the tutor keeps re-teaching the same lesson (the gap between classes is too long), your child is in Hifz and falling behind on revision, or your child is genuinely hungry for more and asks to add a day. Those are real signals, not sales prompts.",
+        "Your child needs FEWER classes when: they're dreading class, rushing homework to get to it, or the tutor reports the child is present but mentally checked out. Pulling back one day often restores the appetite within weeks — and a child who enjoys class learns more in 2 sessions than a resentful child learns in 5.",
+        "The right academy makes this adjustment easy: no penalties, no 'downgrade fees,' just a schedule change. If switching plans feels like breaking a contract, that's information about the academy, not about your child.",
+      ],
+      bullets: [
+        "More: same lesson re-taught repeatedly, Hifz falling behind, child asks for more",
+        "Fewer: dreading class, checked-out during lessons, family schedule cracking",
+        "Adjustments should be free and instant — not a negotiation",
+        "Re-check every 2–3 months as your child grows",
+      ],
+    },
+    {
+      heading: "8. Our honest recommendation table",
+      paragraphs: [
+        "Put it all together, and here's the decision we walk parents through on the trial call. Find your child's row — that's your starting point. Revisit it after the 3-day free trial, when the tutor has actually assessed your child's level and can recommend with evidence instead of guesses.",
+        "Beginner, ages 4–8 (Qaida): 2 days/week to start; add a 3rd if the child is thriving. Ages 9–12 reading with Tajweed: 2–3 days/week. Teen/adult beginner: 2–3 days/week — adults progress fast with two focused sessions. Hifz student: 5 days/week, non-negotiable for real progress. Supplementary to madrasa: 1 day/week. Maintenance for fluent readers: 1–2 days/week.",
+        "And if an academy recommends 5 days a week for your 6-year-old beginner before they've even heard the child read — get a second opinion. Ours is free, and it's a real assessment, not a sales call.",
+      ],
+      bullets: [
+        "Beginner 4–8 (Qaida): start at 2 days/week",
+        "Reading with Tajweed (9–12): 2–3 days/week",
+        "Teen/adult beginner: 2–3 days/week",
+        "Hifz: 5 days/week",
+        "Supplementary / maintenance: 1–2 days/week",
+      ],
+    },
+  ],
+  faqs: [
+    {
+      q: "What is the minimum number of Quran classes per week for a child?",
+      a: "For a beginner learning to read, 2 days a week is the practical minimum — 1 day a week loses too much to forgetting between classes. For Hifz (memorization), the minimum is 4–5 days a week; memorization on a lighter schedule drags on for years.",
+    },
+    {
+      q: "Can daily Quran classes burn out my child?",
+      a: "For Hifz students, daily classes are the norm and children adapt — the classes are short (30 minutes) and the rhythm becomes routine. For a young beginner, starting at 5 days a week often does cause burnout; start at 2–3 days and add a day only if the child is thriving.",
+    },
+    {
+      q: "How many classes per week does a 5-year-old need?",
+      a: "Two 30-minute classes per week is the right start for a 5-year-old beginner. Short, frequent sessions match a young child's attention span far better than fewer long ones. Add a third day after a few months if the tutor sees the child is ready.",
+    },
+    {
+      q: "How many days a week for Hifz memorization?",
+      a: "Five days a week. The Hifz cycle — new memorization, recent revision, old revision — needs a near-daily rhythm. Weekends off are fine and healthy; longer gaps let memorized portions slip.",
+    },
+    {
+      q: "Can we change the number of classes per week later?",
+      a: "Yes — and you should expect to. Children's needs change as they grow and as goals shift (finishing Qaida, starting Hifz, school exam season). A good academy lets you move between plans freely with no penalty; ask about this before enrolling.",
+    },
+    {
+      q: "Does taking more classes per week always mean faster progress?",
+      a: "No. Progress comes from frequency × home practice × tutor quality. Two classes a week with five minutes of daily home practice and a qualified tutor beats four classes a week with no practice between them. More classes help only when the other two are in place.",
+    },
+  ],
+  related: [
+    { href: "/guides/how-much-do-online-quran-classes-cost", label: "How Much Do Online Quran Classes Cost?" },
+    { href: "/guides/how-to-choose-online-quran-teacher", label: "How to Choose an Online Quran Teacher" },
+    { href: "/guides/how-long-does-it-take-to-learn-noorani-qaida", label: "How Long Does It Take to Learn Noorani Qaida?" },
+    { href: "/guides/how-long-does-it-take-to-memorize-the-quran", label: "How Long Does It Take to Memorize the Quran?" },
+    { href: "/guides/what-happens-in-free-trial-quran-class", label: "What Happens in a Free Trial Class?" },
+    { href: "/fees", label: "Fees & Plans" },
+    { href: "/free-trial", label: "Book Your Free 3-Day Trial" },
+  ],
+  whatsappMessage:
+    "Assalamu Alaikum, I want help choosing the right weekly class schedule for my child. Please advise.",
+  courseName: "How Many Days a Week for Quran Classes?",
+  courseDescription:
+    "The honest guide to Quran class frequency: 2–3 days a week for most kids, 5 for Hifz — plus class length, home practice, and how to adjust as your child grows. Free 3-day trial.",
+};
+
+/** Article #8 (drafted 2026-10-11, approved 2026-10-12): US-parent long-tail guide targeting "how to help child memorize quran at home" (30-day plan, Week 4 sprint-2 article 6; no dedicated competitor article found — complements GUIDE_HIFZ_TIMELINE from the parent's side). No ayah/hadith cited; no stats invented — "qualified" used throughout. */
+export const GUIDE_HELP_CHILD_MEMORIZE_HOME: LandingPageData = {
+  slug: "help-child-memorize-quran-at-home",
+  basePath: "/guides",
+  breadcrumb: "Help Your Child Memorize Quran at Home",
+  metaTitle: "How to Help Your Child Memorize the Quran at Home (Without Pushing Too Hard)",
+  metaDescription:
+    "Your child learns Hifz in class but keeps it at home. A practical parent guide: the 15-minute daily routine, sabaq/sabqi/manzil made simple, and how to correct mistakes without nagging.",
+  keywords: [
+    "how to help child memorize quran at home",
+    "help my child memorize quran",
+    "quran memorization tips for parents",
+    "hifz revision routine at home",
+    "child forgetting quran memorization",
+    "how to revise hifz at home",
+  ],
+  h1: "How to Help Your Child Memorize the Quran at Home (Without Pushing Too Hard)",
+  intro: [
+    "Here's the honest truth academies don't put on their brochures: your child's tutor can teach Hifz, but your child will keep Hifz at home. The tutor hears the new portion for 30 minutes; the other 23.5 hours belong to you. Parents who get this do a small daily routine that costs fifteen minutes. Parents who don't watch memorized surahs quietly slip away — and blame the child's memory.",
+    "The good news: helping at home doesn't require you to be a hafiz yourself. You don't even need to read Arabic fluently. You need a routine, a way to track three buckets of material, and the patience to correct mistakes without turning your living room into a courtroom. This guide shows you exactly that — the same system our tutors use, shrunk to what a busy US parent can do between dinner and bedtime.",
+  ],
+  sections: [
+    {
+      heading: "1. Understand the three buckets first",
+      paragraphs: [
+        "Every Hifz program in the world — online or in-person — runs on three buckets. Your child's tutor calls them sabaq (today's new portion), sabqi (recently memorized portions, roughly the last few weeks), and manzil (old portions, everything memorized months ago). New material goes in the top, and everything else must keep circulating, or it evaporates.",
+        "Parents get into trouble when they only hear the sabaq. The child recites today's new verses beautifully at dinner, everyone's proud — meanwhile last month's surahs are quietly disappearing. When you sit down to help, you're the guardian of the two lower buckets. Ask the tutor each week: 'What's in sabaq this week, and which sabqi and manzil should we revise at home?' That one question changes everything.",
+      ],
+      bullets: [
+        "Sabaq: today's new memorization — the tutor's job to teach, your job to hear",
+        "Sabqi: the last few weeks of material — needs daily listening from a parent",
+        "Manzil: old material from months ago — needs weekly cycling or it fades",
+        "Ask the tutor weekly which sabqi/manzil to revise — don't guess",
+      ],
+    },
+    {
+      heading: "2. The 15-minute home routine that actually works",
+      paragraphs: [
+        "Forget hour-long evening sessions. A child's memorization attention lasts about 15 minutes, and consistency beats duration every time. Here's the routine: (1) The child recites today's sabaq to you once, from memory. Don't follow along in the mushaf — just listen for stumbling. (2) Whatever they stumbled on, they read it three times looking at the text, then recite it again without looking. (3) They recite yesterday's sabqi — the recent material — once. (4) On Fridays (or whatever day you pick), instead of steps 1–3, cycle one old manzil portion.",
+        "That structure fits in 15 minutes and covers all three buckets across the week. Miss a day? Fine — pick up where you left off, never double up to 'catch up.' Doubling up is how Hifz turns into dread. The families whose children complete memorization aren't the ones who did marathon sessions; they're the ones who did 15 minutes most days for years.",
+      ],
+      bullets: [
+        "15 minutes daily beats 1 hour twice a week — memorization is a daily discipline",
+        "Routine: recite sabaq → fix stumbles (3x with text) → recite sabqi → Friday: manzil",
+        "Never double up after a missed day — resume, don't punish",
+        "Same time every day turns revision into a habit instead of a negotiation",
+      ],
+    },
+    {
+      heading: "3. Pick the right time of day",
+      paragraphs: [
+        "Memory science agrees with what traditional teachers have always known: morning memorization sticks better. For US families, that usually means before school — even 15 minutes after Fajr. If mornings are chaos in your house, right after school works too, while the child's mind is still in 'learning mode.' What doesn't work well: late at night, when the child is tired and the session becomes something to survive.",
+        "Anchor it to something fixed — after Fajr, after breakfast, before Maghrib — rather than to a clock time that shifts daily. The families who keep this going for years all say the same thing: it became 'what we do after Fajr,' not 'what I have to remind my kid about at 6:43.'",
+      ],
+      bullets: [
+        "Best: early morning (after Fajr) — memorization sticks better when the mind is fresh",
+        "Second best: right after school, before the evening unwinds",
+        "Worst: late night when the child is tired",
+        "Anchor to a fixed daily event, not a shifting clock time",
+      ],
+    },
+    {
+      heading: "4. You don't need to read Arabic to help — you need ears",
+      paragraphs: [
+        "The number-one objection from parents: 'My own Arabic isn't good enough to help.' It is. You are not teaching Tajweed — the qualified tutor does that. You are checking that the child can recite today's portion from memory without stumbling. If the child stalls, reads it wrong twice in a row, or skips a verse, you mark it and they fix it with the text. You can hear a stumble without knowing the language.",
+        "Keep your child's mushaf in one fixed spot — the same copy they always use, since memorizers remember where on the page a verse sits. A phone app works in a pinch, but one physical mushaf that never moves builds the 'page memory' that serious memorizers rely on. And if you can read even a little, sit beside them during class sometimes: seeing you take it seriously teaches more than any lecture.",
+      ],
+      bullets: [
+        "Your job: hear the recitation and catch stumbles — not teach Tajweed",
+        "One fixed mushaf for the child — memorizers remember where verses sit on the page",
+        "If you can read a little, sit in on a class occasionally — it matters to them",
+        "When unsure about a mistake, flag it for the tutor instead of 'correcting' it yourself",
+      ],
+    },
+    {
+      heading: "5. Correct without nagging (the error journal)",
+      paragraphs: [
+        "This is where Hifz breaks down in most homes. The child recites, the parent interrupts every mistake, the child cries, the parent feels guilty, everyone hates revision. There's a better way: the error journal. Keep a small notebook by the mushaf. When the child stumbles, you don't interrupt — you note the verse. After they finish, you open the notebook together and they fix just those spots: read three times with the text, recite once without.",
+        "Two rules make this work. First: praise the completed recitation before opening the journal — 'Mashallah, you finished it' comes first, always. Second: never test a fixed mistake again the same evening. Test it tomorrow. Memory needs overnight sleep to consolidate, and same-evening re-tests just measure short-term echo, not real memorization.",
+      ],
+      bullets: [
+        "Error journal: note mistakes silently, fix them together after the recitation",
+        "Praise the completed recitation first — correction comes second",
+        "Re-test fixed mistakes tomorrow, not tonight — memory consolidates during sleep",
+        "If tears start, stop the session — a finished crying session teaches nothing",
+      ],
+    },
+    {
+      heading: "6. Motivate with milestones, not bribes",
+      paragraphs: [
+        "Paying per surah works for about a month, then the child learns to negotiate instead of memorize. What works long-term: visible milestones. A wall chart where each memorized surah gets colored in. A family dua when a juz is completed. Letting the child lead a short taraweeh-style recitation for the family during Ramadan once they have a few surahs down — that's a reward money can't buy.",
+        "Play Quran recitation in the car and at home — the same reciter your child memorizes from, if possible. Children absorb surprising amounts by passive listening, and hearing the surahs they're memorizing in the background stitches them into daily life. Pick one reciter with clear, measured recitation and stick with them; switching reciters mid-memorization confuses the child's ear.",
+      ],
+      bullets: [
+        "Wall chart: color in each completed surah — visible progress beats verbal praise",
+        "Celebrate juz completions as a family — make Hifz a household event",
+        "Background listening (car, home) from ONE reciter with clear recitation",
+        "Bribes expire in a month; milestones compound for years",
+      ],
+    },
+    {
+      heading: "7. When to ask the tutor to adjust",
+      paragraphs: [
+        "Home revision can only carry so much. Call the tutor — don't just push harder at home — when: the sabaq keeps shrinking because yesterday's portion wasn't solid (a sign the pace is too fast); the child is forgetting manzil faster than the weekly cycle replaces it (a sign the revision plan needs restructuring); or the child consistently dreads class despite a gentle home routine (a sign something in the lesson itself needs changing).",
+        "A qualified tutor will adjust the plan gladly — reduce new material until the backlog is stable, then ramp back up. Be suspicious of any program where the answer to every struggle is 'more classes.' The right answer is usually 'slower sabaq, more sabqi,' and any tutor worth their fee knows it. Same tutor every class matters here too: they can see the trend across weeks that a rotating tutor would miss.",
+      ],
+      bullets: [
+        "Shrinking sabaq or collapsing manzil = call the tutor, don't just push harder",
+        "The right fix is usually 'slower new material, more revision' — not more classes",
+        "Same tutor every session lets them spot trends a rotating tutor would miss",
+        "Ask for a monthly Hifz report: new portions, sabqi status, manzil health",
+      ],
+    },
+  ],
+  faqs: [
+    {
+      q: "How much time should my child spend on Hifz revision at home each day?",
+      a: "About 15 minutes of parent-supervised revision daily is enough for most children: recite today's new portion, fix stumbles, then recite recent material. The 30-minute tutor class teaches; the 15-minute home routine preserves. Longer sessions help only if the child stays engaged — a forced 30 minutes teaches less than a willing 15.",
+    },
+    {
+      q: "My child keeps forgetting surahs they memorized months ago. Is this normal?",
+      a: "Completely normal — old memorization (manzil) fades without weekly cycling. That's not a memory problem, it's a revision-schedule problem. Add one weekly manzil session where the child recites old portions, rotating through them. Tell the tutor which old surahs are slipping; they'll build them back into the plan.",
+    },
+    {
+      q: "My child cries during Hifz revision. Should I push through?",
+      a: "No — stop the session. A child revising through tears retains almost nothing, and repeated crying sessions teach the child that Hifz equals misery. Shorten the session, switch to listening instead of reciting that day, and tell the tutor. Consistent gentle pressure over years completes Hifz; pressure that breaks the child ends it.",
+    },
+    {
+      q: "What is the best age for a child to start memorizing the Quran?",
+      a: "Most children start Hifz between ages 5 and 8, after they can read the Quran fluently with basic Tajweed. Starting earlier works only if the child reads confidently first — memorizing before fluent reading builds a fragile foundation. A qualified tutor should assess reading fluency before recommending a Hifz start.",
+    },
+    {
+      q: "Can I memorize the Quran alongside my child?",
+      a: "Yes — and it's one of the most powerful motivators there is. You don't need to match their pace; memorizing even a few verses a week alongside them turns Hifz from 'the child's chore' into 'our family project.' Many parents discover they retain more than they expected, simply by hearing the same portions daily.",
+    },
+    {
+      q: "Should the home routine change during Ramadan?",
+      a: "Slightly — Ramadan is Hifz season, not Hifz vacation. Many families shift revision to after Fajr (when everyone's awake anyway) and add taraweeh listening as passive revision. Reduce sabaq if the child is fasting and tired; protect the revision routine above all. The month builds momentum that carries into the year.",
+    },
+  ],
+  related: [
+    { href: "/guides/how-long-does-it-take-to-memorize-the-quran", label: "How Long Does It Take to Memorize the Quran?" },
+    { href: "/guides/how-many-days-a-week-quran-classes", label: "How Many Days a Week Should My Child Take Quran Classes?" },
+    { href: "/guides/how-long-does-it-take-to-learn-noorani-qaida", label: "How Long Does It Take to Learn Noorani Qaida?" },
+    { href: "/guides/how-to-choose-online-quran-teacher", label: "How to Choose an Online Quran Teacher" },
+    { href: "/guides/how-much-do-online-quran-classes-cost", label: "How Much Do Online Quran Classes Cost?" },
+    { href: "/fees", label: "Fees & Plans" },
+    { href: "/free-trial", label: "Book Your Free 3-Day Trial" },
+  ],
+  whatsappMessage:
+    "Assalamu Alaikum, my child is memorizing the Quran and I want help setting up a home revision routine. Please advise.",
+  courseName: "Help Your Child Memorize Quran at Home",
+  courseDescription:
+    "The parent's guide to Hifz at home: the 15-minute daily routine, the sabaq/sabqi/manzil system, and how to correct mistakes without nagging. Free 3-day trial.",
+};
+
+/** All guides, keyed for the [slug] route. */
+export const GUIDES: Record<string, LandingPageData> = {
   [GUIDE_4_YEAR_OLDS.slug]: GUIDE_4_YEAR_OLDS,
   [GUIDE_5_YEAR_OLDS.slug]: GUIDE_5_YEAR_OLDS,
   [GUIDE_7_YEAR_OLDS.slug]: GUIDE_7_YEAR_OLDS,
@@ -1927,6 +2411,11 @@ export const GUIDE_FEMALE_TEACHER_KIDS: LandingPageData = {
   [GUIDE_HIFZ_TIMELINE.slug]: GUIDE_HIFZ_TIMELINE,
   [GUIDE_QAIDA_TIMELINE.slug]: GUIDE_QAIDA_TIMELINE,
   [GUIDE_ONLINE_EFFECTIVENESS.slug]: GUIDE_ONLINE_EFFECTIVENESS,
+  [GUIDE_TAJWEED_BEGINNERS.slug]: GUIDE_TAJWEED_BEGINNERS,
+  [GUIDE_FEMALE_TEACHER_KIDS.slug]: GUIDE_FEMALE_TEACHER_KIDS,
+  [GUIDE_CHOOSE_ACADEMY.slug]: GUIDE_CHOOSE_ACADEMY,
+  [GUIDE_CLASS_FREQUENCY.slug]: GUIDE_CLASS_FREQUENCY,
+  [GUIDE_HELP_CHILD_MEMORIZE_HOME.slug]: GUIDE_HELP_CHILD_MEMORIZE_HOME,
 };
 
 /** Ordered list for the guides index page and sitemap. */
@@ -1942,4 +2431,9 @@ export const GUIDE_LIST: LandingPageData[] = [
   GUIDE_HIFZ_TIMELINE,
   GUIDE_QAIDA_TIMELINE,
   GUIDE_ONLINE_EFFECTIVENESS,
+  GUIDE_TAJWEED_BEGINNERS,
+  GUIDE_FEMALE_TEACHER_KIDS,
+  GUIDE_CHOOSE_ACADEMY,
+  GUIDE_CLASS_FREQUENCY,
+  GUIDE_HELP_CHILD_MEMORIZE_HOME,
 ];
