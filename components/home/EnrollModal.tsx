@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { CheckCircle2, MessageCircle, X } from "lucide-react";
+import { CheckCircle2, Mail, MessageCircle, X } from "lucide-react";
 import { useState } from "react";
 import { PLANS, SITE, whatsappLink, type Course } from "@/lib/site";
 import { sendLeadEmail } from "@/lib/leads";
@@ -23,14 +23,7 @@ export default function EnrollModal({ course, onClose }: EnrollModalProps) {
     const plan = PLANS.find((p) => p.id === planId);
     const name = String(data.get("name") || "").trim();
     const contact = String(data.get("contact") || "").trim();
-    const msg =
-      `Assalamu Alaikum! New enrollment request from the QuranHub website.\n\n` +
-      `Course: ${course?.title ?? ""}\n` +
-      `Plan: ${plan ? `${plan.name} — ${plan.classesPerWeek} classes/week` : planId}\n` +
-      `Name: ${name}\nContact: ${contact}`;
-    // Open WhatsApp chat with the academy — the enrollment details arrive as a message
-    window.open(whatsappLink(msg), "_blank", "noopener,noreferrer");
-    // Also email the enrollment details to the academy inbox — this covers
+    // Email the enrollment details to the academy inbox — this covers
     // visitors who don't have WhatsApp; their interest lands in the inbox.
     sendLeadEmail(`New enrollment request — ${course?.title ?? ""}`, {
       Course: course?.title ?? "",
@@ -126,8 +119,15 @@ export default function EnrollModal({ course, onClose }: EnrollModalProps) {
                   <MessageCircle className="h-4 w-4" aria-hidden="true" />
                   Confirm faster on WhatsApp
                 </a>
+                <a
+                  href={`mailto:${SITE.email}`}
+                  className="mt-2.5 inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full border border-brand-800/20 px-6 py-3 text-sm font-bold text-brand-800 transition-colors hover:bg-brand-800/5 dark:border-white/20 dark:text-sand-100 dark:hover:bg-white/10"
+                >
+                  <Mail className="h-4 w-4" aria-hidden="true" />
+                  Email us instead
+                </a>
                 <p className="mt-2 text-[11px] text-ink-soft dark:text-night-muted">
-                  {SITE.whatsappDisplay}
+                  {SITE.whatsappDisplay} · {SITE.email}
                 </p>
               </div>
             ) : (

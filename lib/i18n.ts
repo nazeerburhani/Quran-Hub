@@ -146,7 +146,7 @@ const en = {
   formEmailNote: "No WhatsApp? No problem — your details are emailed to our team too.",
   formSuccessTitle: "Request received!",
   formSuccessText:
-    "JazakAllahu Khairan! Your details have been received — they were also emailed to our team, so your request is safe even without WhatsApp. We will contact you shortly to schedule your free trial. If WhatsApp did not open and you want a faster reply, tap the button below.",
+    "JazakAllahu Khairan! Your details have been received — they were also emailed to our team, so your request is safe. We will contact you shortly to schedule your free trial. Want a faster reply? Message us on WhatsApp or email us below.",
 
   faqEyebrow: "FAQ",
   faqTitle: "Questions, answered",
@@ -157,6 +157,7 @@ const en = {
 
   stickyTrial: "Free 3-Day Trial",
   stickyWhatsapp: "WhatsApp Us",
+  formEmailUs: "Email Us",
 
   footerTagline: "Live one-on-one online Quran classes for kids and adults — qualified male and female tutors, in every timezone.",
   footerCourses: "Courses",
@@ -314,6 +315,7 @@ const ur: typeof en = {
 
   stickyTrial: "3 دن کا مفت ٹرائل",
   stickyWhatsapp: "واٹس ایپ کریں",
+  formEmailUs: "ای میل کریں",
 
   footerTagline: "بچوں اور بڑوں کے لیے براہِ راست انفرادی آن لائن قرآن کلاسز — مستند مرد و خواتین اساتذہ، ہر ٹائم زون میں۔",
   footerCourses: "کورسز",
@@ -471,6 +473,7 @@ const ar: typeof en = {
 
   stickyTrial: "تجربة ٣ أيام مجانًا",
   stickyWhatsapp: "راسلنا واتساب",
+  formEmailUs: "راسلنا بريديًا",
 
   footerTagline: "دروس قرآن مباشرة فردية عبر الإنترنت للأطفال والكبار — معلمون ومعلمات معتمدون، في جميع المناطق الزمنية.",
   footerCourses: "الدورات",

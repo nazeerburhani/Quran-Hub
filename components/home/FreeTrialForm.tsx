@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle2, MessageCircle, Timer } from "lucide-react";
+import { CheckCircle2, Mail, MessageCircle, Timer } from "lucide-react";
 import { SITE, whatsappLink } from "@/lib/site";
 import { sendLeadEmail } from "@/lib/leads";
 import { useLocale } from "@/components/layout/LanguageSwitcher";
@@ -20,12 +20,7 @@ export default function FreeTrialForm() {
     const contact = String(data.get("contact") || "").trim();
     const student =
       String(data.get("student") || "kid") === "adult" ? "Adult" : "Kid";
-    const msg =
-      `Assalamu Alaikum! New FREE trial request from the QuranHub website.\n\n` +
-      `Name: ${name}\nContact: ${contact}\nStudent: ${student}`;
-    // Open WhatsApp chat with the academy — the lead details arrive as a message
-    window.open(whatsappLink(msg), "_blank", "noopener,noreferrer");
-    // Also email the lead details to the academy inbox (backup channel)
+    // Email the lead details to the academy inbox
     sendLeadEmail("New FREE trial request", {
       Name: name,
       Contact: contact,
@@ -99,8 +94,15 @@ export default function FreeTrialForm() {
                       <MessageCircle className="h-4 w-4" aria-hidden="true" />
                       {d.stickyWhatsapp}
                     </a>
+                    <a
+                      href={`mailto:${SITE.email}`}
+                      className="mt-2.5 inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full border border-brand-800/20 px-6 py-3 text-sm font-bold text-brand-800 transition-colors hover:bg-brand-800/5 dark:border-white/20 dark:text-sand-100 dark:hover:bg-white/10"
+                    >
+                      <Mail className="h-4 w-4" aria-hidden="true" />
+                      {d.formEmailUs}
+                    </a>
                     <p className="mt-2 text-[11px] text-ink-soft dark:text-night-muted">
-                      {SITE.whatsappDisplay}
+                      {SITE.whatsappDisplay} · {SITE.email}
                     </p>
                   </div>
                 ) : (
