@@ -2510,6 +2510,119 @@ export const GUIDE_ONE_TO_ONE_VS_GROUP: LandingPageData = {
     "The honest parent's guide to one-to-one vs group Quran classes: learning speed, Tajweed correction, cost per progress, and a 60-second decision checklist. Free 3-day trial.",
 };
 
+export const GUIDE_ADULTS_FROM_SCRATCH: LandingPageData = {
+  slug: "can-adults-learn-quran-online-from-scratch",
+  basePath: "/guides",
+  breadcrumb: "Adults Learning Quran from Scratch",
+  metaTitle: "Can Adults Learn Quran Online from Scratch? Honest Answer",
+  metaDescription:
+    "Too old to start? Never learned as a child? Here's how adults — including reverts — learn Quran online from zero: what to expect, how it works, and a free 3-day trial.",
+  keywords: [
+    "can adults learn quran online from scratch",
+    "learn quran as an adult beginner",
+    "adult quran classes for beginners online",
+    "quran classes for reverts online",
+  ],
+  h1: "Can Adults Learn Quran Online from Scratch?",
+  intro: [
+    "If you're an adult who never learned to read the Quran — maybe you grew up without access to a teacher, maybe you're a revert starting fresh — you might wonder if the door has closed. It hasn't. Adults learn Quran online from scratch every single day, and in some ways they have advantages children don't: focus, motivation, and the ability to ask why.",
+    "This guide covers the honest answers: whether it's too late (it isn't), how adult beginner classes actually work, what progress looks like, and how to start without embarrassment. Our free 3-day trial includes adult beginner classes with patient, qualified tutors — including female teachers for sisters. No credit card, no pressure, no judgment.",
+  ],
+  sections: [
+    {
+      heading: "The short answer",
+      paragraphs: [
+        "Yes — adults absolutely can learn Quran online from scratch, at any age. The starting point is the same as for children: Noorani Qaida, the Arabic alphabet and reading rules. The difference is the teaching approach: adult beginners get a faster pace, clear explanations of why rules work the way they do, and a tutor who treats them like the adult they are.",
+        "Reverts often worry most, but they're some of the most dedicated students — starting from zero with full motivation beats starting as a child with none.",
+      ],
+    },
+    {
+      heading: "\u201cAm I too old?\u201d — no.",
+      paragraphs: [
+        "There's no age limit on learning the Quran. Adult brains learn differently than children's — less sponge-like, more analytical — but that analytical ability is an asset. When a tutor explains why noon carries a shaddah here, or how the throat letters are produced, adult students lock it in through understanding, not just repetition.",
+        "The students who struggle aren't the older ones — they're the inconsistent ones. Thirty minutes of practice between classes matters more than your age. An adult who practices beats a teenager who doesn't, every time.",
+      ],
+    },
+    {
+      heading: "How adult beginner classes work",
+      paragraphs: [
+        "Forget the image of sitting in a kids' class feeling out of place. Adult beginner classes are one-to-one and private — just you and the tutor, no audience, no embarrassment, ask anything. The alphabet moves faster than with a 5-year-old because you can handle it, and every rule comes paired with its reason: Makharij (pronunciation points) taught with clear physical descriptions you can feel in your own mouth and throat.",
+        "And scheduling bends around your life. Before work, after the kids sleep, weekends — online means the class fits your calendar, not the other way around.",
+      ],
+      bullets: [
+        "100% private — no audience, no embarrassment",
+        "Faster pace than kids' classes, explanation-rich teaching",
+        "Scheduled around work and family, including early mornings and late evenings",
+      ],
+    },
+    {
+      heading: "What about Tajweed — isn't that advanced?",
+      paragraphs: [
+        "Tajweed isn't a separate advanced subject you reach later — it's built in from the first lesson. When you learn each letter, you learn its correct pronunciation point from day one. That's actually an advantage of starting as an adult beginner: you learn it right the first time, instead of spending years unlearning childhood mistakes.",
+        "You won't be reciting like a qari in month one, and any academy that promises that is lying. But correct, confident reading with proper Tajweed foundations is a realistic goal within consistent months of study — and every lesson builds audibly on the last, which keeps motivation high.",
+      ],
+    },
+    {
+      heading: "Reverts: your specific worries, answered",
+      paragraphs: [
+        "Don't know any Arabic at all? Perfect — that's the starting line, not a problem. Noorani Qaida assumes zero knowledge. Feeling embarrassed as a beginner? Every tutor who teaches adults has heard this; within two lessons it fades, because one-to-one means there's no one to feel embarrassed in front of.",
+        "Working full time? Most adult students do — two to three 30-minute classes per week plus short daily practice is the standard rhythm. And yes, you can request a female teacher; many sisters prefer it. Just mention it when booking.",
+      ],
+      bullets: [
+        "Zero Arabic needed — Noorani Qaida starts from nothing",
+        "Private lessons remove the embarrassment factor entirely",
+        "2–3 short classes per week fits a full-time schedule",
+        "Qualified female teachers available on request",
+      ],
+    },
+    {
+      heading: "How to start this week",
+      paragraphs: [
+        "Book the free 3-day trial: three real one-to-one beginner classes, no credit card. Tell the tutor you're starting from zero — they'll place you at exactly the right step, no test anxiety. Then show up consistently, because the only students who fail are the ones who stop showing up.",
+        "The hardest recitation is the first one. After that, it's just the next lesson.",
+      ],
+    },
+  ],
+  faqs: [
+    {
+      q: "Can a 40, 50, or 60-year-old learn to read the Quran?",
+      a: "Yes. Age changes the learning style, not the possibility. Older beginners often progress steadily because they practice deliberately and ask better questions.",
+    },
+    {
+      q: "How long does it take an adult to learn Noorani Qaida?",
+      a: "It varies with practice, but adults typically move through it faster than children — consistent students often complete the foundations in a few months of regular classes. Anyone promising an exact number of weeks is guessing.",
+    },
+    {
+      q: "I can't pronounce Arabic letters — will the tutor laugh?",
+      a: "No. Mispronunciation on day one is the job description — correcting it patiently is literally what qualified tutors do all day, one-to-one.",
+    },
+    {
+      q: "Are online classes as effective as in-person for adults?",
+      a: "For one-to-one learning, yes — arguably better. Screen sharing lets the tutor highlight exactly which letter and rule you're working on, and you never commute.",
+    },
+    {
+      q: "What if I've tried before and quit?",
+      a: "Most adult beginners have. The difference this time: a tutor matched to adult learners, a schedule that fits your life, and a free trial so there's nothing to lose by trying once more.",
+    },
+    {
+      q: "Do I need to know how to pray first?",
+      a: "No — many students learn Salah alongside their Quran reading, and tutors can guide both. Start wherever you are.",
+    },
+  ],
+  related: [
+    { href: "/guides/how-to-choose-online-quran-teacher", label: "How to Choose an Online Quran Teacher" },
+    { href: "/guides/tajweed-for-beginners", label: "Tajweed for Beginners" },
+    { href: "/guides/how-many-days-a-week-quran-classes", label: "How Many Days a Week?" },
+    { href: "/courses/learn-quran-online-for-adults", label: "Learn Quran Online for Adults" },
+    { href: "/free-trial", label: "Free 3-Day Trial" },
+  ],
+  whatsappMessage:
+    "Assalamu Alaikum, I'm an adult beginner and want to learn Quran online from scratch. Please share details about the free trial.",
+  courseName: "Can Adults Learn Quran Online from Scratch",
+  courseDescription:
+    "The honest guide for adult beginners and reverts: how one-to-one online Quran classes work from zero, what progress looks like, and how to start this week. Free 3-day trial.",
+};
+
 /** All guides, keyed for the [slug] route. */
 export const GUIDES: Record<string, LandingPageData> = {
   [GUIDE_4_YEAR_OLDS.slug]: GUIDE_4_YEAR_OLDS,
@@ -2529,6 +2642,7 @@ export const GUIDES: Record<string, LandingPageData> = {
   [GUIDE_CLASS_FREQUENCY.slug]: GUIDE_CLASS_FREQUENCY,
   [GUIDE_HELP_CHILD_MEMORIZE_HOME.slug]: GUIDE_HELP_CHILD_MEMORIZE_HOME,
   [GUIDE_ONE_TO_ONE_VS_GROUP.slug]: GUIDE_ONE_TO_ONE_VS_GROUP,
+  [GUIDE_ADULTS_FROM_SCRATCH.slug]: GUIDE_ADULTS_FROM_SCRATCH,
 };
 
 /** Ordered list for the guides index page and sitemap. */
@@ -2550,4 +2664,5 @@ export const GUIDE_LIST: LandingPageData[] = [
   GUIDE_CLASS_FREQUENCY,
   GUIDE_HELP_CHILD_MEMORIZE_HOME,
   GUIDE_ONE_TO_ONE_VS_GROUP,
+  GUIDE_ADULTS_FROM_SCRATCH,
 ];
