@@ -2398,6 +2398,118 @@ export const GUIDE_HELP_CHILD_MEMORIZE_HOME: LandingPageData = {
     "The parent's guide to Hifz at home: the 15-minute daily routine, the sabaq/sabqi/manzil system, and how to correct mistakes without nagging. Free 3-day trial.",
 };
 
+export const GUIDE_ONE_TO_ONE_VS_GROUP: LandingPageData = {
+  slug: "one-to-one-vs-group-quran-classes",
+  basePath: "/guides",
+  breadcrumb: "One-to-One vs Group Quran Classes",
+  metaTitle: "One-to-One vs Group Quran Classes: Which Is Better for Your Child?",
+  metaDescription:
+    "One-to-one or group Quran classes — which should you choose? An honest comparison of learning speed, tajweed correction, cost, and when each format wins. Free 3-day trial.",
+  keywords: [
+    "one-to-one vs group quran classes",
+    "one on one quran classes for kids",
+    "private vs group quran classes",
+    "group quran classes online",
+  ],
+  h1: "One-to-One vs Group Quran Classes: Which Is Better for Your Child?",
+  intro: [
+    "Choosing between one-to-one and group Quran classes is one of the first decisions Muslim parents face — and one of the most misunderstood. Most academies push whichever format they sell. Here's the honest version: for most children learning to read the Quran, one-to-one wins clearly. For some older students and specific goals, groups have real advantages.",
+    "This guide breaks down exactly where each format wins — learning speed, Tajweed correction, cost, and motivation — so you can decide with open eyes. And if you'd rather feel the difference than read about it, our free 3-day trial is a real one-to-one class with a qualified tutor: no credit card, no pressure.",
+  ],
+  sections: [
+    {
+      heading: "The short answer",
+      paragraphs: [
+        "For children under 12 learning Noorani Qaida, Nazra, or the foundations of Tajweed: one-to-one is better — and it's not close. A child in a private lesson gets 100% of the teacher's ears and attention. A child in a group of eight gets roughly 12%.",
+        "Group classes make sense for teenagers and adults who want community, for Hifz revision circles where students motivate each other, and for families where budget is the deciding factor. Neither format is bad — they solve different problems. The mistake is putting a 6-year-old beginner in a group class and expecting the same progress as private lessons.",
+      ],
+    },
+    {
+      heading: "Learning speed: the attention math",
+      paragraphs: [
+        "Do the simple math on a 30-minute class. In a one-to-one lesson, your child speaks, reads, and gets corrected for the full 30 minutes. In a group of eight, your child actively participates for roughly 3–4 minutes — the rest is waiting.",
+        "Quran reading is a performance skill, like learning an instrument, not like watching a lecture. Progress comes from the child reading aloud while a teacher listens and corrects, rep after rep. In a group, most of those reps never happen for your child. This is why parents often report the same pattern: months in a group class with little to show, then visible progress within weeks of switching to one-to-one. The child didn't get smarter — they finally got airtime.",
+      ],
+    },
+    {
+      heading: "Why Tajweed especially needs one-to-one",
+      paragraphs: [
+        "Tajweed correction is personal and physical. When a child mispronounces a letter — mixing up seen and saad, or swallowing the qalqalah — the teacher needs to hear that specific child's mouth making that specific mistake, stop them, demonstrate the correct Makhraj (pronunciation point), and have them repeat it until it's right.",
+        "In a group setting, the teacher hears a chorus, and individual mispronunciations hide in the chorus. A child can spend a year in group Tajweed classes cementing the exact mistakes a private tutor would have fixed in week two. For parents, this is the strongest argument for one-to-one: bad Tajweed habits learned early are far harder to unlearn later.",
+      ],
+    },
+    {
+      heading: "Where group classes genuinely win",
+      paragraphs: [
+        "Honesty requires saying where groups are the better choice. Teenagers and adults often stay consistent longer when they learn alongside peers — a Hifz group where everyone reports their daily sabaq is powerful accountability. For students who already read fluently, group revision circles are excellent, because the skill being practiced is stamina, not new learning.",
+        "And then there's budget: group classes cost less per month than private lessons, full stop. For a family enrolling three or four children, that difference is real money. Some children also thrive on healthy competition — seeing a peer one lesson ahead pulls them forward. (Others shut down — know your child.)",
+      ],
+      bullets: [
+        "Community and motivation for teens and adults",
+        "Revision circles for fluent readers building consistency",
+        "Lower monthly cost — meaningful for multi-child families",
+        "Healthy competition suits some personalities",
+      ],
+    },
+    {
+      heading: "Cost: the honest comparison",
+      paragraphs: [
+        "One-to-one classes cost more per month than group classes — you're paying for 100% of a qualified teacher's time instead of a fraction of it. That's the straightforward part.",
+        "The real question isn't which is cheaper per month, but which is cheaper per unit of progress. A year of group classes that leaves your child still struggling with basic reading costs more — in money, time, and your child's motivation — than a few months of one-to-one that gets them reading confidently. When comparing prices, always ask: how many minutes of my child's actual recitation does this buy?",
+      ],
+    },
+    {
+      heading: "How to decide: a 60-second checklist",
+      paragraphs: [
+        "Choose one-to-one if your child is under 12 and still learning to read, if correct Tajweed from the start is the priority, if your child is shy or easily distracted, or if you've tried group classes and progress stalled.",
+        "Choose group if your teen or adult learner wants community, if the goal is Hifz revision rather than new learning, if budget is the binding constraint, or if your child is the competitive type who rises with peers. Still unsure? Book the free trial — three days of real one-to-one classes — and decide with evidence instead of guesswork.",
+      ],
+      bullets: [
+        "One-to-one: under-12 beginners, Tajweed foundations, shy or distractible children, stalled group progress",
+        "Group: teens/adults wanting community, Hifz revision goals, tight budgets, competitive personalities",
+      ],
+    },
+  ],
+  faqs: [
+    {
+      q: "Are one-to-one Quran classes really better for kids?",
+      a: "For children learning to read — yes, decisively. A young child needs the teacher's full attention on their recitation, their mistakes, and their pace. Groups dilute all three. For teens and adults with different goals, the answer is less one-sided.",
+    },
+    {
+      q: "Are group Quran classes cheaper?",
+      a: "Yes, per month. But measure cost per progress, not per month: private lessons typically get a child reading fluently in months, while group classes can take much longer for the same milestone.",
+    },
+    {
+      q: "Can my child switch from group to one-to-one later?",
+      a: "Absolutely — many families do exactly this after seeing slow progress in groups. One note: if group classes cemented Tajweed mistakes, the tutor will need a few weeks to correct them. Earlier is easier.",
+    },
+    {
+      q: "How many students are in a typical online group Quran class?",
+      a: "It varies widely — anywhere from 4 to 15+. Always ask the specific number before enrolling. A group of 4 behaves very differently from a group of 12.",
+    },
+    {
+      q: "Does one-to-one actually help Tajweed more?",
+      a: "Yes — this is where the gap is widest. Tajweed correction requires the teacher to hear and fix your child's individual pronunciation, mistake by mistake. That can't happen in a chorus.",
+    },
+    {
+      q: "What if my child is shy — group or private?",
+      a: "Private, almost always. Shy children go silent in groups and get skipped over. In one-to-one there's nowhere to hide — gently — and shy kids usually open up within two or three lessons once they trust the tutor.",
+    },
+  ],
+  related: [
+    { href: "/guides/how-to-choose-online-quran-teacher", label: "How to Choose an Online Quran Teacher" },
+    { href: "/guides/how-many-days-a-week-quran-classes", label: "How Many Days a Week?" },
+    { href: "/guides/online-quran-classes-for-5-year-olds", label: "Quran Classes for 5-Year-Olds" },
+    { href: "/courses/online-quran-classes-for-kids", label: "Online Quran Classes for Kids" },
+    { href: "/free-trial", label: "Free 3-Day Trial" },
+  ],
+  whatsappMessage:
+    "Assalamu Alaikum, I'm deciding between one-to-one and group Quran classes for my child. Can you advise which fits better? I'd like to try the free trial.",
+  courseName: "One-to-One vs Group Quran Classes",
+  courseDescription:
+    "The honest parent's guide to one-to-one vs group Quran classes: learning speed, Tajweed correction, cost per progress, and a 60-second decision checklist. Free 3-day trial.",
+};
+
 /** All guides, keyed for the [slug] route. */
 export const GUIDES: Record<string, LandingPageData> = {
   [GUIDE_4_YEAR_OLDS.slug]: GUIDE_4_YEAR_OLDS,
@@ -2416,6 +2528,7 @@ export const GUIDES: Record<string, LandingPageData> = {
   [GUIDE_CHOOSE_ACADEMY.slug]: GUIDE_CHOOSE_ACADEMY,
   [GUIDE_CLASS_FREQUENCY.slug]: GUIDE_CLASS_FREQUENCY,
   [GUIDE_HELP_CHILD_MEMORIZE_HOME.slug]: GUIDE_HELP_CHILD_MEMORIZE_HOME,
+  [GUIDE_ONE_TO_ONE_VS_GROUP.slug]: GUIDE_ONE_TO_ONE_VS_GROUP,
 };
 
 /** Ordered list for the guides index page and sitemap. */
@@ -2436,4 +2549,5 @@ export const GUIDE_LIST: LandingPageData[] = [
   GUIDE_CHOOSE_ACADEMY,
   GUIDE_CLASS_FREQUENCY,
   GUIDE_HELP_CHILD_MEMORIZE_HOME,
+  GUIDE_ONE_TO_ONE_VS_GROUP,
 ];
