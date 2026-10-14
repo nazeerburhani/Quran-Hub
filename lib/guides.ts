@@ -825,6 +825,8 @@ export const GUIDE_ONLINE_VS_MASJID: LandingPageData = {
   ],
   related: [
     { href: "/guides/how-much-do-online-quran-classes-cost", label: "How Much Do Online Quran Classes Cost?" },
+    { href: "/guides/one-to-one-vs-group-quran-classes", label: "One-to-One vs Group Quran Classes" },
+    { href: "/guides/can-adults-learn-quran-online-from-scratch", label: "Can Adults Learn Quran Online from Scratch?" },
     { href: "/guides/how-to-choose-online-quran-teacher", label: "How to Choose an Online Quran Teacher" },
     { href: "/guides/what-happens-in-free-trial-quran-class", label: "What Happens in a Free Trial Class?" },
     { href: "/courses/online-quran-classes-for-kids", label: "Online Quran Classes for Kids" },
@@ -1447,6 +1449,8 @@ export const GUIDE_QAIDA_TIMELINE: LandingPageData = {
     { href: "/free-trial", label: "Book Your Free 3-Day Trial" },
     { href: "/fees", label: "Fees & Plans" },
     { href: "/guides/what-age-should-child-start-quran-classes", label: "What Age Should a Child Start Quran Classes?" },
+    { href: "/guides/how-long-does-it-take-to-learn-noorani-qaida", label: "How Long Does It Take to Learn Noorani Qaida?" },
+    { href: "/guides/can-adults-learn-quran-online-from-scratch", label: "Can Adults Learn Quran Online from Scratch?" },
     { href: "/guides/online-quran-classes-for-4-year-olds", label: "Quran Classes for 4-Year-Olds" },
     { href: "/guides/online-quran-classes-for-5-year-olds", label: "Quran Classes for 5-Year-Olds" },
   ],
@@ -1612,6 +1616,7 @@ export const GUIDE_ONLINE_EFFECTIVENESS: LandingPageData = {
     { href: "/fees", label: "Fees & Plans" },
     { href: "/guides/what-age-should-child-start-quran-classes", label: "What Age Should a Child Start Quran Classes?" },
     { href: "/guides/how-long-does-it-take-to-learn-noorani-qaida", label: "How Long Does It Take to Learn Noorani Qaida?" },
+    { href: "/guides/one-to-one-vs-group-quran-classes", label: "One-to-One vs Group Quran Classes" },
     { href: "/guides/how-much-do-online-quran-classes-cost", label: "How Much Do Online Quran Classes Cost?" },
   ],
   whatsappMessage:
@@ -1759,6 +1764,7 @@ export const GUIDE_TAJWEED_BEGINNERS: LandingPageData = {
     { href: "/free-trial", label: "Book Your Free 3-Day Trial" },
     { href: "/fees", label: "Fees & Plans" },
     { href: "/guides/how-long-does-it-take-to-learn-noorani-qaida", label: "How Long Does It Take to Learn Noorani Qaida?" },
+    { href: "/guides/can-adults-learn-quran-online-from-scratch", label: "Can Adults Learn Quran Online from Scratch?" },
     { href: "/guides/is-online-quran-classes-effective-for-kids", label: "Is Online Quran Learning Effective for Kids?" },
   ],
   whatsappMessage:
@@ -2056,6 +2062,7 @@ export const GUIDE_CHOOSE_ACADEMY: LandingPageData = {
   ],
   related: [
     { href: "/guides/how-to-choose-online-quran-teacher", label: "How to Choose an Online Quran Teacher" },
+    { href: "/guides/one-to-one-vs-group-quran-classes", label: "One-to-One vs Group Quran Classes" },
     { href: "/guides/how-much-do-online-quran-classes-cost", label: "How Much Do Online Quran Classes Cost?" },
     { href: "/guides/what-happens-in-free-trial-quran-class", label: "What Happens in a Free Trial Class?" },
     { href: "/fees", label: "Fees & Plans" },
