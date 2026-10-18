@@ -14,7 +14,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
  * academy stats, and the WhatsApp CTA.
  */
 const stats = [
-  { value: "20+", label: "Qualified tutors" },
+  { value: "10", label: "Qualified tutors" },
   { value: "1,000+", label: "Lessons delivered" },
   { value: "10+", label: "Countries served" },
 ];

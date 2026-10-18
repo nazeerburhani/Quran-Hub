@@ -25,7 +25,7 @@ const en = {
     "Live, personal Quran classes for kids and adults with qualified male and female tutors — in every timezone.",
   heroCtaPrimary: "Claim My Child's Free Trial",
   heroCtaSecondary: "See How It Works",
-  heroChipRating: "20+ qualified tutors",
+  heroChipRating: "10 qualified tutors",
   heroChipStudents: "1,000+ lessons delivered",
   heroChipCountries: "10+ countries",
 
@@ -88,11 +88,7 @@ const en = {
   teachersDesc:
     "Huffaz and Qaris qualified from Tanzeem-ul-Madaris — male and female tutors, matched to your family.",
   teachersTeamNote:
-    "Meet some of our 20+ qualified tutors below — you'll meet the rest in your free trial.",
-  teachersMoreTitle: "20+ tutors & growing",
-  teachersMoreDesc:
-    "Male & female tutors for every age, level, and timezone — matched to your family.",
-  teachersMoreCta: "Meet your tutor",
+    "Meet our 10 qualified tutors below — 5 Qaris and 5 Qariahs.",
   filterMale: "Male",
   filterFemale: "Female",
   yearsExp: "yrs experience",
@@ -183,7 +179,7 @@ const ur: typeof en = {
     "بچوں اور بڑوں کے لیے مستند مرد و خواتین اساتذہ کے ساتھ براہِ راست قرآن کلاسز — ہر ٹائم زون میں۔",
   heroCtaPrimary: "میرے بچے کا مفت ٹرائل حاصل کریں",
   heroCtaSecondary: "طریقہ کار دیکھیں",
-  heroChipRating: "20+ اہل اساتذہ",
+  heroChipRating: "10 اہل اساتذہ",
   heroChipStudents: "1,000+ اسباق",
   heroChipCountries: "10+ ممالک",
 
@@ -246,11 +242,7 @@ const ur: typeof en = {
   teachersDesc:
     "حفاظ و قراء، تنظیم المدارس سے مستند — آپ کے خاندان کے لیے مرد و خواتین اساتذہ۔",
   teachersTeamNote:
-    "ہمارے 20+ اہل اساتذہ میں سے کچھ سے نیچے ملیں — باقی سے آپ مفت ٹرائل میں ملیں گے۔",
-  teachersMoreTitle: "20+ اساتذہ اور بڑھ رہے ہیں",
-  teachersMoreDesc:
-    "ہر عمر، ہر سطح اور ہر ٹائم زون کے لیے مرد و خواتین اساتذہ — آپ کے خاندان کے مطابق۔",
-  teachersMoreCta: "اپنے استاد سے ملیں",
+    "ہمارے 10 اہل اساتذہ سے ملیں — 5 قاری اور 5 قاریہ۔",
   filterMale: "مرد",
   filterFemale: "خواتین",
   yearsExp: "سال تجربہ",
@@ -341,7 +333,7 @@ const ar: typeof en = {
     "دروس قرآن مباشرة للأطفال والكبار مع معلمين ومعلمات معتمدين — في جميع المناطق الزمنية.",
   heroCtaPrimary: "احجز التجربة المجانية لطفلي",
   heroCtaSecondary: "شاهد كيف نعمل",
-  heroChipRating: "أكثر من 20 معلمًا مؤهلًا",
+  heroChipRating: "10 معلمين مؤهلين",
   heroChipStudents: "1,000+ درس",
   heroChipCountries: "أكثر من 10 دول",
 
@@ -404,11 +396,7 @@ const ar: typeof en = {
   teachersDesc:
     "حفّاظ وقرّاء مؤهلون من تنظيم المدارس — معلمون ومعلمات يناسبون عائلتك.",
   teachersTeamNote:
-    "تعرّف على بعض معلمينا المؤهلين (أكثر من 20) أدناه — وستلتقي بالبقية في تجربتك المجانية.",
-  teachersMoreTitle: "أكثر من 20 معلمًا — والعدد في نمو",
-  teachersMoreDesc:
-    "معلمون ومعلمات لكل عمر ومستوى ومنطقة زمنية — بما يناسب عائلتك.",
-  teachersMoreCta: "تعرّف على معلمك",
+    "تعرّف على معلمينا العشرة المؤهلين أدناه — 5 قرّاء و5 قارئات.",
   filterMale: "معلمون",
   filterFemale: "معلمات",
   yearsExp: "سنوات خبرة",

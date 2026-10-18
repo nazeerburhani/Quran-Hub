@@ -330,15 +330,6 @@ export const TEACHERS: Teacher[] = [
     subjects: ["Sisters", "Kids Quran", "Duas & Namaz"],
   },
   {
-    id: "t5",
-    name: "Qari Bilal Ahmed",
-    country: "Pakistan",
-    languages: ["English", "Urdu", "Arabic"],
-    qualification: "Tanzeem-ul-Madaris qualified · M.A. Arabic & Islamiyat",
-    gender: "Male",
-    subjects: ["Tajweed", "Hifz", "Arabic"],
-  },
-  {
     id: "t6",
     name: "Ustadha Maryam Siddiq",
     country: "Pakistan",
@@ -346,15 +337,6 @@ export const TEACHERS: Teacher[] = [
     qualification: "Tanzeem-ul-Madaris qualified · M.A. Arabic & Islamiyat",
     gender: "Female",
     subjects: ["Sisters", "Tajweed", "Islamic Studies"],
-  },
-  {
-    id: "t7",
-    name: "Qari Omar Farouk",
-    country: "Pakistan",
-    languages: ["Arabic", "English", "Urdu"],
-    qualification: "Tanzeem-ul-Madaris qualified · M.A. Arabic & Islamiyat",
-    gender: "Male",
-    subjects: ["Qira'at", "Ijazah", "Tafseer"],
   },
   {
     id: "t8",
@@ -366,15 +348,6 @@ export const TEACHERS: Teacher[] = [
     subjects: ["Kids Quran", "Noorani Qaida", "Duas & Namaz"],
   },
   {
-    id: "t12",
-    name: "Qari Daniyal Raza",
-    country: "Pakistan",
-    languages: ["Urdu", "English"],
-    qualification: "Tanzeem-ul-Madaris qualified · M.A. Arabic & Islamiyat",
-    gender: "Male",
-    subjects: ["Nazra", "Tajweed", "Kids Quran"],
-  },
-  {
     id: "t13",
     name: "Ustadha Iqra Naveed",
     country: "Pakistan",
@@ -382,24 +355,6 @@ export const TEACHERS: Teacher[] = [
     qualification: "Tanzeem-ul-Madaris qualified · M.A. Arabic & Islamiyat",
     gender: "Female",
     subjects: ["Noorani Qaida", "Sisters", "Duas & Namaz"],
-  },
-  {
-    id: "t14",
-    name: "Qari Kamran Aziz",
-    country: "Pakistan",
-    languages: ["Urdu", "English", "Arabic"],
-    qualification: "Tanzeem-ul-Madaris qualified · M.A. Arabic & Islamiyat",
-    gender: "Male",
-    subjects: ["Hifz", "Tajweed", "Islamic Studies"],
-  },
-  {
-    id: "t15",
-    name: "Ustadha Sadia Farooq",
-    country: "Pakistan",
-    languages: ["Urdu", "English"],
-    qualification: "Tanzeem-ul-Madaris qualified · M.A. Arabic & Islamiyat",
-    gender: "Female",
-    subjects: ["Kids Quran", "Tajweed", "Islamic Studies"],
   },
 ];
 
