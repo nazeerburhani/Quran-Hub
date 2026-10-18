@@ -9,9 +9,9 @@ export const KIDS_PAGE: LandingPageData = {
   slug: "online-quran-classes-for-kids",
   basePath: "/courses",
   breadcrumb: "Online Quran Classes for Kids",
-  metaTitle: "Online Quran Classes for Kids | Live 1-on-1 Quran Learning",
+  metaTitle: "Online Quran Classes for Kids | Live 1-on-1",
   metaDescription:
-    "Online Quran classes for kids with live 1-on-1 tutors — Noorani Qaida, Nazra, Tajweed & Hifz for ages 4+. Patient qualified teachers, free 3-day trial, no credit card.",
+    "Online Quran classes for kids — live 1-on-1 tutors, Qaida, Nazra, Tajweed & Hifz for ages 4+. Free 3-day trial, no credit card.",
   keywords: [
     "online quran classes for kids",
     "quran classes for kids online",
@@ -111,6 +111,8 @@ export const KIDS_PAGE: LandingPageData = {
     { href: "/fees", label: "Fees & Plans — transparent pricing" },
     { href: "/usa", label: "Online Quran Classes in the USA" },
     { href: "/uk", label: "Online Quran Classes in the UK" },
+    { href: "/guides/what-age-should-child-start-quran-classes", label: "What Age Should Your Child Start? (Guide)" },
+    { href: "/guides/is-online-quran-classes-effective-for-kids", label: "Are Online Classes Effective for Kids? (Guide)" },
   ],
   whatsappMessage:
     "Assalamu Alaikum, I want online Quran classes for my child. Please share details about the free trial.",
@@ -123,7 +125,7 @@ export const FEMALE_TEACHER_PAGE: LandingPageData = {
   slug: "female-quran-teacher-online",
   basePath: "/courses",
   breadcrumb: "Female Quran Teacher Online",
-  metaTitle: "Female Quran Teacher Online | Learn with a Qualified Qariah",
+  metaTitle: "Female Quran Teacher Online | Qualified Qariah",
   metaDescription:
     "Learn Quran online with a qualified female Quran teacher — 1-on-1 Tajweed, Hifz & Qaida classes for sisters and kids. Choose your Qariah. Free 3-day trial.",
   keywords: [
@@ -210,6 +212,8 @@ export const FEMALE_TEACHER_PAGE: LandingPageData = {
     { href: "/courses/online-quran-classes-for-kids", label: "Online Quran Classes for Kids" },
     { href: "/courses/online-tajweed-course", label: "Online Tajweed Course" },
     { href: "/fees", label: "Fees & Plans — transparent pricing" },
+    { href: "/guides/female-quran-teacher-for-kids", label: "Female Quran Teacher for Kids (Guide)" },
+    { href: "/guides/how-to-choose-online-quran-teacher", label: "How to Choose an Online Quran Teacher (Guide)" },
   ],
   whatsappMessage:
     "Assalamu Alaikum, I would like to learn with a female Quran teacher. Please share details about the free trial.",
@@ -222,7 +226,7 @@ export const QAIDA_PAGE: LandingPageData = {
   slug: "noorani-qaida-online",
   basePath: "/courses",
   breadcrumb: "Noorani Qaida Online",
-  metaTitle: "Noorani Qaida Online | Learn to Read Quran from Zero",
+  metaTitle: "Noorani Qaida Online | Learn to Read Quran",
   metaDescription:
     "Learn Noorani Qaida online with a live 1-on-1 tutor — Arabic alphabet, Makharij & joining rules for kids & adults. Start from zero. Free 3-day trial.",
   keywords: [
@@ -303,6 +307,8 @@ export const QAIDA_PAGE: LandingPageData = {
     { href: "/courses/online-tajweed-course", label: "Online Tajweed Course — the next step" },
     { href: "/courses/learn-quran-online-for-adults", label: "Learn Quran Online for Adults" },
     { href: "/fees", label: "Fees & Plans" },
+    { href: "/guides/how-long-does-it-take-to-learn-noorani-qaida", label: "How Long Does Noorani Qaida Take? (Guide)" },
+    { href: "/guides/what-age-should-child-start-quran-classes", label: "What Age Should Your Child Start? (Guide)" },
   ],
   whatsappMessage:
     "Assalamu Alaikum, I want to learn Noorani Qaida online. Please share details about the free trial.",
@@ -315,7 +321,7 @@ export const TAJWEED_PAGE: LandingPageData = {
   slug: "online-tajweed-course",
   basePath: "/courses",
   breadcrumb: "Online Tajweed Course",
-  metaTitle: "Online Tajweed Course | Learn Quran Recitation with Tajweed",
+  metaTitle: "Online Tajweed Course | Perfect Your Recitation",
   metaDescription:
     "Master Tajweed online with a qualified Qari — 1-on-1 live classes covering Makharij, Noon Sakinah, Madd, Waqf & all Tajweed rules. Free 3-day trial.",
   keywords: [
@@ -404,6 +410,8 @@ export const TAJWEED_PAGE: LandingPageData = {
     { href: "/courses/online-hifz-program", label: "Online Hifz Program" },
     { href: "/courses/female-quran-teacher-online", label: "Female Quran Teacher Online" },
     { href: "/courses/online-ijazah-course", label: "Online Ijazah Course" },
+    { href: "/guides/tajweed-for-beginners", label: "Tajweed for Beginners (Guide)" },
+    { href: "/guides/how-to-choose-online-quran-teacher", label: "How to Choose an Online Quran Teacher (Guide)" },
   ],
   whatsappMessage:
     "Assalamu Alaikum, I want to learn Tajweed online. Please share details about the free trial.",
@@ -416,7 +424,7 @@ export const HIFZ_PAGE: LandingPageData = {
   slug: "online-hifz-program",
   basePath: "/courses",
   breadcrumb: "Online Hifz Program",
-  metaTitle: "Online Hifz Program | Quran Memorization Course Online",
+  metaTitle: "Online Hifz Program | Quran Memorization",
   metaDescription:
     "Memorize the Quran online with a structured Hifz program — Sabaq, Sabqi & Manzil revision with a dedicated tutor. For kids & adults. Free 3-day trial.",
   keywords: [
@@ -499,6 +507,8 @@ export const HIFZ_PAGE: LandingPageData = {
     { href: "/courses/online-quran-classes-for-kids", label: "Online Quran Classes for Kids" },
     { href: "/courses/online-ijazah-course", label: "Online Ijazah Course — for Huffaz" },
     { href: "/fees", label: "Fees & Plans" },
+    { href: "/guides/how-long-does-it-take-to-memorize-the-quran", label: "How Long Does Hifz Take? (Guide)" },
+    { href: "/guides/help-child-memorize-quran-at-home", label: "Help Your Child Memorize at Home (Guide)" },
   ],
   whatsappMessage:
     "Assalamu Alaikum, I want to join the online Hifz program. Please share details about the free trial.",
@@ -511,7 +521,7 @@ export const ADULTS_PAGE: LandingPageData = {
   slug: "learn-quran-online-for-adults",
   basePath: "/courses",
   breadcrumb: "Learn Quran Online for Adults",
-  metaTitle: "Learn Quran Online for Adults | 1-on-1 Classes from Any Level",
+  metaTitle: "Learn Quran Online for Adults | Any Level",
   metaDescription:
     "It's never too late. Learn Quran online as an adult — 1-on-1 classes from zero: Qaida, Tajweed, Hifz & Tafseer at your pace. Flexible timings. Free 3-day trial.",
   keywords: [
@@ -587,6 +597,8 @@ export const ADULTS_PAGE: LandingPageData = {
     { href: "/courses/online-tajweed-course", label: "Online Tajweed Course" },
     { href: "/courses/online-quran-classes-for-sisters", label: "Online Quran Classes for Sisters" },
     { href: "/courses/female-quran-teacher-online", label: "Female Quran Teacher Online" },
+    { href: "/guides/can-adults-learn-quran-online-from-scratch", label: "Adults Learning from Scratch (Guide)" },
+    { href: "/guides/one-to-one-vs-group-quran-classes", label: "One-to-One vs Group Classes (Guide)" },
   ],
   whatsappMessage:
     "Assalamu Alaikum, I'm an adult and I want to learn the Quran online. Please share details about the free trial.",
@@ -599,9 +611,9 @@ export const SISTERS_PAGE: LandingPageData = {
   slug: "online-quran-classes-for-sisters",
   basePath: "/courses",
   breadcrumb: "Online Quran Classes for Sisters",
-  metaTitle: "Online Quran Classes for Sisters | Learn with Female Teachers",
+  metaTitle: "Online Quran Classes for Sisters",
   metaDescription:
-    "Online Quran classes for sisters — 1-on-1 Tajweed, Hifz, Qaida & Islamic studies with qualified female teachers. Private, flexible, comfortable. Free 3-day trial.",
+    "Online Quran classes for sisters — 1-on-1 Tajweed, Hifz & Qaida with qualified female teachers. Private and flexible. Free trial.",
   keywords: [
     "online quran classes for sisters",
     "quran classes for sisters online",
@@ -680,6 +692,8 @@ export const SISTERS_PAGE: LandingPageData = {
     { href: "/courses/learn-quran-online-for-adults", label: "Learn Quran Online for Adults" },
     { href: "/courses/online-hifz-program", label: "Online Hifz Program" },
     { href: "/fees", label: "Fees & Plans" },
+    { href: "/guides/female-quran-teacher-for-kids", label: "Female Quran Teacher for Kids (Guide)" },
+    { href: "/guides/how-to-choose-online-quran-academy", label: "How to Choose an Online Quran Academy (Guide)" },
   ],
   whatsappMessage:
     "Assalamu Alaikum, I'm interested in online Quran classes for sisters. Please share details about the free trial.",
@@ -692,7 +706,7 @@ export const IJAZAH_PAGE: LandingPageData = {
   slug: "online-ijazah-course",
   basePath: "/courses",
   breadcrumb: "Online Ijazah Course",
-  metaTitle: "Online Ijazah Course | Get Ijazah with Unbroken Sanad",
+  metaTitle: "Online Ijazah Course | Unbroken Sanad",
   metaDescription:
     "Earn an authentic Ijazah online — recite the full Quran to a qualified Sheikh with an unbroken chain (Sanad) in Hafs. 1-on-1. Free trial assessment.",
   keywords: [
@@ -772,6 +786,8 @@ export const IJAZAH_PAGE: LandingPageData = {
     { href: "/courses/online-hifz-program", label: "Online Hifz Program" },
     { href: "/courses/learn-quran-online-for-adults", label: "Learn Quran Online for Adults" },
     { href: "/fees", label: "Fees & Plans" },
+    { href: "/guides/tajweed-for-beginners", label: "Tajweed for Beginners (Guide)" },
+    { href: "/guides/how-long-does-it-take-to-memorize-the-quran", label: "How Long Does Hifz Take? (Guide)" },
   ],
   whatsappMessage:
     "Assalamu Alaikum, I'm interested in the online Ijazah program. Please arrange a free recitation assessment.",
@@ -784,7 +800,7 @@ export const USA_PAGE: LandingPageData = {
   slug: "usa",
   basePath: "",
   breadcrumb: "USA",
-  metaTitle: "Online Quran Classes in the USA | Live 1-on-1 Tutors",
+  metaTitle: "Online Quran Classes in the USA",
   metaDescription:
     "Online Quran classes in the USA — live 1-on-1 tutors in every US timezone (EST–PST). After-school slots for kids, flexible timings for adults. Free 3-day trial.",
   keywords: [
@@ -854,6 +870,8 @@ export const USA_PAGE: LandingPageData = {
     { href: "/courses/female-quran-teacher-online", label: "Female Quran Teacher Online" },
     { href: "/fees", label: "Fees & Plans (USD)" },
     { href: "/canada", label: "Online Quran Classes in Canada" },
+    { href: "/guides/online-quran-classes-vs-local-masjid-classes", label: "Online vs Local Masjid Classes (Guide)" },
+    { href: "/guides/how-much-do-online-quran-classes-cost", label: "What Do Online Quran Classes Cost? (Guide)" },
   ],
   whatsappMessage:
     "Assalamu Alaikum, I'm in the USA and I want online Quran classes. Please share details about the free trial.",
@@ -866,9 +884,9 @@ export const UK_PAGE: LandingPageData = {
   slug: "uk",
   basePath: "",
   breadcrumb: "UK",
-  metaTitle: "Online Quran Classes in the UK | 1-on-1 Quran Tutors",
+  metaTitle: "Online Quran Classes in the UK",
   metaDescription:
-    "Online Quran classes in the UK — live 1-on-1 tutors on GMT/BST, after-school slots, qualified male & female teachers. A flexible alternative to madrasah. Free 3-day trial.",
+    "Online Quran classes in the UK — live 1-on-1 tutors, after-school GMT/BST slots. A flexible alternative to madrasah. Free trial.",
   keywords: [
     "online quran classes uk",
     "online quran academy uk",
@@ -930,6 +948,8 @@ export const UK_PAGE: LandingPageData = {
     { href: "/courses/online-quran-classes-for-sisters", label: "Online Quran Classes for Sisters" },
     { href: "/fees", label: "Fees & Plans" },
     { href: "/usa", label: "Online Quran Classes in the USA" },
+    { href: "/guides/online-quran-classes-vs-local-masjid-classes", label: "Online vs Local Masjid Classes (Guide)" },
+    { href: "/guides/how-to-choose-online-quran-academy", label: "How to Choose an Online Quran Academy (Guide)" },
   ],
   whatsappMessage:
     "Assalamu Alaikum, I'm in the UK and I want online Quran classes. Please share details about the free trial.",
@@ -942,7 +962,7 @@ export const CANADA_PAGE: LandingPageData = {
   slug: "canada",
   basePath: "",
   breadcrumb: "Canada",
-  metaTitle: "Online Quran Classes in Canada | Live 1-on-1 Tutors",
+  metaTitle: "Online Quran Classes in Canada",
   metaDescription:
     "Online Quran classes in Canada — live 1-on-1 Quran tutors across EST–PST, from Toronto to Vancouver. After-school slots, CAD-friendly pricing. Free 3-day trial.",
   keywords: [
@@ -1000,6 +1020,8 @@ export const CANADA_PAGE: LandingPageData = {
     { href: "/courses/online-hifz-program", label: "Online Hifz Program" },
     { href: "/fees", label: "Fees & Plans" },
     { href: "/usa", label: "Online Quran Classes in the USA" },
+    { href: "/guides/online-quran-classes-vs-local-masjid-classes", label: "Online vs Local Masjid Classes (Guide)" },
+    { href: "/guides/how-much-do-online-quran-classes-cost", label: "What Do Online Quran Classes Cost? (Guide)" },
   ],
   whatsappMessage:
     "Assalamu Alaikum, I'm in Canada and I want online Quran classes. Please share details about the free trial.",
@@ -1012,7 +1034,7 @@ export const AUSTRALIA_PAGE: LandingPageData = {
   slug: "australia",
   basePath: "",
   breadcrumb: "Australia",
-  metaTitle: "Online Quran Classes in Australia | Live 1-on-1 Tutors",
+  metaTitle: "Online Quran Classes in Australia",
   metaDescription:
     "Online Quran classes in Australia — live 1-on-1 Quran tutors on AEST/AWST, after-school slots for kids in Sydney, Melbourne, Perth & beyond. Free 3-day trial.",
   keywords: [
@@ -1070,6 +1092,8 @@ export const AUSTRALIA_PAGE: LandingPageData = {
     { href: "/courses/learn-quran-online-for-adults", label: "Learn Quran Online for Adults" },
     { href: "/fees", label: "Fees & Plans" },
     { href: "/canada", label: "Online Quran Classes in Canada" },
+    { href: "/guides/how-to-choose-online-quran-academy", label: "How to Choose an Online Quran Academy (Guide)" },
+    { href: "/guides/what-happens-in-free-trial-quran-class", label: "What Happens in a Free Trial? (Guide)" },
   ],
   whatsappMessage:
     "Assalamu Alaikum, I'm in Australia and I want online Quran classes. Please share details about the free trial.",

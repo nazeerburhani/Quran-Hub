@@ -8,11 +8,12 @@ import type { LandingPageData } from "@/components/seo/LandingPage";
 
 export const GUIDE_4_YEAR_OLDS: LandingPageData = {
   slug: "online-quran-classes-for-4-year-olds",
+  datePublished: "2026-09-30",
   basePath: "/guides",
   breadcrumb: "Quran Classes for 4-Year-Olds",
-  metaTitle: "Online Quran Classes for 4-Year-Olds: A Parent's Guide",
+  metaTitle: "Quran Classes for 4-Year-Olds: A Parent's Guide",
   metaDescription:
-    "Can a 4-year-old learn Quran online? Yes — with short, playful 1-on-1 classes. How Noorani Qaida works at age 4, what progress looks like, and a free 3-day trial.",
+    "Can a 4-year-old learn Quran online? Yes — with short, playful 1-on-1 classes. How Qaida works at age 4 and what progress looks like.",
   keywords: [
     "online quran classes for 4 year old",
     "quran classes for 4 year old",
@@ -146,9 +147,10 @@ export const GUIDE_4_YEAR_OLDS: LandingPageData = {
 
 export const GUIDE_5_YEAR_OLDS: LandingPageData = {
   slug: "online-quran-classes-for-5-year-olds",
+  datePublished: "2026-09-30",
   basePath: "/guides",
   breadcrumb: "Quran Classes for 5-Year-Olds",
-  metaTitle: "Online Quran Classes for 5-Year-Olds: Getting Started",
+  metaTitle: "Quran Classes for 5-Year-Olds: Getting Started",
   metaDescription:
     "Age 5 is the sweet spot to start Quran classes. How Noorani Qaida works for 5-year-olds, class structure, schedules for US time zones, and a free 3-day trial.",
   keywords: [
@@ -287,9 +289,10 @@ export const GUIDE_5_YEAR_OLDS: LandingPageData = {
 
 export const GUIDE_7_YEAR_OLDS: LandingPageData = {
   slug: "online-quran-classes-for-7-year-olds",
+  datePublished: "2026-09-30",
   basePath: "/guides",
   breadcrumb: "Quran Classes for 7-Year-Olds",
-  metaTitle: "Online Quran Classes for 7-Year-Olds: Building Habits",
+  metaTitle: "Quran Classes for 7-Year-Olds: Building Habits",
   metaDescription:
     "Age 7 is when Quran learning gets serious — the age of discernment. How online classes build strong recitation, Tajweed, and daily habits for 7-year-olds.",
   keywords: [
@@ -426,11 +429,12 @@ export const GUIDE_7_YEAR_OLDS: LandingPageData = {
 
 export const GUIDE_WHAT_AGE: LandingPageData = {
   slug: "what-age-should-child-start-quran-classes",
+  datePublished: "2026-09-30",
   basePath: "/guides",
   breadcrumb: "What Age to Start Quran Classes",
   metaTitle: "What Age Should a Child Start Quran Classes?",
   metaDescription:
-    "The honest answer: it depends on readiness, not a magic number. What Islamic tradition says, readiness signs by age, and why it's never too late — free trial included.",
+    "What age should your child start Quran classes? Readiness signs by age, what Islamic tradition says, and why it's never too late.",
   keywords: [
     "what age should a child start quran classes",
     "best age to start quran classes",
@@ -561,9 +565,10 @@ export const GUIDE_WHAT_AGE: LandingPageData = {
 
 export const GUIDE_COST: LandingPageData = {
   slug: "how-much-do-online-quran-classes-cost",
+  datePublished: "2026-09-30",
   basePath: "/guides",
   breadcrumb: "Cost of Online Quran Classes",
-  metaTitle: "How Much Do Online Quran Classes Cost? (2026 Guide)",
+  metaTitle: "Online Quran Class Costs (2026 Guide)",
   metaDescription:
     "Online Quran classes typically cost $30–$150/month depending on frequency. Honest 2026 breakdown of market prices, what drives cost, and red flags to avoid.",
   keywords: [
@@ -698,6 +703,7 @@ export const GUIDE_COST: LandingPageData = {
 
 export const GUIDE_ONLINE_VS_MASJID: LandingPageData = {
   slug: "online-quran-classes-vs-local-masjid-classes",
+  datePublished: "2026-09-30",
   basePath: "/guides",
   breadcrumb: "Online vs Masjid Classes",
   metaTitle: "Online vs Masjid Quran Classes: Honest Comparison",
@@ -841,6 +847,7 @@ export const GUIDE_ONLINE_VS_MASJID: LandingPageData = {
 
 export const GUIDE_CHOOSE_TEACHER: LandingPageData = {
   slug: "how-to-choose-online-quran-teacher",
+  datePublished: "2026-09-30",
   basePath: "/guides",
   breadcrumb: "How to Choose an Online Quran Teacher",
   metaTitle: "How to Choose an Online Quran Teacher: 9 Questions",
@@ -987,6 +994,7 @@ export const GUIDE_CHOOSE_TEACHER: LandingPageData = {
 
 export const GUIDE_FREE_TRIAL: LandingPageData = {
   slug: "what-happens-in-free-trial-quran-class",
+  datePublished: "2026-09-30",
   basePath: "/guides",
   breadcrumb: "What Happens in a Free Trial Class",
   metaTitle: "What Happens in a Free Trial Quran Class?",
@@ -1136,11 +1144,12 @@ export const GUIDE_FREE_TRIAL: LandingPageData = {
 
 export const GUIDE_HIFZ_TIMELINE: LandingPageData = {
   slug: "how-long-does-it-take-to-memorize-the-quran",
+  datePublished: "2026-10-05",
   basePath: "/guides",
   breadcrumb: "How Long Hifz Takes",
-  metaTitle: "How Long Does It Take to Memorize the Quran? (Honest Answer)",
+  metaTitle: "How Long Does Hifz Take? (Honest Answer)",
   metaDescription:
-    "How long does it take to memorize the Quran? Honest ranges: days for short surahs, 3–6 months for Juz Amma, 2–5 years for the full Quran — plus the 7 factors that change your timeline.",
+    "How long does it take to memorize the Quran? Honest ranges — days for short surahs, months for Juz Amma, years for the full Quran.",
   keywords: [
     "how long does it take to memorize the quran",
     "how long to memorize the quran",
@@ -1303,11 +1312,12 @@ export const GUIDE_HIFZ_TIMELINE: LandingPageData = {
 /** Article #2 (drafted 2026-10-05, uncommitted, awaiting user review): long-tail guide. */
 export const GUIDE_QAIDA_TIMELINE: LandingPageData = {
   slug: "how-long-does-it-take-to-learn-noorani-qaida",
+  datePublished: "2026-10-05",
   basePath: "/guides",
   breadcrumb: "Noorani Qaida Timeline",
-  metaTitle: "How Long Does It Take to Learn Noorani Qaida? (Honest Answer)",
+  metaTitle: "How Long Does Noorani Qaida Take? (Honest Answer)",
   metaDescription:
-    "How long does it take to learn Noorani Qaida? Honest ranges: children typically take 2–6 months, adults often finish in weeks — plus the 7 factors that change your timeline and what comes after.",
+    "How long does Noorani Qaida take? Children typically need 2–6 months, adults often finish in weeks — plus what comes after Qaida.",
   keywords: [
     "how long does it take to learn noorani qaida",
     "how long to learn noorani qaida",
@@ -1464,11 +1474,12 @@ export const GUIDE_QAIDA_TIMELINE: LandingPageData = {
 /** Article #3 (drafted 2026-10-05, uncommitted, awaiting user review): objection-handling long-tail guide. */
 export const GUIDE_ONLINE_EFFECTIVENESS: LandingPageData = {
   slug: "is-online-quran-classes-effective-for-kids",
+  datePublished: "2026-10-05",
   basePath: "/guides",
   breadcrumb: "Online Class Effectiveness",
-  metaTitle: "Is Online Quran Classes Effective for Kids? (Honest Answer)",
+  metaTitle: "Online Quran Classes for Kids: Do They Work?",
   metaDescription:
-    "Is online Quran classes effective for kids? Honest answer: yes — when it's 1-on-1 with a qualified tutor. Why Quran learning suits video classes, when in-person wins, and a parent's first-month checklist.",
+    "Are online Quran classes effective for kids? Yes — when 1-on-1 with a qualified tutor. A parent's first-month checklist included.",
   keywords: [
     "is online quran classes effective for kids",
     "are online quran classes effective",
@@ -1629,11 +1640,12 @@ export const GUIDE_ONLINE_EFFECTIVENESS: LandingPageData = {
 /** Article #4 (drafted 2026-10-06, approved 2026-10-12): beginner long-tail guide targeting "tajweed for beginners". */
 export const GUIDE_TAJWEED_BEGINNERS: LandingPageData = {
   slug: "tajweed-for-beginners",
+  datePublished: "2026-10-08",
   basePath: "/guides",
   breadcrumb: "Tajweed for Beginners",
-  metaTitle: "Tajweed for Beginners: Where to Start (Simple Guide)",
+  metaTitle: "Tajweed for Beginners: Where to Start",
   metaDescription:
-    "Tajweed for beginners explained simply: what tajweed is, the 7 rules to learn first, whether you need it before reading the Quran, and how 1-on-1 classes build your recitation step by step.",
+    "Tajweed for beginners: what it is, the 7 rules to learn first, and how 1-on-1 classes build your recitation step by step.",
   keywords: [
     "tajweed for beginners",
     "learn tajweed for beginners",
@@ -1777,9 +1789,10 @@ export const GUIDE_TAJWEED_BEGINNERS: LandingPageData = {
 /** Article #5 (drafted 2026-10-08, approved 2026-10-12): US-parent long-tail guide targeting "female quran teacher for kids online" (30-day plan, Week 3 sprint-1 article 4). */
 export const GUIDE_FEMALE_TEACHER_KIDS: LandingPageData = {
   slug: "female-quran-teacher-for-kids",
+  datePublished: "2026-10-08",
   basePath: "/guides",
   breadcrumb: "Female Quran Teacher for Kids",
-  metaTitle: "Female Quran Teacher for Kids Online: A Parent's Guide",
+  metaTitle: "Female Quran Teacher for Kids: A Parent's Guide",
   metaDescription:
     "Why many mothers choose a Qariah for their kids: comfort, learning fit, what to check in a female teacher's qualifications, and how the free trial works.",
   keywords: [
@@ -1924,11 +1937,12 @@ export const GUIDE_FEMALE_TEACHER_KIDS: LandingPageData = {
 /** Article #6 (drafted 2026-10-09, approved 2026-10-12): US-parent long-tail guide targeting "how to choose an online quran academy" (30-day plan, Week 4 sprint-2 article 5). */
 export const GUIDE_CHOOSE_ACADEMY: LandingPageData = {
   slug: "how-to-choose-online-quran-academy",
+  datePublished: "2026-10-12",
   basePath: "/guides",
   breadcrumb: "How to Choose an Online Quran Academy",
-  metaTitle: "How to Choose an Online Quran Academy: 7 Questions to Ask",
+  metaTitle: "Choosing an Online Quran Academy: 7 Questions",
   metaDescription:
-    "Choosing an online Quran academy for your child? Ask these 7 questions about tutor qualifications, trial classes, child safety, communication, curriculum, scheduling, and pricing before you enroll.",
+    "Choosing an online Quran academy? 7 questions to ask about tutors, trials, safety, curriculum, scheduling, and pricing before you enroll.",
   keywords: [
     "how to choose an online quran academy",
     "choosing online quran classes for kids",
@@ -2078,11 +2092,12 @@ export const GUIDE_CHOOSE_ACADEMY: LandingPageData = {
 /** Article #7 (drafted 2026-10-10, approved 2026-10-12): US-parent long-tail guide targeting "how many days a week should my child take quran classes" (keyword-research P2 long-tail; no dedicated article exists from competitors). No ayah/hadith cited; no stats invented — "qualified" used throughout. */
 export const GUIDE_CLASS_FREQUENCY: LandingPageData = {
   slug: "how-many-days-a-week-quran-classes",
+  datePublished: "2026-10-12",
   basePath: "/guides",
   breadcrumb: "How Many Days a Week for Quran Classes?",
-  metaTitle: "How Many Days a Week Should My Child Take Quran Classes?",
+  metaTitle: "How Many Days a Week for Quran Classes?",
   metaDescription:
-    "Wondering how many days a week your child needs Quran classes? A practical guide: 2–3 days for most kids, daily for Hifz — plus how class length, practice, and the right tutor change the answer.",
+    "How many days a week does your child need Quran classes? 2–3 days for most kids, daily for Hifz — a practical parent guide.",
   keywords: [
     "how many days a week should my child take quran classes",
     "how often should kids take quran classes",
@@ -2252,11 +2267,12 @@ export const GUIDE_CLASS_FREQUENCY: LandingPageData = {
 /** Article #8 (drafted 2026-10-11, approved 2026-10-12): US-parent long-tail guide targeting "how to help child memorize quran at home" (30-day plan, Week 4 sprint-2 article 6; no dedicated competitor article found — complements GUIDE_HIFZ_TIMELINE from the parent's side). No ayah/hadith cited; no stats invented — "qualified" used throughout. */
 export const GUIDE_HELP_CHILD_MEMORIZE_HOME: LandingPageData = {
   slug: "help-child-memorize-quran-at-home",
+  datePublished: "2026-10-12",
   basePath: "/guides",
   breadcrumb: "Help Your Child Memorize Quran at Home",
-  metaTitle: "How to Help Your Child Memorize the Quran at Home (Without Pushing Too Hard)",
+  metaTitle: "Help Your Child Memorize Quran at Home",
   metaDescription:
-    "Your child learns Hifz in class but keeps it at home. A practical parent guide: the 15-minute daily routine, sabaq/sabqi/manzil made simple, and how to correct mistakes without nagging.",
+    "Help your child keep Hifz at home: the 15-minute daily routine, sabaq/sabqi/manzil made simple, and correcting without nagging.",
   keywords: [
     "how to help child memorize quran at home",
     "help my child memorize quran",
@@ -2407,11 +2423,12 @@ export const GUIDE_HELP_CHILD_MEMORIZE_HOME: LandingPageData = {
 
 export const GUIDE_ONE_TO_ONE_VS_GROUP: LandingPageData = {
   slug: "one-to-one-vs-group-quran-classes",
+  datePublished: "2026-10-13",
   basePath: "/guides",
   breadcrumb: "One-to-One vs Group Quran Classes",
-  metaTitle: "One-to-One vs Group Quran Classes: Which Is Better for Your Child?",
+  metaTitle: "One-to-One vs Group Quran Classes",
   metaDescription:
-    "One-to-one or group Quran classes — which should you choose? An honest comparison of learning speed, tajweed correction, cost, and when each format wins. Free 3-day trial.",
+    "One-to-one vs group Quran classes: an honest comparison of learning speed, tajweed correction, cost — and when each wins.",
   keywords: [
     "one-to-one vs group quran classes",
     "one on one quran classes for kids",
@@ -2519,11 +2536,12 @@ export const GUIDE_ONE_TO_ONE_VS_GROUP: LandingPageData = {
 
 export const GUIDE_ADULTS_FROM_SCRATCH: LandingPageData = {
   slug: "can-adults-learn-quran-online-from-scratch",
+  datePublished: "2026-10-13",
   basePath: "/guides",
   breadcrumb: "Adults Learning Quran from Scratch",
-  metaTitle: "Can Adults Learn Quran Online from Scratch? Honest Answer",
+  metaTitle: "Adults Learning Quran from Scratch: Honest Answer",
   metaDescription:
-    "Too old to start? Never learned as a child? Here's how adults — including reverts — learn Quran online from zero: what to expect, how it works, and a free 3-day trial.",
+    "Too old to start learning Quran? How adults — including reverts — learn online from zero: what to expect and how it works.",
   keywords: [
     "can adults learn quran online from scratch",
     "learn quran as an adult beginner",

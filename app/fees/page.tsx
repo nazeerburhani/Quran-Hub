@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     description:
       "Transparent pricing, qualified tutors, every class private 1-on-1. Free 3-day trial, no credit card.",
     url: `${SITE.url}/fees`,
-    type: "article",
+    type: "website",
   },
 };
 

@@ -42,6 +42,8 @@ export interface LandingPageData {
   /** For Course schema */
   courseName: string;
   courseDescription: string;
+  /** For Article schema (guides) — ISO date, e.g. "2026-10-05". Verified from git history. */
+  datePublished?: string;
 }
 
 export function pageUrl(d: LandingPageData): string {
@@ -58,7 +60,16 @@ function LandingJsonLd({ data }: { data: LandingPageData }) {
     data.basePath === "/courses" ? "Courses" : data.basePath === "/guides" ? "Guides" : "QuranHub";
   const breadcrumbItems = [
     { name: "Home", url: SITE.url },
-    ...(data.basePath ? [{ name: crumbName, url: `${SITE.url}${data.basePath}` }] : []),
+    // NOTE: there is no /courses index page (it 404s); the visible breadcrumb
+    // links to /#courses, so the JSON-LD must match it exactly.
+    ...(data.basePath
+      ? [
+          {
+            name: crumbName,
+            url: `${SITE.url}${data.basePath === "/courses" ? "/#courses" : data.basePath}`,
+          },
+        ]
+      : []),
     { name: data.breadcrumb, url },
   ];
   const isGuide = data.basePath === "/guides";
@@ -82,6 +93,7 @@ function LandingJsonLd({ data }: { data: LandingPageData }) {
             description: data.courseDescription,
             url,
             inLanguage: "en-US",
+            ...(data.datePublished ? { datePublished: data.datePublished } : {}),
             author: {
               "@type": "EducationalOrganization",
               name: SITE.name,

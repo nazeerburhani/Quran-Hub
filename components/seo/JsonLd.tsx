@@ -19,6 +19,7 @@ export function OrganizationJsonLd() {
         "@type": "EducationalOrganization",
         name: SITE.name,
         url: SITE.url,
+        logo: `${SITE.url}/images/logo.png`,
         slogan: SITE.tagline,
         email: SITE.email,
         founder: {
@@ -78,7 +79,7 @@ export function CoursesJsonLd() {
             "@type": "Course",
             name: `${c.title} — Online Quran Classes`,
             description: c.description,
-            url: `${SITE.url}/#courses`,
+            url: `${SITE.url}/courses/${c.slug}`,
             provider: {
               "@type": "EducationalOrganization",
               name: SITE.name,

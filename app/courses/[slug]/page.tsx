@@ -39,7 +39,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
       title: data.metaTitle,
       description: data.metaDescription,
       url: pageUrl(data),
-      type: "article",
+      type: "website",
     },
   };
 }

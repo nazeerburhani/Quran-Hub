@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: "3 Free Online Quran Classes — No Credit Card",
     description: "Meet your tutor, get a free assessment, experience real 1-on-1 classes.",
     url: `${SITE.url}/free-trial`,
-    type: "article",
+    type: "website",
   },
 };
 

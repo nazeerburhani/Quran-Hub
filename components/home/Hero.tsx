@@ -74,7 +74,7 @@ export default function Hero() {
       <div className="absolute inset-0" aria-hidden="true">
         <Image
           src="/images/hero-quran.jpg"
-          alt=""
+          alt="Open Quran on a rehal — QuranHub online Quran academy classes for kids and adults"
           fill
           priority
           sizes="100vw"
@@ -125,7 +125,9 @@ export default function Hero() {
             data-hero-enter
             className="mt-6 font-display text-[2.6rem] font-semibold leading-[1.08] tracking-tight text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)] sm:text-6xl lg:text-[4.4rem]"
           >
-            <span className="sr-only">Online Quran Academy — </span>
+            <span className="mb-4 block font-sans text-[13px] font-bold uppercase tracking-[0.3em] text-gold-300">
+              Online Quran Academy
+            </span>
             Your child reciting the Quran{" "}
             <em className="text-gold-gradient">beautifully</em> — within
             months.

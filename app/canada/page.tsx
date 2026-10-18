@@ -22,7 +22,7 @@ export function generateMetadata(): Metadata {
       title: CANADA_PAGE.metaTitle,
       description: CANADA_PAGE.metaDescription,
       url: pageUrl(CANADA_PAGE),
-      type: "article",
+      type: "website",
     },
   };
 }

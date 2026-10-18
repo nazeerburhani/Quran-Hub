@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE.name}`,
   },
   description:
-    "QuranHub is an online Quran academy with live 1-on-1 Quran classes for kids & adults — Noorani Qaida, Tajweed, Hifz, Tafseer & Arabic with qualified male & female tutors. Free 3-day trial, no credit card.",
+    "Online Quran academy with live 1-on-1 classes for kids & adults — Qaida, Tajweed, Hifz, Tafseer & Arabic with qualified tutors. Free 3-day trial.",
   keywords: [
     "online quran academy",
     "online quran classes",
@@ -88,15 +88,10 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: SITE.url,
-    // Regional targeting: tells Google which page serves which English-speaking
-    // market (US is the primary target). x-default = global homepage.
-    languages: {
-      "x-default": SITE.url,
-      "en-US": pageUrl(USA_PAGE),
-      "en-GB": pageUrl(UK_PAGE),
-      "en-CA": pageUrl(CANADA_PAGE),
-      "en-AU": pageUrl(AUSTRALIA_PAGE),
-    },
+    // NOTE: hreflang is declared per-page (app/page.tsx + the 4 geo pages),
+    // NOT here — putting `languages` in the root layout made every page
+    // (courses, guides, fees…) falsely claim /usa etc. as alternates,
+    // which triggered GSC "Duplicate without user-selected canonical".
   },
   openGraph: {
     type: "website",
