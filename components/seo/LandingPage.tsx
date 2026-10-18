@@ -95,9 +95,11 @@ function LandingJsonLd({ data }: { data: LandingPageData }) {
             inLanguage: "en-US",
             ...(data.datePublished ? { datePublished: data.datePublished } : {}),
             author: {
-              "@type": "EducationalOrganization",
-              name: SITE.name,
-              url: SITE.url,
+              "@type": "Person",
+              name: "Nazeer Ahmad",
+              jobTitle: "Founder, QuranHub Online Quran Academy",
+              description:
+                "M.A. Arabic & Islamiyat; Dars-e-Nizami (Tanzeem-ul-Madaris); 10+ years teaching Quran and Islamic studies.",
             },
             publisher: {
               "@type": "EducationalOrganization",
@@ -197,6 +199,14 @@ export default function LandingPage({ data }: { data: LandingPageData }) {
           <h1 className="font-display text-3xl font-semibold leading-[1.15] tracking-tight text-ink dark:text-sand-100 sm:text-4xl lg:text-[2.9rem]">
             {data.h1}
           </h1>
+          {/* Author byline (guides only) — E-E-A-T: real named author with credentials */}
+          {isGuide ? (
+            <p className="mt-4 text-sm text-ink-soft dark:text-night-muted">
+              By <span className="font-semibold text-ink dark:text-sand-100">Nazeer Ahmad</span>
+              <span aria-hidden="true"> · </span>
+              Founder, QuranHub Online Quran Academy
+            </p>
+          ) : null}
           <div className="mx-auto mt-6 max-w-3xl space-y-4 text-left">
             {data.intro.map((p, i) => (
               <p key={i} className="text-base leading-relaxed text-ink-soft dark:text-night-muted sm:text-lg">
